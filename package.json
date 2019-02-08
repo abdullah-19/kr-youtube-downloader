@@ -1,0 +1,14 @@
+{
+  "name": "downloader",
+  "version": "1.0.0",
+  "description": "my downloader",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "tulshi das",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^4.0.4"
+  }
+}
