@@ -15,8 +15,10 @@
     		<input type="text" style="width: 100%;" />
     	</div>
     	<div class="col-md-2 bg-primary">
-    		<button>Download</button>
+    		<button id = "downloadBtn" onClick="ipcRenderer.send('startDownload')">Download</button>
     	</div>
     </div>
+    <p id="myP"></p>
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
