@@ -12,13 +12,14 @@
     		<p>URL:&nbsp;</p>
     	</div>
     	<div class="col-md-9 bg-danger px-0">
-    		<input type="text" style="width: 100%;" />
+    		<input id="urlField" type="text" style="width: 100%;" />
     	</div>
     	<div class="col-md-2 bg-primary">
-    		<button id = "downloadBtn" onClick="ipcRenderer.send('startDownload')">Download</button>
+    		<button id = "downloadBtn">Download</button>
     	</div>
     </div>
     <p id="myP"></p>
+    <img src="res/images/loader.gif">
     <script type="text/javascript" src="index.js"></script>
   </body>
 </html>

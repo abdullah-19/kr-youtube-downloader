@@ -40,13 +40,36 @@ app.on('activate', () => {
   }
 });
 
+ipcMain.on('start_download', function (event, url) {
+  console.log("in ipcMain:"+url);
+  var command = preperCommand(url);
+  execute(command, (output) => {
+      console.log(output);
+  });
+
+  event.sender.send('async-message-reply', 'Download completed');
+})
+
+
 ipcMain.on("startDownload", () => {
-    var para = document.getElementById('myP');
+    //var para = document.getElementById('myP');
+    var command = preperCommand();
     execute('ping www.google.com', (output) => {
-      para.innerHTML= output;
+     // para.innerHTML= output;
       console.log(output);
     });
 });
+
+function preperCommand(url){
+  var download_path = path.join(__dirname,"downloads","youtube-dl");
+  console.log("download_path:"+download_path);
+
+  if(url.indexOf("playlist?list=") != -1) return download_path + " -i -f mp4 --yes-playlist "+url;
+  else if(url.indexOf("watch?v=") != -1){
+      console.log("splitted Link:"+url.split("&")[0]);
+      return download_path+" "+url.split("&")[0];
+  }
+}
 
 function execute(command, callback) {
     exec(command, (error, stdout, stderr) => { 
