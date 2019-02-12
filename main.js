@@ -9,7 +9,7 @@ const exec = require('child_process').exec;
 
 
 let win;
-
+let output;
 function createWindow () {
 
   win = new BrowserWindow({width: 800, height: 600})
@@ -45,10 +45,18 @@ ipcMain.on('start_download', function (event, url) {
   var command = preperCommand(url);
   execute(command, (output) => {
       console.log(output);
+      event.sender.send('download-complete');
+     // showStatus(output);
   });
 
-  event.sender.send('async-message-reply', 'Download completed');
+  event.sender.send('download-started', 'Download not completed');
 })
+
+function showStatus(output){
+  setInterval(function(){
+    console.log(output);
+  }, 1000);
+}
 
 
 ipcMain.on("startDownload", () => {

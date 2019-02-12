@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Hello World App</title>
     <link rel="stylesheet" href="res/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="res/font-awesome-4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <h1>Hello World!</h1>
@@ -15,11 +16,14 @@
     		<input id="urlField" type="text" style="width: 100%;" />
     	</div>
     	<div class="col-md-2 bg-primary">
-    		<button id = "downloadBtn">Download</button>
+            <i id="downloadBtn" class="fa fa-arrow-circle-o-down" style="font-size:38px;color:red;background: transparent;"></i>
+            
+            <i id="processIcon" class="fa fa-spinner fa-spin" style="font-size:38px;color:red;display: none;"></i>
+            <i id="fileIcon" class="fa fa-file" style="font-size:38px;color:red;display: none;"></i>
     	</div>
     </div>
     <p id="myP"></p>
-    <img src="res/images/loader.gif">
+    
     <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
