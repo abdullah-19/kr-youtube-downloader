@@ -16,6 +16,11 @@ downloadBtn.addEventListener('click', function(){
     
 });
 
+fileIcon.addEventListener('click', function(){
+  console.log('file icon clicked');
+  ipcRenderer.send('open_file_directory');
+});
+
 
 ipcRenderer.on('download-started', function (event, arg) {
   const message = `Message reply: ${arg}`
