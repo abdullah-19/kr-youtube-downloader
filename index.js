@@ -4,8 +4,7 @@ const downloadBtn = document.getElementById('downloadBtn');
 const urlField = document.getElementById('urlField');
 const processIcon = document.getElementById('processIcon');
 const fileIcon = document.getElementById('fileIcon');
-
-
+const error_text = document.getElementById('error_text');
 
 
 downloadBtn.addEventListener('click', function(){
@@ -27,6 +26,22 @@ ipcRenderer.on('download-started', function (event, arg) {
   console.log(message);
   downloadBtn.style.display = "none";
   processIcon.style.display = "inline-block";
+});
+
+ipcRenderer.on('download_error', function () {
+  
+  error_text.innerHTML="Error when downloading";
+  processIcon.style.display = "none";
+  downloadBtn.style.display = "inline-block";
+});
+
+//already_downloaded
+
+ipcRenderer.on('already_downloaded', function () {
+  
+  error_text.innerHTML="File already exist";
+  processIcon.style.display = "none";
+  downloadBtn.style.display = "inline-block";
 });
 
 ipcRenderer.on('download-complete', function () {

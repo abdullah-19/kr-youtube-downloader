@@ -48,18 +48,28 @@ ipcMain.on('start_download', function (event, url) {
   console.log("in ipcMain:"+url);
   var command = preperCommand(url);
   //shell.showItemInFolder(app.getPath('videos')+"/Captures/Hare krishna Kirtan 11 - YouTube - Google Chrome 2019-02-04 00-24-25.mp4");
-  execute(command, (output) => {
-      outputLines = output;
-      console.log(outputLines);
-      destination_path = outputLines.split("Destination:")[1].split("\n")[0];
-      var splitted_words = destination_path.split(path.sep);
-      downloadFileName = splitted_words[splitted_words.length-1];
-      console.log("fileName:"+downloadFileName);
-      console.log("destination folder:"+destination_path);
-      event.sender.send('download-complete');
+  execute(command, (output,error) => {
+      if(error != null){
+        event.sender.send('download_error');
+      }
+      else{
+        console.log(output);
+        if(output.indexOf("Destination:") != -1){
+          destination_path = output.split("Destination:")[1].split("\n")[0];
+          var splitted_words = destination_path.split(path.sep);
+          downloadFileName = splitted_words[splitted_words.length-1];
+          console.log("fileName:"+downloadFileName);
+          console.log("destination folder:"+destination_path);
+          event.sender.send('download-complete');
+        }
+        else if(output.indexOf("has already been downloaded") != -1){
+          event.sender.send('already_downloaded');
+        }
+        
+      }
+      
      // showStatus(output);
   });
-  console.log(app.getPath('videos'));
   event.sender.send('download-started', 'Download not completed');
 })
 
@@ -105,7 +115,7 @@ function preperCommand(url){
 
 function execute(command, callback) {
     exec(command, (error, stdout, stderr) => { 
-        callback(stdout); 
+        callback(stdout,error); 
     });
 };
 
