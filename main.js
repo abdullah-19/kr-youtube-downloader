@@ -13,6 +13,7 @@ let win;
 let outputLines;
 var download_path = path.join("\""+app.getPath('videos')+"\"","myDownloader","%(title)s.%(ext)s");
 var destination_path;
+var downloadFileName;
 function createWindow () {
 
   win = new BrowserWindow({width: 800, height: 600})
@@ -46,10 +47,14 @@ app.on('activate', () => {
 ipcMain.on('start_download', function (event, url) {
   console.log("in ipcMain:"+url);
   var command = preperCommand(url);
+  //shell.showItemInFolder(app.getPath('videos')+"/Captures/Hare krishna Kirtan 11 - YouTube - Google Chrome 2019-02-04 00-24-25.mp4");
   execute(command, (output) => {
       outputLines = output;
       console.log(outputLines);
       destination_path = outputLines.split("Destination:")[1].split("\n")[0];
+      var splitted_words = destination_path.split(path.sep);
+      downloadFileName = splitted_words[splitted_words.length-1];
+      console.log("fileName:"+downloadFileName);
       console.log("destination folder:"+destination_path);
       event.sender.send('download-complete');
      // showStatus(output);
@@ -60,7 +65,8 @@ ipcMain.on('start_download', function (event, url) {
 
 ipcMain.on('open_file_directory', function(){
   //shell.showItemInFolder("D:\workspace\test\electron-autoupdate-example\index.html");
-  shell.openItem("D:\workspace\test\electron-autoupdate-example\index.html");
+  shell.showItemInFolder(app.getPath('videos')+"/myDownloader/"+downloadFileName);
+  //shell.openItem("D:\workspace\test\electron-autoupdate-example\index.html");
 })
 
 function showStatus(output){
