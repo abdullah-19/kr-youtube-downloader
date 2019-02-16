@@ -1,14 +1,86 @@
 {
-  "name": "downloader",
+  "name": "kr-youtube-downloader",
   "version": "1.0.0",
   "description": "my downloader",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "build",
+    "ship": "build --win -p always"
   },
+  "repository": "https://github.com/TulshiDas39/kr-youtube-downloader",
   "author": "tulshi das",
   "license": "ISC",
   "dependencies": {
-    "electron": "^4.0.4"
+    "electron": "^4.0.4",
+    "electron-updater": "^4.0.6"
+  },
+  "devDependencies": {
+    "electron-builder": "^20.38.5"
+  },
+
+  "build": {
+    "appId": "com.bs.brainJack",
+    "productName": "BrainJack",
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "identity": null,
+      "icon": "assets/icons/mac/icon.icns",
+      "category": "public.app-category.productivity"
+    },
+    "dmg": {
+      "background": "",
+      "icon": "icon.icns",
+      "iconSize": 100,
+      "window": {
+        "width": 744,
+        "height": 465
+      },
+      "contents": [
+        {
+          "x": 145,
+          "y": 257
+        },
+        {
+          "x": 400,
+          "y": 255,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "category": "productivity",
+      "icon": "assets/icons",
+      "packageCategory": "productivity",
+      "maintainer": "Tahlil bsse0803@iit.du.ac.bd",
+      "target": [
+        "AppImage"
+      ],
+      "synopsis": "A desktop monitoring app"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "installerIcon": "icon.ico",
+      "uninstallerIcon": "icon.ico",
+      "license": "LICENSE.md",
+      "runAfterFinish": true
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "tulshidas",
+        "repo": "brainJackLast"
+      }
+    ],
+    "asar": true,
+    "asarUnpack": "scripts"
   }
 }
