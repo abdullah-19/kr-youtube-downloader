@@ -1,4 +1,5 @@
 const {app, BrowserWindow, ipcMain,shell} = require('electron');
+const {autoUpdater} = require("electron-updater");
 // const electron = require("electron");
 // const app = electron.app;
 // const BrowserWindow = electron.BrowserWindow;
@@ -30,7 +31,10 @@ function createWindow () {
   });
 }
 
-app.on('ready', createWindow);
+app.on('ready',()=>{
+  createWindow();
+  checkUpdate();
+});
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
@@ -96,7 +100,7 @@ ipcMain.on("startDownload", () => {
 });
 
 function preperCommand(url){
-  var plugin_path = path.join(__dirname,"downloads","youtube-dl");
+  var plugin_path = path.join("\""+__dirname+"\"","downloads","youtube-dl");
   var command;
   
   console.log("download_path:"+download_path);
@@ -119,5 +123,13 @@ function execute(command, callback) {
     });
 };
 
+autoUpdater.on('update-downloaded', (info) => {
+  this.flags.isFromSystemTrayClose = true;
+  autoUpdater.quitAndInstall();
+});
+
 // call the function
 
+function checkUpdate(){
+  autoUpdater.checkForUpdates();
+}
