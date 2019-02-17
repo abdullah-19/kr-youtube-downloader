@@ -45,7 +45,6 @@ app.on('activate', () => {
 ipcMain.on('start_download', function (event, url) {
   console.log("in ipcMain:"+url);
   var command = preperCommand(url);
-  event.sender.send('update_downloaded');
   execute(command, (output,error) => {
       if(error != null){
         event.sender.send('download_error');
