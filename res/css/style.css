@@ -5,3 +5,13 @@
 #fileIcon:hover{
     background-color: #e8e3e3;
 }
+
+#updateBtn:hover{
+    background: chocolate;
+    cursor:pointer;
+}
+
+#closeIcon:hover{
+    background-color: chocolate;
+    cursor:pointer;
+}

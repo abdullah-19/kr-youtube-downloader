@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>KR-youtube-downloader</title>
-    <link rel="stylesheet" href="res/bootstrap-4.2.1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="res/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="res/css/style.css">
 
-  </head>
-  <body>
-    <h1 style="text-align: center;color:#800000;">Downloader</h1>
-    <div class="row">
-    	<div class="col-md-1 ">
-    		<p>URL:&nbsp;</p>
-    	</div>
-    	<div class="col-md-9 px-0">
-    		<input id="urlField" type="text" style="width: 100%;" oninput="clear_status()">
-    	</div>
-    	<div class="col-md-2 ">
-            <i id="downloadBtn" class="fa fa-arrow-circle-o-down" style="font-size:32px;color:green;"></i>
-            <i id="processIcon" class="fa fa-spinner fa-spin" style="font-size:32px;color:lightcoral;display: none;"></i>
-            <i id="fileIcon" class="fa fa-file" style="font-size:32px;color:green;display: none;"></i>
-    	</div>
+<head>
+  <meta charset="UTF-8">
+  <title>KR-youtube-downloader</title>
+  <link rel="stylesheet" href="res/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="res/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="res/css/style.css">
+
+</head>
+
+<body>
+  <h1 style="text-align: center;color:#800000;">Downloader</h1>
+  <div class="row">
+    <div class="col-md-1 ">
+      <p>URL:&nbsp;</p>
     </div>
-    <p id="error_text" style="color:red;text-align: center;"></p>
-    
-    <script type="text/javascript" src="index.js"></script>
-  </body>
+    <div class="col-md-9 px-0">
+      <input id="urlField" type="text" style="width: 100%;" oninput="clear_status()">
+    </div>
+    <div class="col-md-2 ">
+      <i id="downloadBtn" class="fa fa-arrow-circle-o-down" style="font-size:32px;color:green;"></i>
+      <i id="processIcon" class="fa fa-spinner fa-spin" style="font-size:32px;color:lightcoral;display: none;"></i>
+      <i id="fileIcon" class="fa fa-file" style="font-size:32px;color:green;display: none;"></i>
+    </div>
+  </div>
+
+  <div id="update-bar" class="container" style="position:absolute;bottom: 20px; opacity: 0;display: none;">
+    <div class="row" style="height:22px;">
+      <div class="col-md-4 bg-info ">
+        <p class="small text-center" style="margin-top:2px;"> New update available</p>
+      </div>
+      <div id="updateBtn" class="col-md-1 bg-success">
+        <p  class="small text-center" style="height:inherit; margin-top:2px;">Install</p>
+      </div>
+      <div class="col-md-1 text-center" style="background:lightpink;">
+        <span id="closeIcon" class="fa fa-close" style="font-size:14px;color:darkorange;" onclick="fadeOutUpdateBar()"></span>
+      </div>  
+    </div>
+  </div>
+  
+
+  <p id="error_text" style="color:red;text-align: center;"></p>
+
+  <script type="text/javascript" src="index.js"></script>
+</body>
+
 </html>

@@ -1,45 +1,88 @@
 const ipcRenderer = require('electron').ipcRenderer;
-        // wait for an updateReady message
+// wait for an updateReady message
 const downloadBtn = document.getElementById('downloadBtn');
 const urlField = document.getElementById('urlField');
 const processIcon = document.getElementById('processIcon');
 const fileIcon = document.getElementById('fileIcon');
 const status_text = document.getElementById('error_text');
+const update_button = document.getElementById('updateBtn');
+const closeIcon = document.getElementById('closeIcon');
+
+function fadeOut(id, val) {
+  if (isNaN(val)) { val = 9; }
+  document.getElementById(id).style.opacity = '0.' + val;
+  //For IE
+  document.getElementById(id).style.filter = 'alpha(opacity=' + val + '0)';
+  if (val > 0) {
+    val--;
+    setTimeout('fadeOut("' + id + '",' + val + ')', 90);
+  } else {
+    document.getElementById(id).style.display = "none";
+    return;
+   }
+}
+
+function fadeIn(id,val){
+  // ID of the element to fade, Fade value[min value is 0]
+    if(isNaN(val)){ val = 0;}
+    document.getElementById(id).style.opacity='0.'+val;
+    //For IE
+    document.getElementById(id).style.filter='alpha(opacity='+val+'0)';
+    if(val<9){
+      val++;
+      setTimeout('fadeIn("'+id+'",'+val+')',200);
+    }else{return;}
+  }
 
 
-downloadBtn.addEventListener('click', function(){
-    console.log('download button clicked');
-    var url = urlField.value;
-    if(url == ""){
-      //console.log("empty url");
-      status_text.innerHTML = "Please insert url";
-    }
-    else if(!isValidUrl(url)){
-      status_text.innerHTML = "Url is not valid";
-    }
-    else{
-      ipcRenderer.send('start_download',url);
-    }
-    console.log("Url:"+url);
+function fadeOutUpdateBar() {
+  fadeOut("update-bar",9);
+}
+
+function decreamentTransparency(element) {
+  console.log("element.style.opacity:" + element.style.opacity);
+  if (element.style.opacity > 0) element.style.opacity -= 0.1;
+  else clearInterval(decreamentTransparency);
+}
+
+update_button.addEventListener('click', function () {
+  console.log('update button clicked');
+  ipcRenderer.send('install-update');
 });
 
-fileIcon.addEventListener('click', function(){
+
+downloadBtn.addEventListener('click', function () {
+  console.log('download button clicked');
+  var url = urlField.value;
+  if (url == "") {
+    status_text.innerHTML = "Please insert url";
+  }
+  else if (!isValidUrl(url)) {
+    status_text.innerHTML = "Url is not valid";
+  }
+  else {
+    ipcRenderer.send('start_download', url);
+  }
+  console.log("Url:" + url);
+});
+
+fileIcon.addEventListener('click', function () {
   console.log('file icon clicked');
   ipcRenderer.send('open_file_directory');
 });
 
 
 ipcRenderer.on('download-started', function (event, arg) {
- // const message = `Message reply: ${arg}`
+  // const message = `Message reply: ${arg}`
   downloadBtn.style.display = "none";
   processIcon.style.display = "inline-block";
   status_text.innerHTML = "Downloading...";
-  status_text.style.color="blue";
+  status_text.style.color = "blue";
 });
 
 ipcRenderer.on('download_error', function () {
-  
-  status_text.innerHTML="Error when downloading";
+
+  status_text.innerHTML = "Error when downloading";
   processIcon.style.display = "none";
   downloadBtn.style.display = "inline-block";
 });
@@ -47,7 +90,7 @@ ipcRenderer.on('download_error', function () {
 //already_downloaded
 
 ipcRenderer.on('already_downloaded', function () {
-  status_text.innerHTML="File already exist";
+  status_text.innerHTML = "File already exist";
   status_text.style.color = "green";
   processIcon.style.display = "none";
   downloadBtn.style.display = "inline-block";
@@ -61,9 +104,9 @@ ipcRenderer.on('download-complete', function () {
   status_text.style.color = "green";
 });
 
-function clear_status(){
+function clear_status() {
   status_text.innerHTML = "";
-  if( downloadBtn.style.display == "none"){
+  if (downloadBtn.style.display == "none") {
     downloadBtn.style.display = "inline-block";
     processIcon.style.display = "none";
     fileIcon.style.display = "none";
@@ -72,9 +115,15 @@ function clear_status(){
 
 function isValidUrl(url) {
   var p = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
-  if(url.match(p)!=null){
-      //return url.match(p)[1];
-      return true;
+  if (url.match(p) != null) {
+    //return url.match(p)[1];
+    return true;
   }
   return false;
 }
+
+ipcRenderer.on('update_downloaded', function () {
+  console.log("update-downloaded");
+  document.getElementById("update-bar").style.display = "block";
+  fadeIn("update-bar",0);
+});

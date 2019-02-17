@@ -1,14 +1,8 @@
 const {app, BrowserWindow, ipcMain,shell} = require('electron');
 const {autoUpdater} = require("electron-updater");
-// const electron = require("electron");
-// const app = electron.app;
-// const BrowserWindow = electron.BrowserWindow;
-//const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
 const exec = require('child_process').exec;
-//const {shell} = require('electron')
-
 
 let win;
 let outputLines;
@@ -51,7 +45,7 @@ app.on('activate', () => {
 ipcMain.on('start_download', function (event, url) {
   console.log("in ipcMain:"+url);
   var command = preperCommand(url);
-  //shell.showItemInFolder(app.getPath('videos')+"/Captures/Hare krishna Kirtan 11 - YouTube - Google Chrome 2019-02-04 00-24-25.mp4");
+  event.sender.send('update_downloaded');
   execute(command, (output,error) => {
       if(error != null){
         event.sender.send('download_error');
@@ -72,15 +66,12 @@ ipcMain.on('start_download', function (event, url) {
         
       }
       
-     // showStatus(output);
   });
   event.sender.send('download-started', 'Download not completed');
 })
 
 ipcMain.on('open_file_directory', function(){
-  //shell.showItemInFolder("D:\workspace\test\electron-autoupdate-example\index.html");
   shell.showItemInFolder(app.getPath('videos')+"/myDownloader/"+downloadFileName);
-  //shell.openItem("D:\workspace\test\electron-autoupdate-example\index.html");
 })
 
 function showStatus(output){
@@ -90,14 +81,12 @@ function showStatus(output){
 }
 
 
-ipcMain.on("startDownload", () => {
-    //var para = document.getElementById('myP');
-    var command = preperCommand();
-    execute('ping www.google.com', (output) => {
-     // para.innerHTML= output;
-      console.log(output);
-    });
-});
+// ipcMain.on("startDownload", () => {
+//     var command = preperCommand();
+//     execute('ping www.google.com', (output) => {
+//       console.log(output);
+//     });
+// });
 
 function preperCommand(url){
   var plugin_path = path.join("\""+__dirname+"\"","downloads","youtube-dl");
@@ -124,11 +113,13 @@ function execute(command, callback) {
 };
 
 autoUpdater.on('update-downloaded', (info) => {
-  this.flags.isFromSystemTrayClose = true;
-  autoUpdater.quitAndInstall();
+  win.webContents.send('update_downloaded');
 });
 
-// call the function
+ipcMain.on("install-update", () => {
+  console.log("has come to install-update");
+  autoUpdater.quitAndInstall();
+});
 
 function checkUpdate(){
   autoUpdater.checkForUpdates();
