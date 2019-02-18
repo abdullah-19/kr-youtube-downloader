@@ -70,7 +70,10 @@ ipcMain.on('start_download', function (event, url) {
 })
 
 ipcMain.on('open_file_directory', function(){
-  shell.showItemInFolder(app.getPath('videos')+"/myDownloader/"+downloadFileName);
+  var downloadedFile_path = path.join(app.getPath('videos'),"myDownloader",downloadFileName);
+  console.log("downloaded file path:"+downloadedFile_path);
+  //shell.showItemInFolder(app.getPath('videos')+"/myDownloader/"+"\""+downloadFileName+"\"");
+  shell.showItemInFolder(downloadedFile_path);
 })
 
 function showStatus(output){
