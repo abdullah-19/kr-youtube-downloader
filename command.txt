@@ -1,2 +1,2 @@
 1.download video thumbail: youtube-dl --skip-download --write-thumbnail  https://www.youtube.com/watch?v=QohH89Eu5iM
-2.
+5 second video: https://www.youtube.com/watch?v=QohH89Eu5iM

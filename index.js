@@ -104,6 +104,11 @@ ipcRenderer.on('download-complete', function () {
   status_text.style.color = "green";
 });
 
+ipcRenderer.on('downloaded-thumbnail', function (event, imagePath) {
+  console.log("downloaded thumbnail from index.js file:");
+  ipcRenderer.send('download_video');
+});
+
 function clear_status() {
   status_text.innerHTML = "";
   if (downloadBtn.style.display == "none") {
