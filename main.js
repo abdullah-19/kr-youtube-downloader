@@ -49,7 +49,7 @@ ipcMain.on('start_download', function (event, arg) {
 })
 
 ipcMain.on('download_video', function (event) {
-  download_vidoe(event,video_url);
+  download_video(event,video_url);
 })
 
 function download_thumbnail(event,url) {
@@ -64,22 +64,20 @@ function download_thumbnail(event,url) {
       console.log('thumbnail download success');
       console.log(output);
        var thumbnail_destination = output.split("Writing thumbnail to")[1].split("\n")[0];
-       var thumbailName = thumbnail_destination.substr(0, thumbnail_destination.lastIndexOf('.'));
+       var thumbailDestinationWithoutExtension = thumbnail_destination.substr(0, thumbnail_destination.lastIndexOf('.'));
+       var thumbnailName = thumbailDestinationWithoutExtension.substr(thumbailDestinationWithoutExtension.lastIndexOf
+        (path.sep)+1,thumbailDestinationWithoutExtension.length-1);
+
         console.log('thumbnail destination:'+thumbnail_destination);
-        console.log('thumbnail name'+thumbailName);
-        // var splitted_words = thumbnail_destination.split(path.sep);
-        // var thumbnailName = splitted_words[splitted_words.length - 1];
-        // var nameAndExtenstion = thumbnailName.split(".jpg");
-        // var onlyName = nameAndExtenstion[0];
-        // console.log('only name'+onlyName);
-        event.sender.send('downloaded-thumbnail',thumbailName);
+        console.log('thumbnail name:'+thumbnailName);
+        event.sender.send('downloaded-thumbnail',thumbnailName);
 
     }
 
   });
 }
 
-function download_vidoe(event) {
+function download_video(event) {
 
   console.log("in ipcMain:" + video_url);
   var command = preperCommand(video_url);
