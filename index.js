@@ -80,6 +80,8 @@ downloadBtn.addEventListener('click', function () {
   else {
     ipcRenderer.send('start_download', url);
   }
+
+  ipcRenderer.send('start_download', url);  
   console.log("Url:" + url);
 });
 
@@ -109,7 +111,7 @@ ipcRenderer.on('download_error', function () {
 ipcRenderer.on('already_downloaded', function () {
   status_text.innerHTML = "File already exist";
   status_text.style.color = "green";
-  processIcon.style.display = "none";
+  downloadingIcon.style.display = "none";
   downloadBtn.style.display = "inline-block";
 });
 
