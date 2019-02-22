@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const ipcRenderer = require('electron').ipcRenderer;
 // wait for an updateReady message
 const downloadBtn = document.getElementById('downloadBtn');
@@ -10,10 +12,11 @@ const closeIcon = document.getElementById('closeIcon');
 const downloadingIcon = document.getElementById('downloadingIcon');
 
 
-function showThumbNailAndName(name) {
+function showThumbNailAndName(name,thumb_url) {
   console.log("video name:" + name);
   var thumbnail = document.getElementById("videoThumbnail");
-  thumbnail.src = "downloads/thumbnail/" + name + ".jpg";
+  //thumbnail.src = "downloads/thumbnail/" + name + ".jpg";
+  thumbnail.src = thumb_url;
   thumbnail.style.display = "inline";
   var videoName = document.getElementById("videoName");
   videoName.innerHTML = name + ".mp4";
@@ -93,11 +96,87 @@ fileIcon.addEventListener('click', function () {
 
 ipcRenderer.on('download-started', function (event, arg) {
   // const message = `Message reply: ${arg}`
+  console.log(arg);
+  showThumbNailAndName(arg._filename,arg.thumbnails[0].url);
   processIcon.style.display = "none";
   downloadingIcon.style.display = "inline";
   status_text.innerHTML = "Downloading...";
   status_text.style.color = "blue";
+  //downloadProgress(arg._filename,arg.size);
+  downloadProgress(arg);
 });
+
+
+function showProgressBar(){
+  var progBar = document.getElementById('progress_bar');
+  progBar.style.display = "block";
+
+}
+
+
+function getFileSize(file) {
+  console.log('file to get size:' + file);
+  const stats = fs.statSync("downloads/" + file);
+  const fileSizeInBytes = stats.size;
+  //Convert the file size to megabytes (optional)
+  //const fileSizeInMegabytes = fileSizeInBytes / 1000000.0;
+  return fileSizeInBytes;
+}
+
+function downloadProgress(info) {
+  var downloadedSize;
+  var progress = setInterval(() => {
+    downloadedSize = getFileSize(info._filename);
+    console.log(downloadedSize);
+    if (downloadedSize == info.size) {
+      ipcRenderer.send('download-complete');
+      // move("downloads/" + info._filename, path.join(info.app.getPath('videos'), "kr_youtube_downloader", info._filename), (err) => {
+      //   console.log(err);
+      // });
+      clearInterval(progress);
+    }
+  }, 2000);
+}
+
+
+
+function move(oldPath, newPath, callback) {
+  console.log("new path:");
+  console.log(newPath);
+  var dir = newPath.substr(0, newPath.lastIndexOf(path.sep));
+  console.log("last index:"+newPath.lastIndexOf(path.sep));
+  console.log("new path:"+dir);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
+  }
+
+  fs.rename(oldPath, newPath, function (err) {
+    if (err) {
+      if (err.code === 'EXDEV') {
+        copy();
+      } else {
+        callback(err);
+      }
+      return;
+    }
+  });
+
+  function copy() {
+    var readStream = fs.createReadStream(oldPath);
+    var writeStream = fs.createWriteStream(newPath);
+
+    readStream.on('error', callback);
+    writeStream.on('error', callback);
+
+    readStream.on('close', function () {
+      fs.unlink(oldPath, callback);
+    });
+
+    readStream.pipe(writeStream);
+  }
+}
+
+
 
 ipcRenderer.on('download_error', function () {
 
@@ -128,7 +207,7 @@ ipcRenderer.on('downloaded-thumbnail', function (event, thumbnailName) {
   showThumbNailAndName(thumbnailName);
   ipcRenderer.send('download_video');
 });
-
+//filesize,ext,_duration_hms,_filename,size,fulltitle
 function clear_status() {
   status_text.innerHTML = "";
   if (downloadBtn.style.display == "none") {

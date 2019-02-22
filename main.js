@@ -6,6 +6,7 @@ const exec = require('child_process').exec;
 var fetchVideoInfo = require('youtube-info');
 var fs = require('fs');
 var youtubedl = require('youtube-dl');
+var videoInfo;
 
 let win;
 let outputLines;
@@ -75,12 +76,16 @@ function downloadUsingYDL() {
 
   // Will be called when the download starts.
   video.on('info', function (info) {
-    console.log('Download started');
-    console.log('filename: ' + info._filename);
-    console.log('size: ' + info.size);
+    // console.log('Download started');
+    // console.log('filename: ' + info._filename);
+    // console.log('size: ' + info.size);
+    videoInfo = info;
+    console.log(info);
+    console.log('thumbnail url:'+info.thumbnails[0].url);
     filename = info._filename;
-    video.pipe(fs.createWriteStream(filename));
-    downloadProgress(filename,info.size);
+    video.pipe(fs.createWriteStream("downloads/" + filename));
+   // downloadProgress(filename, info.size);
+    win.webContents.send('download-started',info);
   });
 
   //video.pipe(fs.createWriteStream('myvideo.mp4'));
@@ -88,54 +93,69 @@ function downloadUsingYDL() {
 }
 
 function getFileSize(file) {
-  const stats = fs.statSync(file);
+  console.log('file to get size:' + file);
+  const stats = fs.statSync("downloads/" + file);
   const fileSizeInBytes = stats.size;
   //Convert the file size to megabytes (optional)
   //const fileSizeInMegabytes = fileSizeInBytes / 1000000.0;
   return fileSizeInBytes;
 }
 
-function downloadProgress(fileName,totalSize) {
-    var downloadedSize;
-    var progress = setInterval(()=>{
-      downloadedSize = getFileSize(fileName);
-      console.log(downloadedSize);
-      if(downloadedSize == totalSize){
-        move(fileName,path.join(app.getPath('videos'),"myDownloader",fileName), (err)=>{
-            console.log(err);
-        });
-        clearInterval(progress);
-      }
-    },2000);
+function downloadProgress(fileName, totalSize) {
+  var downloadedSize;
+  var progress = setInterval(() => {
+    downloadedSize = getFileSize(fileName);
+    console.log(downloadedSize);
+    if (downloadedSize == totalSize) {
+      move("downloads/" + fileName, path.join(app.getPath('videos'), "kr_youtube_downloader", fileName), (err) => {
+        console.log(err);
+      });
+      clearInterval(progress);
+    }
+  }, 2000);
 }
 
 function move(oldPath, newPath, callback) {
+  console.log("new path:");
+  console.log(newPath);
+  var dir = newPath.substr(0, newPath.lastIndexOf(path.sep));
+  console.log("last index:"+newPath.lastIndexOf(path.sep));
+  console.log("new path:"+dir);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
+  }
 
   fs.rename(oldPath, newPath, function (err) {
-      if (err) {
-          if (err.code === 'EXDEV') {
-              copy();
-          } else {
-              callback(err);
-          }
-          return;
+    if (err) {
+      if (err.code === 'EXDEV') {
+        copy();
+      } else {
+        callback(err);
       }
+      return;
+    }
   });
 
   function copy() {
-      var readStream = fs.createReadStream(oldPath);
-      var writeStream = fs.createWriteStream(newPath);
+    var readStream = fs.createReadStream(oldPath);
+    var writeStream = fs.createWriteStream(newPath);
 
-      readStream.on('error', callback);
-      writeStream.on('error', callback);
+    readStream.on('error', callback);
+    writeStream.on('error', callback);
 
-      readStream.on('close', function () {
-          fs.unlink(oldPath, callback);
-      });
+    readStream.on('close', function () {
+      fs.unlink(oldPath, callback);
+    });
 
-      readStream.pipe(writeStream);
+    readStream.pipe(writeStream);
   }
 }
+
+ipcMain.on('download-complete', ()=>{
+  move("downloads/" + videoInfo._filename, path.join(app.getPath('videos'), "kr_youtube_downloader", videoInfo._filename), (err) => {
+    console.log(err);
+  });
+});
 
 function getVideoInfo() {
   fetchVideoInfo("QohH89Eu5iM", function (err, videoInfo) {
