@@ -12,7 +12,7 @@
 
 <body>
   <h1 style="text-align: center;color:#800000;">Downloader</h1>
-  <div class="row">
+  <div class="row border mx-0">
     <div class="col-md-1 ">
       <p>URL:&nbsp;</p>
     </div>
@@ -21,10 +21,42 @@
     </div>
     <div class="col-md-2 ">
       <i id="downloadBtn" class="fa fa-arrow-circle-o-down" style="font-size:32px;color:green;"></i>
-      <i id="processIcon" class="fa fa-spinner fa-spin" style="font-size:32px;color:lightcoral;display: none;"></i>
-      <i id="fileIcon" class="fa fa-file" style="font-size:32px;color:green;display: none;"></i>
+
+      <!-- <img id="downloadingIcon" src="res/images/dwonload3.gif" style="height:32px;width:32px;display: none;"> -->
     </div>
   </div>
+
+
+  <div id="video_div" class="container-fluid border px-0" style="display: none;">
+    <div class="row mx-0 border" style="height:80px; ">
+      <div class="col-md-2">
+        <img id="videoThumbnail" src="" style="display:none;height:100%;width:100%;">
+      </div>
+
+      <div class="col-md-9" style="height:inherit;">
+        <p id="filesize" style="margin: 2px;" class="small"></p>
+        <p id="duration" style="margin:2px;" class="small"></p>
+        <p id="filename" style="margin: 2px;" class="small"></p>
+      </div>
+
+      <div class="col-md-1 align-self-center">
+        <img id="downloadingIcon" src="res/images/dwonload3.gif" style="height:40px;width:40px;display: none;">
+        <i id="processIcon" class="fa fa-spinner fa-spin" style="font-size:32px;color:lightcoral;display: none;"></i>
+        <i id="fileIcon" class="fa fa-file" style="font-size:32px;color:green;display: none;"></i>
+      </div>
+
+    </div>
+
+    <div id="progress_div" class="row mx-0" style="height:18px; display: none;">
+      <div id="parentOfprogressBar" class="col-md-12 p-0" style="height: 100%;">
+        <div id="progress_bar" class="bg-info text-center border border-danger" style="height:100%;width:0%;"></div>
+          <p id="progress" class="small" style="position:absolute; top:0;left: 50%;"></p>
+      </div>
+    </div>
+
+  </div>
+
+  <p id="error_text" style="color:red;text-align: center;"></p>
 
   <div id="update-bar" class="container" style="position:absolute;bottom: 20px; opacity: 0;display: none;">
     <div class="row" style="height:22px;">
@@ -32,16 +64,15 @@
         <p class="small text-center" style="margin-top:2px;"> New update available</p>
       </div>
       <div id="updateBtn" class="col-md-1 bg-success">
-        <p  class="small text-center" style="height:inherit; margin-top:2px;">Install</p>
+        <p class="small text-center" style="height:inherit; margin-top:2px;">Install</p>
       </div>
       <div class="col-md-1 text-center" style="background:lightpink;">
-        <span id="closeIcon" class="fa fa-close" style="font-size:14px;color:darkorange;" onclick="fadeOutUpdateBar()"></span>
-      </div>  
+        <span id="closeIcon" class="fa fa-close" style="font-size:14px;color:darkorange;"
+          onclick="fadeOutUpdateBar()"></span>
+      </div>
     </div>
   </div>
-  
 
-  <p id="error_text" style="color:red;text-align: center;"></p>
 
   <script type="text/javascript" src="index.js"></script>
 </body>

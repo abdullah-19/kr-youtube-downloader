@@ -1,2 +1,7 @@
 1.download video thumbail: youtube-dl --skip-download --write-thumbnail  https://www.youtube.com/watch?v=QohH89Eu5iM
-2.
+5 second video: https://www.youtube.com/watch?v=QohH89Eu5iM
+Angular 7 : Part 1- Angular 7 Full Tutorial in Hindi- Angular Introduction , Versioning and Releases(20 min) : https://www.youtube.com/watch?v=SuZa2nv24HE&t=306s&index=2&list=PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+Angular 7 : Part 2 - Angular 7 Full Tutorial in Hindi - What new in angular get notifications(5 min): https://www.youtube.com/watch?v=BdGaUltG_sk&list=PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT&index=2
+Angular 7 Stable Version Released Now - Introduction : Part 4 - Angular 7 Full Tutorial in Hindi(11min):https://www.youtube.com/watch?v=P7-hAe41sIA&index=4&list=PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+2 hour video: https://www.youtube.com/watch?v=LIJAsKCLTqc
+
