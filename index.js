@@ -125,8 +125,19 @@ function getFileSize(file) {
 
 function downloadProgress(info) {
   var downloadedSize;
+  var progressStatus = document.getElementById('progress');
+  var progressBar = document.getElementById('progress_bar');
+  var widthOfProgressBar = parseFloat(document.getElementById("parentOfprogressBar").style.width);
+  var parcentOfProgress;
   var progress = setInterval(() => {
     downloadedSize = getFileSize(info._filename);
+    parcentOfProgress = downloadedSize/info.size;
+    console.log('parcent of width:');
+    console.log((widthOfProgressBar*parcentOfProgress)+"");
+    progressBar.style.width = (widthOfProgressBar*parcentOfProgress)+"px"; 
+    console.log('width of bar:'+progressBar.style.width);
+    parcentOfProgress = parcentOfProgress*100;
+    progressStatus.innerHTML = parcentOfProgress +"%";
     console.log(downloadedSize);
     if (downloadedSize == info.size) {
       ipcRenderer.send('download-complete');
