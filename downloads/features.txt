@@ -1,0 +1,29 @@
+In progress
+1.Downloading multiple video at a time
+2.
+3.
+
+To Do
+1.playlist download
+2.excluding in windows defender
+3.quality,format setting before download
+4.pause,cancell,resume all video or a single video
+5.youtube mode(when compy link video download will start)
+6.video info display
+7.getting to start cancelled videos
+8.video editing
+9.getting downloaded part of video as file.
+10.downloading video thumbnail only
+11.getting video info without downloading
+12.showing downloading speed and waiting time when downloading for each and for all video
+13.opening media file to edit or to play
+
+Bugs/Errors
+1.auto update is not working well
+2.
+3.
+4.
+
+Done
+1.
+2.
