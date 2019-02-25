@@ -2,8 +2,13 @@
     background-color: #e8e3e3;
 }
 
-#fileIcon:hover{
-    background-color: #e8e3e3;
+#folderIcon{
+    font-size: 32px;
+    color: green;
+}
+#folderIcon:hover{
+    font-size: 36px;
+    color: brown;
 }
 
 #updateBtn:hover{

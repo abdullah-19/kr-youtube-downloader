@@ -12,39 +12,36 @@
 
 <body>
   <h1 style="text-align: center;color:#800000;">Downloader</h1>
-  <div class="row border mx-0">
+  <div class="row mx-0">
     <div class="col-md-1 ">
       <p>URL:&nbsp;</p>
     </div>
-    <div class="col-md-9 px-0">
+    <div class="col-md-10 px-0">
       <input id="urlField" type="text" style="width: 100%;" oninput="clear_status()">
     </div>
-    <div class="col-md-2 ">
+    <div class="col-md-1">
       <i id="downloadBtn" class="fa fa-arrow-circle-o-down" style="font-size:32px;color:green;"></i>
-
-      <!-- <img id="downloadingIcon" src="res/images/dwonload3.gif" style="height:32px;width:32px;display: none;"> -->
     </div>
   </div>
 
 
-  <div id="video_div" class="container-fluid border px-0" style="display: none;">
-    <div class="row mx-0 border" style="height:80px; ">
-      <div class="col-md-2">
-        <img id="videoThumbnail" src="" style="display:none;height:100%;width:100%;">
+  <div id="video_div" class="container-fluid px-0" >
+    <div class="row mx-0" style="height:80px; ">
+      <div class="col-md-2" style="height: 100%;">
+        <img id="videoThumbnail" src="" style="display: none; height:100%;width:100%;">
       </div>
 
-      <div class="col-md-9" style="height:inherit;">
+      <div class="col-md-9 " style="height:inherit;">
         <p id="filesize" style="margin: 2px;" class="small"></p>
-        <p id="duration" style="margin:2px;" class="small"></p>
+        <p id="duration" style="margin:2px; " class="small"></p>
         <p id="filename" style="margin: 2px;" class="small"></p>
+        <i id="processIcon" class="fa fa-spinner fa-spin" style="position: absolute;top: 30%;left: 40%; font-size:32px;color:lightcoral; display:none;"></i>
       </div>
 
       <div class="col-md-1 align-self-center">
         <img id="downloadingIcon" src="res/images/dwonload3.gif" style="height:40px;width:40px;display: none;">
-        <i id="processIcon" class="fa fa-spinner fa-spin" style="font-size:32px;color:lightcoral;display: none;"></i>
-        <i id="fileIcon" class="fa fa-file" style="font-size:32px;color:green;display: none;"></i>
+        <i id="folderIcon" class="fa fa-folder-open" style="display: none;"></i>
       </div>
-
     </div>
 
     <div id="progress_div" class="row mx-0" style="height:18px; display: none;">

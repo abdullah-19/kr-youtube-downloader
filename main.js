@@ -60,7 +60,7 @@ ipcMain.on('start_download', function (event, arg) {
 function downloadUsingYDL() {
   var filename;
 
-  var video = youtubedl('https://www.youtube.com/watch?v=LIJAsKCLTqc',
+  var video = youtubedl('https://www.youtube.com/watch?v=QohH89Eu5iM',
     ['--format=18'],//"%(title)s.%(ext)s"
     { cwd: __dirname });
 
@@ -113,10 +113,14 @@ function move(oldPath, newPath, callback) {
     if (err) {
       if (err.code === 'EXDEV') {
         copy();
+        win.webContents.send('move-complete');
       } else {
         callback(err);
       }
       return;
+    }
+    else{
+      win.webContents.send('move-complete');
     }
   });
 
@@ -206,7 +210,7 @@ function download_video(event) {
 }
 
 ipcMain.on('open_file_directory', function () {
-  var downloadedFile_path = path.join(app.getPath('videos'), "myDownloader", downloadFileName);
+  var downloadedFile_path = path.join(app.getPath('videos'), "kr_youtube_downloader", videoInfo._filename);
   console.log("downloaded file path:" + downloadedFile_path);
   //shell.showItemInFolder(app.getPath('videos')+"/myDownloader/"+"\""+downloadFileName+"\"");
   shell.showItemInFolder(downloadedFile_path);
@@ -267,7 +271,7 @@ function execute(command, callback) {
   exec(command, (error, stdout, stderr) => {
     callback(stdout, error);
   });
-};
+}
 
 autoUpdater.on('update-downloaded', (info) => {
   win.webContents.send('update_downloaded');
