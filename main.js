@@ -60,7 +60,7 @@ ipcMain.on('start_download', function (event, arg) {
 function downloadUsingYDL() {
   var filename;
 
-  var video = youtubedl('https://www.youtube.com/watch?v=QohH89Eu5iM',
+  var video = youtubedl(video_url,
     ['--format=18'],//"%(title)s.%(ext)s"
     { cwd: __dirname });
 

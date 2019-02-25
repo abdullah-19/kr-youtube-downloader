@@ -62,11 +62,7 @@ update_button.addEventListener('click', function () {
 
 downloadBtn.addEventListener('click', function () {
   console.log('download button clicked');
-
-  show_processIcon();
   var url = urlField.value;
-
-  status_text.innerHTML = "Processing..";
   if (url == "") {
     status_text.innerHTML = "Please insert url";
   }
@@ -74,14 +70,23 @@ downloadBtn.addEventListener('click', function () {
     status_text.innerHTML = "Url is not valid";
   }
   else {
+    show_processIcon();
     ipcRenderer.send('start_download', url);
   }
 
-  ipcRenderer.send('start_download', url);  
+  //ipcRenderer.send('start_download', url);  
   console.log("Url:" + url);
 });
 
 function show_processIcon(){
+
+  //var videoInfoDiv = document.getElementById('video_info_div');
+  document.getElementById('filesize').innerHTML = "";
+  document.getElementById('duration').innerHTML = "";
+  document.getElementById('filename').innerHTML = "";
+  folderIcon.style.display = "none";
+//videoThumbnail
+  document.getElementById('videoThumbnail').style.display = "none";
   downloadBtn.style.display = "none";
   document.getElementById('video_div').style.display = "block";
   processIcon.style.display = "inline-block";
@@ -99,8 +104,8 @@ ipcRenderer.on('download-started', function (event, arg) {
   showThumbNailAndName(arg._filename,arg.thumbnails[0].url);
   processIcon.style.display = "none";
   downloadingIcon.style.display = "inline";
-  status_text.innerHTML = "Downloading...";
-  status_text.style.color = "blue";
+  //status_text.innerHTML = "Downloading...";
+ // status_text.style.color = "blue";
   //downloadProgress(arg._filename,arg.size);
   showBasicInfo(arg);
   downloadProgress(arg);
@@ -148,7 +153,7 @@ function downloadProgress(info) {
       clearInterval(progress);
       progressDiv.style.display = "none";
     }
-  }, 2000);
+  }, 500);
 }
 
 ipcRenderer.on('move-complete',()=>{
@@ -231,11 +236,6 @@ function clear_status() {
   if (downloadBtn.style.display == "none") {
     downloadBtn.style.display = "inline-block";
     processIcon.style.display = "none";
-    folderIcon.style.display = "none";
-    var thumbnail = document.getElementById("videoThumbnail");
-    thumbnail.style.display = "none";
-    var videoName = document.getElementById("videoName");
-    videoName.style.display = "none";
   }
 }
 
