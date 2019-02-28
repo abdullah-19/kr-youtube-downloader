@@ -85,21 +85,21 @@ function getFileSize(file) {
   return fileSizeInBytes;
 }
 
-function downloadProgress(fileName, totalSize) {
-  var downloadedSize;
-  var progress = setInterval(() => {
-    downloadedSize = getFileSize(fileName);
-    console.log(downloadedSize);
-    if (downloadedSize == totalSize) {
-      move("downloads/" + fileName, path.join(app.getPath('videos'), "kr_youtube_downloader", fileName), (err) => {
-        console.log(err);
-      });
-      clearInterval(progress);
-    }
-  }, 2000);
-}
+// function downloadProgress(fileName, totalSize) {
+//   var downloadedSize;
+//   var progress = setInterval(() => {
+//     downloadedSize = getFileSize(fileName);
+//     console.log(downloadedSize);
+//     if (downloadedSize == totalSize) {
+//       move("downloads/" + fileName, path.join(app.getPath('videos'), "kr_youtube_downloader", fileName), (err) => {
+//         console.log(err);
+//       });
+//       clearInterval(progress);
+//     }
+//   }, 2000);
+// }
 
-function move(oldPath, newPath, callback) {
+function move(oldPath, newPath, info, callback) {
   console.log("new path:");
   console.log(newPath);
   var dir = newPath.substr(0, newPath.lastIndexOf(path.sep));
@@ -113,14 +113,14 @@ function move(oldPath, newPath, callback) {
     if (err) {
       if (err.code === 'EXDEV') {
         copy();
-        win.webContents.send('move-complete');
+        win.webContents.send('move-complete',info);
       } else {
         callback(err);
       }
       return;
     }
     else{
-      win.webContents.send('move-complete');
+      win.webContents.send('move-complete',info);
     }
   });
 
@@ -138,8 +138,8 @@ function move(oldPath, newPath, callback) {
   }
 }
 
-ipcMain.on('download-complete', ()=>{
-  move("downloads/" + videoInfo._filename, path.join(app.getPath('videos'), "kr_youtube_downloader", videoInfo._filename), (err) => {
+ipcMain.on('download-complete', (event,info)=>{
+  move("downloads/" + info._filename, path.join(app.getPath('videos'), "kr_youtube_downloader", info._filename),info, (err) => {
     console.log(err);
   });
 });
@@ -209,8 +209,8 @@ function download_video(event) {
 
 }
 
-ipcMain.on('open_file_directory', function () {
-  var downloadedFile_path = path.join(app.getPath('videos'), "kr_youtube_downloader", videoInfo._filename);
+ipcMain.on('open_file_directory', function (event, info) {
+  var downloadedFile_path = path.join(app.getPath('videos'), "kr_youtube_downloader", info._filename);
   console.log("downloaded file path:" + downloadedFile_path);
   //shell.showItemInFolder(app.getPath('videos')+"/myDownloader/"+"\""+downloadFileName+"\"");
   shell.showItemInFolder(downloadedFile_path);
