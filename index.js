@@ -277,12 +277,11 @@ function showBasicInfo(info) {
 function showProgressBar() {
   var progBar = document.getElementById('progress_bar');
   progBar.style.display = "block";
-
 }
 
 function getFileSize(file) {
   console.log('file to get size:' + file);
-  const stats = fs.statSync("downloads/" + file);
+  const stats = fs.statSync(file);
   const fileSizeInBytes = stats.size;
   //Convert the file size to megabytes (optional)
   //const fileSizeInMegabytes = fileSizeInBytes / 1000000.0;
@@ -301,7 +300,9 @@ function downloadProgress(info) {
   var parcentOfProgress;
   var parecentStr;
   var progress = setInterval(() => {
-    downloadedSize = getFileSize(info._filename);
+    //downloadedSize = getFileSize(info._filename);
+    downloadedSize = getFileSize(info.downloadFilePath);
+
     parcentOfProgress = downloadedSize / info.size;
     parcentOfProgress = parcentOfProgress * 100;
     progressBar.style.width = parcentOfProgress + "%";
@@ -369,10 +370,15 @@ ipcRenderer.on('download_error', function () {
 
 //already_downloaded
 
-ipcRenderer.on('already_downloaded', function () {
+ipcRenderer.on('already_downloaded', function (event,info) {
   status_text.innerHTML = "File already exist";
   status_text.style.color = "green";
-  downloadingIcon.style.display = "none";
+  setTimeout(() => {
+    //status_text.innerHTML = "";
+    fadeOut('error_text',9);
+  }, 4000);
+  document.getElementById('video_div').removeChild(document.getElementById(info.id));
+  //document.getElementById(info.id).style.display = "none";
   downloadBtn.style.display = "inline-block";
 });
 

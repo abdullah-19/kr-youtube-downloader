@@ -14,7 +14,7 @@ let win;
 let outputLines;
 var video_url;
 var download_path = path.join("\"" + app.getPath('videos') + "\"", "myDownloader", "%(title)s.%(ext)s");
-var destination_path;
+var destination_folder = path.join(app.getPath('videos'), "kr_youtube_downloader");
 var downloadFileName;
 var isWindowClosed = false;
 function createWindow() {
@@ -59,18 +59,33 @@ ipcMain.on('start_download', function (event, arg) {
 
 function downloadUsingYDL() {
   var filename;
+  var downloadPath;
 
   var video = youtubedl(video_url,
     ['--format=18'],//"%(title)s.%(ext)s"
     { cwd: __dirname });
 
   video.on('info', function (info) {
-    videoInfo = info;
-    console.log(info);
-    console.log('thumbnail url:'+info.thumbnails[0].url);
-    filename = info._filename;
-    video.pipe(fs.createWriteStream("downloads/" + filename));
-    win.webContents.send('download-started',info);
+    if (fs.existsSync(path.join(destination_folder, info._filename))) {
+      win.webContents.send('already_downloaded',info);
+    }
+    else if (fs.existsSync(path.join(app.getAppPath(), "downloads", info._filename))) {
+      win.webContents.send('already_downloadeding');
+    }
+    else {
+      videoInfo = info;
+      console.log(info);
+      console.log('thumbnail url:' + info.thumbnails[0].url);
+      filename = info._filename;
+      downloadPath = path.join(app.getAppPath(), "downloads", filename);
+      video.pipe(fs.createWriteStream(downloadPath));
+      //fs.createWriteStream("downloads/" + filename));
+      info.appPath = app.getAppPath();
+      info.downloadFilePath = downloadPath;
+      console.log('download path:');
+      console.log(info.appPath);
+      win.webContents.send('download-started', info);
+    }
   });
 
 
@@ -103,8 +118,8 @@ function move(oldPath, newPath, info, callback) {
   console.log("new path:");
   console.log(newPath);
   var dir = newPath.substr(0, newPath.lastIndexOf(path.sep));
-  console.log("last index:"+newPath.lastIndexOf(path.sep));
-  console.log("new path:"+dir);
+  console.log("last index:" + newPath.lastIndexOf(path.sep));
+  console.log("new path:" + dir);
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
   }
@@ -113,14 +128,14 @@ function move(oldPath, newPath, info, callback) {
     if (err) {
       if (err.code === 'EXDEV') {
         copy();
-        win.webContents.send('move-complete',info);
+        win.webContents.send('move-complete', info);
       } else {
         callback(err);
       }
       return;
     }
-    else{
-      win.webContents.send('move-complete',info);
+    else {
+      win.webContents.send('move-complete', info);
     }
   });
 
@@ -138,8 +153,8 @@ function move(oldPath, newPath, info, callback) {
   }
 }
 
-ipcMain.on('download-complete', (event,info)=>{
-  move("downloads/" + info._filename, path.join(app.getPath('videos'), "kr_youtube_downloader", info._filename),info, (err) => {
+ipcMain.on('download-complete', (event, info) => {
+  move(info.downloadFilePath, path.join(app.getPath('videos'), "kr_youtube_downloader", info._filename), info, (err) => {
     console.log(err);
   });
 });

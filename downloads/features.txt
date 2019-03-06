@@ -1,5 +1,5 @@
 In progress
-1.Downloading multiple video at a time
+1. forbidin downloading same video.
 2.
 3.
 
@@ -20,10 +20,10 @@ To Do
 
 Bugs/Errors
 1.auto update is not working well
-2.
+2.downloads same video when click download
 3.
 4.
 
 Done
-1.
+1.Downloading multiple video at a time
 2.
