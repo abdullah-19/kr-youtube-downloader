@@ -92,7 +92,7 @@ function addVideoDiv(url) {//parameter info
   //firstDiv.classList.add("row mx-0");
   firstDiv.setAttribute("class", "row mx-0 border-bottom");
   firstDiv.setAttribute("style", "height:80px;");
-  firstDiv.setAttribute("id", video_id);//info.id
+  firstDiv.setAttribute("id", "temp");//info.id
   document.getElementById('video_div').appendChild(firstDiv);
 
   make_firstChild(firstDiv, video_id);
@@ -254,6 +254,7 @@ function show_processIcon() {
 ipcRenderer.on('download-started', function (event, arg) {
   // const message = `Message reply: ${arg}`
   console.log(arg);
+  document.getElementById('temp').id = arg.id ;
   showThumbNailAndName(arg);
   document.getElementById("processIcon_" + arg.id).style.display = "none";
   document.getElementById('downloadingIcon_' + arg.id).style.display = "inline";
@@ -373,11 +374,27 @@ ipcRenderer.on('download_error', function () {
 ipcRenderer.on('already_downloaded', function (event,info) {
   status_text.innerHTML = "File already exist";
   status_text.style.color = "green";
+  var exitingEle = document.getElementById('temp');
+  document.getElementById('video_div').removeChild(exitingEle);
   setTimeout(() => {
     //status_text.innerHTML = "";
     fadeOut('error_text',9);
   }, 4000);
-  document.getElementById('video_div').removeChild(document.getElementById(info.id));
+  document.getElementById('video_div').removeChild(document.getElementById("temp"));
+  //document.getElementById(info.id).style.display = "none";
+  downloadBtn.style.display = "inline-block";
+});
+
+ipcRenderer.on('already_downloadeding', function(event,info){
+  var exitingEle = document.getElementById('temp');
+  document.getElementById('video_div').removeChild(exitingEle);
+  status_text.innerHTML = "File already in process";
+  status_text.style.color = "green";
+  setTimeout(() => {
+    //status_text.innerHTML = "";
+    fadeOut('error_text',9);
+  }, 4000);
+  document.getElementById('video_div').removeChild(document.getElementById("temp"));
   //document.getElementById(info.id).style.display = "none";
   downloadBtn.style.display = "inline-block";
 });

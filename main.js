@@ -70,7 +70,7 @@ function downloadUsingYDL() {
       win.webContents.send('already_downloaded',info);
     }
     else if (fs.existsSync(path.join(app.getAppPath(), "downloads", info._filename))) {
-      win.webContents.send('already_downloadeding');
+      win.webContents.send('already_downloadeding',info);
     }
     else {
       videoInfo = info;
