@@ -204,7 +204,7 @@ function make_thirdChild(parent, video_id) {
 function make_progressDiv(video_id) {
 
   var div1 = document.createElement("div");
-  div1.setAttribute("id", "progressDiv_" + video_id);
+  div1.setAttribute("id", "progressDiv_" + "temp");
   div1.setAttribute("class", "row mx-0");
   div1.setAttribute("style", "height:18px; display: none;");
   document.getElementById("video_div").appendChild(div1);
@@ -254,7 +254,13 @@ function show_processIcon() {
 ipcRenderer.on('download-started', function (event, arg) {
   // const message = `Message reply: ${arg}`
   console.log(arg);
+  if(document.getElementById(arg.id) !=null){
+    document.getElementById('video_div').removeChild(document.getElementById(arg.id));
+    document.getElementById('video_div').removeChild(document.getElementById('progressDiv_'+arg.id));
+  }
   document.getElementById('temp').id = arg.id ;
+  document.getElementById('progressDiv_temp').id = 'progressDiv_'+arg.id;
+
   showThumbNailAndName(arg);
   document.getElementById("processIcon_" + arg.id).style.display = "none";
   document.getElementById('downloadingIcon_' + arg.id).style.display = "inline";
@@ -376,11 +382,12 @@ ipcRenderer.on('already_downloaded', function (event,info) {
   status_text.style.color = "green";
   var exitingEle = document.getElementById('temp');
   document.getElementById('video_div').removeChild(exitingEle);
+  document.getElementById('video_div').removeChild(document.getElementById('progressDiv_temp'));
   setTimeout(() => {
     //status_text.innerHTML = "";
     fadeOut('error_text',9);
   }, 4000);
-  document.getElementById('video_div').removeChild(document.getElementById("temp"));
+  //document.getElementById('video_div').removeChild(document.getElementById("error_text"));
   //document.getElementById(info.id).style.display = "none";
   downloadBtn.style.display = "inline-block";
 });
@@ -394,7 +401,7 @@ ipcRenderer.on('already_downloadeding', function(event,info){
     //status_text.innerHTML = "";
     fadeOut('error_text',9);
   }, 4000);
-  document.getElementById('video_div').removeChild(document.getElementById("temp"));
+  //document.getElementById('video_div').removeChild(document.getElementById("temp"));
   //document.getElementById(info.id).style.display = "none";
   downloadBtn.style.display = "inline-block";
 });

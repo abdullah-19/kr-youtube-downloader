@@ -21,7 +21,7 @@ To Do
 Bugs/Errors
 1.auto update is not working well
 2.downloads same video when click download
-3.
+3.space problem in url
 4.
 
 Done
