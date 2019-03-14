@@ -52,6 +52,46 @@ app.on('activate', () => {
   }
 });
 
+ipcMain.on('start_playlist_download', function (event, arg) {
+  console.log('come to main.js');
+  video_url = arg;
+  download_playlist(video_url);
+})
+
+function download_playlist(url) {
+
+  var video = youtubedl(url);
+
+  video.on('error', function error(err) {
+    console.log('error 2:', err);
+  });
+
+  var size = 0;
+  video.on('info', function (info) {
+    console.log('playlist info:');
+    console.log(info);
+    size = info.size;
+    var output = path.join(__dirname + '/', size + '.mp4');
+    video.pipe(fs.createWriteStream(output));
+  });
+
+  var pos = 0;
+  video.on('data', function data(chunk) {
+    pos += chunk.length;
+    // `size` should not be 0 here.
+    if (size) {
+      var percent = (pos / size * 100).toFixed(2);
+      // process.stdout.cursorTo(0);
+      // process.stdout.clearLine(1);
+      // process.stdout.write(percent + '%');
+      console.log('percent:'+percent+'%');
+    }
+  });
+
+  video.on('next', download_playlist);
+  //playlist('https://www.youtube.com/playlist?list=PLEFA9E9D96CB7F807');
+}
+
 ipcMain.on('start_download', function (event, arg) {
   video_url = arg;
   downloadUsingYDL();
@@ -67,10 +107,10 @@ function downloadUsingYDL() {
 
   video.on('info', function (info) {
     if (fs.existsSync(path.join(destination_folder, info._filename))) {
-      win.webContents.send('already_downloaded',info);
+      win.webContents.send('already_downloaded', info);
     }
     else if (fs.existsSync(path.join(app.getAppPath(), "downloads", info._filename))) {
-      win.webContents.send('already_downloadeding',info);
+      win.webContents.send('already_downloadeding', info);
     }
     else {
       videoInfo = info;

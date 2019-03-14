@@ -61,9 +61,21 @@ update_button.addEventListener('click', function () {
 
 
 downloadBtn.addEventListener('click', function () {
-  start_process();
+  //start_process();
   //addVideoDiv();
+  download_playlist();
 });
+
+function download_playlist(){
+  console.log('download button clicked');
+  var url = urlField.value;
+  if (url == "") {
+    status_text.innerHTML = "Please insert url";
+  }
+  else{
+    ipcRenderer.send('start_playlist_download', url);
+  }
+}
 
 function start_process() {
   console.log('download button clicked');
