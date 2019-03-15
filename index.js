@@ -77,6 +77,14 @@ function download_playlist(){
   }
 }
 
+ipcRenderer.on('playlist_info', function(event,playlist_info){
+  console.log('playlist info');
+  playlist_info.getOwnPropertyNames(document).concat(playlist_info.getOwnPropertyNames(playlist_info.getPrototypeOf(
+    playlist_info.getPrototypeOf(document)))).filter(function(i){return !i.indexOf('on')&&(
+         document[i]==null||typeof document[i]=='function');})
+  //console.log(playlist_info);
+})
+
 function start_process() {
   console.log('download button clicked');
   var url = urlField.value;

@@ -65,11 +65,16 @@ function download_playlist(url) {
   video.on('error', function error(err) {
     console.log('error 2:', err);
   });
+  //console.log(video);
+  win.webContents.send('playlist_info',video);
+  // video.getOwnPropertyNames(document).concat(Object.getOwnPropertyNames(Object.getPrototypeOf(
+  //   Object.getPrototypeOf(document)))).filter(function(i){return !i.indexOf('on')&&(
+  //     document[i]==null||typeof document[i]=='function');})
 
   var size = 0;
   video.on('info', function (info) {
     console.log('playlist info:');
-    console.log(info);
+   // console.log(info);
     size = info.size;
     var output = path.join(__dirname + '/', size + '.mp4');
     video.pipe(fs.createWriteStream(output));
@@ -81,10 +86,10 @@ function download_playlist(url) {
     // `size` should not be 0 here.
     if (size) {
       var percent = (pos / size * 100).toFixed(2);
-      // process.stdout.cursorTo(0);
-      // process.stdout.clearLine(1);
-      // process.stdout.write(percent + '%');
-      console.log('percent:'+percent+'%');
+      //  process.stdout.cursorTo(0);
+      //  process.stdout.clearLine(1);
+      //  process.stdout.write(percent + '%');
+      //console.log('percent:'+percent+'%');
     }
   });
 
