@@ -12,7 +12,7 @@ var youtubedl = require('youtube-dl');
 var videoInfo;
 let win;
 let outputLines;
-var video_url;
+//var video_url;
 var download_path = path.join("\"" + app.getPath('videos') + "\"", "myDownloader", "%(title)s.%(ext)s");
 var destination_folder = path.join(app.getPath('videos'), "kr_youtube_downloader");
 var downloadFileName;
@@ -53,60 +53,78 @@ app.on('activate', () => {
 });
 
 ipcMain.on('start_playlist_download', function (event, arg) {
-  console.log('come to main.js');
-  video_url = arg;
-  download_playlist(video_url);
+ // console.log('come to main.js');
+ // video_url = arg;
+  //download_playlist(video_url);
+  download_videoList(arg);
 })
 
-function download_playlist(url) {
+function download_videoList(url){
+  youtubedl.exec(url, ['-j', '--flat-playlist'], {}, function(err, output) {
+    if (err) throw err;
+    //console.log(output.join('\n'));
+    var myObject = JSON.parse(output[0]);
+    // console.log('length:'+output.length);
+    // console.log('firs elem:'+myObject.id);
+    win.webContents.send('video-list', output);
+    //console.log('type of first elem:'+ (typeof output[0]));
 
-  var video = youtubedl(url);
-
-  video.on('error', function error(err) {
-    console.log('error 2:', err);
   });
-  //console.log(video);
-  win.webContents.send('playlist_info',video);
-  // video.getOwnPropertyNames(document).concat(Object.getOwnPropertyNames(Object.getPrototypeOf(
-  //   Object.getPrototypeOf(document)))).filter(function(i){return !i.indexOf('on')&&(
-  //     document[i]==null||typeof document[i]=='function');})
-
-  var size = 0;
-  video.on('info', function (info) {
-    console.log('playlist info:');
-   // console.log(info);
-    size = info.size;
-    var output = path.join(__dirname + '/', size + '.mp4');
-    video.pipe(fs.createWriteStream(output));
-  });
-
-  var pos = 0;
-  video.on('data', function data(chunk) {
-    pos += chunk.length;
-    // `size` should not be 0 here.
-    if (size) {
-      var percent = (pos / size * 100).toFixed(2);
-      //  process.stdout.cursorTo(0);
-      //  process.stdout.clearLine(1);
-      //  process.stdout.write(percent + '%');
-      //console.log('percent:'+percent+'%');
-    }
-  });
-
-  video.on('next', download_playlist);
-  //playlist('https://www.youtube.com/playlist?list=PLEFA9E9D96CB7F807');
 }
 
+// function download_playlist(url) {
+
+//   var video = youtubedl(url);
+
+//   video.on('error', function error(err) {
+//     console.log('error 2:', err);
+//   });
+//   //console.log(video);
+//   win.webContents.send('playlist_info',video);
+//   var size = 0;
+//   video.on('info', function (info) {
+//     console.log('playlist info:');
+//    // console.log(info);
+//     size = info.size;
+//     var output = path.join(__dirname + '/', size + '.mp4');
+//     video.pipe(fs.createWriteStream(output));
+//   });
+
+//   var pos = 0;
+//   video.on('data', function data(chunk) {
+//     pos += chunk.length;
+//     // `size` should not be 0 here.
+//     if (size) {
+//       var percent = (pos / size * 100).toFixed(2);
+//       //  process.stdout.cursorTo(0);
+//       //  process.stdout.clearLine(1);
+//       //  process.stdout.write(percent + '%');
+//       //console.log('percent:'+percent+'%');
+//     }
+//   });
+
+//   video.on('next', download_playlist);
+//   //playlist('https://www.youtube.com/playlist?list=PLEFA9E9D96CB7F807');
+// }
+
 ipcMain.on('start_download', function (event, arg) {
-  video_url = arg;
-  downloadUsingYDL();
+ // video_url = arg;
+  downloadUsingYDL(arg);
 })
 
-function downloadUsingYDL() {
+ipcMain.on('download-playlist-item',function(event,video_list,item){
+  
+})
+
+
+
+function downloadUsingYDL(url) {
   var filename;
   var downloadPath;
+  console.log('in downloadUsingYDL');
+  console.log(url);
 
-  var video = youtubedl(video_url,
+  var video = youtubedl(url,
     ['--format=18'],//"%(title)s.%(ext)s"
     { cwd: __dirname });
 
@@ -211,9 +229,9 @@ function getVideoInfo() {
   });
 }
 
-ipcMain.on('download_video', function (event) {
-  download_video(event, video_url);
-})
+// ipcMain.on('download_video', function (event) {
+//   download_video(event, video_url);
+// })
 
 function download_thumbnail(event, url) {
   var command = preperCommandForThumbnail(url);
@@ -240,34 +258,34 @@ function download_thumbnail(event, url) {
   });
 }
 
-function download_video(event) {
+// function download_video(event) {
 
-  console.log("in ipcMain:" + video_url);
-  var command = preperCommand(video_url);
-  execute(command, (output, error) => {
-    if (error != null) {
-      event.sender.send('download_error');
-    }
-    else {
-      console.log(output);
-      if (output.indexOf("Destination:") != -1) {
-        destination_path = output.split("Destination:")[1].split("\n")[0];
-        var splitted_words = destination_path.split(path.sep);
-        downloadFileName = splitted_words[splitted_words.length - 1];
-        console.log("fileName:" + downloadFileName);
-        console.log("destination folder:" + destination_path);
-        event.sender.send('download-complete');
-      }
-      else if (output.indexOf("has already been downloaded") != -1) {
-        event.sender.send('already_downloaded');
-      }
+//   console.log("in ipcMain:" + video_url);
+//   var command = preperCommand(video_url);
+//   execute(command, (output, error) => {
+//     if (error != null) {
+//       event.sender.send('download_error');
+//     }
+//     else {
+//       console.log(output);
+//       if (output.indexOf("Destination:") != -1) {
+//         destination_path = output.split("Destination:")[1].split("\n")[0];
+//         var splitted_words = destination_path.split(path.sep);
+//         downloadFileName = splitted_words[splitted_words.length - 1];
+//         console.log("fileName:" + downloadFileName);
+//         console.log("destination folder:" + destination_path);
+//         event.sender.send('download-complete');
+//       }
+//       else if (output.indexOf("has already been downloaded") != -1) {
+//         event.sender.send('already_downloaded');
+//       }
 
-    }
+//     }
 
-  });
-  event.sender.send('download-started', 'Download not completed');
+//   });
+//   event.sender.send('download-started', 'Download not completed');
 
-}
+// }
 
 ipcMain.on('open_file_directory', function (event, info) {
   var downloadedFile_path = path.join(app.getPath('videos'), "kr_youtube_downloader", info._filename);

@@ -10,6 +10,8 @@ const status_text = document.getElementById('error_text');
 const update_button = document.getElementById('updateBtn');
 const closeIcon = document.getElementById('closeIcon');
 const downloadingIcon = document.getElementById('downloadingIcon');
+var isLoading = false;
+
 
 
 function showThumbNailAndName(info) {
@@ -61,20 +63,40 @@ update_button.addEventListener('click', function () {
 
 
 downloadBtn.addEventListener('click', function () {
-  //start_process();
+  start_process();
   //addVideoDiv();
-  download_playlist();
+  //download_playlist();
 });
 
-function download_playlist(){
-  console.log('download button clicked');
-  var url = urlField.value;
-  if (url == "") {
-    status_text.innerHTML = "Please insert url";
-  }
-  else{
-    ipcRenderer.send('start_playlist_download', url);
-  }
+// function download_playlist(url){
+//   console.log('download button clicked');
+//   //var url = urlField.value;
+//   ipcRenderer.send('start_playlist_download', url);
+// }
+
+ipcRenderer.on('video-list',function(event,video_list){
+  console.log('video_list');
+  var url;
+  //for(var i=0;i<video_list.length;i++){
+    //console.log('i:'+i);
+    url = "https://www.youtube.com/watch?v="+JSON.parse(video_list[0]).id;
+    console.log('url:'+url);
+    //download_video(url);
+    download_playlistItem(video_list,0);
+    // while(true){
+    //   if(!isLoading){
+    //     console.log('not loading');
+    //     download_video(url);
+    //     break;
+    //   }
+    // }
+
+  //}
+  //console.log(video_list);
+})
+
+function download_playlistItem(video_list,item){
+    ipcRenderer.send('download-playlist-item',video_list,item);
 }
 
 ipcRenderer.on('playlist_info', function(event,playlist_info){
@@ -88,23 +110,38 @@ ipcRenderer.on('playlist_info', function(event,playlist_info){
 function start_process() {
   console.log('download button clicked');
   var url = urlField.value;
+  var url_status = isValidUrl(url);
   if (url == "") {
     status_text.innerHTML = "Please insert url";
   }
-  else if (!isValidUrl(url)) {
-    status_text.innerHTML = "Url is not valid";
+  else if (url_status==1) {
+    download_video(url);
+  }
+  else if(url_status == 2){
+    //download_playlist(url);
+    ipcRenderer.send('start_playlist_download', url);
   }
   else {
     //show_processIcon();
-    console.log('in start process');
-    console.log("before extract:" + url);
-    addVideoDiv(url);
-    ipcRenderer.send('start_download', url);
+    status_text.innerHTML = "Url is not valid";
+    // console.log('in start process');
+    // console.log("before extract:" + url);
+    // addVideoDiv(url);
+    // ipcRenderer.send('start_download', url);
   }
 
   //ipcRenderer.send('start_download', url);  
   console.log("Url:" + url);
 }
+
+function download_video(url){
+  console.log('downloading video');
+  isLoading = true;
+  addVideoDiv(url);
+  ipcRenderer.send('start_download', url);
+}
+
+
 
 function addVideoDiv(url) {//parameter info
   var video_id = extractId(url);
@@ -280,6 +317,7 @@ ipcRenderer.on('download-started', function (event, arg) {
   }
   document.getElementById('temp').id = arg.id ;
   document.getElementById('progressDiv_temp').id = 'progressDiv_'+arg.id;
+  isLoading = false;
 
   showThumbNailAndName(arg);
   document.getElementById("processIcon_" + arg.id).style.display = "none";
@@ -307,7 +345,7 @@ function showProgressBar() {
 }
 
 function getFileSize(file) {
-  console.log('file to get size:' + file);
+  //console.log('file to get size:' + file);
   const stats = fs.statSync(file);
   const fileSizeInBytes = stats.size;
   //Convert the file size to megabytes (optional)
@@ -334,7 +372,7 @@ function downloadProgress(info) {
     parcentOfProgress = parcentOfProgress * 100;
     progressBar.style.width = parcentOfProgress + "%";
     progressStatus.innerHTML = Math.floor(parcentOfProgress) + "%";
-    console.log(downloadedSize);
+    //console.log(downloadedSize);
     if (downloadedSize == info.size) {
       ipcRenderer.send('download-complete', info);
       clearInterval(progress);
@@ -415,6 +453,7 @@ ipcRenderer.on('already_downloaded', function (event,info) {
 ipcRenderer.on('already_downloadeding', function(event,info){
   var exitingEle = document.getElementById('temp');
   document.getElementById('video_div').removeChild(exitingEle);
+  document.getElementById('video_div').removeChild(document.getElementById('progressDiv_temp'));
   status_text.innerHTML = "File already in process";
   status_text.style.color = "green";
   setTimeout(() => {
@@ -452,8 +491,18 @@ function isValidUrl(url) {
   var p = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
   if (url.match(p) != null) {
     //return url.match(p)[1];
+    return 1;
+  }
+  else if(is_playlist(url)) return 2;
+  return -1;
+}
+
+function is_playlist(url){
+  var p = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|playlist\?list=))((\w|-))(?:\S+)?$/;
+  if(url.match(p) != null){
     return true;
   }
+
   return false;
 }
 

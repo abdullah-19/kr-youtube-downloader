@@ -27,3 +27,7 @@ Bugs/Errors
 Done
 1.Downloading multiple video at a time
 2.forbidin downloading same video.
+
+
+last status:
+1.making folder for playlis download
