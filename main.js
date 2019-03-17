@@ -62,14 +62,27 @@ ipcMain.on('start_playlist_download', function (event, arg) {
 function download_videoList(url){
   youtubedl.exec(url, ['-j', '--flat-playlist'], {}, function(err, output) {
     if (err) throw err;
+    var info = {};
+    info.type = "playlist";
+    info.folderName = "playlist:"+getDateTime();
+    info.list = output;
+    info.currentDownloadItem = 0;
     //console.log(output.join('\n'));
     var myObject = JSON.parse(output[0]);
     // console.log('length:'+output.length);
     // console.log('firs elem:'+myObject.id);
-    win.webContents.send('video-list', output);
+    win.webContents.send('video-list', info);
     //console.log('type of first elem:'+ (typeof output[0]));
 
   });
+}
+
+ 
+function getDateTime() {
+  var date = new Date();
+  var time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+  var date = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+  return time + " " + date;
 }
 
 // function download_playlist(url) {
@@ -107,14 +120,29 @@ function download_videoList(url){
 //   //playlist('https://www.youtube.com/playlist?list=PLEFA9E9D96CB7F807');
 // }
 
-ipcMain.on('start_download', function (event, arg) {
+ipcMain.on('start_download', function (event, info) {
  // video_url = arg;
-  downloadUsingYDL(arg);
+ var url;
+ if(info.type === "playlist"){
+  var id = JSON.parse(info.list[info.currentDownloadItem]).id;
+  url = getUrlFromId(id);
+ }
+
+ else if(info.type === "single"){
+   url = info.url;
+ }
+ 
+  downloadUsingYDL(url);
 })
 
 ipcMain.on('download-playlist-item',function(event,playlist){
   
 })
+
+function getUrlFromId(id){
+  return "https://www.youtube.com/watch?v=" + id;
+}
+
 
 
 

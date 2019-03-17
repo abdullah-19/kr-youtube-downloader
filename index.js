@@ -11,7 +11,7 @@ const update_button = document.getElementById('updateBtn');
 const closeIcon = document.getElementById('closeIcon');
 const downloadingIcon = document.getElementById('downloadingIcon');
 var isLoading = false;
-
+var queue = [];
 
 
 function showThumbNailAndName(info) {
@@ -74,41 +74,49 @@ downloadBtn.addEventListener('click', function () {
 //   ipcRenderer.send('start_playlist_download', url);
 // }
 
-ipcRenderer.on('video-list',function(event,video_list){
+ipcRenderer.on('video-list', function (event, info) {
   var playlist = {};
-  var folderName = "Playlist:"+ d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate()+" "+d.toLocaleTimeString();
-  playlist.list = video_list;
-  playlist.folderName = folderName;
-  playlist.currentItem = 0;
-  console.log('video_list');
-  var url;
+  //var folderName = "Playlist:" + d.getFullYear() + "-" + d.getMonth() + "-" + d.getDate() + " " + d.toLocaleTimeString();
+  // playlist.list = video_list;
+  // playlist.folderName = folderName;
+  // playlist.currentItem = 0;
+  // console.log('video_list');
+  // var url;
   //for(var i=0;i<video_list.length;i++){
-    //console.log('i:'+i);
-    url = "https://www.youtube.com/watch?v="+JSON.parse(video_list[0]).id;
-    console.log('url:'+url);
-    //download_video(url);
-    download_playlistItem(playlist);
-    // while(true){
-    //   if(!isLoading){
-    //     console.log('not loading');
-    //     download_video(url);
-    //     break;
-    //   }
-    // }
+  //console.log('i:'+i);
+  queue.push(info);
+  if(queue.length == 1) download_video();
+  // url = "https://www.youtube.com/watch?v=" + JSON.parse(video_list[0]).id;
+  // console.log('url:' + url);
+  //download_video(url);
+  //download_playlistItem(playlist);
+  // while(true){
+  //   if(!isLoading){
+  //     console.log('not loading');
+  //     download_video(url);
+  //     break;
+  //   }
+  // }
 
   //}
   //console.log(video_list);
 })
 
-function download_playlistItem(playlist){
-    ipcRenderer.send('download-playlist-item',playlist);
+function getUrlFromId(id){
+  return "https://www.youtube.com/watch?v=" + id;
 }
 
-ipcRenderer.on('playlist_info', function(event,playlist_info){
+function download_playlistItem(playlist) {
+  ipcRenderer.send('download-playlist-item', playlist);
+}
+
+ipcRenderer.on('playlist_info', function (event, playlist_info) {
   console.log('playlist info');
   playlist_info.getOwnPropertyNames(document).concat(playlist_info.getOwnPropertyNames(playlist_info.getPrototypeOf(
-    playlist_info.getPrototypeOf(document)))).filter(function(i){return !i.indexOf('on')&&(
-         document[i]==null||typeof document[i]=='function');})
+    playlist_info.getPrototypeOf(document)))).filter(function (i) {
+      return !i.indexOf('on') && (
+        document[i] == null || typeof document[i] == 'function');
+    })
   //console.log(playlist_info);
 })
 
@@ -119,11 +127,22 @@ function start_process() {
   if (url == "") {
     status_text.innerHTML = "Please insert url";
   }
-  else if (url_status==1) {
-    download_video(url);
+  else if (url_status == 1) {
+    var info = {};
+    info.type = "single";
+    info.url = url;
+    queue.push(info);
+    //download_video(url);
+    if (queue.length === 1) {
+      download_video();
+    }
+  
   }
-  else if(url_status == 2){
+  else if (url_status == 2) {
     //download_playlist(url);
+    var info = {};
+    info.type = "playlist";
+    info.folderName = "playlist:"+getDateTime();
     ipcRenderer.send('start_playlist_download', url);
   }
   else {
@@ -139,16 +158,36 @@ function start_process() {
   console.log("Url:" + url);
 }
 
-function download_video(url){
+function getDateTime() {
+  var date = new Date();
+  var time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+  var date = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+  return time + " " + date;
+}
+
+function download_video() {
   console.log('downloading video');
-  isLoading = true;
+  var url;
+  var info = queue[0];
+  console.log('info');
+  console.log(info);
+  ipcRenderer.send('start_download', info);
+  if(info.type === "single") url = info.url;
+  else if(info.type === "playlist"){
+    var id = JSON.parse(info.list[info.currentDownloadItem]).id;
+    url = getUrlFromId(id);
+  }
   addVideoDiv(url);
-  ipcRenderer.send('start_download', url);
+  //ipcRenderer.send('start_download', url);
 }
 
 
+function downloadFromQueue() {
+  download_video(queue.shift());
+}
 
 function addVideoDiv(url) {//parameter info
+  isLoading = true;
   var video_id = extractId(url);
   var firstDiv = document.createElement("div");
   //firstDiv.classList.add("row mx-0");
@@ -316,26 +355,37 @@ function show_processIcon() {
 ipcRenderer.on('download-started', function (event, arg) {
   // const message = `Message reply: ${arg}`
   console.log(arg);
-  if(document.getElementById(arg.id) !=null){
+  if (document.getElementById(arg.id) != null) {
     document.getElementById('video_div').removeChild(document.getElementById(arg.id));
-    document.getElementById('video_div').removeChild(document.getElementById('progressDiv_'+arg.id));
+    document.getElementById('video_div').removeChild(document.getElementById('progressDiv_' + arg.id));
   }
-  document.getElementById('temp').id = arg.id ;
-  document.getElementById('progressDiv_temp').id = 'progressDiv_'+arg.id;
+  document.getElementById('temp').id = arg.id;
+  document.getElementById('progressDiv_temp').id = 'progressDiv_' + arg.id;
   isLoading = false;
 
   showThumbNailAndName(arg);
   document.getElementById("processIcon_" + arg.id).style.display = "none";
   document.getElementById('downloadingIcon_' + arg.id).style.display = "inline";
   document.getElementById('folderIcon_' + arg.id).onclick = function () {
-      ipcRenderer.send('open_file_directory',arg);
+    ipcRenderer.send('open_file_directory', arg);
   }
   //status_text.innerHTML = "Downloading...";
   // status_text.style.color = "blue";
   //downloadProgress(arg._filename,arg.size);
   showBasicInfo(arg);
   downloadProgress(arg);
+  downloadNext();
 });
+
+function downloadNext(){
+  var info = queue[0];
+  if(info.type === "single") queue.shift();
+  else if(info.type === "playlist"){
+    if(info.currentDownloadItem>= info.list.length) queue.shift();
+    else queue[0].currentDownloadItem++;
+  }
+  if(queue.length != 0) download_video();
+}
 
 function showBasicInfo(info) {
   document.getElementById("processIcon_" + info.id).style.display = "none";
@@ -382,9 +432,12 @@ function downloadProgress(info) {
       ipcRenderer.send('download-complete', info);
       clearInterval(progress);
       progressDiv.style.display = "none";
+      //updateQueue();
     }
   }, 500);
 }
+
+
 
 ipcRenderer.on('move-complete', (event, arg) => {
   console.log('move completed');
@@ -440,7 +493,7 @@ ipcRenderer.on('download_error', function () {
 
 //already_downloaded
 
-ipcRenderer.on('already_downloaded', function (event,info) {
+ipcRenderer.on('already_downloaded', function (event, info) {
   status_text.innerHTML = "File already exist";
   status_text.style.color = "green";
   var exitingEle = document.getElementById('temp');
@@ -448,14 +501,14 @@ ipcRenderer.on('already_downloaded', function (event,info) {
   document.getElementById('video_div').removeChild(document.getElementById('progressDiv_temp'));
   setTimeout(() => {
     //status_text.innerHTML = "";
-    fadeOut('error_text',9);
+    fadeOut('error_text', 9);
   }, 4000);
   //document.getElementById('video_div').removeChild(document.getElementById("error_text"));
   //document.getElementById(info.id).style.display = "none";
   downloadBtn.style.display = "inline-block";
 });
 
-ipcRenderer.on('already_downloadeding', function(event,info){
+ipcRenderer.on('already_downloadeding', function (event, info) {
   var exitingEle = document.getElementById('temp');
   document.getElementById('video_div').removeChild(exitingEle);
   document.getElementById('video_div').removeChild(document.getElementById('progressDiv_temp'));
@@ -463,7 +516,7 @@ ipcRenderer.on('already_downloadeding', function(event,info){
   status_text.style.color = "green";
   setTimeout(() => {
     //status_text.innerHTML = "";
-    fadeOut('error_text',9);
+    fadeOut('error_text', 9);
   }, 4000);
   //document.getElementById('video_div').removeChild(document.getElementById("temp"));
   //document.getElementById(info.id).style.display = "none";
@@ -498,13 +551,13 @@ function isValidUrl(url) {
     //return url.match(p)[1];
     return 1;
   }
-  else if(is_playlist(url)) return 2;
+  else if (is_playlist(url)) return 2;
   return -1;
 }
 
-function is_playlist(url){
+function is_playlist(url) {
   var p = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|playlist\?list=))((\w|-))(?:\S+)?$/;
-  if(url.match(p) != null){
+  if (url.match(p) != null) {
     return true;
   }
 

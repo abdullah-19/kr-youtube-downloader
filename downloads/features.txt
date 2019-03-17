@@ -22,7 +22,7 @@ Bugs/Errors
 1.auto update is not working well
 2.downloads same video when click download
 3.space problem in url
-4.
+4.max buffer exceeded problem;
 
 Done
 1.Downloading multiple video at a time
