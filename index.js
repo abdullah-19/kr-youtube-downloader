@@ -75,6 +75,11 @@ downloadBtn.addEventListener('click', function () {
 // }
 
 ipcRenderer.on('video-list',function(event,video_list){
+  var playlist = {};
+  var folderName = "Playlist:"+ d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate()+" "+d.toLocaleTimeString();
+  playlist.list = video_list;
+  playlist.folderName = folderName;
+  playlist.currentItem = 0;
   console.log('video_list');
   var url;
   //for(var i=0;i<video_list.length;i++){
@@ -82,7 +87,7 @@ ipcRenderer.on('video-list',function(event,video_list){
     url = "https://www.youtube.com/watch?v="+JSON.parse(video_list[0]).id;
     console.log('url:'+url);
     //download_video(url);
-    download_playlistItem(video_list,0);
+    download_playlistItem(playlist);
     // while(true){
     //   if(!isLoading){
     //     console.log('not loading');
@@ -95,8 +100,8 @@ ipcRenderer.on('video-list',function(event,video_list){
   //console.log(video_list);
 })
 
-function download_playlistItem(video_list,item){
-    ipcRenderer.send('download-playlist-item',video_list,item);
+function download_playlistItem(playlist){
+    ipcRenderer.send('download-playlist-item',playlist);
 }
 
 ipcRenderer.on('playlist_info', function(event,playlist_info){

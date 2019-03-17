@@ -112,7 +112,7 @@ ipcMain.on('start_download', function (event, arg) {
   downloadUsingYDL(arg);
 })
 
-ipcMain.on('download-playlist-item',function(event,video_list,item){
+ipcMain.on('download-playlist-item',function(event,playlist){
   
 })
 
