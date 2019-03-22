@@ -11,10 +11,16 @@ const update_button = document.getElementById('updateBtn');
 const closeIcon = document.getElementById('closeIcon');
 const downloadingIcon = document.getElementById('downloadingIcon');
 var isLoading = false;
-var queue = [];
+// var queue=[];
+var queue = {
+  toLoad:[],
+  toDownload:[]
+};
 
 
 function showThumbNailAndName(info) {
+  console.log('in showThumbnail:');
+  console.log(info.id);
   var thumbnail = document.getElementById("videoThumbnail_" + info.id);
   thumbnail.src = info.thumbnails[0].url;
   thumbnail.style.display = "inline-block";
@@ -84,8 +90,10 @@ ipcRenderer.on('video-list', function (event, info) {
   // var url;
   //for(var i=0;i<video_list.length;i++){
   //console.log('i:'+i);
-  queue.push(info);
-  if(queue.length == 1) download_video();
+  queue.toDownload.push(info);
+  queue.toLoad.push(info);
+  // if(queue.toLoad.length == 1) download_video();
+  if(queue.toLoad.length == 1) loadVideo(info);
   // url = "https://www.youtube.com/watch?v=" + JSON.parse(video_list[0]).id;
   // console.log('url:' + url);
   //download_video(url);
@@ -124,17 +132,24 @@ function start_process() {
   console.log('download button clicked');
   var url = urlField.value;
   var url_status = isValidUrl(url);
+  if(queue.toDownload.length === 0){
+    queue.isDownloading = false;
+  }
   if (url == "") {
     status_text.innerHTML = "Please insert url";
   }
   else if (url_status == 1) {
     var info = {};
+    console.log('url status 1');
     info.type = "single";
     info.url = url;
-    queue.push(info);
+    queue.toLoad.push(info);
+    queue.toDownload.push(info);
     //download_video(url);
-    if (queue.length === 1) {
-      download_video();
+    if (queue.toLoad.length === 1) {
+      //queue.isDownloading = false;
+      loadNext();
+
     }
   
   }
@@ -165,10 +180,25 @@ function getDateTime() {
   return time + " " + date;
 }
 
-function download_video() {
+function loadVideo(info){
+  console.log('loading video');
+  var url;
+  //var info = queue.toLoad[0];
+  //console.log('info');
+  //console.log(info);
+  ipcRenderer.send('start_load', info);
+  if(info.type === "single") url = info.url;
+  else if(info.type === "playlist"){
+    var id = JSON.parse(info.list[info.currentLoadItem]).id;
+    url = getUrlFromId(id);
+  }
+  addVideoDiv(url);
+}
+
+function download_video(info) {
   console.log('downloading video');
   var url;
-  var info = queue[0];
+  //var info = queue.toDownload[0];
   console.log('info');
   console.log(info);
   ipcRenderer.send('start_download', info);
@@ -177,13 +207,13 @@ function download_video() {
     var id = JSON.parse(info.list[info.currentDownloadItem]).id;
     url = getUrlFromId(id);
   }
-  addVideoDiv(url);
+ /// addVideoDiv(url);
   //ipcRenderer.send('start_download', url);
 }
 
 
 function downloadFromQueue() {
-  download_video(queue.shift());
+  download_video(queue.toDownload.shift());
 }
 
 function addVideoDiv(url) {//parameter info
@@ -352,8 +382,34 @@ function show_processIcon() {
 // });
 
 
-ipcRenderer.on('download-started', function (event, arg) {
-  // const message = `Message reply: ${arg}`
+ipcRenderer.on('load-complete',function(event,info){
+  showVideoInfo(info.loadedInfo);
+  console.log('in load-complete');
+  console.log('video type:');
+  console.log(info.type);
+  if(info.type === "single") {
+    queue.toLoad.shift();
+    console.log('after deleting single video, size:'+queue.toLoad.length);
+  }
+  else if(info.type === "playlist"){
+    if(info.currentLoadItem>= info.list.length) queue.toLoad.shift();
+    else queue.toLoad[0].currentLoadItem++;
+  }
+  if(!queue.isDownloading && queue.toDownload.length != 0){
+    console.log('not queue');
+    queue.isDownloading = true;
+    downloadNext();
+  }
+  if(queue.toLoad.length !=0) {
+    console.log('queue not empty, size:'+queue.toLoad.length);
+
+    loadNext();
+  }
+
+});
+
+function showVideoInfo(arg){
+  console.log('in show basic info');
   console.log(arg);
   if (document.getElementById(arg.id) != null) {
     document.getElementById('video_div').removeChild(document.getElementById(arg.id));
@@ -373,18 +429,42 @@ ipcRenderer.on('download-started', function (event, arg) {
   // status_text.style.color = "blue";
   //downloadProgress(arg._filename,arg.size);
   showBasicInfo(arg);
-  downloadProgress(arg);
-  downloadNext();
+  //downloadProgress(arg);
+  //downloadNext();
+}
+
+ipcRenderer.on('download-started', function (event, arg) {
+  // const message = `Message reply: ${arg}`
+  //status_text.innerHTML = "Downloading...";
+  // status_text.style.color = "blue";
+  //downloadProgress(arg._filename,arg.size);
+  // showBasicInfo(arg);
+  downloadProgress(arg.loadedInfo);
+  //downloadNext();
 });
 
+function loadNext(){
+  var info = queue.toLoad[0];
+  // if(info.type === "single") queue.toLoad.shift();
+  // else if(info.type === "playlist"){
+  //   if(info.currentLoadItem>= info.list.length) queue.toLoad.shift();
+  //   else queue.toLoad[0].currentLoadItem++;
+  // }
+  loadVideo(info);
+}
+
 function downloadNext(){
-  var info = queue[0];
-  if(info.type === "single") queue.shift();
-  else if(info.type === "playlist"){
-    if(info.currentDownloadItem>= info.list.length) queue.shift();
-    else queue[0].currentDownloadItem++;
-  }
-  if(queue.length != 0) download_video();
+  var info = queue.toDownload[0];
+  // if(info.type === "single") queue.toDownload.shift();
+  // else if(info.type === "playlist"){
+  //   if(info.currentDownloadItem>= info.list.length) {
+  //     queue.toDownload.shift();
+  //     if(queue.toDownload.length === 0) queue.isDownloading = false;
+  //   }
+  //   else queue.toDownload[0].currentDownloadItem++;
+  // }
+  console.log('next download');
+  download_video(info);
 }
 
 function showBasicInfo(info) {
@@ -431,12 +511,25 @@ function downloadProgress(info) {
     if (downloadedSize == info.size) {
       ipcRenderer.send('download-complete', info);
       clearInterval(progress);
+      processNextVideo();
       progressDiv.style.display = "none";
       //updateQueue();
     }
   }, 500);
 }
 
+function processNextVideo(){
+  var info = queue.toDownload[0];
+  if(info.type === "single") queue.toDownload.shift();
+  else if(info.type === "playlist"){
+    if(info.currentDownloadItem>= info.list.length) {
+      queue.toDownload.shift();
+      if(queue.toDownload.length === 0) queue.isDownloading = false;
+    }
+    else queue.toDownload[0].currentDownloadItem++;
+  }
+  if(queue.toDownload.length != 0) downloadNext();
+}
 
 
 ipcRenderer.on('move-complete', (event, arg) => {

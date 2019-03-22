@@ -19,6 +19,14 @@
 //console.log(new Date().toLocaleString());
 // var time = dateFormat(new Date(),"dd-mm-yy h:MM TT");
 // console.log(time);
-array = [2,3,5];
-array.splice(1, 1);
-console.log(array);
+// array = [2,3,5];
+// array.splice(1, 1);
+// console.log(array);
+
+var obj = {
+    toLoad:[],
+    toDownload:[]
+}
+obj.toLoad = [1,2];
+obj.toDownload = [3,4];
+console.log(obj.toLoad);
