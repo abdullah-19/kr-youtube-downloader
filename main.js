@@ -164,15 +164,60 @@ function getUrlFromId(id) {
 }
 
 
+function loadUsingYDL(info){
+  var filename;
+  var downloadPath;
 
-function loadUsingYDL(info) {
+  //var options = ['--username=user', '--password=hunter2'];
+  var options = ['--format=18', '--skip-download'];
+  youtubedl.getInfo(info.url,options, function (err, loadedInfo) {
+    if (err) throw err;
+    console.log('from video info');
+    console.log('id:', loadedInfo.id);
+    console.log('title:', loadedInfo.title);
+    console.log('url:', loadedInfo.url);
+    console.log('thumbnail:', loadedInfo.thumbnail);
+    console.log('description:', loadedInfo.description);
+    console.log('filename:', loadedInfo._filename);
+    console.log('format id:', loadedInfo.format_id);
+    // return info;
+
+
+    info.loadedInfo = loadedInfo;
+
+    if (fs.existsSync(path.join(destination_folder, loadedInfo._filename))) {
+      win.webContents.send('already_downloaded', info);
+    }
+    else if (fs.existsSync(path.join(app.getAppPath(), "downloads", loadedInfo._filename))) {
+      win.webContents.send('already_downloadeding', info);
+    }
+    else {
+      videoInfo = loadedInfo;
+
+      //console.log(info);
+      console.log('thumbnail url:' + loadedInfo.thumbnails[0].url);
+      filename = loadedInfo._filename;
+      downloadPath = path.join(app.getAppPath(), "downloads", filename);
+      //video.pipe(fs.createWriteStream(downloadPath));
+      //fs.createWriteStream("downloads/" + filename));
+      loadedInfo.appPath = app.getAppPath();
+      loadedInfo.downloadFilePath = downloadPath;
+      //console.log('download path:');
+      //console.log(info.appPath);
+      win.webContents.send('load-complete', info);
+    }
+
+  });
+}
+
+function loadUsingYDL1(info) {
   var filename;
   var downloadPath;
   //console.log('in downloadUsingYDL');
   //console.log(info);
 
   var video = youtubedl(info.url,
-    ['--format=18','--skip-download'],//"%(title)s.%(ext)s"
+    ['--format=18', '--skip-download'],//"%(title)s.%(ext)s"
     { cwd: __dirname });
 
   video.on('info', function (loadedInfo) {
@@ -207,7 +252,7 @@ function downloadUsingYDL(info) {
   var downloadPath;
   //console.log('in downloadUsingYDL');
   //console.log(info);
-  console.log('downlaod video url:'+info.url);
+  console.log('downlaod video url:' + info.url);
 
   var video = youtubedl(info.url,
     ['--format=18'],//"%(title)s.%(ext)s"
@@ -309,12 +354,30 @@ ipcMain.on('download-complete', (event, info) => {
   });
 });
 
-function getVideoInfo() {
-  fetchVideoInfo("QohH89Eu5iM", function (err, videoInfo) {
-    if (err) throw new Error(err);
-    console.log(videoInfo);
+function getVideoInfo(url) {
+  //var url = 'http://www.youtube.com/watch?v=WKsjaOqDXgg';
+  // Optional arguments passed to youtube-dl.
+  var options = ['--username=user', '--password=hunter2'];
+  youtubedl.getInfo(url, options, function (err, info) {
+    if (err) throw err;
+    console.log('from video info');
+    console.log('id:', info.id);
+    console.log('title:', info.title);
+    console.log('url:', info.url);
+    console.log('thumbnail:', info.thumbnail);
+    console.log('description:', info.description);
+    console.log('filename:', info._filename);
+    console.log('format id:', info.format_id);
+    return info;
   });
 }
+
+// function getVideoInfo() {
+//   fetchVideoInfo("QohH89Eu5iM", function (err, videoInfo) {
+//     if (err) throw new Error(err);
+//     console.log(videoInfo);
+//   });
+// }
 
 // ipcMain.on('download_video', function (event) {
 //   download_video(event, video_url);

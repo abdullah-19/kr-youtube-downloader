@@ -23,10 +23,25 @@
 // array.splice(1, 1);
 // console.log(array);
 
-var obj = {
-    toLoad:[],
-    toDownload:[]
+
+// var obj = {
+//     toLoad:[],
+//     toDownload:[]
+// }
+// obj.toLoad = [1,2];
+// obj.toDownload = [3,4];
+// console.log(obj.toLoad);
+
+
+const exec = require('child_process').exec;
+
+function execute(command,callback) {
+    exec(command, (error, stdout, stderr) => {
+        callback(stdout, error);
+    });
 }
-obj.toLoad = [1,2];
-obj.toDownload = [3,4];
-console.log(obj.toLoad);
+var command = __dirname+"/downloads/youtube-dl --dump-single-json --format=18 --skip-download https://www.youtube.com/channel/UCRxDiLOp7YuY7CrzuIR4TKw";
+execute(command,(std,err)=>{
+    console.log(std);
+    console.log(err);
+});

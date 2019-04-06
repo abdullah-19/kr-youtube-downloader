@@ -385,6 +385,7 @@ function show_processIcon() {
 ipcRenderer.on('load-complete',function(event,info){
   showVideoInfo(info.loadedInfo);
   console.log('in load-complete');
+  console.log(info);
   console.log('video type:');
   console.log(info.type);
   if(info.type === "single") {
@@ -469,7 +470,7 @@ function downloadNext(){
 
 function showBasicInfo(info) {
   document.getElementById("processIcon_" + info.id).style.display = "none";
-  document.getElementById('filesize_' + info.id).innerHTML = "Size(KB):" + info.size;
+  document.getElementById('filesize_' + info.id).innerHTML = "Size(KB):" + info.filesize;
   document.getElementById('duration_' + info.id).innerHTML = "Duration(h:m:s:):" + info._duration_hms;
   document.getElementById('filename_' + info.id).innerHTML = "Filename:" + info._filename;
 }
