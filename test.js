@@ -32,16 +32,63 @@
 // obj.toDownload = [3,4];
 // console.log(obj.toLoad);
 
+//////////////////////////////////////////////////////////////////////////////////
+// const exec = require('child_process').exec;
 
-const exec = require('child_process').exec;
+// function execute(command,callback) {
+//     exec(command, (error, stdout, stderr) => {
+//         callback(stdout, error);
+//     });
+// }
+// var command = __dirname+"/downloads/youtube-dl --dump-single-json --format=18 --skip-download https://www.youtube.com/channel/UCRxDiLOp7YuY7CrzuIR4TKw";
+// execute(command,(std,err)=>{
+//     console.log(std);
+//     console.log(err);
+// });
 
-function execute(command,callback) {
-    exec(command, (error, stdout, stderr) => {
-        callback(stdout, error);
-    });
+
+
+///////////////////////////////////////////////////////
+var fetchVideoInfo = require('youtube-info');
+
+function getVideoInfo(id) {
+  fetchVideoInfo(id, function (err, videoInfo) {
+    if (err) throw new Error(err);
+    console.log(videoInfo);
+  });
 }
-var command = __dirname+"/downloads/youtube-dl --dump-single-json --format=18 --skip-download https://www.youtube.com/channel/UCRxDiLOp7YuY7CrzuIR4TKw";
-execute(command,(std,err)=>{
-    console.log(std);
-    console.log(err);
-});
+
+getVideoInfo("t_qHCNMfIpo");
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+// var youtubedl = require('youtube-dl');
+
+// function downloadUsingYDL(url) {
+//     var filename;
+//     var downloadPath;
+//     console.log('downlaod video url:' + url);
+  
+//     var video = youtubedl(url,
+//       ['--format=18'],
+//       { cwd: __dirname });
+  
+//     video.on('info', function (loadedInfo) {
+//       info.loadedInfo = loadedInfo;
+//         videoInfo = loadedInfo;
+//         console.log('thumbnail url:' + loadedInfo.thumbnails[0].url);
+//         filename = loadedInfo._filename;
+//         loadedInfo.appPath = app.getAppPath();
+//         loadedInfo.downloadFilePath = downloadPath;
+//         console.log(loadedInfo);
+//     });
+  
+//   }
+
+//   var url = "https://www.youtube.com/watch?v=t_qHCNMfIpo&list=PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT&index=7&t=0s";
+
+//   downloadUsingYDL(url);
+
+

@@ -1,5 +1,5 @@
 In progress
-1. playlist download
+1. fixing buffer error
 2.
 3.
 
