@@ -4,7 +4,7 @@
   "description": "A youtube downloader",
   "main": "main2.js",
   "scripts": {
-    "start": "electron .",
+    "start": "electron . --debug",
     "dist": "build",
     "ship": "build --win -p always"
   },

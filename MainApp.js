@@ -1,5 +1,7 @@
 const {BrowserWindow, ipcMain, shell } = require('electron');
 const Downloader = require('./Downloader');
+const config = require('./config');
+const AutoUpdater = require('./AutoUpdater');
 const Info = require('./Info');
 const path = require('path')
 const url = require('url')
@@ -36,7 +38,10 @@ module.exports = class MainApp {
     onReady() {
         this.app.on('ready', () => {
             this.createWindow();
-            new Downloader(this.app,this.win);
+            if(config.isProduction){
+                new AutoUpdater().checkForUpdate();
+            }
+            //new Downloader(this.app,this.win);
             //checkUpdate();
         });
     }

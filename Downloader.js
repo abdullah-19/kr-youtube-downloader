@@ -28,7 +28,6 @@ module.exports = class Downloader {
             else if (info.type === "single") {
                 url = info.url;
             }
-
             this.loadUsingYDL(info);
 
         })
@@ -94,10 +93,117 @@ module.exports = class Downloader {
         });
     }
 
+    downloadUsingYDL(info) {
+        var filename;
+        var downloadPath;
+        //console.log('in downloadUsingYDL');
+        //console.log(info);
+        console.log('downlaod video url:' + info.url);
+
+        var video = youtubedl(info.url,
+            ['--format=18'],//"%(title)s.%(ext)s"
+            { cwd: __dirname });
+
+        video.on('info', function (loadedInfo) {
+            info.loadedInfo = loadedInfo;
+
+            if (fs.existsSync(path.join(destination_folder, loadedInfo._filename))) {
+                win.webContents.send('already_downloaded', info);
+            }
+            else if (fs.existsSync(path.join(app.getAppPath(), "downloads", loadedInfo._filename))) {
+                win.webContents.send('already_downloadeding', info);
+            }
+            else {
+                videoInfo = loadedInfo;
+
+                //console.log(info);
+                console.log('thumbnail url:' + loadedInfo.thumbnails[0].url);
+                filename = loadedInfo._filename;
+                downloadPath = path.join(app.getAppPath(), "downloads", filename);
+                video.pipe(fs.createWriteStream(downloadPath));
+                //fs.createWriteStream("downloads/" + filename));
+                loadedInfo.appPath = app.getAppPath();
+                loadedInfo.downloadFilePath = downloadPath;
+                //console.log('download path:');
+                //console.log(info.appPath);
+                win.webContents.send('download-started', info);
+            }
+        });
+
+    }
+
     getDateTime() {
         var date = new Date();
         var time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
         var date = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
         return time + " " + date;
+    }
+
+    download_thumbnail(event, url) {
+        var command = preperCommandForThumbnail(url);
+        execute(command, (output, error) => {
+            if (error != null) {
+                console.log('thumbnail eror');
+                event.sender.send('download_error');
+            }
+
+            else {
+                console.log('thumbnail download success');
+                console.log(output);
+                var thumbnail_destination = output.split("Writing thumbnail to")[1].split("\n")[0];
+                var thumbailDestinationWithoutExtension = thumbnail_destination.substr(0, thumbnail_destination.lastIndexOf('.'));
+                var thumbnailName = thumbailDestinationWithoutExtension.substr(thumbailDestinationWithoutExtension.lastIndexOf
+                    (path.sep) + 1, thumbailDestinationWithoutExtension.length - 1);
+
+                console.log('thumbnail destination:' + thumbnail_destination);
+                console.log('thumbnail name:' + thumbnailName);
+                event.sender.send('downloaded-thumbnail', thumbnailName);
+
+            }
+
+        });
+    }
+
+    preperCommand(url) {
+        var plugin_path = path.join("\"" + __dirname + "\"", "downloads", "youtube-dl");
+        var command;
+
+        console.log("download_path:" + download_path);
+
+        if (url.indexOf("playlist?list=") != -1) {
+            command = plugin_path + " -i -f mp4 --yes-playlist -o " + download_path + " " + url;
+            return command;
+        }
+        else {
+            console.log("splitted Link:" + url.split("&")[0]);
+            command = plugin_path + " -o " + download_path + " " + url.split("&")[0];
+            console.log("command:" + command);
+            return command;
+        }
+    }
+
+    preperCommandForThumbnail(url) {
+        var plugin_path = path.join("\"" + __dirname + "\"", "downloads", "youtube-dl");
+        var thumbnail_path = path.join("\"" + __dirname + "\"", "downloads", "thumbnail", "%(title)s");
+        var command;
+
+        //console.log("download_path:" + download_path);
+
+        if (url.indexOf("playlist?list=") != -1) {
+            command = plugin_path + " -i -f mp4 --yes-playlist -o " + download_path + " " + url;
+            return command;
+        }
+        else {
+            console.log("splitted Link:" + url.split("&")[0]);
+            command = plugin_path + " --skip-download --write-thumbnail" + " -o " + thumbnail_path + " " + url.split("&")[0];
+            console.log("thumbnail command:" + command);
+            return command;
+        }
+    }
+
+    execute(command, callback) {
+        exec(command, (error, stdout, stderr) => {
+            callback(stdout, error);
+        });
     }
 }
