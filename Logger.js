@@ -22,7 +22,7 @@ var projectPath = __dirname;
     });
     
     log.debug('logging set up');
-    log.debug('log level:' + config.log_level);
+    log.debug('log level:' + config.logger.level);
     log.debug('size:' + log.transports.file.maxSize);
 
 })();

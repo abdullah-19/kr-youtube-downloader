@@ -654,7 +654,6 @@ function is_playlist(url) {
   if (url.match(p) != null) {
     return true;
   }
-
   return false;
 }
 

@@ -1,0 +1,298 @@
+[2019-04-22 11:39:43.174] [debug] logging set up
+[2019-04-22 11:39:43.184] [debug] log level:debug
+[2019-04-22 11:39:43.184] [debug] size:5242880
+[2019-04-22 11:40:37.342] [error] an unhandled error caught in gloabl handler:  TypeError: this.loadUsingYDL is not a function
+    at EventEmitter.<anonymous> (D:\workspace\downloader\Downloader.js:31:18)
+    at emitTwo (events.js:126:13)
+    at EventEmitter.emit (events.js:214:7)
+    at WebContents.<anonymous> (D:\workspace\downloader\node_modules\electron\dist\resources\electron.asar\browser\api\web-contents.js:287:13)
+    at emitTwo (events.js:126:13)
+    at WebContents.emit (events.js:214:7)
+[2019-04-22 11:49:36.673] [debug] logging set up
+[2019-04-22 11:49:36.673] [debug] log level:debug
+[2019-04-22 11:49:36.673] [debug] size:5242880
+[2019-04-22 11:49:49.243] [error] an unhandled error caught in gloabl handler:  ReferenceError: fs is not defined
+    at D:\workspace\downloader\Downloader.js:57:13
+    at done (D:\workspace\downloader\node_modules\youtube-dl\lib\youtube-dl.js:295:9)
+    at done (D:\workspace\downloader\node_modules\youtube-dl\lib\youtube-dl.js:202:9)
+    at ChildProcess.exithandler (child_process.js:279:7)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-04-22 11:50:49.948] [debug] logging set up
+[2019-04-22 11:50:49.953] [debug] log level:debug
+[2019-04-22 11:50:49.953] [debug] size:5242880
+[2019-04-22 11:51:00.672] [error] an unhandled error caught in gloabl handler:  ReferenceError: path is not defined
+    at D:\workspace\downloader\Downloader.js:58:31
+    at done (D:\workspace\downloader\node_modules\youtube-dl\lib\youtube-dl.js:295:9)
+    at done (D:\workspace\downloader\node_modules\youtube-dl\lib\youtube-dl.js:202:9)
+    at ChildProcess.exithandler (child_process.js:279:7)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-04-22 11:52:16.503] [debug] logging set up
+[2019-04-22 11:52:16.503] [debug] log level:debug
+[2019-04-22 11:52:16.503] [debug] size:5242880
+[2019-04-22 11:52:45.869] [error] an unhandled error caught in gloabl handler:  ReferenceError: destination_folder is not defined
+    at D:\workspace\downloader\Downloader.js:58:41
+    at done (D:\workspace\downloader\node_modules\youtube-dl\lib\youtube-dl.js:295:9)
+    at done (D:\workspace\downloader\node_modules\youtube-dl\lib\youtube-dl.js:202:9)
+    at ChildProcess.exithandler (child_process.js:279:7)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-04-22 12:21:19.232] [debug] logging set up
+[2019-04-22 12:21:19.273] [debug] log level:debug
+[2019-04-22 12:21:19.275] [debug] size:5242880
+[2019-04-22 12:21:25.385] [error] an unhandled error caught in gloabl handler:  TypeError: Cannot read property 'getPath' of undefined
+    at new Downloader (D:\workspace\downloader\Downloader.js:11:49)
+    at new MainApp (D:\workspace\downloader\MainApp.js:19:27)
+    at Object.<anonymous> (D:\workspace\downloader\main2.js:5:1)
+    at Object.<anonymous> (D:\workspace\downloader\main2.js:6:3)
+    at Module._compile (module.js:642:30)
+    at Object.Module._extensions..js (module.js:653:10)
+    at Module.load (module.js:561:32)
+    at tryModuleLoad (module.js:504:12)
+    at Function.Module._load (module.js:496:3)
+    at loadApplicationPackage (D:\workspace\downloader\node_modules\electron\dist\resources\default_app.asar\main.js:287:12)
+    at Object.<anonymous> (D:\workspace\downloader\node_modules\electron\dist\resources\default_app.asar\main.js:328:5)
+    at Object.<anonymous> (D:\workspace\downloader\node_modules\electron\dist\resources\default_app.asar\main.js:365:3)
+    at Module._compile (module.js:642:30)
+    at Object.Module._extensions..js (module.js:653:10)
+    at Module.load (module.js:561:32)
+    at tryModuleLoad (module.js:504:12)
+    at Function.Module._load (module.js:496:3)
+    at Object.<anonymous> (D:\workspace\downloader\node_modules\electron\dist\resources\electron.asar\browser\init.js:186:8)
+    at Object.<anonymous> (D:\workspace\downloader\node_modules\electron\dist\resources\electron.asar\browser\init.js:188:3)
+    at Module._compile (module.js:642:30)
+    at Object.Module._extensions..js (module.js:653:10)
+    at Module.load (module.js:561:32)
+[2019-04-22 12:26:44.184] [debug] logging set up
+[2019-04-22 12:26:44.222] [debug] log level:debug
+[2019-04-22 12:26:44.224] [debug] size:5242880
+[2019-04-22 12:27:20.040] [error] an unhandled error caught in gloabl handler:  TypeError: Cannot read property 'destination_folder' of undefined
+    at D:\workspace\downloader\Downloader.js:59:46
+    at done (D:\workspace\downloader\node_modules\youtube-dl\lib\youtube-dl.js:295:9)
+    at done (D:\workspace\downloader\node_modules\youtube-dl\lib\youtube-dl.js:202:9)
+    at ChildProcess.exithandler (child_process.js:279:7)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-04-22 12:30:12.793] [debug] logging set up
+[2019-04-22 12:30:12.799] [debug] log level:debug
+[2019-04-22 12:30:12.802] [debug] size:5242880
+[2019-04-22 12:30:26.147] [error] an unhandled error caught in gloabl handler:  ReferenceError: app is not defined
+    at youtubedl.getInfo (D:\workspace\downloader\Downloader.js:62:46)
+    at done (D:\workspace\downloader\node_modules\youtube-dl\lib\youtube-dl.js:295:9)
+    at done (D:\workspace\downloader\node_modules\youtube-dl\lib\youtube-dl.js:202:9)
+    at ChildProcess.exithandler (child_process.js:279:7)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-04-22 12:33:55.499] [debug] logging set up
+[2019-04-22 12:33:55.503] [debug] log level:debug
+[2019-04-22 12:33:55.503] [debug] size:5242880
+[2019-04-22 12:44:00.498] [error] an unhandled error caught in gloabl handler:  TypeError: Cannot read property 'webContents' of undefined
+    at youtubedl.getInfo (D:\workspace\downloader\Downloader.js:72:26)
+    at done (D:\workspace\downloader\node_modules\youtube-dl\lib\youtube-dl.js:295:9)
+    at done (D:\workspace\downloader\node_modules\youtube-dl\lib\youtube-dl.js:202:9)
+    at ChildProcess.exithandler (child_process.js:279:7)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-04-22 13:09:23.751] [debug] logging set up
+[2019-04-22 13:09:23.802] [debug] log level:debug
+[2019-04-22 13:09:23.805] [debug] size:5242880
+[2019-04-22 13:10:00.618] [error] an unhandled error caught in gloabl handler:  TypeError: Cannot read property 'webContents' of undefined
+    at youtubedl.getInfo (D:\workspace\downloader\Downloader.js:72:26)
+    at done (D:\workspace\downloader\node_modules\youtube-dl\lib\youtube-dl.js:295:9)
+    at done (D:\workspace\downloader\node_modules\youtube-dl\lib\youtube-dl.js:202:9)
+    at ChildProcess.exithandler (child_process.js:279:7)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-04-22 13:22:52.108] [debug] logging set up
+[2019-04-22 13:22:52.168] [debug] log level:debug
+[2019-04-22 13:22:52.174] [debug] size:5242880
+[2019-04-22 13:22:53.295] [debug] window created
+[2019-04-22 13:22:53.295] [debug] downloader object created.
+[2019-04-22 14:57:04.087] [debug] logging set up
+[2019-04-22 14:57:04.091] [debug] log level:debug
+[2019-04-22 14:57:04.093] [debug] size:5242880
+[2019-04-22 14:57:07.986] [debug] window created
+[2019-04-22 14:57:08.053] [debug] downloader object created.
+[2019-04-22 14:57:17.950] [debug] in ipcMain start_load 
+[2019-04-22 14:57:17.954] [debug] in fun loadUsingYDL
+[2019-04-22 15:10:46.192] [debug] logging set up
+[2019-04-22 15:10:46.222] [debug] log level:debug
+[2019-04-22 15:10:46.226] [debug] size:5242880
+[2019-04-22 15:10:48.929] [debug] window created
+[2019-04-22 15:10:49.103] [debug] downloader object created.
+[2019-04-22 15:11:02.266] [debug] in ipcMain start_load 
+[2019-04-22 15:11:02.278] [debug] in fun loadUsingYDL
+[2019-04-22 15:11:12.295] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-04-22 15:16:12.942] [debug] logging set up
+[2019-04-22 15:16:12.971] [debug] log level:debug
+[2019-04-22 15:16:12.975] [debug] size:5242880
+[2019-04-22 15:16:14.908] [debug] window created
+[2019-04-22 15:16:14.911] [debug] downloader object created.
+[2019-04-22 15:16:55.026] [debug] in ipcMain start_load 
+[2019-04-22 15:16:55.041] [debug] in fun loadUsingYDL
+[2019-04-22 15:17:05.326] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-04-22 15:17:05.444] [error] an unhandled error caught in gloabl handler:  ReferenceError: downloadUsingYDL is not defined
+    at EventEmitter.ipcMain.on (D:\workspace\downloader\Downloader.js:55:13)
+    at emitTwo (events.js:126:13)
+    at EventEmitter.emit (events.js:214:7)
+    at WebContents.<anonymous> (D:\workspace\downloader\node_modules\electron\dist\resources\electron.asar\browser\api\web-contents.js:287:13)
+    at emitTwo (events.js:126:13)
+    at WebContents.emit (events.js:214:7)
+[2019-04-22 15:17:41.318] [debug] logging set up
+[2019-04-22 15:17:41.321] [debug] log level:debug
+[2019-04-22 15:17:41.323] [debug] size:5242880
+[2019-04-22 15:17:42.155] [debug] window created
+[2019-04-22 15:17:42.178] [debug] downloader object created.
+[2019-04-22 15:17:53.727] [debug] in ipcMain start_load 
+[2019-04-22 15:17:53.744] [debug] in fun loadUsingYDL
+[2019-04-22 15:17:59.720] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-04-22 15:18:10.967] [error] an unhandled error caught in gloabl handler:  ReferenceError: destination_folder is not defined
+    at Readable.video.on (D:\workspace\downloader\Downloader.js:134:41)
+    at emitOne (events.js:116:13)
+    at Readable.emit (events.js:211:7)
+    at Request.response (D:\workspace\downloader\node_modules\youtube-dl\lib\youtube-dl.js:75:16)
+    at emitOne (events.js:116:13)
+    at Request.emit (events.js:211:7)
+    at Request.onRequestResponse (D:\workspace\downloader\node_modules\request\request.js:1066:10)
+    at emitOne (events.js:116:13)
+    at ClientRequest.emit (events.js:211:7)
+    at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:551:21)
+    at HTTPParser.parserOnHeadersComplete (_http_common.js:117:23)
+    at TLSSocket.socketOnData (_http_client.js:440:20)
+    at emitOne (events.js:116:13)
+    at TLSSocket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at TLSSocket.Readable.push (_stream_readable.js:208:10)
+    at TLSWrap.onread (net.js:594:20)
+[2019-04-22 15:18:11.022] [error] an unhandled error caught in gloabl handler:  Error: Parse Error
+    at TLSSocket.socketOnData (_http_client.js:440:20)
+    at emitOne (events.js:116:13)
+    at TLSSocket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at TLSSocket.Readable.push (_stream_readable.js:208:10)
+    at TLSWrap.onread (net.js:594:20)
+[2019-04-22 15:19:15.112] [debug] logging set up
+[2019-04-22 15:19:15.115] [debug] log level:debug
+[2019-04-22 15:19:15.118] [debug] size:5242880
+[2019-04-22 15:19:16.173] [debug] window created
+[2019-04-22 15:19:16.177] [debug] downloader object created.
+[2019-04-22 15:19:26.024] [debug] in ipcMain start_load 
+[2019-04-22 15:19:26.046] [debug] in fun loadUsingYDL
+[2019-04-22 15:19:32.519] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-04-22 15:28:29.270] [debug] logging set up
+[2019-04-22 15:28:29.305] [debug] log level:debug
+[2019-04-22 15:28:29.310] [debug] size:5242880
+[2019-04-22 15:28:30.822] [debug] window created
+[2019-04-22 15:28:30.826] [debug] downloader object created.
+[2019-04-22 15:28:52.704] [debug] in ipcMain start_load 
+[2019-04-22 15:28:52.714] [debug] in fun loadUsingYDL
+[2019-04-22 15:28:59.226] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-04-22 15:28:59.234] [debug] ------------in fun downloadUsingYDL-------------
+[2019-04-22 15:28:59.236] [debug] downlaod video url:https://www.youtube.com/watch?v=QohH89Eu5iM
+[2019-04-22 15:29:05.276] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-04-22 15:30:00.034] [debug] logging set up
+[2019-04-22 15:30:00.037] [debug] log level:debug
+[2019-04-22 15:30:00.040] [debug] size:5242880
+[2019-04-22 15:30:00.834] [debug] window created
+[2019-04-22 15:30:00.849] [debug] downloader object created.
+[2019-04-22 15:30:22.680] [debug] in ipcMain start_load 
+[2019-04-22 15:30:22.692] [debug] in fun loadUsingYDL
+[2019-04-22 17:30:30.241] [debug] logging set up
+[2019-04-22 17:30:30.296] [debug] log level:debug
+[2019-04-22 17:30:30.298] [debug] size:5242880
+[2019-04-22 17:30:31.904] [debug] window created
+[2019-04-22 17:30:31.909] [debug] downloader object created.
+[2019-04-22 17:33:10.952] [debug] in ipcMain start_load 
+[2019-04-22 17:33:10.967] [debug] in fun loadUsingYDL
+[2019-04-22 17:35:49.100] [debug] logging set up
+[2019-04-22 17:35:49.103] [debug] log level:debug
+[2019-04-22 17:35:49.104] [debug] size:5242880
+[2019-04-22 17:35:49.832] [debug] window created
+[2019-04-22 17:35:49.851] [debug] downloader object created.
+[2019-04-22 17:35:54.983] [debug] in ipcMain start_load 
+[2019-04-22 17:35:54.998] [debug] in fun loadUsingYDL
+[2019-04-22 17:36:01.472] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-04-22 17:36:01.501] [debug] ------------in fun downloadUsingYDL-------------
+[2019-04-22 17:36:01.503] [debug] downlaod video url:https://www.youtube.com/watch?v=QohH89Eu5iM
+[2019-04-22 17:46:08.258] [error] an unhandled error caught in gloabl handler:  Error: Command failed: D:\workspace\downloader\node_modules\youtube-dl\bin\youtube-dl.exe --dump-json --format=18 http://www.youtube.com/watch?v=QohH89Eu5iM
+ERROR: Unable to download webpage: The read operation timed out (caused by timeout('The read operation timed out',))
+
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-04-22 17:54:53.175] [debug] logging set up
+[2019-04-22 17:54:53.191] [debug] log level:debug
+[2019-04-22 17:54:53.191] [debug] size:5242880
+[2019-04-22 17:54:54.321] [debug] window created
+[2019-04-22 17:54:54.350] [debug] downloader object created.
+[2019-04-22 17:55:01.316] [debug] in ipcMain start_load 
+[2019-04-22 17:55:01.375] [debug] in fun loadUsingYDL
+[2019-04-22 17:55:14.008] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-04-22 17:55:14.026] [debug] ------------in fun downloadUsingYDL-------------
+[2019-04-22 17:55:14.029] [debug] downlaod video url:https://www.youtube.com/watch?v=QohH89Eu5iM
+[2019-04-22 17:55:28.453] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-04-22 17:58:48.770] [debug] logging set up
+[2019-04-22 17:58:48.770] [debug] log level:debug
+[2019-04-22 17:58:48.770] [debug] size:5242880
+[2019-04-22 17:58:49.533] [debug] window created
+[2019-04-22 17:58:49.559] [debug] downloader object created.
+[2019-04-22 17:58:54.419] [debug] in ipcMain start_load 
+[2019-04-22 17:58:54.434] [debug] in fun loadUsingYDL
+[2019-04-22 18:15:23.101] [debug] logging set up
+[2019-04-22 18:15:23.119] [debug] log level:debug
+[2019-04-22 18:15:23.124] [debug] size:5242880
+[2019-04-22 18:15:23.877] [debug] window created
+[2019-04-22 18:15:23.900] [debug] downloader object created.
+[2019-04-22 18:16:20.077] [debug] in ipcMain start_load 
+[2019-04-22 18:16:20.092] [debug] in fun loadUsingYDL
+[2019-04-22 18:16:58.622] [debug] logging set up
+[2019-04-22 18:16:58.623] [debug] log level:debug
+[2019-04-22 18:16:58.623] [debug] size:5242880
+[2019-04-22 18:16:59.342] [debug] window created
+[2019-04-22 18:16:59.352] [debug] downloader object created.
+[2019-04-22 18:17:03.648] [debug] in ipcMain start_load 
+[2019-04-22 18:17:03.648] [debug] in fun loadUsingYDL
+[2019-04-22 18:17:08.829] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-04-22 18:17:08.858] [debug] ------------in fun downloadUsingYDL-------------
+[2019-04-22 18:17:08.861] [debug] downlaod video url:https://www.youtube.com/watch?v=QohH89Eu5iM
+[2019-04-22 18:17:15.324] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-04-22 18:34:52.254] [debug] logging set up
+[2019-04-22 18:34:52.292] [debug] log level:debug
+[2019-04-22 18:34:52.294] [debug] size:5242880
+[2019-04-22 18:34:54.154] [debug] window created
+[2019-04-22 18:34:54.157] [debug] downloader object created.
+[2019-04-22 18:36:18.702] [debug] in ipcMain start_load 
+[2019-04-22 18:36:18.702] [debug] in fun loadUsingYDL
+[2019-04-22 18:37:44.363] [debug] logging set up
+[2019-04-22 18:37:44.363] [debug] log level:debug
+[2019-04-22 18:37:44.363] [debug] size:5242880
+[2019-04-22 18:37:45.249] [debug] window created
+[2019-04-22 18:37:45.255] [debug] downloader object created.
+[2019-04-22 18:37:50.179] [debug] in ipcMain start_load 
+[2019-04-22 18:37:50.179] [debug] in fun loadUsingYDL
+[2019-04-22 18:38:01.523] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-04-22 18:38:01.531] [debug] ------------in fun downloadUsingYDL-------------
+[2019-04-22 18:38:01.534] [debug] downlaod video url:https://www.youtube.com/watch?v=QohH89Eu5iM
+[2019-04-22 18:38:24.503] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-04-22 18:38:29.132] [error] an unhandled error caught in gloabl handler:  TypeError: Cannot read property 'win' of null
+    at D:\workspace\downloader\FileManager.js:29:26
+    at FSReqWrap.oncomplete (fs.js:135:15)

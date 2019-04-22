@@ -189,6 +189,7 @@ function showProgressBar() {
 
 function downloadProgress(info) {
     var downloadedSize;
+    console.log('--------in fun downloadProgress---------');
     console.log('info.id: in progress :');
     console.log(info.id);
     var progressDiv = document.getElementById('progressDiv_' + info.id);
@@ -258,4 +259,12 @@ function showThumbNailAndName(info) {
     var thumbnail = document.getElementById("videoThumbnail_" + info.id);
     thumbnail.src = info.thumbnails[0].url;
     thumbnail.style.display = "inline-block";
+}
+
+function clear_status() {
+    status_text.innerHTML = "";
+    if (downloadBtn.style.display == "none") {
+        downloadBtn.style.display = "inline-block";
+        processIcon.style.display = "none";
+    }
 }

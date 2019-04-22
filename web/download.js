@@ -16,6 +16,7 @@ function loadVideo(info) {
 
 
 function download_video(info) {
+    console.log('----------in fun download_video----------');
     console.log('downloading video');
     var url;
     //var info = queue.toDownload[0];
@@ -39,7 +40,7 @@ function downloadFromQueue() {
 
 ipcRenderer.on('load-complete', function (event, info) {
     showVideoInfo(info.loadedInfo);
-    console.log('in load-complete');
+    console.log('in ipcRenderer load-complete');
     console.log(info);
     console.log('video type:');
     console.log(info.type);
@@ -88,6 +89,7 @@ function loadNext() {
 
 
 function downloadNext() {
+    console.log('-----in fun downloadNext--------');
     var info = queue.toDownload[0];
     // if(info.type === "single") queue.toDownload.shift();
     // else if(info.type === "playlist"){

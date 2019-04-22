@@ -1,8 +1,11 @@
 const {BrowserWindow, ipcMain, shell } = require('electron');
 const Downloader = require('./Downloader');
 const config = require('./config');
+const log = require('./Logger');
+
 const AutoUpdater = require('./AutoUpdater');
 const Info = require('./Info');
+const FileManager = require('./FileManager');
 const path = require('path')
 const url = require('url')
 const exec = require('child_process').exec;
@@ -13,7 +16,10 @@ const fs = require('fs');
 module.exports = class MainApp {
     constructor(app) {
         this.app = app;
+
         this.onReady();
+        //this.downloader = new Downloader(this.app,this.win);
+        //this.info = new Info();
         this.setAppEvents();
     }
 
@@ -47,10 +53,11 @@ module.exports = class MainApp {
     }
 
     createWindow() {
-        this.win = new BrowserWindow({ width: 800, height: 600 })
+        this.win = new BrowserWindow({ width: 800, height: 600 });
+        
 
         this.win.loadURL(url.format({
-            pathname: path.join(__dirname, 'index.html'),
+            pathname: path.join(__dirname, 'web/index.html'),
             protocol: 'file:',
             slashes: true
         }));
@@ -58,7 +65,10 @@ module.exports = class MainApp {
         this.win.on('closed', () => {
             this.win = null
         });
-        console.log('window created');
+        log.debug('window created');
+        this.downloader = new Downloader(this.app,this.win);
+        this.FileManager = new FileManager(this.app,this.win);
+        log.debug('downloader object created.')
     }
 }
 

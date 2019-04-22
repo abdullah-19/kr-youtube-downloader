@@ -3,9 +3,12 @@ const { ipcMain, shell } = require('electron');
 const Url = require('./Url');
 const youtubedl = require('youtube-dl');
 const fs = require('fs');
+const path = require('path');
 
 module.exports = class FileManager {
     constructor(app, win) {
+        this.app = app;
+        this.win = win;
         this.setIpcEvents();
     }
 
@@ -23,14 +26,14 @@ module.exports = class FileManager {
             if (err) {
                 if (err.code === 'EXDEV') {
                     copy();
-                    win.webContents.send('move-complete', info);
+                    this.win.webContents.send('move-complete', info);
                 } else {
                     callback(err);
                 }
                 return;
             }
             else {
-                win.webContents.send('move-complete', info);
+                this.win.webContents.send('move-complete', info);
             }
         });
 
@@ -56,7 +59,7 @@ module.exports = class FileManager {
 
     onDownloadComplete() {
         ipcMain.on('download-complete', (event, info) => {
-            move(info.downloadFilePath, path.join(app.getPath('videos'), "kr_youtube_downloader", info._filename), info, (err) => {
+            this.move(info.downloadFilePath, path.join(this.app.getPath('videos'), "kr_youtube_downloader", info._filename), info, (err) => {
                 console.log(err);
             });
         });
@@ -64,7 +67,7 @@ module.exports = class FileManager {
 
     onShowDownloads() {
         ipcMain.on('open_file_directory', function (event, info) {
-            var downloadedFile_path = path.join(app.getPath('videos'), "kr_youtube_downloader", info._filename);
+            var downloadedFile_path = path.join(this.app.getPath('videos'), "kr_youtube_downloader", info._filename);
             console.log("downloaded file path:" + downloadedFile_path);
             //shell.showItemInFolder(app.getPath('videos')+"/myDownloader/"+"\""+downloadFileName+"\"");
             shell.showItemInFolder(downloadedFile_path);
