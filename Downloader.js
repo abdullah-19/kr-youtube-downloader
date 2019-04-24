@@ -44,7 +44,7 @@ module.exports = class Downloader {
             console.log("-----------in ipcMain start_download------------");
             if (info.type === "playlist") {
                 var id = JSON.parse(info.list[info.currentDownloadItem]).id;
-                url = getUrlFromId(id);
+                url = this.url.getUrlFromId(id);
                 info.url = url;
             }
 
@@ -107,17 +107,20 @@ module.exports = class Downloader {
 
 
     setPlaylistDownloadEvent() {
-        ipcMain.on('start_playlist_download', function (event, arg) {
-            this.download_videoList(arg);
+        log.debug('-------------in fun setPlaylistDownloadEvent-----------------');
+        ipcMain.on('start_playlist_download', (event, url) =>{
+            log.debug('----------in ipcMain start_playlist_download---------------');
+            this.download_videoList(url);
         })
     }
 
     download_videoList(url) {
+        log.debug('-------------in fun download_videoList-----------------');
         youtubedl.exec(url, ['-j', '--flat-playlist'], {}, (err, output) => {
             if (err) throw err;
             var info = {};
             info.type = "playlist";
-            info.folderName = "playlist:" + getDateTime();
+            info.folderName = "playlist:" + this.getDateTime();
             info.list = output;
             info.currentDownloadItem = 0;
             info.currentLoadItem = 0;

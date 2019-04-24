@@ -22,7 +22,7 @@ module.exports = class FileManager {
             fs.mkdirSync(dir);
         }
 
-        fs.rename(oldPath, newPath, function (err) {
+        fs.rename(oldPath, newPath, (err) =>{
             if (err) {
                 if (err.code === 'EXDEV') {
                     copy();
@@ -66,7 +66,7 @@ module.exports = class FileManager {
     }
 
     onShowDownloads() {
-        ipcMain.on('open_file_directory', function (event, info) {
+        ipcMain.on('open_file_directory', (event, info) =>{
             var downloadedFile_path = path.join(this.app.getPath('videos'), "kr_youtube_downloader", info._filename);
             console.log("downloaded file path:" + downloadedFile_path);
             //shell.showItemInFolder(app.getPath('videos')+"/myDownloader/"+"\""+downloadFileName+"\"");

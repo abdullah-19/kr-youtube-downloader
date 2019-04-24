@@ -296,3 +296,247 @@ ERROR: Unable to download webpage: The read operation timed out (caused by timeo
 [2019-04-22 18:38:29.132] [error] an unhandled error caught in gloabl handler:  TypeError: Cannot read property 'win' of null
     at D:\workspace\downloader\FileManager.js:29:26
     at FSReqWrap.oncomplete (fs.js:135:15)
+[2019-04-23 17:29:20.765] [debug] logging set up
+[2019-04-23 17:29:20.765] [debug] log level:debug
+[2019-04-23 17:29:20.765] [debug] size:5242880
+[2019-04-23 17:29:24.204] [debug] window created
+[2019-04-23 17:29:24.210] [debug] downloader object created.
+[2019-04-23 17:30:46.062] [debug] in ipcMain start_load 
+[2019-04-23 17:30:46.064] [debug] in fun loadUsingYDL
+[2019-04-23 18:36:07.437] [debug] logging set up
+[2019-04-23 18:36:07.492] [debug] log level:debug
+[2019-04-23 18:36:07.494] [debug] size:5242880
+[2019-04-23 18:36:11.571] [debug] window created
+[2019-04-23 18:36:11.577] [debug] downloader object created.
+[2019-04-23 18:36:19.216] [debug] in ipcMain start_load 
+[2019-04-23 18:36:19.232] [debug] in fun loadUsingYDL
+[2019-04-23 18:36:24.883] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-04-23 18:36:24.921] [debug] ------------in fun downloadUsingYDL-------------
+[2019-04-23 18:36:24.924] [debug] downlaod video url:https://www.youtube.com/watch?v=QohH89Eu5iM
+[2019-04-23 18:36:31.344] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-04-23 18:36:31.968] [error] an unhandled error caught in gloabl handler:  TypeError: Cannot read property 'win' of null
+    at D:\workspace\downloader\FileManager.js:29:26
+    at FSReqWrap.oncomplete (fs.js:135:15)
+[2019-04-23 18:44:18.686] [debug] logging set up
+[2019-04-23 18:44:18.690] [debug] log level:debug
+[2019-04-23 18:44:18.692] [debug] size:5242880
+[2019-04-23 18:44:20.021] [debug] window created
+[2019-04-23 18:44:20.056] [debug] downloader object created.
+[2019-04-23 18:44:28.634] [debug] in ipcMain start_load 
+[2019-04-23 18:44:28.634] [debug] in fun loadUsingYDL
+[2019-04-23 18:44:33.700] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-04-23 18:44:33.711] [debug] ------------in fun downloadUsingYDL-------------
+[2019-04-23 18:44:33.714] [debug] downlaod video url:https://www.youtube.com/watch?v=QohH89Eu5iM
+[2019-04-23 18:44:39.184] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-04-23 18:47:17.545] [debug] logging set up
+[2019-04-23 18:47:17.577] [debug] log level:debug
+[2019-04-23 18:47:17.579] [debug] size:5242880
+[2019-04-23 18:47:18.760] [debug] window created
+[2019-04-23 18:47:18.760] [debug] downloader object created.
+[2019-04-23 18:52:50.848] [debug] logging set up
+[2019-04-23 18:52:50.868] [debug] log level:debug
+[2019-04-23 18:52:50.872] [debug] size:5242880
+[2019-04-23 18:52:51.664] [debug] window created
+[2019-04-23 18:52:51.679] [debug] downloader object created.
+[2019-04-23 18:53:28.060] [error] an unhandled error caught in gloabl handler:  TypeError: this.download_videoList is not a function
+    at EventEmitter.<anonymous> (D:\workspace\downloader\Downloader.js:111:18)
+    at emitTwo (events.js:126:13)
+    at EventEmitter.emit (events.js:214:7)
+    at WebContents.<anonymous> (D:\workspace\downloader\node_modules\electron\dist\resources\electron.asar\browser\api\web-contents.js:287:13)
+    at emitTwo (events.js:126:13)
+    at WebContents.emit (events.js:214:7)
+[2019-04-23 19:00:55.197] [debug] logging set up
+[2019-04-23 19:00:55.213] [debug] log level:debug
+[2019-04-23 19:00:55.213] [debug] size:5242880
+[2019-04-23 19:00:56.021] [debug] window created
+[2019-04-23 19:00:56.026] [debug] downloader object created.
+[2019-04-23 19:01:08.955] [error] an unhandled error caught in gloabl handler:  ReferenceError: getDateTime is not defined
+    at youtubedl.exec (D:\workspace\downloader\Downloader.js:120:13)
+    at done (D:\workspace\downloader\node_modules\youtube-dl\lib\youtube-dl.js:202:9)
+    at ChildProcess.exithandler (child_process.js:279:7)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-04-23 19:02:15.228] [debug] logging set up
+[2019-04-23 19:02:15.228] [debug] log level:debug
+[2019-04-23 19:02:15.243] [debug] size:5242880
+[2019-04-23 19:02:16.054] [debug] window created
+[2019-04-23 19:02:16.069] [debug] downloader object created.
+[2019-04-23 19:16:36.649] [debug] logging set up
+[2019-04-23 19:16:36.649] [debug] log level:debug
+[2019-04-23 19:16:36.649] [debug] size:5242880
+[2019-04-23 19:16:37.909] [debug] window created
+[2019-04-23 19:16:37.909] [debug] -------------in fun setPlaylistDownloadEvent-----------------
+[2019-04-23 19:16:37.909] [debug] downloader object created.
+[2019-04-23 19:17:09.148] [debug] ----------in ipcMain start_playlist_download---------------
+[2019-04-23 19:17:09.148] [debug] -------------in fun download_videoList-----------------
+[2019-04-23 19:17:18.124] [debug] in ipcMain start_load 
+[2019-04-23 19:17:18.126] [debug] in fun loadUsingYDL
+[2019-04-23 19:17:23.873] [debug] thumbnail url:https://i.ytimg.com/vi/SuZa2nv24HE/maxresdefault.jpg
+[2019-04-23 19:17:24.173] [error] an unhandled error caught in gloabl handler:  ReferenceError: getUrlFromId is not defined
+    at EventEmitter.ipcMain.on (D:\workspace\downloader\Downloader.js:47:17)
+    at emitTwo (events.js:126:13)
+    at EventEmitter.emit (events.js:214:7)
+    at WebContents.<anonymous> (D:\workspace\downloader\node_modules\electron\dist\resources\electron.asar\browser\api\web-contents.js:287:13)
+    at emitTwo (events.js:126:13)
+    at WebContents.emit (events.js:214:7)
+[2019-04-23 19:17:24.176] [debug] in ipcMain start_load 
+[2019-04-23 19:17:24.179] [debug] in fun loadUsingYDL
+[2019-04-23 19:17:30.945] [debug] thumbnail url:https://i.ytimg.com/vi/BdGaUltG_sk/maxresdefault.jpg
+[2019-04-23 19:17:30.959] [debug] in ipcMain start_load 
+[2019-04-23 19:17:30.962] [debug] in fun loadUsingYDL
+[2019-04-23 19:17:37.574] [debug] thumbnail url:https://i.ytimg.com/vi/GYHaucEVFG4/maxresdefault.jpg
+[2019-04-23 19:17:37.586] [debug] in ipcMain start_load 
+[2019-04-23 19:17:37.589] [debug] in fun loadUsingYDL
+[2019-04-23 19:17:43.551] [debug] thumbnail url:https://i.ytimg.com/vi/P7-hAe41sIA/maxresdefault.jpg
+[2019-04-23 19:17:43.558] [debug] in ipcMain start_load 
+[2019-04-23 19:17:43.560] [debug] in fun loadUsingYDL
+[2019-04-23 19:17:50.533] [debug] thumbnail url:https://i.ytimg.com/vi/Q3uLQxJ5vqE/maxresdefault.jpg
+[2019-04-23 19:17:50.539] [debug] in ipcMain start_load 
+[2019-04-23 19:17:50.542] [debug] in fun loadUsingYDL
+[2019-04-23 19:17:57.119] [error] an unhandled error caught in gloabl handler:  Error: stdout maxBuffer exceeded
+    at Socket.onChildStdout (child_process.js:340:14)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:246:13)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at Pipe.onread (net.js:594:20)
+[2019-04-23 23:58:58.981] [debug] logging set up
+[2019-04-23 23:58:59.020] [debug] log level:debug
+[2019-04-23 23:58:59.025] [debug] size:5242880
+[2019-04-23 23:59:00.460] [debug] window created
+[2019-04-23 23:59:00.472] [debug] -------------in fun setPlaylistDownloadEvent-----------------
+[2019-04-23 23:59:00.476] [debug] downloader object created.
+[2019-04-24 00:04:54.711] [debug] ----------in ipcMain start_playlist_download---------------
+[2019-04-24 00:04:54.715] [debug] -------------in fun download_videoList-----------------
+[2019-04-24 00:05:02.089] [debug] in ipcMain start_load 
+[2019-04-24 00:05:02.091] [debug] in fun loadUsingYDL
+[2019-04-24 00:05:09.331] [debug] thumbnail url:https://i.ytimg.com/vi/SuZa2nv24HE/maxresdefault.jpg
+[2019-04-24 00:05:09.429] [error] an unhandled error caught in gloabl handler:  ReferenceError: getUrlFromId is not defined
+    at EventEmitter.ipcMain.on (D:\workspace\downloader\Downloader.js:47:17)
+    at emitTwo (events.js:126:13)
+    at EventEmitter.emit (events.js:214:7)
+    at WebContents.<anonymous> (D:\workspace\downloader\node_modules\electron\dist\resources\electron.asar\browser\api\web-contents.js:287:13)
+    at emitTwo (events.js:126:13)
+    at WebContents.emit (events.js:214:7)
+[2019-04-24 00:05:09.432] [debug] in ipcMain start_load 
+[2019-04-24 00:05:09.438] [debug] in fun loadUsingYDL
+[2019-04-24 00:05:16.486] [debug] thumbnail url:https://i.ytimg.com/vi/BdGaUltG_sk/maxresdefault.jpg
+[2019-04-24 00:05:16.549] [debug] in ipcMain start_load 
+[2019-04-24 00:05:16.553] [debug] in fun loadUsingYDL
+[2019-04-24 00:05:24.576] [debug] thumbnail url:https://i.ytimg.com/vi/GYHaucEVFG4/maxresdefault.jpg
+[2019-04-24 00:05:24.602] [debug] in ipcMain start_load 
+[2019-04-24 00:05:24.604] [debug] in fun loadUsingYDL
+[2019-04-24 00:05:31.097] [debug] thumbnail url:https://i.ytimg.com/vi/P7-hAe41sIA/maxresdefault.jpg
+[2019-04-24 00:05:31.113] [debug] in ipcMain start_load 
+[2019-04-24 00:05:31.121] [debug] in fun loadUsingYDL
+[2019-04-24 00:05:37.369] [debug] thumbnail url:https://i.ytimg.com/vi/Q3uLQxJ5vqE/maxresdefault.jpg
+[2019-04-24 00:05:37.378] [debug] in ipcMain start_load 
+[2019-04-24 00:05:37.383] [debug] in fun loadUsingYDL
+[2019-04-24 00:05:45.799] [error] an unhandled error caught in gloabl handler:  Error: stdout maxBuffer exceeded
+    at Socket.onChildStdout (child_process.js:340:14)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:246:13)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at Pipe.onread (net.js:594:20)
+[2019-04-24 00:07:35.491] [debug] logging set up
+[2019-04-24 00:07:35.494] [debug] log level:debug
+[2019-04-24 00:07:35.496] [debug] size:5242880
+[2019-04-24 00:07:37.589] [debug] window created
+[2019-04-24 00:07:37.593] [debug] -------------in fun setPlaylistDownloadEvent-----------------
+[2019-04-24 00:07:37.596] [debug] downloader object created.
+[2019-04-24 00:07:45.639] [debug] ----------in ipcMain start_playlist_download---------------
+[2019-04-24 00:07:45.651] [debug] -------------in fun download_videoList-----------------
+[2019-04-24 00:07:50.929] [debug] in ipcMain start_load 
+[2019-04-24 00:07:50.933] [debug] in fun loadUsingYDL
+[2019-04-24 00:07:57.497] [debug] thumbnail url:https://i.ytimg.com/vi/SuZa2nv24HE/maxresdefault.jpg
+[2019-04-24 00:07:57.544] [debug] ------------in fun downloadUsingYDL-------------
+[2019-04-24 00:07:57.548] [debug] downlaod video url:https://www.youtube.com/watch?v=SuZa2nv24HE
+[2019-04-24 00:07:57.620] [debug] in ipcMain start_load 
+[2019-04-24 00:07:57.624] [debug] in fun loadUsingYDL
+[2019-04-24 00:18:09.005] [debug] thumbnail url:https://i.ytimg.com/vi/BdGaUltG_sk/maxresdefault.jpg
+[2019-04-24 00:18:09.124] [debug] in ipcMain start_load 
+[2019-04-24 00:18:09.153] [debug] in fun loadUsingYDL
+[2019-04-24 00:18:10.786] [debug] thumbnail url:https://i.ytimg.com/vi/SuZa2nv24HE/maxresdefault.jpg
+[2019-04-24 00:18:26.424] [debug] thumbnail url:https://i.ytimg.com/vi/GYHaucEVFG4/maxresdefault.jpg
+[2019-04-24 00:18:26.447] [debug] in ipcMain start_load 
+[2019-04-24 00:18:26.454] [debug] in fun loadUsingYDL
+[2019-04-24 00:18:37.486] [debug] thumbnail url:https://i.ytimg.com/vi/P7-hAe41sIA/maxresdefault.jpg
+[2019-04-24 00:18:37.496] [debug] in ipcMain start_load 
+[2019-04-24 00:18:37.502] [debug] in fun loadUsingYDL
+[2019-04-24 00:18:45.534] [debug] thumbnail url:https://i.ytimg.com/vi/Q3uLQxJ5vqE/maxresdefault.jpg
+[2019-04-24 00:18:45.553] [debug] in ipcMain start_load 
+[2019-04-24 00:18:45.560] [debug] in fun loadUsingYDL
+[2019-04-24 00:19:01.842] [error] an unhandled error caught in gloabl handler:  Error: stdout maxBuffer exceeded
+    at Socket.onChildStdout (child_process.js:340:14)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:246:13)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at Pipe.onread (net.js:594:20)
+[2019-04-24 00:22:24.418] [debug] ------------in fun downloadUsingYDL-------------
+[2019-04-24 00:22:24.428] [debug] downlaod video url:https://www.youtube.com/watch?v=BdGaUltG_sk
+[2019-04-24 00:22:35.525] [debug] thumbnail url:https://i.ytimg.com/vi/BdGaUltG_sk/maxresdefault.jpg
+[2019-04-24 00:24:39.239] [debug] ------------in fun downloadUsingYDL-------------
+[2019-04-24 00:24:39.244] [debug] downlaod video url:https://www.youtube.com/watch?v=GYHaucEVFG4
+[2019-04-24 00:24:54.366] [debug] thumbnail url:https://i.ytimg.com/vi/GYHaucEVFG4/maxresdefault.jpg
+[2019-04-24 00:27:14.542] [debug] ------------in fun downloadUsingYDL-------------
+[2019-04-24 00:27:14.556] [debug] downlaod video url:https://www.youtube.com/watch?v=P7-hAe41sIA
+[2019-04-24 00:27:23.215] [debug] thumbnail url:https://i.ytimg.com/vi/P7-hAe41sIA/maxresdefault.jpg
+[2019-04-24 00:29:36.782] [debug] ------------in fun downloadUsingYDL-------------
+[2019-04-24 00:29:36.798] [debug] downlaod video url:https://www.youtube.com/watch?v=Q3uLQxJ5vqE
+[2019-04-24 00:29:44.195] [debug] thumbnail url:https://i.ytimg.com/vi/Q3uLQxJ5vqE/maxresdefault.jpg
+[2019-04-24 00:35:12.762] [debug] ------------in fun downloadUsingYDL-------------
+[2019-04-24 00:35:12.795] [debug] downlaod video url:https://www.youtube.com/watch?v=t_qHCNMfIpo
+[2019-04-24 00:35:21.307] [error] an unhandled error caught in gloabl handler:  Error: stdout maxBuffer exceeded
+    at Socket.onChildStdout (child_process.js:340:14)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:246:13)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at Pipe.onread (net.js:594:20)
+[2019-04-24 00:36:00.937] [debug] logging set up
+[2019-04-24 00:36:00.940] [debug] log level:debug
+[2019-04-24 00:36:00.943] [debug] size:5242880
+[2019-04-24 00:36:02.466] [debug] window created
+[2019-04-24 00:36:02.497] [debug] -------------in fun setPlaylistDownloadEvent-----------------
+[2019-04-24 00:36:02.513] [debug] downloader object created.
+[2019-04-24 00:36:20.008] [debug] ----------in ipcMain start_playlist_download---------------
+[2019-04-24 00:36:20.020] [debug] -------------in fun download_videoList-----------------
+[2019-04-24 00:36:25.962] [debug] in ipcMain start_load 
+[2019-04-24 00:36:25.964] [debug] in fun loadUsingYDL
+[2019-04-24 00:36:31.149] [debug] thumbnail url:https://i.ytimg.com/vi/SuZa2nv24HE/maxresdefault.jpg
+[2019-04-24 00:36:31.158] [debug] ------------in fun downloadUsingYDL-------------
+[2019-04-24 00:36:31.161] [debug] downlaod video url:https://www.youtube.com/watch?v=SuZa2nv24HE
+[2019-04-24 00:36:31.257] [debug] in ipcMain start_load 
+[2019-04-24 00:36:31.262] [debug] in fun loadUsingYDL
+[2019-04-24 00:36:38.321] [debug] thumbnail url:https://i.ytimg.com/vi/BdGaUltG_sk/maxresdefault.jpg
+[2019-04-24 00:36:38.341] [debug] in ipcMain start_load 
+[2019-04-24 00:36:38.343] [debug] in fun loadUsingYDL
+[2019-04-24 00:36:39.280] [debug] thumbnail url:https://i.ytimg.com/vi/SuZa2nv24HE/maxresdefault.jpg
+[2019-04-24 00:36:46.479] [debug] thumbnail url:https://i.ytimg.com/vi/GYHaucEVFG4/maxresdefault.jpg
+[2019-04-24 00:36:46.497] [debug] in ipcMain start_load 
+[2019-04-24 00:36:46.500] [debug] in fun loadUsingYDL
+[2019-04-24 00:36:53.891] [debug] thumbnail url:https://i.ytimg.com/vi/P7-hAe41sIA/maxresdefault.jpg
+[2019-04-24 00:36:53.898] [debug] in ipcMain start_load 
+[2019-04-24 00:36:53.900] [debug] in fun loadUsingYDL
+[2019-04-24 00:36:59.953] [debug] thumbnail url:https://i.ytimg.com/vi/Q3uLQxJ5vqE/maxresdefault.jpg
+[2019-04-24 00:36:59.961] [debug] in ipcMain start_load 
+[2019-04-24 00:36:59.964] [debug] in fun loadUsingYDL
+[2019-04-24 00:37:08.688] [error] an unhandled error caught in gloabl handler:  Error: stdout maxBuffer exceeded
+    at Socket.onChildStdout (child_process.js:340:14)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:246:13)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at Pipe.onread (net.js:594:20)
+[2019-04-24 00:37:37.317] [debug] ------------in fun downloadUsingYDL-------------
+[2019-04-24 00:37:37.323] [debug] downlaod video url:https://www.youtube.com/watch?v=BdGaUltG_sk
+[2019-04-24 00:37:47.358] [debug] thumbnail url:https://i.ytimg.com/vi/BdGaUltG_sk/maxresdefault.jpg

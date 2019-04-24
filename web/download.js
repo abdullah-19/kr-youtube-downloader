@@ -116,3 +116,35 @@ function processNextVideo() {
     if (queue.toDownload.length != 0) downloadNext();
 }
 
+
+
+ipcRenderer.on('video-list', function (event, info) {
+    console.log('-----------------in ipcRenderer video-list------------------');
+    var playlist = {};
+    //var folderName = "Playlist:" + d.getFullYear() + "-" + d.getMonth() + "-" + d.getDate() + " " + d.toLocaleTimeString();
+    // playlist.list = video_list;
+    // playlist.folderName = folderName;
+    // playlist.currentItem = 0;
+    // console.log('video_list');
+    // var url;
+    //for(var i=0;i<video_list.length;i++){
+    //console.log('i:'+i);
+    queue.toDownload.push(info);
+    queue.toLoad.push(info);
+    // if(queue.toLoad.length == 1) download_video();
+    if(queue.toLoad.length == 1) loadVideo(info);
+    // url = "https://www.youtube.com/watch?v=" + JSON.parse(video_list[0]).id;
+    // console.log('url:' + url);
+    //download_video(url);
+    //download_playlistItem(playlist);
+    // while(true){
+    //   if(!isLoading){
+    //     console.log('not loading');
+    //     download_video(url);
+    //     break;
+    //   }
+    // }
+  
+    //}
+    //console.log(video_list);
+  })

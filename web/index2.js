@@ -47,8 +47,9 @@ function start_process() {
         }
 
     }
-    else if (url_status == 2) {
+    else if (url_status === 2) {
         //download_playlist(url);
+    
         var info = {};
         info.type = "playlist";
         info.folderName = "playlist:" + getDateTime();
@@ -66,3 +67,9 @@ function start_process() {
     console.log("Url:" + url);
 }
 
+function getDateTime() {
+    var date = new Date();
+    var time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    var current_date = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    return time + " " + current_date;
+}
