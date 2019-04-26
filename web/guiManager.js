@@ -149,20 +149,22 @@ function show_processIcon() {
 
 
 function showVideoInfo(arg) {
-    console.log('in show basic info');
+    console.log('------in fun showVideoInfo----------');
     console.log(arg);
-    if (document.getElementById(arg.id) != null) {
-        document.getElementById('video_div').removeChild(document.getElementById(arg.id));
-        document.getElementById('video_div').removeChild(document.getElementById('progressDiv_' + arg.id));
+    var id = arg.id;
+    //if (document.getElementById(arg.id) != null) {
+    if (document.getElementById(id) != null) {
+        document.getElementById('video_div').removeChild(document.getElementById(id));
+        document.getElementById('video_div').removeChild(document.getElementById('progressDiv_' + id));
     }
-    document.getElementById('temp').id = arg.id;
-    document.getElementById('progressDiv_temp').id = 'progressDiv_' + arg.id;
+    document.getElementById('temp').id = id;
+    document.getElementById('progressDiv_temp').id = 'progressDiv_' + id;
     isLoading = false;
 
     showThumbNailAndName(arg);
-    document.getElementById("processIcon_" + arg.id).style.display = "none";
-    document.getElementById('downloadingIcon_' + arg.id).style.display = "inline";
-    document.getElementById('folderIcon_' + arg.id).onclick = function () {
+    document.getElementById("processIcon_" + id).style.display = "none";
+    document.getElementById('downloadingIcon_' + id).style.display = "inline";
+    document.getElementById('folderIcon_' + id).onclick = function () {
         ipcRenderer.send('open_file_directory', arg);
     }
     //status_text.innerHTML = "Downloading...";
@@ -175,10 +177,11 @@ function showVideoInfo(arg) {
 
 
 function showBasicInfo(info) {
-    document.getElementById("processIcon_" + info.id).style.display = "none";
-    document.getElementById('filesize_' + info.id).innerHTML = "Size(KB):" + info.filesize;
-    document.getElementById('duration_' + info.id).innerHTML = "Duration(h:m:s:):" + info._duration_hms;
-    document.getElementById('filename_' + info.id).innerHTML = "Filename:" + info._filename;
+    var id = info.id;
+    document.getElementById("processIcon_" + id).style.display = "none";
+    document.getElementById('filesize_' + id).innerHTML = "Size(KB):" + info.filesize;
+    document.getElementById('duration_' + id).innerHTML = "Duration(h:m:s:):" + info._duration_hms;
+    document.getElementById('filename_' + id).innerHTML = "Filename:" + info._filename;
 }
 
 function showProgressBar() {

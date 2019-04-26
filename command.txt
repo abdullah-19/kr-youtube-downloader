@@ -9,3 +9,11 @@ Angular 7 : Part 2 - Angular 7 Full Tutorial in Hindi - What new in angular get 
 Angular 7 Stable Version Released Now - Introduction : Part 4 - Angular 7 Full Tutorial in Hindi(11min):https://www.youtube.com/watch?v=P7-hAe41sIA&index=4&list=PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
 2 hour video: https://www.youtube.com/watch?v=LIJAsKCLTqc
 
+---------playlist-----------
+1. angular playlist: https://www.youtube.com/playlist?list=PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+
+
+
+------------------commands-----------------------
+1.update the plugin: youtube-dl -U
+2.

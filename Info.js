@@ -1,29 +1,72 @@
 
 const { ipcMain, shell } = require('electron');
 const Url = require('./Url');
+const log = require('./Logger');
 const youtubedl = require('youtube-dl');
 const fs = require('fs');
+const fetchVideoInfo = require('youtube-info');
+const exec = require('child_process').exec;
+
 
 module.exports = class Info {
-    constructor(app, win) {
-        
-    }
+  constructor(app, win) {
+    this.app = app;
+    this.win = win;
+  }
 
-    getVideoInfo(url) {
-        //var url = 'http://www.youtube.com/watch?v=WKsjaOqDXgg';
-        // Optional arguments passed to youtube-dl.
-        var options = ['--username=user', '--password=hunter2'];
-        youtubedl.getInfo(url, options, function (err, info) {
-          if (err) throw err;
-          console.log('from video info');
-          console.log('id:', info.id);
-          console.log('title:', info.title);
-          console.log('url:', info.url);
-          console.log('thumbnail:', info.thumbnail);
-          console.log('description:', info.description);
-          console.log('filename:', info._filename);
-          console.log('format id:', info.format_id);
-          return info;
-        });
-      }
+  getVideoInfo(url) {
+    //var url = 'http://www.youtube.com/watch?v=WKsjaOqDXgg';
+    // Optional arguments passed to youtube-dl.
+    //var options = ['--username=user', '--password=hunter2'];
+    log.debug('--------------in fun getVideoInfo----------------');
+    return new Promise((resolve, reject) => {
+      youtubedl.getInfo(url, [],{cwd: __dirname, maxBuffer: Infinity}, function (err, info) {
+        if (err) throw err;
+        log.debug('from video info');
+        log.debug('id:', info.id);
+        log.debug('title:', info.title);
+        log.debug('url:', info.url);
+        log.debug('thumbnail:', info.thumbnail);
+        log.debug('description:', info.description);
+        log.debug('filename:', info._filename);
+        log.debug('format id:', info.format_id);
+        resolve(info);
+      });
+    });
+  }
+
+  // getInfo(id) {
+
+  //   return new Promise((resolve, reject) => {
+  //     fetchVideoInfo(id, (err, videoInfo) => {
+  //       if (err) throw new Error(err);
+  //       // if(err){
+  //       //   reject(err);
+  //       // }
+  //       log.debug(videoInfo);
+  //       //return videoInfo;
+  //       resolve(videoInfo);
+  //     });
+  //   });
+
+  // }
+
+  // async getVideoInfo(url) {
+  //   log.debug('------------------in getVideoInfo---------------');
+  //     var command = this.app.getAppPath() + "/downloads/" + "youtube-dl -j "+url;
+  //     var data= await this.execute(command);
+  //     log.debug(data);
+  //     return JSON.parse(data);
+  // }
+
+  // execute(command) {
+  //   log.debug('------------in fun execute---------------');
+  //   return new Promise((resolve,reject)=>{
+  //     exec(command, (error, stdout, stderr) => {
+  //       if (error) throw new Error(error);
+  //       resolve(stdout);
+  //     });
+  //   })
+    
+  // }
 }

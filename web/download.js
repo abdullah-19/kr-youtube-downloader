@@ -39,8 +39,9 @@ function downloadFromQueue() {
 
 
 ipcRenderer.on('load-complete', function (event, info) {
+    console.log('--------in ipcRenderer load-complete--------------');
     showVideoInfo(info.loadedInfo);
-    console.log('in ipcRenderer load-complete');
+    
     console.log(info);
     console.log('video type:');
     console.log(info.type);
