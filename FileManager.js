@@ -59,15 +59,22 @@ module.exports = class FileManager {
 
     onDownloadComplete() {
         ipcMain.on('download-complete', (event, info) => {
-            this.move(info.downloadFilePath, path.join(this.app.getPath('videos'), "kr_youtube_downloader", info._filename), info, (err) => {
+            var movePath;
+            if(info.type === "playlist") movePath = path.join(this.app.getPath('videos'), "kr_youtube_downloader",info.folderName, info.loadedInfo
+            ._filename);
+            else movePath = path.join(this.app.getPath('videos'), "kr_youtube_downloader", info.loadedInfo._filename);
+            this.move(info.loadedInfo.downloadFilePath, movePath, info, (err) => {
                 console.log(err);
             });
         });
     }
 
     onShowDownloads() {
-        ipcMain.on('open_file_directory', (event, info) =>{
-            var downloadedFile_path = path.join(this.app.getPath('videos'), "kr_youtube_downloader", info._filename);
+        ipcMain.on('open-file-directory', (event, info) =>{
+            var downloadedFile_path;
+            if(info.type === 'playlist') 
+                downloadedFile_path = path.join(this.app.getPath('videos'), "kr_youtube_downloader",info.folderName, info.loadedInfo._filename);
+            else downloadedFile_path = path.join(this.app.getPath('videos'), "kr_youtube_downloader", info.loadedInfo._filename);
             console.log("downloaded file path:" + downloadedFile_path);
             //shell.showItemInFolder(app.getPath('videos')+"/myDownloader/"+"\""+downloadFileName+"\"");
             shell.showItemInFolder(downloadedFile_path);

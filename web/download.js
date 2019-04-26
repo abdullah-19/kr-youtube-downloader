@@ -1,11 +1,11 @@
 
 function loadVideo(info) {
-    console.log('loading video');
+    console.log('--------- in fun loadVideo----------');
     var url;
     //var info = queue.toLoad[0];
     //console.log('info');
     //console.log(info);
-    ipcRenderer.send('start_load', info);
+    ipcRenderer.send('start-load', info);
     if (info.type === "single") url = info.url;
     else if (info.type === "playlist") {
         var id = JSON.parse(info.list[info.currentLoadItem]).id;
@@ -40,7 +40,7 @@ function downloadFromQueue() {
 
 ipcRenderer.on('load-complete', function (event, info) {
     console.log('--------in ipcRenderer load-complete--------------');
-    showVideoInfo(info.loadedInfo);
+    showVideoInfo(info);
     
     console.log(info);
     console.log('video type:');
@@ -73,7 +73,7 @@ ipcRenderer.on('download-started', function (event, arg) {
     // status_text.style.color = "blue";
     //downloadProgress(arg._filename,arg.size);
     // showBasicInfo(arg);
-    downloadProgress(arg.loadedInfo);
+    downloadProgress(arg);
     //downloadNext();
 });
 
@@ -130,10 +130,10 @@ ipcRenderer.on('video-list', function (event, info) {
     // var url;
     //for(var i=0;i<video_list.length;i++){
     //console.log('i:'+i);
-    queue.toDownload.push(info);
-    queue.toLoad.push(info);
+    queue.toDownload.push({...info});
+    queue.toLoad.push({...info});
     // if(queue.toLoad.length == 1) download_video();
-    if(queue.toLoad.length == 1) loadVideo(info);
+    if(queue.toLoad.length == 1) loadVideo(queue.toLoad[0]);
     // url = "https://www.youtube.com/watch?v=" + JSON.parse(video_list[0]).id;
     // console.log('url:' + url);
     //download_video(url);

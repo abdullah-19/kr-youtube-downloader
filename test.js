@@ -210,25 +210,47 @@
 // getVideoInfo('https://www.youtube.com/watch?v=QohH89Eu5iM');
 ////////////////////////////////////////////////////////////////////
 
-const youtubedl = require('youtube-dl');
-const log = require('./Logger');
+// const youtubedl = require('youtube-dl');
+// const log = require('./Logger');
 
-function getVideoInfo(url) {
+// function getVideoInfo(url) {
 
-  log.debug('--------------in fun getVideoInfo----------------');
-  return new Promise((resolve, reject) => {
-    youtubedl.getInfo(url, [],{cwd: __dirname, maxBuffer: Infinity}, function (err, info) {
-      if (err) throw err;
-      log.debug('from video info');
-      log.debug('id:', info.id);
-      log.debug('title:', info.title);
-      log.debug('url:', info.url);
-      log.debug('thumbnail:', info.thumbnail);
-      log.debug('filename:', info._filename);
-      log.debug('format id:', info.format_id);
-      resolve(info);
-    });
-  });
+//   log.debug('--------------in fun getVideoInfo----------------');
+//   return new Promise((resolve, reject) => {
+//     youtubedl.getInfo(url, [],{cwd: __dirname, maxBuffer: Infinity}, function (err, info) {
+//       if (err) throw err;
+//       log.debug('from video info');
+//       log.debug('id:', info.id);
+//       log.debug('title:', info.title);
+//       log.debug('url:', info.url);
+//       log.debug('thumbnail:', info.thumbnail);
+//       log.debug('filename:', info._filename);
+//       log.debug('format id:', info.format_id);
+//       resolve(info);
+//     });
+//   });
+// }
+
+// getVideoInfo('https://www.youtube.com/watch?v=JRxRVPQjTIY');
+////////////////////////////////////////////////////////////////////////
+
+
+
+function f1(a){
+  a.a=2;
+  console.log(a);
 }
 
-getVideoInfo('https://www.youtube.com/watch?v=JRxRVPQjTIY');
+function f2(a){
+  a.a=3;
+  console.log(a);
+}
+var a = {
+  a:1,
+  b:2
+};
+var b = a;
+b.a = 100;
+//f1({...a});
+console.log(a);
+console.log(b);

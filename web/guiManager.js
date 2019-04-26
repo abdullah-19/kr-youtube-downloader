@@ -148,8 +148,10 @@ function show_processIcon() {
 }
 
 
-function showVideoInfo(arg) {
+function showVideoInfo(info) {
+    
     console.log('------in fun showVideoInfo----------');
+    var arg = info.loadedInfo;
     console.log(arg);
     var id = arg.id;
     //if (document.getElementById(arg.id) != null) {
@@ -165,7 +167,7 @@ function showVideoInfo(arg) {
     document.getElementById("processIcon_" + id).style.display = "none";
     document.getElementById('downloadingIcon_' + id).style.display = "inline";
     document.getElementById('folderIcon_' + id).onclick = function () {
-        ipcRenderer.send('open_file_directory', arg);
+        ipcRenderer.send('open-file-directory', info);
     }
     //status_text.innerHTML = "Downloading...";
     // status_text.style.color = "blue";
@@ -190,8 +192,9 @@ function showProgressBar() {
 }
 
 
-function downloadProgress(info) {
+function downloadProgress(arg) {
     var downloadedSize;
+    var info = arg.loadedInfo;
     console.log('--------in fun downloadProgress---------');
     console.log('info.id: in progress :');
     console.log(info.id);
@@ -212,7 +215,7 @@ function downloadProgress(info) {
         progressStatus.innerHTML = Math.floor(parcentOfProgress) + "%";
         //console.log(downloadedSize);
         if (downloadedSize == info.size) {
-            ipcRenderer.send('download-complete', info);
+            ipcRenderer.send('download-complete', arg);
             clearInterval(progress);
             processNextVideo();
             progressDiv.style.display = "none";
@@ -271,3 +274,11 @@ function clear_status() {
         processIcon.style.display = "none";
     }
 }
+
+ipcRenderer.on('move-complete', (event, info) => {
+    var arg = info.loadedInfo;
+    console.log('move completed');
+    document.getElementById('downloadingIcon_' + arg.id).style.display = "none";
+    document.getElementById('folderIcon_' + arg.id).style.display = "inline-block";
+
+});

@@ -13,6 +13,7 @@ module.exports = class Downloader {
         this.info = new Info(this.app,this.win);
         this.destination_folder = path.join(this.app.getPath('videos'), "kr_youtube_downloader");
         this.setIpcEvents();
+        this.makeDestinationDir();
     }
 
     setIpcEvents() {
@@ -21,10 +22,15 @@ module.exports = class Downloader {
         this.setStartDownloadEvent();
     }
 
+    makeDestinationDir(){
+        log.debug('-------makeDestinationDir-------');
+        var destination = path.join(this.app.getPath('videos'),"kr_youtube_downloader");
+        this.createFolder(destination);
+    }
     setLoadEvent() {
-        ipcMain.on('start_load', (event, info) => {
+        ipcMain.on('start-load', (event, info) => {
             var url;
-            log.debug('in ipcMain start_load ');
+            log.debug('------in ipcMain start-load-------');
             if (info.type === "playlist") {
                 var id = JSON.parse(info.list[info.currentLoadItem]).id;
                 url = this.url.getUrlFromId(id);
@@ -69,9 +75,11 @@ module.exports = class Downloader {
 
             if (fs.existsSync(path.join(this.destination_folder, info.loadedInfo._filename))) {
                 this.win.webContents.send('already_downloaded', info);
+                log.debug('already downloaded');
             }
             else if (fs.existsSync(path.join(this.app.getAppPath(), "downloads", info.loadedInfo._filename))) {
                 this.win.webContents.send('already_downloadeding', info);
+                log.debug('already downloading');
             }
             else {
                 // videoInfo = loadedInfo;
@@ -141,7 +149,7 @@ module.exports = class Downloader {
 
     setPlaylistDownloadEvent() {
         log.debug('-------------in fun setPlaylistDownloadEvent-----------------');
-        ipcMain.on('start_playlist_download', (event, url) => {
+        ipcMain.on('start-playlist-download', (event, url) => {
             log.debug('----------in ipcMain start_playlist_download---------------');
             this.download_videoList(url);
         })
@@ -153,7 +161,9 @@ module.exports = class Downloader {
             if (err) throw err;
             var info = {};
             info.type = "playlist";
-            info.folderName = "playlist:" + this.getDateTime();
+            info.folderName = "playlist" + this.getDateTime();
+            var dir = path.join(this.app.getPath('videos'), "kr_youtube_downloader",info.folderName);
+            this.createFolder(dir);
             info.list = output;
             info.currentDownloadItem = 0;
             info.currentLoadItem = 0;
@@ -161,6 +171,12 @@ module.exports = class Downloader {
         });
     }
 
+    createFolder(dir){
+        //var dir = path.join(this.app.getPath('videos'), "kr_youtube_downloader",name);
+        if (!fs.existsSync(dir)){
+            fs.mkdirSync(dir);
+        }
+    }
     downloadUsingYDL(info) {
         var filename;
         var downloadPath;
@@ -203,8 +219,8 @@ module.exports = class Downloader {
 
     getDateTime() {
         var date = new Date();
-        var time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-        var str_date = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+        var time = date.getHours() + "_" + date.getMinutes() + "_" + date.getSeconds();
+        var str_date = date.getFullYear() + '.' + (date.getMonth() + 1) + '.' + date.getDate();
         return time + " " + str_date;
     }
 

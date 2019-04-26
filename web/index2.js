@@ -53,7 +53,7 @@ function start_process() {
         var info = {};
         info.type = "playlist";
         info.folderName = "playlist:" + getDateTime();
-        ipcRenderer.send('start_playlist_download', url);
+        ipcRenderer.send('start-playlist-download', url);
     }
     else {
         //show_processIcon();
