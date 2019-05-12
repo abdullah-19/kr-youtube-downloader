@@ -6,11 +6,13 @@ module.exports = class Item{
     constructor() {
         this.url = null;
         this.type= null;
-        this.loadedInfo = null;
+        this.infoAtLoad = null;
+        this.infoAtDownload = null;
         this.folderName = null;
         this.list = null;
         this.loadIndex= null;
         this.downloadIndex = null;
+        log.debug('------in Item class constuctor-----');
 
     }
 }
