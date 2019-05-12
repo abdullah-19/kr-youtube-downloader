@@ -60,7 +60,6 @@ ipcRenderer.on('load-complete', function (event, info) {
     }
     if (queue.toLoad.length != 0) {
         console.log('queue not empty, size:' + queue.toLoad.length);
-
         loadNext();
     }
 

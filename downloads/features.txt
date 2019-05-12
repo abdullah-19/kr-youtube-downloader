@@ -1,7 +1,13 @@
 In progress
-1.
+1.gui process refactoring
 
 To Do
+......necessary.....
+1.partial playlist download.
+2.download resume single/playliist
+
+.....not necessary......
+
 1.video info code refactoring
 2.excluding in windows defender
 3.quality,format setting before download

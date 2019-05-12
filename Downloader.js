@@ -67,13 +67,17 @@ module.exports = class Downloader {
         var filename;
         var downloadPath;
         console.log('----------in fun loadInfo-------------');
+        log.debug('url:'+info.url);
         //info.loadedInfo = await this.info.getVideoInfo(this.url.getIdFromUrl(info.url));
         this.info.getVideoInfo(this.url.getIdFromUrl(info.url)).then((loadedInfo) => {
             info.loadedInfo = loadedInfo;
             log.debug('filename');
             log.debug(info.loadedInfo._filename);
+            log.debug('folder name');
+            log.debug(info.destination_folder);
 
-            if (fs.existsSync(path.join(this.destination_folder, info.loadedInfo._filename))) {
+
+            if (fs.existsSync(path.join(this.destination_folder,info.folderName, info.loadedInfo._filename))) {
                 this.win.webContents.send('already_downloaded', info);
                 log.debug('already downloaded');
             }

@@ -253,3 +253,215 @@
 [2019-04-26 20:05:20.697] [debug] ------------in fun downloadUsingYDL-------------
 [2019-04-26 20:05:20.699] [debug] downlaod video url:https://www.youtube.com/watch?v=SuZa2nv24HE&t=306s&index=2&list=PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
 [2019-04-26 20:05:26.008] [debug] thumbnail url:https://i.ytimg.com/vi/SuZa2nv24HE/maxresdefault.jpg
+[2019-05-12 22:54:59.035] [debug] logging set up
+[2019-05-12 22:54:59.066] [debug] log level:debug
+[2019-05-12 22:54:59.070] [debug] size:5242880
+[2019-05-12 22:55:00.945] [debug] window created
+[2019-05-12 22:55:00.959] [debug] -------------in fun setPlaylistDownloadEvent-----------------
+[2019-05-12 22:55:00.965] [debug] -------makeDestinationDir-------
+[2019-05-12 22:55:00.994] [debug] downloader object created.
+[2019-05-12 22:57:11.850] [debug] ----------in ipcMain start_playlist_download---------------
+[2019-05-12 22:57:11.866] [debug] -------------in fun download_videoList-----------------
+[2019-05-12 22:57:22.344] [debug] ------in ipcMain start-load-------
+[2019-05-12 22:57:22.349] [debug] in extract id
+[2019-05-12 22:57:22.351] [debug] ------getVideoInfo-------
+[2019-05-12 22:57:30.556] [debug] filename
+[2019-05-12 22:57:30.565] [debug] Angular 7  - Part 1- Angular 7 Full Tutorial in Hindi- Angular Introduction , Versioning and Releases-SuZa2nv24HE.mp4
+[2019-05-12 22:57:30.608] [debug] already downloaded
+[2019-05-12 23:18:26.932] [debug] logging set up
+[2019-05-12 23:18:26.952] [debug] log level:debug
+[2019-05-12 23:18:26.954] [debug] size:5242880
+[2019-05-12 23:18:28.363] [debug] window created
+[2019-05-12 23:18:28.371] [debug] -------------in fun setPlaylistDownloadEvent-----------------
+[2019-05-12 23:18:28.378] [debug] -------makeDestinationDir-------
+[2019-05-12 23:18:28.380] [debug] downloader object created.
+[2019-05-12 23:18:51.657] [debug] ----------in ipcMain start_playlist_download---------------
+[2019-05-12 23:18:51.668] [debug] -------------in fun download_videoList-----------------
+[2019-05-12 23:18:58.689] [debug] ------in ipcMain start-load-------
+[2019-05-12 23:18:58.693] [debug] in extract id
+[2019-05-12 23:18:58.695] [debug] ------getVideoInfo-------
+[2019-05-12 23:19:08.701] [debug] filename
+[2019-05-12 23:19:08.709] [debug] Angular 7  - Part 1- Angular 7 Full Tutorial in Hindi- Angular Introduction , Versioning and Releases-SuZa2nv24HE.mp4
+[2019-05-12 23:19:08.725] [debug] already downloaded
+[2019-05-12 23:20:45.170] [debug] logging set up
+[2019-05-12 23:20:45.173] [debug] log level:debug
+[2019-05-12 23:20:45.175] [debug] size:5242880
+[2019-05-12 23:20:45.996] [debug] window created
+[2019-05-12 23:20:46.002] [debug] -------------in fun setPlaylistDownloadEvent-----------------
+[2019-05-12 23:20:46.009] [debug] -------makeDestinationDir-------
+[2019-05-12 23:20:46.013] [debug] downloader object created.
+[2019-05-12 23:21:00.339] [debug] ----------in ipcMain start_playlist_download---------------
+[2019-05-12 23:21:00.365] [debug] -------------in fun download_videoList-----------------
+[2019-05-12 23:21:10.026] [debug] ------in ipcMain start-load-------
+[2019-05-12 23:21:10.030] [debug] in extract id
+[2019-05-12 23:21:10.032] [debug] ------getVideoInfo-------
+[2019-05-12 23:31:21.067] [debug] filename
+[2019-05-12 23:31:21.087] [debug] Angular 7  - Part 1- Angular 7 Full Tutorial in Hindi- Angular Introduction , Versioning and Releases-SuZa2nv24HE.mp4
+[2019-05-12 23:31:21.091] [debug] folder name
+[2019-05-12 23:31:21.094] [debug] undefined
+[2019-05-12 23:36:23.010] [debug] logging set up
+[2019-05-12 23:36:23.014] [debug] log level:debug
+[2019-05-12 23:36:23.015] [debug] size:5242880
+[2019-05-12 23:36:23.821] [debug] window created
+[2019-05-12 23:36:23.826] [debug] -------------in fun setPlaylistDownloadEvent-----------------
+[2019-05-12 23:36:23.829] [debug] -------makeDestinationDir-------
+[2019-05-12 23:36:23.832] [debug] downloader object created.
+[2019-05-12 23:36:43.047] [debug] ----------in ipcMain start_playlist_download---------------
+[2019-05-12 23:36:43.057] [debug] -------------in fun download_videoList-----------------
+[2019-05-12 23:36:48.107] [debug] ------in ipcMain start-load-------
+[2019-05-12 23:36:48.109] [debug] url:https://www.youtube.com/watch?v=SuZa2nv24HE
+[2019-05-12 23:36:48.112] [debug] in extract id
+[2019-05-12 23:36:48.114] [debug] ------getVideoInfo-------
+[2019-05-12 23:36:56.486] [debug] filename
+[2019-05-12 23:36:56.500] [debug] Angular 7  - Part 1- Angular 7 Full Tutorial in Hindi- Angular Introduction , Versioning and Releases-SuZa2nv24HE.mp4
+[2019-05-12 23:36:56.505] [debug] folder name
+[2019-05-12 23:36:56.516] [debug] undefined
+[2019-05-12 23:43:43.653] [debug] logging set up
+[2019-05-12 23:43:43.656] [debug] log level:debug
+[2019-05-12 23:43:43.678] [debug] size:5242880
+[2019-05-12 23:43:44.440] [debug] window created
+[2019-05-12 23:43:44.445] [debug] -------------in fun setPlaylistDownloadEvent-----------------
+[2019-05-12 23:43:44.455] [debug] -------makeDestinationDir-------
+[2019-05-12 23:43:44.458] [debug] downloader object created.
+[2019-05-12 23:43:49.859] [debug] ----------in ipcMain start_playlist_download---------------
+[2019-05-12 23:43:49.860] [debug] -------------in fun download_videoList-----------------
+[2019-05-12 23:43:55.580] [debug] ------in ipcMain start-load-------
+[2019-05-12 23:43:55.596] [debug] url:https://www.youtube.com/watch?v=SuZa2nv24HE
+[2019-05-12 23:43:55.599] [debug] in extract id
+[2019-05-12 23:43:55.602] [debug] ------getVideoInfo-------
+[2019-05-12 23:44:02.851] [debug] filename
+[2019-05-12 23:44:02.858] [debug] Angular 7  - Part 1- Angular 7 Full Tutorial in Hindi- Angular Introduction , Versioning and Releases-SuZa2nv24HE.mp4
+[2019-05-12 23:44:02.863] [debug] folder name
+[2019-05-12 23:44:02.868] [debug] undefined
+[2019-05-12 23:44:02.898] [debug] thumbnail url:https://i.ytimg.com/vi/SuZa2nv24HE/maxresdefault.jpg
+[2019-05-12 23:44:02.930] [debug] ------------in fun downloadUsingYDL-------------
+[2019-05-12 23:44:02.932] [debug] downlaod video url:https://www.youtube.com/watch?v=SuZa2nv24HE
+[2019-05-12 23:44:02.946] [debug] ------in ipcMain start-load-------
+[2019-05-12 23:44:02.949] [debug] url:https://www.youtube.com/watch?v=BdGaUltG_sk
+[2019-05-12 23:44:02.951] [debug] in extract id
+[2019-05-12 23:44:02.954] [debug] ------getVideoInfo-------
+[2019-05-12 23:44:10.741] [debug] filename
+[2019-05-12 23:44:10.752] [debug] Angular 7  - Part 2  -  Angular 7 Full Tutorial in Hindi - What new in angular get notifications-BdGaUltG_sk.mp4
+[2019-05-12 23:44:10.762] [debug] folder name
+[2019-05-12 23:44:10.771] [debug] undefined
+[2019-05-12 23:44:10.783] [debug] thumbnail url:https://i.ytimg.com/vi/BdGaUltG_sk/maxresdefault.jpg
+[2019-05-12 23:44:10.852] [debug] ------in ipcMain start-load-------
+[2019-05-12 23:44:10.857] [debug] url:https://www.youtube.com/watch?v=GYHaucEVFG4
+[2019-05-12 23:44:10.862] [debug] in extract id
+[2019-05-12 23:44:10.864] [debug] ------getVideoInfo-------
+[2019-05-12 23:44:17.099] [debug] filename
+[2019-05-12 23:44:17.112] [debug] Angular 7  - Part 3   - Angular 7 Full Tutorial in Hindi - Angular 7 New Features-GYHaucEVFG4.mp4
+[2019-05-12 23:44:17.122] [debug] folder name
+[2019-05-12 23:44:17.132] [debug] undefined
+[2019-05-12 23:44:17.146] [debug] thumbnail url:https://i.ytimg.com/vi/GYHaucEVFG4/maxresdefault.jpg
+[2019-05-12 23:44:17.213] [debug] ------in ipcMain start-load-------
+[2019-05-12 23:44:17.217] [debug] url:https://www.youtube.com/watch?v=P7-hAe41sIA
+[2019-05-12 23:44:17.220] [debug] in extract id
+[2019-05-12 23:44:17.222] [debug] ------getVideoInfo-------
+[2019-05-12 23:44:22.610] [debug] filename
+[2019-05-12 23:44:22.655] [debug] Angular 7 Stable Version Released Now - Introduction  -  Part 4 - Angular 7 Full Tutorial in Hindi-P7-hAe41sIA.mp4
+[2019-05-12 23:44:22.665] [debug] folder name
+[2019-05-12 23:44:22.675] [debug] undefined
+[2019-05-12 23:44:22.685] [debug] thumbnail url:https://i.ytimg.com/vi/P7-hAe41sIA/maxresdefault.jpg
+[2019-05-12 23:44:22.726] [debug] ------in ipcMain start-load-------
+[2019-05-12 23:44:22.742] [debug] url:https://www.youtube.com/watch?v=Q3uLQxJ5vqE
+[2019-05-12 23:44:22.751] [debug] in extract id
+[2019-05-12 23:44:22.755] [debug] ------getVideoInfo-------
+[2019-05-12 23:44:30.158] [debug] filename
+[2019-05-12 23:44:30.169] [debug] Angular 7 CLI Prompts  - Part 5 - Angular 7 Full Tutorial in Hindi _ Angular 7 New Features-Q3uLQxJ5vqE.mp4
+[2019-05-12 23:44:30.176] [debug] folder name
+[2019-05-12 23:44:30.188] [debug] undefined
+[2019-05-12 23:44:30.207] [debug] thumbnail url:https://i.ytimg.com/vi/Q3uLQxJ5vqE/maxresdefault.jpg
+[2019-05-12 23:44:30.245] [debug] ------in ipcMain start-load-------
+[2019-05-12 23:44:30.250] [debug] url:https://www.youtube.com/watch?v=t_qHCNMfIpo
+[2019-05-12 23:44:30.255] [debug] in extract id
+[2019-05-12 23:44:30.259] [debug] ------getVideoInfo-------
+[2019-05-12 23:44:36.978] [debug] filename
+[2019-05-12 23:44:36.989] [debug] Drag and Drop in angular  - Part 6 - Angular 7 Full Tutorial in Hindi _ Angular 7 New Features-t_qHCNMfIpo.mp4
+[2019-05-12 23:44:36.997] [debug] folder name
+[2019-05-12 23:44:37.006] [debug] undefined
+[2019-05-12 23:44:37.016] [debug] thumbnail url:https://i.ytimg.com/vi/t_qHCNMfIpo/maxresdefault.jpg
+[2019-05-12 23:44:37.137] [debug] ------in ipcMain start-load-------
+[2019-05-12 23:44:37.139] [debug] url:https://www.youtube.com/watch?v=AN9WuOIctw8
+[2019-05-12 23:44:37.141] [debug] in extract id
+[2019-05-12 23:44:37.145] [debug] ------getVideoInfo-------
+[2019-05-12 23:44:44.666] [debug] filename
+[2019-05-12 23:44:44.670] [debug] Virtual Scrolling in angular 7  - Part 7 - Angular 7 Full Tutorial in Hindi _ Angular 7 New Features-AN9WuOIctw8.mp4
+[2019-05-12 23:44:44.674] [debug] folder name
+[2019-05-12 23:44:44.677] [debug] undefined
+[2019-05-12 23:44:44.681] [debug] thumbnail url:https://i.ytimg.com/vi/AN9WuOIctw8/maxresdefault.jpg
+[2019-05-12 23:44:44.739] [debug] ------in ipcMain start-load-------
+[2019-05-12 23:44:44.741] [debug] url:https://www.youtube.com/watch?v=pS1T7Q7wLeM
+[2019-05-12 23:44:44.744] [debug] in extract id
+[2019-05-12 23:44:44.746] [debug] ------getVideoInfo-------
+[2019-05-12 23:44:54.158] [debug] filename
+[2019-05-12 23:44:54.234] [debug] Improved Accessibility of Selects  -Part 8 -Angular 7 Full Tutorial in Hindi _ Angular 7 New Features-pS1T7Q7wLeM.mp4
+[2019-05-12 23:44:54.248] [debug] folder name
+[2019-05-12 23:44:54.253] [debug] undefined
+[2019-05-12 23:44:54.260] [debug] thumbnail url:https://i.ytimg.com/vi/pS1T7Q7wLeM/maxresdefault.jpg
+[2019-05-12 23:44:54.303] [debug] ------in ipcMain start-load-------
+[2019-05-12 23:44:54.306] [debug] url:https://www.youtube.com/watch?v=OH0KYhVChcc
+[2019-05-12 23:44:54.308] [debug] in extract id
+[2019-05-12 23:44:54.311] [debug] ------getVideoInfo-------
+[2019-05-12 23:45:01.637] [debug] filename
+[2019-05-12 23:45:01.640] [debug] Documentation Updates in Angular 7 -Part 9 -Angular 7 Full Tutorial in Hindi _ Angular 7 New Features-OH0KYhVChcc.mp4
+[2019-05-12 23:45:01.642] [debug] folder name
+[2019-05-12 23:45:01.645] [debug] undefined
+[2019-05-12 23:45:01.648] [debug] thumbnail url:https://i.ytimg.com/vi/OH0KYhVChcc/maxresdefault.jpg
+[2019-05-12 23:45:01.676] [debug] ------in ipcMain start-load-------
+[2019-05-12 23:45:01.682] [debug] url:https://www.youtube.com/watch?v=ffbeyGim0AI
+[2019-05-12 23:45:01.686] [debug] in extract id
+[2019-05-12 23:45:01.690] [debug] ------getVideoInfo-------
+[2019-05-12 23:45:11.559] [debug] filename
+[2019-05-12 23:45:11.569] [debug] Application Performance in Angular 7  - Part 10 -Angular 7 Full Tutorial in Hindi-ffbeyGim0AI.mp4
+[2019-05-12 23:45:11.573] [debug] folder name
+[2019-05-12 23:45:11.587] [debug] undefined
+[2019-05-12 23:45:11.596] [debug] thumbnail url:https://i.ytimg.com/vi/ffbeyGim0AI/maxresdefault.jpg
+[2019-05-12 23:45:11.728] [debug] ------in ipcMain start-load-------
+[2019-05-12 23:45:11.730] [debug] url:https://www.youtube.com/watch?v=DX9ruG4c3v0
+[2019-05-12 23:45:11.734] [debug] in extract id
+[2019-05-12 23:45:11.736] [debug] ------getVideoInfo-------
+[2019-05-12 23:45:38.289] [debug] filename
+[2019-05-12 23:45:38.303] [debug] Partner Launches Angular 7  -  Part 11 -Angular 7 Full Tutorial in Hindi-DX9ruG4c3v0.mp4
+[2019-05-12 23:45:38.306] [debug] folder name
+[2019-05-12 23:45:38.310] [debug] undefined
+[2019-05-12 23:45:38.313] [debug] thumbnail url:https://i.ytimg.com/vi/DX9ruG4c3v0/maxresdefault.jpg
+[2019-05-12 23:45:38.358] [debug] ------in ipcMain start-load-------
+[2019-05-12 23:45:38.367] [debug] url:https://www.youtube.com/watch?v=xxwx2MrgXCs
+[2019-05-12 23:45:38.369] [debug] in extract id
+[2019-05-12 23:45:38.372] [debug] ------getVideoInfo-------
+[2019-05-12 23:45:48.627] [debug] filename
+[2019-05-12 23:45:48.635] [debug] Angular 7 installation requirements  - Part 12 -Angular 7 Full Tutorial in Hindi-xxwx2MrgXCs.mp4
+[2019-05-12 23:45:48.638] [debug] folder name
+[2019-05-12 23:45:48.649] [debug] undefined
+[2019-05-12 23:45:48.658] [debug] thumbnail url:https://i.ytimg.com/vi/xxwx2MrgXCs/maxresdefault.jpg
+[2019-05-12 23:45:48.777] [debug] ------in ipcMain start-load-------
+[2019-05-12 23:45:48.780] [debug] url:https://www.youtube.com/watch?v=JiS6UTNucbs
+[2019-05-12 23:45:48.785] [debug] in extract id
+[2019-05-12 23:45:48.787] [debug] ------getVideoInfo-------
+[2019-05-12 23:45:57.326] [debug] filename
+[2019-05-12 23:45:57.339] [debug] Angular folder structure and booting process   -  Part 13 -Angular 7 Full Tutorial in Hindi-JiS6UTNucbs.mp4
+[2019-05-12 23:45:57.347] [debug] folder name
+[2019-05-12 23:45:57.353] [debug] undefined
+[2019-05-12 23:45:57.358] [debug] thumbnail url:https://i.ytimg.com/vi/JiS6UTNucbs/maxresdefault.jpg
+[2019-05-12 23:45:57.369] [debug] ------in ipcMain start-load-------
+[2019-05-12 23:45:57.374] [debug] url:https://www.youtube.com/watch?v=wLURqXxxYSo
+[2019-05-12 23:45:57.377] [debug] in extract id
+[2019-05-12 23:45:57.381] [debug] ------getVideoInfo-------
+[2019-05-12 23:46:06.781] [debug] filename
+[2019-05-12 23:46:06.792] [debug] package json and package-lock json  - Part 14 -Angular 7 Full Tutorial in Hindi-wLURqXxxYSo.mp4
+[2019-05-12 23:46:06.795] [debug] folder name
+[2019-05-12 23:46:06.806] [debug] undefined
+[2019-05-12 23:46:06.815] [debug] thumbnail url:https://i.ytimg.com/vi/wLURqXxxYSo/maxresdefault.jpg
+[2019-05-12 23:46:06.866] [debug] ------in ipcMain start-load-------
+[2019-05-12 23:46:06.870] [debug] url:https://www.youtube.com/watch?v=3AKwhTMB8Ho
+[2019-05-12 23:46:06.873] [debug] in extract id
+[2019-05-12 23:46:06.875] [debug] ------getVideoInfo-------
+[2019-05-12 23:56:12.985] [error] an unhandled error caught in gloabl handler:  Error: Command failed: D:\workspace\downloader\node_modules\youtube-dl\bin\youtube-dl.exe --dump-json --format=18 3AKwhTMB8Ho
+ERROR: Unable to download webpage: The read operation timed out (caused by timeout('The read operation timed out',))
+
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
