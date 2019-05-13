@@ -1,4 +1,8 @@
+const {app} = require('electron');
+const path = require('path');
 const loggerPath = __dirname;
+const downloadDir = path.join(app.getPath('videos'),"kr_youtube_downloader");
+
 
 var config = {
   "logger": {
@@ -7,6 +11,7 @@ var config = {
     "size": 5 * 1024 * 1024,
     "filename": "log.txt"
   },
+  "downloadDir":downloadDir,
   "isProduction": false
 };
 //const debug = /--debug/.test(process.argv[2]);
@@ -17,7 +22,5 @@ if (index === -1) {
   var prod = require('./config-production');
   config = { ...config, ...prod };
 }
-
-
 
 module.exports = config;

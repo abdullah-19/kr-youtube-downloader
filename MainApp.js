@@ -1,4 +1,4 @@
-const {BrowserWindow, ipcMain, shell } = require('electron');
+const { BrowserWindow, ipcMain, shell } = require('electron');
 const Downloader = require('./Downloader');
 const config = require('./config');
 const log = require('./Logger');
@@ -25,6 +25,13 @@ module.exports = class MainApp {
 
 
     setAppEvents() {
+
+        this.closeEvent();
+        this.activateEvent();
+
+    }
+
+    closeEvent() {
         this.app.on('window-all-closed', () => {
 
             if (process.platform !== 'darwin') {
@@ -32,19 +39,20 @@ module.exports = class MainApp {
                 this.app.quit();
             }
         });
+    }
 
+    activateEvent() {
         this.app.on('activate', () => {
             if (this.win === null) {
                 createWindow();
             }
         });
-
     }
 
     onReady() {
         this.app.on('ready', () => {
             this.createWindow();
-            if(config.isProduction){
+            if (config.isProduction) {
                 new AutoUpdater().checkForUpdate();
             }
             //new Downloader(this.app,this.win);
@@ -54,7 +62,7 @@ module.exports = class MainApp {
 
     createWindow() {
         this.win = new BrowserWindow({ width: 800, height: 600 });
-        
+
 
         this.win.loadURL(url.format({
             pathname: path.join(__dirname, 'web/index.html'),
@@ -66,8 +74,8 @@ module.exports = class MainApp {
             this.win = null
         });
         log.debug('window created');
-        this.downloader = new Downloader(this.app,this.win);
-        this.FileManager = new FileManager(this.app,this.win);
+        this.downloader = new Downloader(this.app, this.win);
+        this.FileManager = new FileManager(this.app, this.win);
         log.debug('downloader object created.')
     }
 }

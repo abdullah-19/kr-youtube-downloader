@@ -4,14 +4,15 @@ const log = require('./Logger');
 
 module.exports = class Item{
     constructor() {
-        this.url = null;
-        this.type= null;
+        this.url = "";
+        this.id = "";
+        this.isPlayliist= false;
         this.infoAtLoad = null;
         this.infoAtDownload = null;
         this.folderName = null;
         this.list = null;
-        this.loadIndex= null;
-        this.downloadIndex = null;
+        this.loadIndex= 0;
+        this.downloadIndex = 0;
         log.debug('------in Item class constuctor-----');
 
     }

@@ -15,4 +15,12 @@ module.exports = class Url {
         }
         return video_id;
     }
+
+    is_playlist(url) {
+        var p = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|playlist\?list=))((\w|-))(?:\S+)?$/;
+        if (url.match(p) != null) {
+            return true;
+        }
+        return false;
+    }
 }
