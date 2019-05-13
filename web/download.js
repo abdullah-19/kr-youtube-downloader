@@ -38,20 +38,20 @@ function downloadFromQueue() {
 }
 
 
-ipcRenderer.on('load-complete', function (event, info) {
+ipcRenderer.on('load-complete', function (event, item) {
     console.log('--------in ipcRenderer load-complete--------------');
-    showVideoInfo(info);
-    
-    console.log(info);
+    showVideoInfo(item);
+
+    console.log(item);
     console.log('video type:');
-    console.log(info.type);
-    if (info.type === "single") {
-        queue.toLoad.shift();
+    console.log(item.isPlaylist);
+    if (!item.isPlaylist) {
+        //queue.toLoad.shift();
         console.log('after deleting single video, size:' + queue.toLoad.length);
     }
-    else if (info.type === "playlist") {
-        if (info.currentLoadItem >= info.list.length) queue.toLoad.shift();
-        else queue.toLoad[0].currentLoadItem++;
+    else {
+        if (item.loadIndex >= item.list.length) queue.toLoad.shift();
+        else queue.toLoad[0].loadIndex++;
     }
     if (!queue.isDownloading && queue.toDownload.length != 0) {
         console.log('not queue');
@@ -129,10 +129,10 @@ ipcRenderer.on('video-list', function (event, info) {
     // var url;
     //for(var i=0;i<video_list.length;i++){
     //console.log('i:'+i);
-    queue.toDownload.push({...info});
-    queue.toLoad.push({...info});
+    queue.toDownload.push({ ...info });
+    queue.toLoad.push({ ...info });
     // if(queue.toLoad.length == 1) download_video();
-    if(queue.toLoad.length == 1) loadVideo(queue.toLoad[0]);
+    if (queue.toLoad.length == 1) loadVideo(queue.toLoad[0]);
     // url = "https://www.youtube.com/watch?v=" + JSON.parse(video_list[0]).id;
     // console.log('url:' + url);
     //download_video(url);
@@ -144,7 +144,7 @@ ipcRenderer.on('video-list', function (event, info) {
     //     break;
     //   }
     // }
-  
+
     //}
     //console.log(video_list);
-  })
+})

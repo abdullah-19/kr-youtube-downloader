@@ -38,11 +38,13 @@ module.exports = class Downloader {
         item.id = this.url.getIdFromUrl(url);
         if(item.isPlayliist){
             item.folderName = "playlist" + this.getDateTime();
-            var dir = path.join(this.downloadDir,item.folderName);
-            this.createFolder(dir);
+            item.destinationPath  = path.join(this.downloadDir,item.folderName);
+            //var dir = path.join(this.downloadDir,item.folderName);
+            this.createFolder(item.destinationPath);
             this.download_videoList(item);
         }
         else{
+            item.destinationPath = this.downloadDir;
             this.loadInfo(item);
         }
         
@@ -143,30 +145,30 @@ module.exports = class Downloader {
         console.log('----------in fun loadInfo-------------');
         log.debug('url:'+info.url);
         //info.loadedInfo = await this.info.getVideoInfo(this.url.getIdFromUrl(info.url));
-        this.info.getVideoInfo(this.url.getIdFromUrl(info.url)).then((loadedInfo) => {
-            info.loadedInfo = loadedInfo;
+        this.info.getVideoInfo(this.url.getIdFromUrl(item.url)).then((loadedInfo) => {
+            item.infoAtLoad = loadedInfo;
             log.debug('filename');
-            log.debug(info.loadedInfo._filename);
+            log.debug(item.infoAtLoad._filename);
             log.debug('folder name');
-            log.debug(info.downloadDir);
+            log.debug(item.folderName);
 
 
-            if (fs.existsSync(path.join(this.downloadDir,info.folderName, info.loadedInfo._filename))) {
-                this.win.webContents.send('already_downloaded', info);
+            if (fs.existsSync(path.join(this.downloadDir,item.folderName, item.infoAtLoad._filename))) {
+                this.win.webContents.send('already_downloaded', item);
                 log.debug('already downloaded');
             }
-            else if (fs.existsSync(path.join(this.app.getAppPath(), "downloads", info.loadedInfo._filename))) {
-                this.win.webContents.send('already_downloadeding', info);
+            else if (fs.existsSync(path.join(this.app.getAppPath(), "downloads", item.infoAtLoad._filename))) {
+                this.win.webContents.send('already_downloadeding', item);
                 log.debug('already downloading');
             }
             else {
                 // videoInfo = loadedInfo;
-                log.debug('thumbnail url:' + info.loadedInfo.thumbnails[0].url);
-                filename = info.loadedInfo._filename;
+                log.debug('thumbnail url:' + item.loadedInfo.thumbnails[0].url);
+                filename = item.infoAtLoad._filename;
                 downloadPath = path.join(this.app.getAppPath(), "downloads", filename);
-                info.loadedInfo.appPath = this.app.getAppPath();
-                info.loadedInfo.downloadFilePath = downloadPath;
-                this.win.webContents.send('load-complete', info);
+                item.infoAtLoad.appPath = this.app.getAppPath();
+                item.infoAtLoad.downloadFilePath = downloadPath;
+                this.win.webContents.send('load-complete', item);
             }
 
         }).catch((error) => {
@@ -175,14 +177,14 @@ module.exports = class Downloader {
 
     }
 
-    loadUsingYDL(info) {
+    loadUsingYDL(item) {
         log.debug('in fun loadUsingYDL');
         var filename;
         var downloadPath;
 
         //var options = ['--username=user', '--password=hunter2'];
         var options = ['--format=18', '--skip-download'];
-        youtubedl.getInfo(info.url, options, (err, loadedInfo) => {
+        youtubedl.getInfo(item.url, options, (err, loadedInfo) => {
             if (err) throw err;
             // console.log('from video info');
             // console.log('id:', loadedInfo.id);
@@ -195,22 +197,22 @@ module.exports = class Downloader {
             // return info;
 
 
-            info.loadedInfo = loadedInfo;
+            item.infoAtLoad = loadedInfo;
 
-            if (fs.existsSync(path.join(this.downloadDir, loadedInfo._filename))) {
-                this.win.webContents.send('already_downloaded', info);
+            if (fs.existsSync(path.join(this.downloadDir, item.infoAtLoad._filename))) {
+                this.win.webContents.send('already_downloaded', item);
             }
-            else if (fs.existsSync(path.join(this.app.getAppPath(), "downloads", loadedInfo._filename))) {
-                this.win.webContents.send('already_downloadeding', info);
+            else if (fs.existsSync(path.join(this.app.getAppPath(), "downloads", item.infoAtLoad._filename))) {
+                this.win.webContents.send('already_downloadeding', item);
             }
             else {
                 // videoInfo = loadedInfo;
-                log.debug('thumbnail url:' + loadedInfo.thumbnails[0].url);
-                filename = loadedInfo._filename;
+                log.debug('thumbnail url:' + item.infoAtLoad.thumbnails[0].url);
+                filename = item.infoAtLoad._filename;
                 downloadPath = path.join(this.app.getAppPath(), "downloads", filename);
-                loadedInfo.appPath = this.app.getAppPath();
-                loadedInfo.downloadFilePath = downloadPath;
-                this.win.webContents.send('load-complete', info);
+                item.infoAtLoad.appPath = this.app.getAppPath();
+                item.infoAtLoad.downloadFilePath = downloadPath;
+                this.win.webContents.send('load-complete', item);
             }
 
         });
