@@ -177,7 +177,6 @@ function showVideoInfo(info) {
     //downloadNext();
 }
 
-
 function showBasicInfo(info) {
     var id = info.id;
     document.getElementById("processIcon_" + id).style.display = "none";
@@ -282,3 +281,15 @@ ipcRenderer.on('move-complete', (event, info) => {
     document.getElementById('folderIcon_' + arg.id).style.display = "inline-block";
 
 });
+
+function showWaiting(){
+    var div1 = document.createElement("div");
+    //div1.setAttribute("id", "progressDiv_" + "temp");
+    div1.setAttribute("class", "waiting");
+    var paragraph = document.createElement("p");
+    paragraph.setAttribute("class", "p-1 bg-info text-center");
+    paragraph.innerHTML = "Waiting...";
+    //div1.setAttribute("style", "height:18px; display: none;");
+    div1.appendChild(paragraph);
+    document.getElementById("video_div").appendChild(div1);
+}

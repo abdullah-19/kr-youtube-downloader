@@ -45,4 +45,4 @@ Done
 6.show video in destination on click
 
 last status:
-1.woring at Downloader.js in processPlaylist function.
+1.woring at Downloader.js in loadInfo function.

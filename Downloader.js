@@ -11,6 +11,8 @@ module.exports = class Downloader {
     constructor(app, win) {
         this.app = app;
         this.win = win;
+        this.numberOfItemInProgress=0;
+        this.queue = [];
         this.url = new Url();
         this.info = new Info(this.app,this.win);
         this.downloadDir = path.join(this.app.getPath('videos'), "kr_youtube_downloader");
@@ -19,7 +21,7 @@ module.exports = class Downloader {
     }
 
     setIpcEvents() {
-        this.setPlaylistDownloadEvent();
+        //this.setPlaylistDownloadEvent();
         this.setLoadEvent();
         this.setStartDownloadEvent();
         this.setProcessEvent();
@@ -153,20 +155,20 @@ module.exports = class Downloader {
             log.debug(item.folderName);
 
 
-            if (fs.existsSync(path.join(this.downloadDir,item.folderName, item.infoAtLoad._filename))) {
+            if (fs.existsSync(path.join(item.destinationPath, item.infoAtLoad._filename))) {
                 this.win.webContents.send('already_downloaded', item);
                 log.debug('already downloaded');
             }
-            else if (fs.existsSync(path.join(this.app.getAppPath(), "downloads", item.infoAtLoad._filename))) {
+            else if (fs.existsSync(path.join(config.downloadPath, item.infoAtLoad._filename))) {
                 this.win.webContents.send('already_downloadeding', item);
                 log.debug('already downloading');
             }
             else {
                 // videoInfo = loadedInfo;
-                log.debug('thumbnail url:' + item.loadedInfo.thumbnails[0].url);
+                log.debug('thumbnail url:' + item.infoAtLoad.thumbnails[0].url);
                 filename = item.infoAtLoad._filename;
-                downloadPath = path.join(this.app.getAppPath(), "downloads", filename);
-                item.infoAtLoad.appPath = this.app.getAppPath();
+                downloadPath = path.join(config.downloadPath, filename);
+                //item.infoAtLoad.appPath = this.app.getAppPath();
                 item.infoAtLoad.downloadFilePath = downloadPath;
                 this.win.webContents.send('load-complete', item);
             }

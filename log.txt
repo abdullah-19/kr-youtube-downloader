@@ -465,3 +465,58 @@ ERROR: Unable to download webpage: The read operation timed out (caused by timeo
     at ChildProcess.emit (events.js:214:7)
     at maybeClose (internal/child_process.js:925:16)
     at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-05-14 10:03:43.374] [debug] logging set up
+[2019-05-14 10:03:43.433] [debug] log level:debug
+[2019-05-14 10:03:43.435] [debug] size:5242880
+[2019-05-14 10:03:51.340] [debug] window created
+[2019-05-14 10:03:51.496] [error] an unhandled error caught in gloabl handler:  TypeError: this.setPlaylistDownloadEvent is not a function
+    at Downloader.setIpcEvents (D:\workspace\downloader\Downloader.js:24:14)
+    at new Downloader (D:\workspace\downloader\Downloader.js:19:14)
+    at MainApp.createWindow (D:\workspace\downloader\MainApp.js:77:27)
+    at App.app.on (D:\workspace\downloader\MainApp.js:54:18)
+    at emitTwo (events.js:131:20)
+    at App.emit (events.js:214:7)
+[2019-05-14 10:05:33.445] [debug] logging set up
+[2019-05-14 10:05:33.461] [debug] log level:debug
+[2019-05-14 10:05:33.461] [debug] size:5242880
+[2019-05-14 10:05:34.208] [debug] window created
+[2019-05-14 10:05:34.223] [error] an unhandled error caught in gloabl handler:  TypeError: this.setPlaylistDownloadEvent is not a function
+    at Downloader.setIpcEvents (D:\workspace\downloader\Downloader.js:24:14)
+    at new Downloader (D:\workspace\downloader\Downloader.js:19:14)
+    at MainApp.createWindow (D:\workspace\downloader\MainApp.js:77:27)
+    at App.app.on (D:\workspace\downloader\MainApp.js:54:18)
+    at emitTwo (events.js:131:20)
+    at App.emit (events.js:214:7)
+[2019-05-14 10:10:47.112] [debug] logging set up
+[2019-05-14 10:10:47.112] [debug] log level:debug
+[2019-05-14 10:10:47.112] [debug] size:5242880
+[2019-05-14 10:10:47.826] [debug] window created
+[2019-05-14 10:10:47.839] [error] an unhandled error caught in gloabl handler:  TypeError: this.setPlaylistDownloadEvent is not a function
+    at Downloader.setIpcEvents (D:\workspace\downloader\Downloader.js:24:14)
+    at new Downloader (D:\workspace\downloader\Downloader.js:19:14)
+    at MainApp.createWindow (D:\workspace\downloader\MainApp.js:77:27)
+    at App.app.on (D:\workspace\downloader\MainApp.js:54:18)
+    at emitTwo (events.js:131:20)
+    at App.emit (events.js:214:7)
+[2019-05-14 10:13:16.658] [debug] logging set up
+[2019-05-14 10:13:16.658] [debug] log level:debug
+[2019-05-14 10:13:16.658] [debug] size:5242880
+[2019-05-14 10:13:17.451] [debug] window created
+[2019-05-14 10:13:17.467] [error] an unhandled error caught in gloabl handler:  TypeError: this.setPlaylistDownloadEvent is not a function
+    at Downloader.setIpcEvents (D:\workspace\downloader\Downloader.js:24:14)
+    at new Downloader (D:\workspace\downloader\Downloader.js:19:14)
+    at MainApp.createWindow (D:\workspace\downloader\MainApp.js:77:27)
+    at App.app.on (D:\workspace\downloader\MainApp.js:54:18)
+    at emitTwo (events.js:131:20)
+    at App.emit (events.js:214:7)
+[2019-05-14 10:21:21.422] [debug] logging set up
+[2019-05-14 10:21:21.425] [debug] log level:debug
+[2019-05-14 10:21:21.427] [debug] size:5242880
+[2019-05-14 10:21:22.325] [debug] window created
+[2019-05-14 10:21:22.340] [error] an unhandled error caught in gloabl handler:  TypeError: this.setPlaylistDownloadEvent is not a function
+    at Downloader.setIpcEvents (D:\workspace\downloader\Downloader.js:24:14)
+    at new Downloader (D:\workspace\downloader\Downloader.js:19:14)
+    at MainApp.createWindow (D:\workspace\downloader\MainApp.js:77:27)
+    at App.app.on (D:\workspace\downloader\MainApp.js:54:18)
+    at emitTwo (events.js:131:20)
+    at App.emit (events.js:214:7)

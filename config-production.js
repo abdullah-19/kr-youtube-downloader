@@ -1,7 +1,8 @@
 const {app} = require('electron');
 const path = require('path');
 
-const downloadDir = path.join(app.getPath('videos'),"kr_youtube_downloader");
+const downloadPath = path.join(app.getAppPath(), "downloads");
+const destinationPath = path.join(app.getPath('videos'),"kr_youtube_downloader");
 
 const loggerPath = __dirname + '/../../';
 
@@ -12,7 +13,8 @@ var config_prod = {
     "size": 5 * 1024 * 1024,
     "filename": "log.txt"
   },
-  "downloadDir":downloadDir,
+  "downloadPath":downloadPath,
+  "destinationPath":destinationPath,
   "isProduction": true
 }
 

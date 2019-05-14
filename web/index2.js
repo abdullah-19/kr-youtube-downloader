@@ -20,7 +20,8 @@ var queue = {
 
 
 downloadBtn.addEventListener('click', function () {
-    start_process();
+    //start_process();
+    showWaiting();
 });
 
 function start_process() {
