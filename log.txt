@@ -520,3 +520,15 @@ ERROR: Unable to download webpage: The read operation timed out (caused by timeo
     at App.app.on (D:\workspace\downloader\MainApp.js:54:18)
     at emitTwo (events.js:131:20)
     at App.emit (events.js:214:7)
+[2019-05-15 11:55:47.483] [debug] logging set up
+[2019-05-15 11:55:47.518] [debug] log level:debug
+[2019-05-15 11:55:47.520] [debug] size:5242880
+[2019-05-15 11:55:49.533] [debug] window created
+[2019-05-15 11:55:49.548] [debug] -------makeDestinationDir-------
+[2019-05-15 11:55:49.619] [debug] downloader object created.
+[2019-05-15 11:57:28.346] [debug] logging set up
+[2019-05-15 11:57:28.346] [debug] log level:debug
+[2019-05-15 11:57:28.346] [debug] size:5242880
+[2019-05-15 11:57:30.522] [debug] window created
+[2019-05-15 11:57:30.529] [debug] -------makeDestinationDir-------
+[2019-05-15 11:57:30.533] [debug] downloader object created.

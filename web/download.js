@@ -38,33 +38,43 @@ function downloadFromQueue() {
 }
 
 
+// ipcRenderer.on('load-complete', function (event, item) {
+//     console.log('--------in ipcRenderer load-complete--------------');
+//     showVideoInfo(item);
+
+//     console.log(item);
+//     console.log('video type:');
+//     console.log(item.isPlaylist);
+//     if (!item.isPlaylist) {
+//         //queue.toLoad.shift();
+//         console.log('after deleting single video, size:' + queue.toLoad.length);
+//     }
+//     else {
+//         if (item.loadIndex >= item.list.length) queue.toLoad.shift();
+//         else queue.toLoad[0].loadIndex++;
+//     }
+//     if (!queue.isDownloading && queue.toDownload.length != 0) {
+//         console.log('not queue');
+//         queue.isDownloading = true;
+//         downloadNext();
+//     }
+//     if (queue.toLoad.length != 0) {
+//         console.log('queue not empty, size:' + queue.toLoad.length);
+//         loadNext();
+//     }
+
+// });
+
+
 ipcRenderer.on('load-complete', function (event, item) {
     console.log('--------in ipcRenderer load-complete--------------');
-    showVideoInfo(item);
-
+    //showVideoInfo(item);
     console.log(item);
     console.log('video type:');
     console.log(item.isPlaylist);
-    if (!item.isPlaylist) {
-        //queue.toLoad.shift();
-        console.log('after deleting single video, size:' + queue.toLoad.length);
-    }
-    else {
-        if (item.loadIndex >= item.list.length) queue.toLoad.shift();
-        else queue.toLoad[0].loadIndex++;
-    }
-    if (!queue.isDownloading && queue.toDownload.length != 0) {
-        console.log('not queue');
-        queue.isDownloading = true;
-        downloadNext();
-    }
-    if (queue.toLoad.length != 0) {
-        console.log('queue not empty, size:' + queue.toLoad.length);
-        loadNext();
-    }
 
+    
 });
-
 
 ipcRenderer.on('download-started', function (event, arg) {
     // const message = `Message reply: ${arg}`

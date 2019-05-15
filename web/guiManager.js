@@ -1,5 +1,19 @@
 
-
+function addWaitingDiv(){
+    //var video_id = extractId(url);
+    var firstDiv = document.createElement("div");
+    firstDiv.setAttribute("class", "waiting border border-info mx-3");
+    var paragraph = document.createElement("p");
+    paragraph.setAttribute("class","text-center mb-0");
+    var span = document.createElement("span");
+    span.setAttribute("class","fa fa-spinner fa-spin py-4");
+    span.setAttribute("style","font-size:24px");
+    paragraph.appendChild(span);
+    //firstDiv.setAttribute("style", "height:80px;");
+    //firstDiv.setAttribute("id", "temp");//info.id
+    firstDiv.appendChild(paragraph);
+    document.getElementById('video_div').appendChild(firstDiv);
+}
 
 function addVideoDiv(url) {
 

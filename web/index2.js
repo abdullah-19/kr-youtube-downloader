@@ -21,7 +21,8 @@ var queue = {
 
 downloadBtn.addEventListener('click', function () {
     //start_process();
-    showWaiting();
+    //showWaiting();
+    addWaitingDiv();
 });
 
 function start_process() {
@@ -68,6 +69,7 @@ function start_process() {
     if (isValidUrl(url)) {
         ipcRenderer.send('start-process', url);
     }
+
     else {
         status_text.innerHTML = "Url is not valid";
     }
