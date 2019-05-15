@@ -20,3 +20,18 @@
     background-color: chocolate;
     cursor:pointer;
 }
+
+#accordion a{
+    text-decoration: none;
+    color:black;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#accordion a:hover{
+    text-decoration: underline;
+}
+
+.card{
+    margin-bottom: 4px;
+}
