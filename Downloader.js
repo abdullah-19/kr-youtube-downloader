@@ -34,11 +34,13 @@ module.exports = class Downloader {
     }
 
     startDownloadProcess(url){
+        log.debug('------startDownloadProcess-----');
         var item = new Item();
         item.url = url;
         item.isPlayliist = this.url.is_playlist(url);
-        item.id = this.url.getIdFromUrl(url);
+        //item.id = this.url.getIdFromUrl(url);
         if(item.isPlayliist){
+            item.id = this.url.getPlaylistId(url);
             item.folderName = "playlist" + this.getDateTime();
             item.destinationPath  = path.join(this.downloadDir,item.folderName);
             //var dir = path.join(this.downloadDir,item.folderName);
@@ -46,6 +48,7 @@ module.exports = class Downloader {
             this.download_videoList(item);
         }
         else{
+            item.id = this.url.getIdFromUrl(url);
             item.destinationPath = this.downloadDir;
             this.loadInfo(item);
         }
@@ -145,9 +148,10 @@ module.exports = class Downloader {
         var filename;
         var downloadPath;
         console.log('----------in fun loadInfo-------------');
-        log.debug('url:'+info.url);
-        //info.loadedInfo = await this.info.getVideoInfo(this.url.getIdFromUrl(info.url));
+       // log.debug('url:'+info.url);
         this.info.getVideoInfo(this.url.getIdFromUrl(item.url)).then((loadedInfo) => {
+            this.writeInfoToFile(loadedInfo);
+
             item.infoAtLoad = loadedInfo;
             log.debug('filename');
             log.debug(item.infoAtLoad._filename);
@@ -164,19 +168,29 @@ module.exports = class Downloader {
                 log.debug('already downloading');
             }
             else {
-                // videoInfo = loadedInfo;
                 log.debug('thumbnail url:' + item.infoAtLoad.thumbnails[0].url);
                 filename = item.infoAtLoad._filename;
                 downloadPath = path.join(config.downloadPath, filename);
-                //item.infoAtLoad.appPath = this.app.getAppPath();
                 item.infoAtLoad.downloadFilePath = downloadPath;
-                this.win.webContents.send('load-complete', item);
+               // this.win.webContents.send('load-complete', item);
             }
 
         }).catch((error) => {
             console.log('Error from getVideoinfo with async( When promise gets rejected ): ' + error);
         });
 
+    }
+
+    writeInfoToFile(loadedInfo){
+        var jsonContent = JSON.stringify(loadedInfo);
+        fs.writeFile("output.json", jsonContent, 'utf8', function (err) { 
+            if (err) { 
+                console.log("An error occured while writing JSON Object to File."); 
+                return console.log(err); 
+            } 
+         
+            console.log("JSON file has been saved."); 
+        }); 
     }
 
     loadUsingYDL(item) {
@@ -247,6 +261,7 @@ module.exports = class Downloader {
 
 
     download_videoList(item) {
+        var url = item.url;
         log.debug('-------------in fun download_videoList-----------------');
         youtubedl.exec(url, ['-j', '--flat-playlist'], {}, (err, output) => {
             if (err) throw err;
@@ -256,8 +271,13 @@ module.exports = class Downloader {
             //var dir = path.join(this.downloadDir,item.folderName);
             //this.createFolder(dir);
             item.list = output;
-            //this.win.webContents.send('video-list', item);
-            this.processPlaylist(item);
+            this.win.webContents.send('video-list', item);
+            //this.processPlaylist(item);
+            //var  id = JSON.parse(output[info.currentLoadItem]).id;
+            // this.info.getVideoInfo(this.url.getUrlFromId(id)).then((loadedInfo)=>{
+            //     this.writeInfoToFile(output);
+            // });
+           // this.writeInfoToFile(output);
 
         });
     }

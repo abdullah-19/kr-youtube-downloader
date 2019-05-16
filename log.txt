@@ -532,3 +532,105 @@ ERROR: Unable to download webpage: The read operation timed out (caused by timeo
 [2019-05-15 11:57:30.522] [debug] window created
 [2019-05-15 11:57:30.529] [debug] -------makeDestinationDir-------
 [2019-05-15 11:57:30.533] [debug] downloader object created.
+[2019-05-16 09:34:44.511] [debug] logging set up
+[2019-05-16 09:34:44.856] [debug] log level:debug
+[2019-05-16 09:34:44.867] [debug] size:5242880
+[2019-05-16 09:34:47.822] [debug] window created
+[2019-05-16 09:34:47.827] [debug] -------makeDestinationDir-------
+[2019-05-16 09:34:47.884] [debug] downloader object created.
+[2019-05-16 09:35:27.670] [debug] ------in Item class constuctor-----
+[2019-05-16 09:35:27.677] [debug] in extract id
+[2019-05-16 09:36:37.008] [debug] logging set up
+[2019-05-16 09:36:37.012] [debug] log level:debug
+[2019-05-16 09:36:37.014] [debug] size:5242880
+[2019-05-16 09:36:42.291] [debug] window created
+[2019-05-16 09:36:42.296] [debug] -------makeDestinationDir-------
+[2019-05-16 09:36:42.308] [debug] downloader object created.
+[2019-05-16 09:36:49.976] [debug] ------in Item class constuctor-----
+[2019-05-16 09:36:49.978] [debug] in extract id
+[2019-05-16 09:36:49.981] [debug] in extract id
+[2019-05-16 09:36:49.983] [debug] ------getVideoInfo-------
+[2019-05-16 09:36:57.834] [debug] filename
+[2019-05-16 09:36:57.837] [debug] 5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-05-16 09:36:57.840] [debug] folder name
+[2019-05-16 09:36:57.843] [debug] 
+[2019-05-16 09:36:57.863] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-05-16 09:43:31.031] [debug] logging set up
+[2019-05-16 09:43:31.058] [debug] log level:debug
+[2019-05-16 09:43:31.060] [debug] size:5242880
+[2019-05-16 09:43:34.685] [debug] window created
+[2019-05-16 09:43:34.691] [debug] -------makeDestinationDir-------
+[2019-05-16 09:43:34.694] [debug] downloader object created.
+[2019-05-16 09:43:51.434] [debug] ------in Item class constuctor-----
+[2019-05-16 09:43:51.445] [debug] in extract id
+[2019-05-16 09:43:51.501] [error] an unhandled error caught in gloabl handler:  TypeError: Cannot read property 'indexOf' of undefined
+    at Url.getIdFromUrl (D:\workspace\downloader\Url.js:12:42)
+    at Downloader.startDownloadProcess (D:\workspace\downloader\Downloader.js:40:28)
+    at EventEmitter.ipcMain.on (D:\workspace\downloader\Downloader.js:32:18)
+    at emitTwo (events.js:126:13)
+    at EventEmitter.emit (events.js:214:7)
+    at WebContents.<anonymous> (D:\workspace\downloader\node_modules\electron\dist\resources\electron.asar\browser\api\web-contents.js:287:13)
+    at emitTwo (events.js:126:13)
+    at WebContents.emit (events.js:214:7)
+[2019-05-16 10:37:49.858] [debug] logging set up
+[2019-05-16 10:37:49.879] [debug] log level:debug
+[2019-05-16 10:37:49.881] [debug] size:5242880
+[2019-05-16 10:37:51.763] [debug] window created
+[2019-05-16 10:37:51.840] [debug] -------makeDestinationDir-------
+[2019-05-16 10:37:51.884] [debug] downloader object created.
+[2019-05-16 10:38:00.734] [debug] ------startDownloadProcess-----
+[2019-05-16 10:38:00.797] [debug] ------in Item class constuctor-----
+[2019-05-16 10:38:00.802] [debug] -----getIdFromUrl----
+[2019-05-16 10:38:00.807] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-05-16 10:38:00.849] [debug] -------------in fun download_videoList-----------------
+[2019-05-16 10:38:00.863] [error] an unhandled error caught in gloabl handler:  ReferenceError: url is not defined
+    at Downloader.download_videoList (D:\workspace\downloader\Downloader.js:265:24)
+    at Downloader.startDownloadProcess (D:\workspace\downloader\Downloader.js:48:18)
+    at EventEmitter.ipcMain.on (D:\workspace\downloader\Downloader.js:32:18)
+    at emitTwo (events.js:126:13)
+    at EventEmitter.emit (events.js:214:7)
+    at WebContents.<anonymous> (D:\workspace\downloader\node_modules\electron\dist\resources\electron.asar\browser\api\web-contents.js:287:13)
+    at emitTwo (events.js:126:13)
+    at WebContents.emit (events.js:214:7)
+[2019-05-16 10:40:12.344] [debug] logging set up
+[2019-05-16 10:40:12.347] [debug] log level:debug
+[2019-05-16 10:40:12.349] [debug] size:5242880
+[2019-05-16 10:40:13.104] [debug] window created
+[2019-05-16 10:40:13.138] [debug] -------makeDestinationDir-------
+[2019-05-16 10:40:13.166] [debug] downloader object created.
+[2019-05-16 10:40:18.742] [debug] ------startDownloadProcess-----
+[2019-05-16 10:40:18.751] [debug] ------in Item class constuctor-----
+[2019-05-16 10:40:18.763] [debug] -----getIdFromUrl----
+[2019-05-16 10:40:18.772] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-05-16 10:40:18.784] [debug] -------------in fun download_videoList-----------------
+[2019-05-16 11:03:10.969] [debug] logging set up
+[2019-05-16 11:03:10.972] [debug] log level:debug
+[2019-05-16 11:03:10.974] [debug] size:5242880
+[2019-05-16 11:03:11.805] [debug] window created
+[2019-05-16 11:03:11.814] [debug] -------makeDestinationDir-------
+[2019-05-16 11:03:11.928] [debug] downloader object created.
+[2019-05-16 11:03:34.008] [debug] ------startDownloadProcess-----
+[2019-05-16 11:03:34.011] [debug] ------in Item class constuctor-----
+[2019-05-16 11:03:34.015] [debug] -----getIdFromUrl----
+[2019-05-16 11:03:34.017] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-05-16 11:03:34.022] [debug] -------------in fun download_videoList-----------------
+[2019-05-16 11:03:38.841] [error] an unhandled error caught in gloabl handler:  ReferenceError: info is not defined
+    at youtubedl.exec (D:\workspace\downloader\Downloader.js:276:41)
+    at done (D:\workspace\downloader\node_modules\youtube-dl\lib\youtube-dl.js:202:9)
+    at ChildProcess.exithandler (child_process.js:279:7)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-05-16 11:04:15.080] [debug] logging set up
+[2019-05-16 11:04:15.190] [debug] log level:debug
+[2019-05-16 11:04:15.193] [debug] size:5242880
+[2019-05-16 11:04:32.166] [debug] window created
+[2019-05-16 11:04:32.170] [debug] -------makeDestinationDir-------
+[2019-05-16 11:04:32.173] [debug] downloader object created.
+[2019-05-16 11:04:38.698] [debug] ------startDownloadProcess-----
+[2019-05-16 11:04:38.701] [debug] ------in Item class constuctor-----
+[2019-05-16 11:04:38.704] [debug] -----getIdFromUrl----
+[2019-05-16 11:04:38.707] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-05-16 11:04:38.726] [debug] -------------in fun download_videoList-----------------
+[2019-05-16 11:04:44.718] [debug] ------getVideoInfo-------

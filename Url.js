@@ -7,7 +7,7 @@ module.exports = class Url {
     }
 
     getIdFromUrl(url) {
-        log.debug('in extract id');
+        log.debug('-----getIdFromUrl----');
         var video_id = url.split('v=')[1];
         var ampersandPosition = video_id.indexOf('&');
         if (ampersandPosition != -1) {
@@ -22,5 +22,12 @@ module.exports = class Url {
             return true;
         }
         return false;
+    }
+
+    getPlaylistId(url){
+        log.debug('-----getIdFromUrl----');
+        var playlist_id = url.split('list=')[1];
+        log.debug('playlistId:'+playlist_id);
+        return playlist_id;
     }
 }

@@ -12,6 +12,7 @@ module.exports = class Item{
         this.folderName = "";
         this.destinationPath = "";
         this.list = null;
+        this.playlistId = "";
         this.loadIndex= 0;
         this.downloadIndex = 0;
         log.debug('------in Item class constuctor-----');
