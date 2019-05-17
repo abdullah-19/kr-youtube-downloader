@@ -72,7 +72,12 @@ ipcRenderer.on('load-complete', function (event, item) {
     console.log(item);
     console.log('video type:');
     console.log(item.isPlaylist);
-
+    if(item.isPlaylist){
+        showPlaylistItemInfo(item);
+    }
+    else{
+        showSingleVideoInfo(item);
+    }
     
 });
 

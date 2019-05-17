@@ -12,13 +12,13 @@
 <body>
   <h1 style="text-align: center;color:#800000;">Downloader</h1>
   <div class="row mx-0">
-    <div class="col-md-1 ">
+    <div class="col-1 ">
       <p>URL:&nbsp;</p>
     </div>
-    <div class="col-md-10 px-0">
+    <div class="col-10 px-0">
       <input id="urlField" type="text" style="width: 100%;" oninput="clear_status()">
     </div>
-    <div class="col-md-1">
+    <div class="col-1">
       <span id="downloadBtn" class="fa fa-arrow-circle-o-down" style="font-size:32px;color:green;"></span>
     </div>
   </div>
@@ -28,10 +28,94 @@
 
     <div id="accordion" class=" px-md-5 mx-md-5">
 
-      <div class="card">
+      <div id="single_videos" class="card">
+        <div class="card-header text-center d-none">
+          <a class="card-link" data-toggle="collapse" href=""> </a>
+        </div>
+        <div id="" class="collapse show" data-parent="">
+          <div class="card-body">
+
+              <div id="singleWaitingDemo" class="container-fluid border border-info px-0 d-none">
+
+                  <div class="row mx-0 border border-info" style="height:80px; ">
+                    <div class="col-2 " style="height: 100%;">
+                      <img class="thumbnail" alt="" src="" style="height:100%;width:100%;">
+                    </div>
+    
+                    <div class="col-9 " style="height:inherit;">
+                      <p style="margin: 2px;" class="filesize small d-none">100MB</p>
+                      <p style="margin: 2px; " class="duration small d-none">1h</p>
+                      <p style="margin: 2px;" class="filename small d-none">This a file name</p>
+                      <span id="" class="processIcon fa fa-spinner fa-spin"
+                        style="position: absolute;top: 30%;left: 40%; font-size:32px;color:lightcoral;"></span>
+                    </div>
+    
+                    <div class="col-1 align-self-center">
+                      <img class="downloadingIcon" alt="" src="res/images/dwonload_continous.gif"
+                        style="height:40px;width:40px;display: none;">
+                      <span id="" class="folderIcon fa fa-folder-open" style="display: none;"></span>
+                    </div>
+                  </div>
+    
+    
+                  <div id="" class="progress_div d-none row mx-0" style="height:18px;">
+                    <div id="" class="parentOfprogressBar col-md-12 p-0 border" style="height: 100%;">
+                      <div id="" class="progress_bar bg-info text-center border border-danger"
+                        style="height:100%;width:10%;">
+                      </div>
+                      <p id="" class="progress small" style="position:absolute; top:0;left: 50%;">10%</p>
+                    </div>
+                  </div>
+                </div>
+
+            <div id="singleInfoDemo" class="container-fluid border border-info px-0 d-none">
+
+              <div class="row mx-0 border border-info" style="height:80px; ">
+                <div class="col-2" style="height: 100%;">
+                  <img class="thumbnail" alt="" src="res/images/raju_vaskor2.jpg"
+                    style="height:100%;width:100%;">
+                </div>
+
+                <div class="col-9 " style="height:inherit;">
+                  <p id="" style="margin: 2px;" class="filesize small">100MB</p>
+                  <p id="" style="margin:2px; " class="duration small">1h</p>
+                  <p id="" style="margin: 2px;" class="filename small">This a file name</p>
+                  <span id="" class="processIcon fa fa-spinner fa-spin"
+                    style="position: absolute;top: 30%;left: 40%; font-size:32px;color:lightcoral; display: none;"></span>
+                </div>
+
+                <div class="col-1 align-self-center">
+                  <img class="downloadingIcon" alt="thumbnail" src="res/images/dwonload_continous.gif"
+                    style="height:40px;width:40px;display: none;">
+                  <span id="" class="folderIcon fa fa-folder-open" style="display: none;"></span>
+                </div>
+              </div>
+
+              <div id="" class="progress_div row mx-0" style="height:18px;">
+                <div id="" class="parentOfprogressBar col-md-12 p-0 border" style="height: 100%;">
+                  <div id="" class="progress_bar bg-info text-center border border-danger"
+                    style="height:100%;width:10%;">
+                  </div>
+                  <p id="" class="progress small" style="position:absolute; top:0;left: 50%;">10%</p>
+                </div>
+              </div>
+
+
+
+            </div>
+
+            
+
+
+
+          </div>
+        </div>
+      </div>
+
+      <div id="playlist_demo" class="card d-none">
         <div class="card-header text-center">
           <a class="card-link" data-toggle="collapse" href="#collapseOne">
-            Playlist: this is a playlist title
+            Processing the playlist...
           </a>
           <p id="playlistDownloadStatus" class="mb-0 d-none">downloading
             <span>2/100</span>
@@ -43,7 +127,7 @@
         <div id="collapseOne" class="collapse" data-parent="#accordion">
           <div class="card-body">
 
-            <div id="" class="container-fluid border border-info px-0">
+            <div id="" class="container-fluid border border-info px-0 d-none">
 
               <div class="row mx-0 border border-info" style="height:80px; ">
                 <div class="col-2" style="height: 100%;">
@@ -80,7 +164,7 @@
             </div>
 
 
-            <div id="" class="row mx-0 border border-info" style="height:80px; ">
+            <div id="" class="row mx-0 border border-info d-none" style="height:80px; ">
               <div class="col-2 " style="height: 100%;">
                 <img id="videoThumbnail" alt="" src="" style="height:100%;width:100%;">
               </div>
@@ -115,88 +199,21 @@
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-header text-center d-none">
-          <a class="card-link" data-toggle="collapse" href=""> </a>
-        </div>
-        <div id="" class="collapse show" data-parent="">
-          <div class="card-body">
 
-            <div id="" class="container-fluid border border-info px-0">
-
-              <div class="row mx-0 border border-info" style="height:80px; ">
-                <div class="col-2" style="height: 100%;">
-                  <img id="videoThumbnail" alt="thumbnail" src="res/images/raju_vaskor2.jpg"
-                    style="height:100%;width:100%;">
-                </div>
-
-                <div class="col-9 " style="height:inherit;">
-                  <p id="filesize" style="margin: 2px;" class="small">100MB</p>
-                  <p id="duration" style="margin:2px; " class="small">1h</p>
-                  <p id="filename" style="margin: 2px;" class="small">This a file name</p>
-                  <span id="processIcon" class="fa fa-spinner fa-spin"
-                    style="position: absolute;top: 30%;left: 40%; font-size:32px;color:lightcoral; display: none;"></span>
-                </div>
-
-                <div class="col-1 align-self-center">
-                  <img id="downloadingIcon" alt="thumbnail" src="res/images/dwonload_continous.gif"
-                    style="height:40px;width:40px;display: none;">
-                  <span id="folderIcon" class="fa fa-folder-open" style="display: none;"></span>
-                </div>
-              </div>
-
-              <div id="progress_div" class="row mx-0" style="height:18px;">
-                <div id="parentOfprogressBar" class="col-md-12 p-0 border" style="height: 100%;">
-                  <div id="progress_bar" class="bg-info text-center border border-danger"
-                    style="height:100%;width:10%;">
-                  </div>
-                  <p id="progress" class="small" style="position:absolute; top:0;left: 50%;">10%</p>
-                </div>
-              </div>
-
-
-
-            </div>
-
-
-            <div id="" class="row mx-0 border border-info" style="height:80px; ">
-              <div class="col-2 " style="height: 100%;">
-                <img id="videoThumbnail" alt="" src="" style="height:100%;width:100%;">
-              </div>
-
-              <div class="col-9 " style="height:inherit;">
-                <p id="filesize" style="margin: 2px;" class="small d-none">100MB</p>
-                <p id="duration" style="margin:2px; " class="small d-none">1h</p>
-                <p id="filename" style="margin: 2px;" class="small d-none">This a file name</p>
-                <span id="processIcon" class="fa fa-spinner fa-spin"
-                  style="position: absolute;top: 30%;left: 40%; font-size:32px;color:lightcoral;"></span>
-              </div>
-
-              <div class="col-1 align-self-center">
-                <img id="downloadingIcon" alt="thumbnail" src="res/images/dwonload_continous.gif"
-                  style="height:40px;width:40px;display: none;">
-                <span id="folderIcon" class="fa fa-folder-open" style="display: none;"></span>
-              </div>
-            </div>
-
-
-            <!-- <div id="progress_div" class="row mx-0" style="height:18px; display: none;">
-                <div id="parentOfprogressBar" class="col-md-12 p-0 border" style="height: 100%;">
-                  <div id="progress_bar" class="bg-info text-center border border-danger" style="height:100%;width:0%;">
-                  </div>
-                  <p id="progress" class="small" style="position:absolute; top:0;left: 50%;"></p>
-                </div>
-              </div> -->
-
-
-
-          </div>
-        </div>
-      </div>
     </div>
 
+  </div>
 
-<!-- ...........................the below code are no longer used....................... -->
+
+  <!-- <div id="progress_div" class="row mx-0" style="height:18px; display: none;">
+                    <div id="parentOfprogressBar" class="col-md-12 p-0 border" style="height: 100%;">
+                      <div id="progress_bar" class="bg-info text-center border border-danger" style="height:100%;width:0%;">
+                      </div>
+                      <p id="progress" class="small" style="position:absolute; top:0;left: 50%;"></p>
+                    </div>
+                  </div> -->
+
+    <!-- ...........................the below code are no longer used....................... -->
 
     <!-- <div class="waiting border border-info mx-3">
       <p class="text-center mb-0"><span class="fa fa-spinner fa-spin py-4" style="font-size:24px"></span></p>
@@ -234,9 +251,6 @@
       </div>
     </div> -->
 
-
-  </div>
-
   <p id="error_text" style="color:red;text-align: center;"></p>
 
   <div id="update-bar" class="container" style="position:absolute;bottom: 20px; opacity: 0;display: none;">
@@ -260,7 +274,9 @@
   <script type="text/javascript" src="download.js"></script>
   <script type="text/javascript" src="url.js"></script>
   <script type="text/javascript" src="fileManager.js"></script>
-  <script src="res/js/jquery-3.4.1.min.js"></script>
+  <script src="res/js/jquery-3.3.1.min.js"></script>
+  <script src="res/js/jquery-3.3.1.slim.min.js"></script>
+  <script src="res/js/popper.js-1.14.7/umd/popper.min.js"></script>
   <script src="res/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 </body>
 

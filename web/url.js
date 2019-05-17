@@ -41,3 +41,10 @@ function is_playlist(url) {
 function getUrlFromId(id) {
     return "https://www.youtube.com/watch?v=" + id;
 }
+
+function getPlaylistId(url){
+    console.log('-----getIdFromUrl----');
+    var playlist_id = url.split('list=')[1];
+    console.log('playlistId:'+playlist_id);
+    return playlist_id;
+}

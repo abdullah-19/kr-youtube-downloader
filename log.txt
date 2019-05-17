@@ -634,3 +634,204 @@ ERROR: Unable to download webpage: The read operation timed out (caused by timeo
 [2019-05-16 11:04:38.707] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
 [2019-05-16 11:04:38.726] [debug] -------------in fun download_videoList-----------------
 [2019-05-16 11:04:44.718] [debug] ------getVideoInfo-------
+[2019-05-17 11:23:43.639] [debug] logging set up
+[2019-05-17 11:23:43.704] [debug] log level:debug
+[2019-05-17 11:23:43.740] [debug] size:5242880
+[2019-05-17 11:23:45.642] [debug] window created
+[2019-05-17 11:23:45.750] [debug] -------makeDestinationDir-------
+[2019-05-17 11:23:45.768] [debug] downloader object created.
+[2019-05-17 11:26:55.444] [debug] logging set up
+[2019-05-17 11:26:55.444] [debug] log level:debug
+[2019-05-17 11:26:55.444] [debug] size:5242880
+[2019-05-17 11:26:56.218] [debug] window created
+[2019-05-17 11:26:56.224] [debug] -------makeDestinationDir-------
+[2019-05-17 11:26:56.235] [debug] downloader object created.
+[2019-05-17 11:43:19.861] [debug] logging set up
+[2019-05-17 11:43:19.911] [debug] log level:debug
+[2019-05-17 11:43:19.914] [debug] size:5242880
+[2019-05-17 11:43:24.243] [debug] window created
+[2019-05-17 11:43:24.257] [debug] -------makeDestinationDir-------
+[2019-05-17 11:43:24.283] [debug] downloader object created.
+[2019-05-17 11:44:22.967] [debug] logging set up
+[2019-05-17 11:44:22.971] [debug] log level:debug
+[2019-05-17 11:44:23.004] [debug] size:5242880
+[2019-05-17 11:44:23.922] [debug] window created
+[2019-05-17 11:44:23.930] [debug] -------makeDestinationDir-------
+[2019-05-17 11:44:23.947] [debug] downloader object created.
+[2019-05-17 11:45:31.039] [debug] logging set up
+[2019-05-17 11:45:31.039] [debug] log level:debug
+[2019-05-17 11:45:31.039] [debug] size:5242880
+[2019-05-17 11:45:31.746] [debug] window created
+[2019-05-17 11:45:31.751] [debug] -------makeDestinationDir-------
+[2019-05-17 11:45:31.758] [debug] downloader object created.
+[2019-05-17 11:48:59.871] [debug] logging set up
+[2019-05-17 11:48:59.871] [debug] log level:debug
+[2019-05-17 11:48:59.871] [debug] size:5242880
+[2019-05-17 11:49:00.664] [debug] window created
+[2019-05-17 11:49:00.671] [debug] -------makeDestinationDir-------
+[2019-05-17 11:49:00.680] [debug] downloader object created.
+[2019-05-17 11:57:23.376] [debug] logging set up
+[2019-05-17 11:57:23.731] [debug] log level:debug
+[2019-05-17 11:57:23.740] [debug] size:5242880
+[2019-05-17 11:57:24.649] [debug] window created
+[2019-05-17 11:57:24.654] [debug] -------makeDestinationDir-------
+[2019-05-17 11:57:24.665] [debug] downloader object created.
+[2019-05-17 11:59:31.682] [debug] logging set up
+[2019-05-17 11:59:31.682] [debug] log level:debug
+[2019-05-17 11:59:31.682] [debug] size:5242880
+[2019-05-17 11:59:32.403] [debug] window created
+[2019-05-17 11:59:32.454] [debug] -------makeDestinationDir-------
+[2019-05-17 11:59:32.459] [debug] downloader object created.
+[2019-05-17 12:01:18.539] [debug] logging set up
+[2019-05-17 12:01:18.543] [debug] log level:debug
+[2019-05-17 12:01:18.544] [debug] size:5242880
+[2019-05-17 12:01:19.319] [debug] window created
+[2019-05-17 12:01:19.332] [debug] -------makeDestinationDir-------
+[2019-05-17 12:01:19.336] [debug] downloader object created.
+[2019-05-17 12:10:58.663] [debug] logging set up
+[2019-05-17 12:10:58.666] [debug] log level:debug
+[2019-05-17 12:10:58.668] [debug] size:5242880
+[2019-05-17 12:10:59.379] [debug] window created
+[2019-05-17 12:10:59.389] [debug] -------makeDestinationDir-------
+[2019-05-17 12:10:59.397] [debug] downloader object created.
+[2019-05-17 12:11:34.792] [debug] logging set up
+[2019-05-17 12:11:34.795] [debug] log level:debug
+[2019-05-17 12:11:34.797] [debug] size:5242880
+[2019-05-17 12:11:35.523] [debug] window created
+[2019-05-17 12:11:35.533] [debug] -------makeDestinationDir-------
+[2019-05-17 12:11:35.538] [debug] downloader object created.
+[2019-05-17 12:12:07.250] [debug] logging set up
+[2019-05-17 12:12:07.253] [debug] log level:debug
+[2019-05-17 12:12:07.256] [debug] size:5242880
+[2019-05-17 12:12:08.018] [debug] window created
+[2019-05-17 12:12:08.028] [debug] -------makeDestinationDir-------
+[2019-05-17 12:12:08.034] [debug] downloader object created.
+[2019-05-17 12:12:29.090] [debug] logging set up
+[2019-05-17 12:12:29.093] [debug] log level:debug
+[2019-05-17 12:12:29.095] [debug] size:5242880
+[2019-05-17 12:12:29.805] [debug] window created
+[2019-05-17 12:12:29.809] [debug] -------makeDestinationDir-------
+[2019-05-17 12:12:29.818] [debug] downloader object created.
+[2019-05-17 12:12:48.612] [debug] logging set up
+[2019-05-17 12:12:48.615] [debug] log level:debug
+[2019-05-17 12:12:48.617] [debug] size:5242880
+[2019-05-17 12:12:49.395] [debug] window created
+[2019-05-17 12:12:49.413] [debug] -------makeDestinationDir-------
+[2019-05-17 12:12:49.416] [debug] downloader object created.
+[2019-05-17 12:13:37.029] [debug] logging set up
+[2019-05-17 12:13:37.029] [debug] log level:debug
+[2019-05-17 12:13:37.029] [debug] size:5242880
+[2019-05-17 12:13:37.742] [debug] window created
+[2019-05-17 12:13:37.749] [debug] -------makeDestinationDir-------
+[2019-05-17 12:13:37.763] [debug] downloader object created.
+[2019-05-17 15:41:25.298] [debug] logging set up
+[2019-05-17 15:41:25.553] [debug] log level:debug
+[2019-05-17 15:41:25.560] [debug] size:5242880
+[2019-05-17 15:41:33.406] [debug] window created
+[2019-05-17 15:41:33.516] [debug] -------makeDestinationDir-------
+[2019-05-17 15:41:33.562] [debug] downloader object created.
+[2019-05-17 15:42:32.898] [debug] ------startDownloadProcess-----
+[2019-05-17 15:42:32.902] [debug] ------in Item class constuctor-----
+[2019-05-17 15:42:32.905] [debug] -----getIdFromUrl----
+[2019-05-17 15:42:32.925] [debug] -----getIdFromUrl----
+[2019-05-17 15:42:32.999] [debug] ------getVideoInfo-------
+[2019-05-17 15:42:44.664] [debug] filename
+[2019-05-17 15:42:44.669] [debug] 5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-05-17 15:42:44.675] [debug] folder name
+[2019-05-17 15:42:44.698] [debug] 
+[2019-05-17 15:42:44.751] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-05-17 15:48:16.803] [debug] logging set up
+[2019-05-17 15:48:16.805] [debug] log level:debug
+[2019-05-17 15:48:16.808] [debug] size:5242880
+[2019-05-17 15:48:18.054] [debug] window created
+[2019-05-17 15:48:18.061] [debug] -------makeDestinationDir-------
+[2019-05-17 15:48:18.077] [debug] downloader object created.
+[2019-05-17 15:48:36.891] [debug] ------startDownloadProcess-----
+[2019-05-17 15:48:36.910] [debug] ------in Item class constuctor-----
+[2019-05-17 15:48:36.924] [debug] -----getIdFromUrl----
+[2019-05-17 15:48:36.936] [debug] -----getIdFromUrl----
+[2019-05-17 15:48:36.945] [debug] ------getVideoInfo-------
+[2019-05-17 15:48:55.973] [debug] filename
+[2019-05-17 15:48:55.980] [debug] 5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-05-17 15:48:55.986] [debug] folder name
+[2019-05-17 15:48:55.995] [debug] 
+[2019-05-17 15:48:56.001] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-05-17 16:04:26.575] [debug] logging set up
+[2019-05-17 16:04:26.579] [debug] log level:debug
+[2019-05-17 16:04:26.581] [debug] size:5242880
+[2019-05-17 16:04:27.445] [debug] window created
+[2019-05-17 16:04:27.456] [debug] -------makeDestinationDir-------
+[2019-05-17 16:04:27.461] [debug] downloader object created.
+[2019-05-17 16:06:47.199] [debug] logging set up
+[2019-05-17 16:06:47.203] [debug] log level:debug
+[2019-05-17 16:06:47.205] [debug] size:5242880
+[2019-05-17 16:06:47.914] [debug] window created
+[2019-05-17 16:06:47.923] [debug] -------makeDestinationDir-------
+[2019-05-17 16:06:47.927] [debug] downloader object created.
+[2019-05-17 16:06:53.467] [debug] ------startDownloadProcess-----
+[2019-05-17 16:06:53.482] [debug] ------in Item class constuctor-----
+[2019-05-17 16:06:53.490] [debug] -----getIdFromUrl----
+[2019-05-17 16:06:53.499] [debug] -----getIdFromUrl----
+[2019-05-17 16:06:53.509] [debug] ------getVideoInfo-------
+[2019-05-17 16:07:03.159] [debug] filename
+[2019-05-17 16:07:03.161] [debug] 5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-05-17 16:07:03.167] [debug] folder name
+[2019-05-17 16:07:03.172] [debug] 
+[2019-05-17 16:07:03.176] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-05-17 16:09:24.792] [debug] logging set up
+[2019-05-17 16:09:24.797] [debug] log level:debug
+[2019-05-17 16:09:24.798] [debug] size:5242880
+[2019-05-17 16:09:25.504] [debug] window created
+[2019-05-17 16:09:25.514] [debug] -------makeDestinationDir-------
+[2019-05-17 16:09:25.518] [debug] downloader object created.
+[2019-05-17 16:09:30.851] [debug] ------startDownloadProcess-----
+[2019-05-17 16:09:30.860] [debug] ------in Item class constuctor-----
+[2019-05-17 16:09:30.870] [debug] -----getIdFromUrl----
+[2019-05-17 16:09:30.881] [debug] -----getIdFromUrl----
+[2019-05-17 16:09:30.890] [debug] ------getVideoInfo-------
+[2019-05-17 16:09:41.204] [debug] filename
+[2019-05-17 16:09:41.206] [debug] 5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-05-17 16:09:41.217] [debug] folder name
+[2019-05-17 16:09:41.221] [debug] 
+[2019-05-17 16:09:41.225] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg
+[2019-05-17 16:21:58.389] [debug] logging set up
+[2019-05-17 16:21:58.392] [debug] log level:debug
+[2019-05-17 16:21:58.394] [debug] size:5242880
+[2019-05-17 16:21:59.136] [debug] window created
+[2019-05-17 16:21:59.146] [debug] -------makeDestinationDir-------
+[2019-05-17 16:21:59.152] [debug] downloader object created.
+[2019-05-17 16:41:00.219] [debug] logging set up
+[2019-05-17 16:41:00.219] [debug] log level:debug
+[2019-05-17 16:41:00.219] [debug] size:5242880
+[2019-05-17 16:41:00.936] [debug] window created
+[2019-05-17 16:41:00.947] [debug] -------makeDestinationDir-------
+[2019-05-17 16:41:00.950] [debug] downloader object created.
+[2019-05-17 16:42:37.026] [debug] logging set up
+[2019-05-17 16:42:37.026] [debug] log level:debug
+[2019-05-17 16:42:37.042] [debug] size:5242880
+[2019-05-17 16:42:37.753] [debug] window created
+[2019-05-17 16:42:37.759] [debug] -------makeDestinationDir-------
+[2019-05-17 16:42:37.767] [debug] downloader object created.
+[2019-05-17 16:42:43.496] [debug] ------startDownloadProcess-----
+[2019-05-17 16:42:43.501] [debug] ------in Item class constuctor-----
+[2019-05-17 16:42:43.504] [debug] -----getIdFromUrl----
+[2019-05-17 16:42:43.505] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-05-17 16:42:43.635] [debug] -------------in fun download_videoList-----------------
+[2019-05-17 16:42:50.725] [debug] ------in ipcMain start-load-------
+[2019-05-17 16:42:50.727] [debug] -----getIdFromUrl----
+[2019-05-17 16:50:31.708] [debug] logging set up
+[2019-05-17 16:50:31.708] [debug] log level:debug
+[2019-05-17 16:50:31.708] [debug] size:5242880
+[2019-05-17 16:50:32.457] [debug] window created
+[2019-05-17 16:50:32.467] [debug] -------makeDestinationDir-------
+[2019-05-17 16:50:32.475] [debug] downloader object created.
+[2019-05-17 16:50:44.774] [debug] ------startDownloadProcess-----
+[2019-05-17 16:50:44.776] [debug] ------in Item class constuctor-----
+[2019-05-17 16:50:44.778] [debug] -----getIdFromUrl----
+[2019-05-17 16:50:44.781] [debug] -----getIdFromUrl----
+[2019-05-17 16:50:44.783] [debug] ------getVideoInfo-------
+[2019-05-17 16:50:52.910] [debug] filename
+[2019-05-17 16:50:52.916] [debug] 5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-05-17 16:50:52.922] [debug] folder name
+[2019-05-17 16:50:52.927] [debug] 
+[2019-05-17 16:50:52.930] [debug] thumbnail url:https://i.ytimg.com/vi/QohH89Eu5iM/maxresdefault.jpg

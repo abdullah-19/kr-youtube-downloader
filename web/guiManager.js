@@ -1,13 +1,13 @@
 
-function addWaitingDiv(){
+function addWaitingDiv() {
     //var video_id = extractId(url);
     var firstDiv = document.createElement("div");
     firstDiv.setAttribute("class", "waiting border border-info mx-3");
     var paragraph = document.createElement("p");
-    paragraph.setAttribute("class","text-center mb-0");
+    paragraph.setAttribute("class", "text-center mb-0");
     var span = document.createElement("span");
-    span.setAttribute("class","fa fa-spinner fa-spin py-4");
-    span.setAttribute("style","font-size:24px");
+    span.setAttribute("class", "fa fa-spinner fa-spin py-4");
+    span.setAttribute("style", "font-size:24px");
     paragraph.appendChild(span);
     //firstDiv.setAttribute("style", "height:80px;");
     //firstDiv.setAttribute("id", "temp");//info.id
@@ -163,7 +163,7 @@ function show_processIcon() {
 
 
 function showVideoInfo(info) {
-    
+
     console.log('------in fun showVideoInfo----------');
     var arg = info.loadedInfo;
     console.log(arg);
@@ -296,7 +296,7 @@ ipcRenderer.on('move-complete', (event, info) => {
 
 });
 
-function showWaiting(){
+function showWaiting() {
     var div1 = document.createElement("div");
     //div1.setAttribute("id", "progressDiv_" + "temp");
     div1.setAttribute("class", "waiting");
@@ -306,4 +306,64 @@ function showWaiting(){
     //div1.setAttribute("style", "height:18px; display: none;");
     div1.appendChild(paragraph);
     document.getElementById("video_div").appendChild(div1);
+}
+
+function showSingleVideoWaitingDiv() {
+    console.log('----showSingleVideoWaitingDiv-----');
+    var waitingDiv = document.querySelector('#singleWaitingDemo').cloneNode(true);
+    waitingDiv.id = "";
+    waitingDiv.classList.remove("d-none");
+    waitingDiv.classList.add('waiting');
+    var sibling = document.getElementById('singleWaitingDemo');
+    sibling.parentNode.insertBefore(waitingDiv, sibling.nextSibling);
+    //head.parentNode.insertBefore(myEle,head.nextSibling)
+    //element.classList.remove("mystyle");
+}
+
+function showSingleVideoInfo(item) {
+    console.log('----showSingleVideoInfo----');
+    var info = item.infoAtLoad;
+
+    let singleVideos = document.getElementById('single_videos');
+    var infoDiv = singleVideos.getElementsByClassName('waiting')[0]
+
+    //var infoDiv = document.getElementsByClassName('singleWaiting')[0];
+    if (document.getElementById('s_' + item.id)) {
+        let ele = document.getElementById('s_' + item.id);
+        ele.parentNode.removeChild(ele);
+    }
+
+    infoDiv.classList.remove('waiting');
+    infoDiv.id = 's_' + item.id;
+    infoDiv.getElementsByClassName('thumbnail')[0].src = item.infoAtLoad.thumbnail;
+
+    var filesize = infoDiv.getElementsByClassName('filesize')[0];
+    filesize.innerHTML = "filesize:" + (info.filesize / 1024) + "MB";
+    filesize.classList.remove('d-none');
+
+    var duration = infoDiv.getElementsByClassName('duration')[0];
+    duration.innerHTML = "duration:" + info._duration_hms;
+    duration.classList.remove('d-none');
+
+    var filename = infoDiv.getElementsByClassName('filename')[0];
+    filename.innerHTML = "filename:" + info._filename;
+    filename.classList.remove('d-none');
+
+    infoDiv.getElementsByClassName('processIcon')[0].classList.add('d-none');
+
+}
+
+function showPlaylistWaitingDiv(url) {
+    let id = getPlaylistId(url);
+    console.log('----showPlaylistWaitingDiv-----');
+    var waitingDiv = document.querySelector('#playlist_demo').cloneNode(true);
+    waitingDiv.id = "playlist_"+id;
+    waitingDiv.classList.remove("d-none");
+    var sibling = document.getElementById('playlist_demo');
+    sibling.parentNode.insertBefore(waitingDiv, sibling.nextSibling);
+}
+
+function showPlaylistItemInfo(item) {
+
+
 }

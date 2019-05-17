@@ -31,9 +31,9 @@ function start_process() {
     console.log('download button clicked');
     var url = urlField.value;
     //var url_status = isValidUrl(url);
-    if (queue.toDownload.length === 0) {
-        queue.isDownloading = false;
-    }
+    // if (queue.toDownload.length === 0) {
+    //     queue.isDownloading = false;
+    // }
     if (url == "") {
         status_text.innerHTML = "Please insert url";
     }
@@ -69,6 +69,12 @@ function start_process() {
     // }
 
     if (isValidUrl(url)) {
+        if (is_playlist(url)) {
+            showPlaylistWaitingDiv(url);
+        }
+        else {
+            showSingleVideoWaitingDiv();
+        }
         ipcRenderer.send('start-process', url);
     }
 
