@@ -349,6 +349,13 @@ function showSingleVideoInfo(item) {
     filename.innerHTML = "filename:" + info._filename;
     filename.classList.remove('d-none');
 
+    infoDiv.getElementsByClassName('progress_div')[0].id = "pds_" + item.id;
+    infoDiv.getElementsByClassName('progress_bar')[0].id = "pbs_" + item.id;
+    infoDiv.getElementsByClassName('progress_text')[0].id = "pts_" + item.id;
+
+    filename.innerHTML = "filename:" + info._filename;
+    filename.classList.remove('d-none');
+
     infoDiv.getElementsByClassName('processIcon')[0].classList.add('d-none');
 
 }
@@ -357,7 +364,7 @@ function showPlaylistWaitingDiv(url) {
     let id = getPlaylistId(url);
     console.log('----showPlaylistWaitingDiv-----');
     var waitingDiv = document.querySelector('#playlist_demo').cloneNode(true);
-    waitingDiv.id = "playlist_"+id;
+    waitingDiv.id = "playlist_" + id;
     waitingDiv.classList.remove("d-none");
     var sibling = document.getElementById('playlist_demo');
     sibling.parentNode.insertBefore(waitingDiv, sibling.nextSibling);
@@ -367,3 +374,31 @@ function showPlaylistItemInfo(item) {
 
 
 }
+
+function showProgressOfSingleVideo(item) {
+    console.log('----showProgressOfSingleVideo----');
+    console.log('id:');
+    console.log(item.id);
+    var videoDiv = document.getElementById('s_' + item.id);
+    var progressDiv = videoDiv.getElementsByClassName('progress_div')[0];
+    progressDiv.classList.remove('d-none');
+    var progressBar = progressDiv.getElementsByClassName('progress_bar')[0];
+    var progressText = progressDiv.getElementsByClassName('progress_text')[0];
+
+    var f = setInterval(() => {
+        console.log('---setInterval---');
+        progressBar.style.width = item.downloadProgress + "%";
+        progressText.innerHTML = item.downloadProgress + "%";
+        if (item.downloadProgress == 100) clearInterval(f);
+    }, 500);
+
+}
+
+ipcRenderer.on('download-progress', function (event, progressInfo) {
+    console.log('--------in ipcRenderer download-progress--------------');
+    console.log('progressInfo.id:'+progressInfo.id);
+    console.log('progressInfo.percent:'+progressInfo.percent);
+    document.getElementById('pbs_' + progressInfo.id).style.width = progressInfo.percent + "%";
+    document.getElementById('pts_' + progressInfo.id).innerHTML = progressInfo.percent + "%";
+
+});

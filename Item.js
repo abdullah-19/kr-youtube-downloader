@@ -15,7 +15,7 @@ module.exports = class Item{
         this.playlistId = "";
         this.loadIndex= 0;
         this.downloadIndex = 0;
-        this.downloadProgress = "";
+        this.downloadProgress = 0;
         this.listSize = -1;
         log.debug('------in Item class constuctor-----');
 

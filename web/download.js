@@ -81,14 +81,25 @@ ipcRenderer.on('load-complete', function (event, item) {
     
 });
 
-ipcRenderer.on('download-started', function (event, arg) {
+ipcRenderer.on('download-started', function (event, item) {
+    console.log('---ipcRenderer download-started-------');
     // const message = `Message reply: ${arg}`
     //status_text.innerHTML = "Downloading...";
     // status_text.style.color = "blue";
     //downloadProgress(arg._filename,arg.size);
     // showBasicInfo(arg);
-    downloadProgress(arg);
+    console.log('item:');
+    console.log(item);
+    //downloadProgress(arg);
     //downloadNext();
+    if(item.isPlaylist){
+        showProgressOfPlaylistVideo(item);
+    }
+    else{
+       // showProgressOfSingleVideo(item);
+       document.getElementById('pds_'+item.id).classList.remove('d-none');
+    }
+    //showProgress(item);
 });
 
 

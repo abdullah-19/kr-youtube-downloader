@@ -149,14 +149,7 @@ module.exports = class Downloader {
         console.log('----------in fun loadInfo-------------');
         // log.debug('url:'+info.url);
         this.info.getVideoInfo(this.url.getIdFromUrl(item.url)).then((loadedInfo) => {
-            //this.writeInfoToFile(loadedInfo);
-
             item.infoAtLoad = loadedInfo;
-            log.debug('filename');
-            log.debug(item.infoAtLoad._filename);
-            log.debug('folder name');
-            log.debug(item.folderName);
-
 
             if (fs.existsSync(path.join(item.destinationDir, item.infoAtLoad._filename))) {
                 this.win.webContents.send('already_downloaded', item);
@@ -168,9 +161,9 @@ module.exports = class Downloader {
             }
             else {
                 //log.debug('thumbnail url:' + item.infoAtLoad.thumbnails[0].url);
-                filename = item.infoAtLoad._filename;
-                downloadPath = path.join(config.downloadDir, filename);
-                item.infoAtLoad.downloadFilePath = downloadPath;
+                //filename = item.infoAtLoad._filename;
+                //ownloadPath = path.join(config.downloadDir, filename);
+               // item.infoAtLoad.downloadFilePath = downloadPath;
                 this.win.webContents.send('load-complete', item);
                 this.processForDownload(item);
             }
@@ -193,17 +186,27 @@ module.exports = class Downloader {
         var size = item.infoAtLoad.filesize;
         let video = this.downloadVideo(item.url);
         var pos = 0;
+        var progressInfo = {};
+        var percent=0;
+        progressInfo.id = item.id;
         video.on('data', function data(chunk) {
             pos += chunk.length;
             // `size` should not be 0 here.
             if (size) {
-                var percent = (pos / size * 100).toFixed(2);
-                // process.stdout.cursorTo(0);
-                // process.stdout.clearLine(1);
-                // process.stdout.write(percent + '%');
-                item.downloadProgress = percent + '%';
+                //var percent = (pos / size * 100).toFixed(2);
+                percent = Math.floor((pos / size) * 100);
+                //item.downloadProgress = percent;
+                
+                log.debug('percent:'+percent+"%");
+
             }
         });
+        this.win.webContents.send('download-started',item);
+
+        var f = setInterval(()=>{
+            progressInfo.percent = percent;
+            this.win.webContents.send('download-progress',progressInfo);
+        },1000);
     }
 
     downloadPlaylist(item) {
