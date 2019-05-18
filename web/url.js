@@ -43,7 +43,7 @@ function getUrlFromId(id) {
 }
 
 function getPlaylistId(url){
-    console.log('-----getIdFromUrl----');
+    console.log('-----getPlaylistId----');
     var playlist_id = url.split('list=')[1];
     console.log('playlistId:'+playlist_id);
     return playlist_id;

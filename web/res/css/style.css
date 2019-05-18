@@ -2,12 +2,12 @@
     background-color: #e8e3e3;
 }
 
-#folderIcon{
-    font-size: 32px;
+.folderIcon{
+    font-size: 26px;
     color: green;
 }
-#folderIcon:hover{
-    font-size: 36px;
+.folderIcon:hover{
+    font-size: 30px;
     color: brown;
 }
 

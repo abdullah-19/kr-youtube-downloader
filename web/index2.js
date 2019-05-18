@@ -28,7 +28,7 @@ downloadBtn.addEventListener('click', function () {
 });
 
 function start_process() {
-    console.log('download button clicked');
+    console.log('--start_process----');
     var url = urlField.value;
     //var url_status = isValidUrl(url);
     // if (queue.toDownload.length === 0) {

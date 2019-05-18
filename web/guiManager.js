@@ -205,37 +205,39 @@ function showProgressBar() {
 }
 
 
-function downloadProgress(arg) {
-    var downloadedSize;
-    var info = arg.loadedInfo;
-    console.log('--------in fun downloadProgress---------');
-    console.log('info.id: in progress :');
-    console.log(info.id);
-    var progressDiv = document.getElementById('progressDiv_' + info.id);
-    progressDiv.style.display = "block";
-    var progressStatus = document.getElementById('progress_' + info.id);
-    var progressBar = document.getElementById('progressBar_' + info.id);
-    progressBar.style.display = "block";
-    var parcentOfProgress;
-    var parecentStr;
-    var progress = setInterval(() => {
-        //downloadedSize = getFileSize(info._filename);
-        downloadedSize = getFileSize(info.downloadFilePath);
+// function downloadProgress(arg) {
+//     var downloadedSize;
+//     var info = arg.loadedInfo;
+//     console.log('--------in fun downloadProgress---------');
+//     console.log('info.id: in progress :');
+//     console.log(info.id);
+//     var progressDiv = document.getElementById('progressDiv_' + info.id);
+//     progressDiv.style.display = "block";
+//     var progressStatus = document.getElementById('progress_' + info.id);
+//     var progressBar = document.getElementById('progressBar_' + info.id);
+//     progressBar.style.display = "block";
+//     var parcentOfProgress;
+//     var parecentStr;
+//     var progress = setInterval(() => {
+//         //downloadedSize = getFileSize(info._filename);
+//         downloadedSize = getFileSize(info.downloadFilePath);
 
-        parcentOfProgress = downloadedSize / info.size;
-        parcentOfProgress = parcentOfProgress * 100;
-        progressBar.style.width = parcentOfProgress + "%";
-        progressStatus.innerHTML = Math.floor(parcentOfProgress) + "%";
-        //console.log(downloadedSize);
-        if (downloadedSize == info.size) {
-            ipcRenderer.send('download-complete', arg);
-            clearInterval(progress);
-            processNextVideo();
-            progressDiv.style.display = "none";
-            //updateQueue();
-        }
-    }, 500);
-}
+//         parcentOfProgress = downloadedSize / info.size;
+//         parcentOfProgress = parcentOfProgress * 100;
+//         progressBar.style.width = parcentOfProgress + "%";
+//         progressStatus.innerHTML = Math.floor(parcentOfProgress) + "%";
+//         //console.log(downloadedSize);
+//         if (downloadedSize == info.size) {
+//             ipcRenderer.send('download-complete', arg);
+//             clearInterval(progress);
+//             processNextVideo();
+//             progressDiv.style.display = "none";
+//             //updateQueue();
+//         }
+//     }, 500);
+// }
+
+
 
 
 function fadeOut(id, val) {
@@ -360,45 +362,115 @@ function showSingleVideoInfo(item) {
 
 }
 
+
+// function showProgressOfSingleVideo(item) {
+//     console.log('----showProgressOfSingleVideo----');
+//     console.log('id:');
+//     console.log(item.id);
+//     var videoDiv = document.getElementById('s_' + item.id);
+//     var progressDiv = videoDiv.getElementsByClassName('progress_div')[0];
+//     progressDiv.classList.remove('d-none');
+//     var progressBar = progressDiv.getElementsByClassName('progress_bar')[0];
+//     var progressText = progressDiv.getElementsByClassName('progress_text')[0];
+
+//     var f = setInterval(() => {
+//         progressBar.style.width = item.downloadProgress + "%";
+//         progressText.innerHTML = item.downloadProgress + "%";
+//         if (item.downloadProgress == 100) clearInterval(f);
+//     }, 500);
+
+// }
+
+
+ipcRenderer.on('download-progress', function (event, progressInfo) {
+    console.log('--------in ipcRenderer download-progress--------------');
+    console.log('progressInfo.id:' + progressInfo.id);
+    console.log('progressInfo.percent:' + progressInfo.percent);
+    document.getElementById('pbs_' + progressInfo.id).style.width = progressInfo.percent + "%";
+    document.getElementById('pts_' + progressInfo.id).innerHTML = progressInfo.percent + "%";
+
+});
+
+ipcRenderer.on('download-complete', (event, item) => {
+    var iconDiv = document.getElementById('s_' + item.id);
+
+    var folderIcon = iconDiv.getElementsByClassName('folderIcon')[0];
+    folderIcon.classList.remove('d-none');
+
+    var progressDiv = iconDiv.getElementsByClassName('progress_div')[0];
+    progressDiv.classList.add('d-none');
+
+    folderIcon.onclick = function () {
+        ipcRenderer.send('open-file-directory', item);
+    }
+
+});
+
 function showPlaylistWaitingDiv(url) {
-    let id = getPlaylistId(url);
     console.log('----showPlaylistWaitingDiv-----');
+    let id = getPlaylistId(url);
     var waitingDiv = document.querySelector('#playlist_demo').cloneNode(true);
     waitingDiv.id = "playlist_" + id;
     waitingDiv.classList.remove("d-none");
     var sibling = document.getElementById('playlist_demo');
     sibling.parentNode.insertBefore(waitingDiv, sibling.nextSibling);
+
+    var playlistItemDemo = waitingDiv.getElementsByClassName('playlistItem')[0];
+    console.log('playlist item demo:');
+    playlistItemDemo.id = "piDemo_"+id;
+    console.log(playlistItemDemo);
+
+}
+
+function showPlaylistItemWaitingDiv(item) {
+    console.log('-----showPlaylistItemWaitingDiv------');
+
+    //var playlistDiv = document.getElementById('playlist_'+item.id);
+
+    var waitingItemDiv = document.querySelector('#piDemo_'+item.id).cloneNode(true);
+    console.log('loadIndex:'+item.loadIndex);
+    let id =JSON.parse(item.list[item.loadIndex+1]).id;
+    console.log('id:'+item.id);
+    //var waitingItemDiv = playlistDiv.getElementsByClassName('playlistItem');
+    waitingItemDiv.id = "pi_" + id;
+    waitingItemDiv.classList.remove("d-none");
+    var sibling = document.getElementById('piDemo_'+item.id);
+    console.log('sibling:');
+    console.log(sibling);
+    sibling.parentNode.insertBefore(waitingItemDiv, sibling.nextSibling);
+    
+    waitingItemDiv.getElementsByClassName('progress_bar')[0].id = 'pbp_' + id;
+    waitingItemDiv.getElementsByClassName('progress_text')[0].id = 'ptp_' + id;
+
 }
 
 function showPlaylistItemInfo(item) {
+    
+    let playlistItemDiv = document.getElementById('pi_' + item.infoAtLoad.id);
+    playlistItemDiv.getElementsByClassName('processIcon')[0].classList.add('d-none');
+    
+    let filesize = playlistItemDiv.getElementsByClassName('filesize')[0];
+    filesize.innerHTML = Math.floor(item.infoAtLoad.filesize/(1020*1024))+"MB";
+    filesize.classList.remove('d-none');
+
+    let duration = playlistItemDiv.getElementsByClassName('duration')[0];
+    duration.innerHTML = item.infoAtLoad._duration_hms;
+    duration.classList.remove('d-none');
+
+    let filename = playlistItemDiv.getElementsByClassName('filename')[0];
+    filename.innerHTML = item.infoAtLoad._filename;
+    filename.classList.remove('d-none');
+
+    let progress_div = playlistItemDiv.getElementsByClassName('progress_div')[0];
+    progress_div.classList.add('bg-danger');
+
+    playlistItemDiv.getElementsByClassName('progress_text')[0].innerHTML = "pending";
+
+    let thumbnail = playlistItemDiv.getElementsByClassName('thumbnail')[0];
+    thumbnail.src = item.infoAtLoad.thumbnail;
+    
+    progress_div.classList.remove('d-none');
 
 
 }
 
-function showProgressOfSingleVideo(item) {
-    console.log('----showProgressOfSingleVideo----');
-    console.log('id:');
-    console.log(item.id);
-    var videoDiv = document.getElementById('s_' + item.id);
-    var progressDiv = videoDiv.getElementsByClassName('progress_div')[0];
-    progressDiv.classList.remove('d-none');
-    var progressBar = progressDiv.getElementsByClassName('progress_bar')[0];
-    var progressText = progressDiv.getElementsByClassName('progress_text')[0];
-
-    var f = setInterval(() => {
-        console.log('---setInterval---');
-        progressBar.style.width = item.downloadProgress + "%";
-        progressText.innerHTML = item.downloadProgress + "%";
-        if (item.downloadProgress == 100) clearInterval(f);
-    }, 500);
-
-}
-
-ipcRenderer.on('download-progress', function (event, progressInfo) {
-    console.log('--------in ipcRenderer download-progress--------------');
-    console.log('progressInfo.id:'+progressInfo.id);
-    console.log('progressInfo.percent:'+progressInfo.percent);
-    document.getElementById('pbs_' + progressInfo.id).style.width = progressInfo.percent + "%";
-    document.getElementById('pts_' + progressInfo.id).innerHTML = progressInfo.percent + "%";
-
-});

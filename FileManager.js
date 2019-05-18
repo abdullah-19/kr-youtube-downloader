@@ -1,6 +1,7 @@
 
 const { ipcMain, shell } = require('electron');
 const Url = require('./Url');
+const log = require('./Logger');
 const youtubedl = require('youtube-dl');
 const fs = require('fs');
 const path = require('path');
@@ -12,12 +13,12 @@ module.exports = class FileManager {
         this.setIpcEvents();
     }
 
-    move(oldPath, newPath, info, callback) {
-        console.log("new path:");
-        console.log(newPath);
+    move(oldPath, newPath, item, callback) {
+        log.debug("new path:");
+        log.debug(newPath);
         var dir = newPath.substr(0, newPath.lastIndexOf(path.sep));
-        console.log("last index:" + newPath.lastIndexOf(path.sep));
-        console.log("new path:" + dir);
+        log.debug("last index:" + newPath.lastIndexOf(path.sep));
+        log.debug("new path:" + dir);
         if (!fs.existsSync(dir)) {
             fs.mkdirSync(dir);
         }
@@ -26,14 +27,16 @@ module.exports = class FileManager {
             if (err) {
                 if (err.code === 'EXDEV') {
                     copy();
-                    this.win.webContents.send('move-complete', info);
+                   // this.win.webContents.send('move-complete', item);
+                   this.win.webContents.send('download-complete', item);
                 } else {
                     callback(err);
                 }
                 return;
             }
             else {
-                this.win.webContents.send('move-complete', info);
+                //this.win.webContents.send('move-complete', item);
+                this.win.webContents.send('download-complete', item);
             }
         });
 
@@ -53,31 +56,29 @@ module.exports = class FileManager {
 
 
     setIpcEvents() {
-        this.onDownloadComplete();
+        //this.onDownloadComplete();
         this.onShowDownloads();
     }
 
-    onDownloadComplete() {
-        ipcMain.on('download-complete', (event, info) => {
-            var movePath;
-            if(info.type === "playlist") movePath = path.join(this.app.getPath('videos'), "kr_youtube_downloader",info.folderName, info.loadedInfo
-            ._filename);
-            else movePath = path.join(this.app.getPath('videos'), "kr_youtube_downloader", info.loadedInfo._filename);
-            this.move(info.loadedInfo.downloadFilePath, movePath, info, (err) => {
-                console.log(err);
-            });
-        });
-    }
+    // onDownloadComplete() {
+    //     ipcMain.on('download-complete', (event, info) => {
+    //         var movePath;
+    //         if(info.type === "playlist") movePath = path.join(this.app.getPath('videos'), "kr_youtube_downloader",info.folderName, info.loadedInfo
+    //         ._filename);
+    //         else movePath = path.join(this.app.getPath('videos'), "kr_youtube_downloader", info.loadedInfo._filename);
+    //         this.move(info.loadedInfo.downloadFilePath, movePath, info, (err) => {
+    //             console.log(err);
+    //         });
+    //     });
+    // }
 
     onShowDownloads() {
-        ipcMain.on('open-file-directory', (event, info) =>{
-            var downloadedFile_path;
-            if(info.type === 'playlist') 
-                downloadedFile_path = path.join(this.app.getPath('videos'), "kr_youtube_downloader",info.folderName, info.loadedInfo._filename);
-            else downloadedFile_path = path.join(this.app.getPath('videos'), "kr_youtube_downloader", info.loadedInfo._filename);
-            console.log("downloaded file path:" + downloadedFile_path);
-            //shell.showItemInFolder(app.getPath('videos')+"/myDownloader/"+"\""+downloadFileName+"\"");
-            shell.showItemInFolder(downloadedFile_path);
+        ipcMain.on('open-file-directory', (event, item) =>{
+            log.debug('----ipcMain open-file-directory----');
+            var destinationPath;
+            destinationPath = path.join(item.destinationDir,item.infoAtDownload._filename);
+            log.debug("downloaded file path:" + destinationPath);
+            shell.showItemInFolder(destinationPath);
         });
     }
 

@@ -13,8 +13,8 @@ module.exports = class Item{
         this.destinationDir = "";
         this.list = null;
         this.playlistId = "";
-        this.loadIndex= 0;
-        this.downloadIndex = 0;
+        this.loadIndex= -1;
+        this.downloadIndex = -1;
         this.downloadProgress = 0;
         this.listSize = -1;
         log.debug('------in Item class constuctor-----');

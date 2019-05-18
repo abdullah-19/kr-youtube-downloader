@@ -3,6 +3,7 @@ const Url = require('./Url');
 const Item = require('./Item');
 const Info = require('./Info');
 const log = require('./Logger');
+const FileManager = require('./FileManager');
 const config = require('./config');
 const youtubedl = require('youtube-dl');
 const fs = require('fs');
@@ -15,6 +16,7 @@ module.exports = class Downloader {
         this.queue = [];
         this.url = new Url();
         this.info = new Info(this.app, this.win);
+        this.fileManager = new FileManager(this.app, this.win);
         this.setIpcEvents();
         this.makeDestinationDir();
     }
@@ -22,7 +24,7 @@ module.exports = class Downloader {
     setIpcEvents() {
         //this.setPlaylistDownloadEvent();
         this.setLoadEvent();
-        this.setStartDownloadEvent();
+        // this.setStartDownloadEvent();
         this.setProcessEvent();
     }
 
@@ -37,7 +39,6 @@ module.exports = class Downloader {
         var item = new Item();
         item.url = url;
         item.isPlaylist = this.url.is_playlist(url);
-        //item.id = this.url.getIdFromUrl(url);
         if (item.isPlaylist) {
             item.id = this.url.getPlaylistId(url);
             item.folderName = "playlist" + this.getDateTime();
@@ -49,7 +50,7 @@ module.exports = class Downloader {
         else {
             item.id = this.url.getIdFromUrl(url);
             item.destinationDir = config.destinationDir;
-            this.loadInfo(item);
+            this.loadInfo(url, item);
         }
 
     }
@@ -73,82 +74,15 @@ module.exports = class Downloader {
             //     url = info.url;
             // }
             // this.loadUsingYDL(info);
-            this.loadInfo(info);
+            // this.loadInfo(info);
 
         });
     }
 
-    setStartDownloadEvent() {
-        ipcMain.on('start_download', (event, info) => {
-            // video_url = arg;
-            var url;
-            console.log("-----------in ipcMain start_download------------");
-            if (info.type === "playlist") {
-                var id = JSON.parse(info.list[info.currentDownloadItem]).id;
-                url = this.url.getUrlFromId(id);
-                info.url = url;
-            }
+    async loadInfo(url, item) {
 
-            this.downloadUsingYDL(info);
-            //this.loadInfo(info);
-        })
-    }
-
-    // async loadInfo(info) {
-
-    //     var filename;
-    //     var downloadPath;
-    //     console.log('----------in fun loadInfo-------------');
-    //     log.debug('url:'+info.url);
-    //     //info.loadedInfo = await this.info.getVideoInfo(this.url.getIdFromUrl(info.url));
-    //     this.info.getVideoInfo(this.url.getIdFromUrl(info.url)).then((loadedInfo) => {
-    //         info.loadedInfo = loadedInfo;
-    //         log.debug('filename');
-    //         log.debug(info.loadedInfo._filename);
-    //         log.debug('folder name');
-    //         log.debug(info.downloadDir);
-
-
-    //         if (fs.existsSync(path.join(this.downloadDir,info.folderName, info.loadedInfo._filename))) {
-    //             this.win.webContents.send('already_downloaded', info);
-    //             log.debug('already downloaded');
-    //         }
-    //         else if (fs.existsSync(path.join(this.app.getAppPath(), "downloads", info.loadedInfo._filename))) {
-    //             this.win.webContents.send('already_downloadeding', info);
-    //             log.debug('already downloading');
-    //         }
-    //         else {
-    //             // videoInfo = loadedInfo;
-    //             log.debug('thumbnail url:' + info.loadedInfo.thumbnails[0].url);
-    //             filename = info.loadedInfo._filename;
-    //             downloadPath = path.join(this.app.getAppPath(), "downloads", filename);
-    //             info.loadedInfo.appPath = this.app.getAppPath();
-    //             info.loadedInfo.downloadFilePath = downloadPath;
-    //             this.win.webContents.send('load-complete', info);
-    //         }
-
-    //     }).catch((error) => {
-    //         console.log('Error from getVideoinfo with async( When promise gets rejected ): ' + error);
-    //     });
-
-    // }
-
-    // setDownloadCompleteEvent() {
-    //     ipcMain.on('download-complete', (event, info) => {
-    //         move(info.downloadFilePath, path.join(app.getPath('videos'), "kr_youtube_downloader", info._filename), info, (err) => {
-    //             console.log(err);
-    //         });
-    //     });
-    // }
-
-
-    async loadInfo(item) {
-
-        var filename;
-        var downloadPath;
-        console.log('----------in fun loadInfo-------------');
-        // log.debug('url:'+info.url);
-        this.info.getVideoInfo(this.url.getIdFromUrl(item.url)).then((loadedInfo) => {
+        console.log('----------loadInfo-------------');
+        this.info.getVideoInfo(this.url.getIdFromUrl(url)).then((loadedInfo) => {
             item.infoAtLoad = loadedInfo;
 
             if (fs.existsSync(path.join(item.destinationDir, item.infoAtLoad._filename))) {
@@ -160,12 +94,12 @@ module.exports = class Downloader {
                 log.debug('already downloading');
             }
             else {
-                //log.debug('thumbnail url:' + item.infoAtLoad.thumbnails[0].url);
-                //filename = item.infoAtLoad._filename;
-                //ownloadPath = path.join(config.downloadDir, filename);
-               // item.infoAtLoad.downloadFilePath = downloadPath;
                 this.win.webContents.send('load-complete', item);
-                this.processForDownload(item);
+                //here vulnerability of asynchronous item attribute change 
+                if (item.isPlaylist) {
+                   this.loadListItem(item);
+                }
+                else this.processForDownload(item);
             }
 
         }).catch((error) => {
@@ -174,7 +108,18 @@ module.exports = class Downloader {
 
     }
 
+    loadNextPlaylistItem(item) {
+        item.loadIndex++;
+        if (item.loadIndex >= item.list.length) {
+            let id = JSON.parse(item.list[item.loadIndex]).id;
+            let url = this.url.getUrlFromId(id);
+            this.loadInfo(url, item);
+        }
+
+    }
+
     processForDownload(item) {
+        log.debug('----processForDownload---');
         if (this.numberOfItemInProgress < 6) {
             if (item.isPlaylist) this.downloadPlaylist(item);
             else this.downloadSingleVideo(item);
@@ -182,34 +127,78 @@ module.exports = class Downloader {
         else this.queue.push(item);
     }
 
-    downloadSingleVideo(item) {
+    async downloadSingleVideo(item) {
+        log.debug('----downloadSingleVideo------');
         var size = item.infoAtLoad.filesize;
-        let video = this.downloadVideo(item.url);
+        let video = this.downloadVideo(item.url, item);
         var pos = 0;
         var progressInfo = {};
-        var percent=0;
+        var percent = 0;
         progressInfo.id = item.id;
         video.on('data', function data(chunk) {
             pos += chunk.length;
-            // `size` should not be 0 here.
             if (size) {
-                //var percent = (pos / size * 100).toFixed(2);
                 percent = Math.floor((pos / size) * 100);
-                //item.downloadProgress = percent;
-                
-                log.debug('percent:'+percent+"%");
-
+                log.debug('percent:' + percent + "%");
             }
         });
-        this.win.webContents.send('download-started',item);
+        this.win.webContents.send('download-started', item);
 
-        var f = setInterval(()=>{
+        var f = setInterval(() => {
             progressInfo.percent = percent;
-            this.win.webContents.send('download-progress',progressInfo);
-        },1000);
+            this.win.webContents.send('download-progress', progressInfo);
+        }, 1000);
+
+        video.on('end', () => {
+            log.debug('--- video.on(\'end\')---');
+            clearInterval(f);
+            var filename = item.infoAtDownload._filename;
+            var srcPath = path.join(config.downloadDir, filename);
+            var destinationPath = path.join(item.destinationDir, filename);
+            this.fileManager.move(srcPath, destinationPath, item,
+                function (message) {
+                    log.debug(message);
+                });
+
+            //this.win.webContents.send('download-complete', item);
+
+
+            // var f2 = setInterval(() => {
+            //     if (percent == 100) {
+            //         clearInterval(f);
+            //         clearInterval(f2);
+
+            //     }
+            // }, 1000);
+
+        });
     }
 
     downloadPlaylist(item) {
+        console.log('-----downloadPlaylist-----');
+        if (this.queue.length < 6) {
+            this.win.webContents.send('downloading-playlist',item);
+            this.loadListItem(item);
+           // this.downloadListItem(item);
+        }
+        else {
+            this.queue.push(item);
+        }
+        //this.downloadListItem(item);
+    }
+
+    loadListItem(item) {
+        console.log('-----loadListItem-----');
+        item.loadIndex++;
+        if (item.loadIndex < item.list.length) {
+            let id = JSON.parse(item.list[item.loadIndex]).id;
+            let url = this.url.getUrlFromId(id);
+            this.loadInfo(url, item);
+        }
+
+    }
+
+    downloadListItem(item) {
 
     }
 
@@ -225,46 +214,32 @@ module.exports = class Downloader {
         });
     }
 
-    loadUsingYDL(item) {
-        log.debug('in fun loadUsingYDL');
-        var filename;
-        var downloadPath;
+    // loadUsingYDL(item) {
+    //     log.debug('in fun loadUsingYDL');
+    //     var filename;
+    //     var downloadPath;
 
-        //var options = ['--username=user', '--password=hunter2'];
-        var options = ['--format=18', '--skip-download'];
-        youtubedl.getInfo(item.url, options, (err, loadedInfo) => {
-            if (err) throw err;
-            // console.log('from video info');
-            // console.log('id:', loadedInfo.id);
-            // console.log('title:', loadedInfo.title);
-            // console.log('url:', loadedInfo.url);
-            // console.log('thumbnail:', loadedInfo.thumbnail);
-            // console.log('description:', loadedInfo.description);
-            // console.log('filename:', loadedInfo._filename);
-            // console.log('format id:', loadedInfo.format_id);
-            // return info;
+    //     var options = ['--format=18', '--skip-download'];
+    //     youtubedl.getInfo(item.url, options, (err, loadedInfo) => {
+    //         if (err) throw err;
+    //         item.infoAtLoad = loadedInfo;
+    //         if (fs.existsSync(path.join(config.destinationDir, item.infoAtLoad._filename))) {
+    //             this.win.webContents.send('already_downloaded', item);
+    //         }
+    //         else if (fs.existsSync(path.join(this.app.getAppPath(), "downloads", item.infoAtLoad._filename))) {
+    //             this.win.webContents.send('already_downloadeding', item);
+    //         }
+    //         else {
+    //             log.debug('thumbnail url:' + item.infoAtLoad.thumbnails[0].url);
+    //             filename = item.infoAtLoad._filename;
+    //             downloadPath = path.join(this.app.getAppPath(), "downloads", filename);
+    //             item.infoAtLoad.appPath = this.app.getAppPath();
+    //             item.infoAtLoad.downloadFilePath = downloadPath;
+    //             this.win.webContents.send('load-complete', item);
+    //         }
 
-
-            item.infoAtLoad = loadedInfo;
-
-            if (fs.existsSync(path.join(config.destinationDir, item.infoAtLoad._filename))) {
-                this.win.webContents.send('already_downloaded', item);
-            }
-            else if (fs.existsSync(path.join(this.app.getAppPath(), "downloads", item.infoAtLoad._filename))) {
-                this.win.webContents.send('already_downloadeding', item);
-            }
-            else {
-                // videoInfo = loadedInfo;
-                log.debug('thumbnail url:' + item.infoAtLoad.thumbnails[0].url);
-                filename = item.infoAtLoad._filename;
-                downloadPath = path.join(this.app.getAppPath(), "downloads", filename);
-                item.infoAtLoad.appPath = this.app.getAppPath();
-                item.infoAtLoad.downloadFilePath = downloadPath;
-                this.win.webContents.send('load-complete', item);
-            }
-
-        });
-    }
+    //     });
+    // }
 
 
     // setPlaylistDownloadEvent() {
@@ -293,43 +268,39 @@ module.exports = class Downloader {
 
 
     download_videoList(item) {
+
+        log.debug('------in fun download_videoList--------');
         var url = item.url;
-        log.debug('-------------in fun download_videoList-----------------');
         youtubedl.exec(url, ['-j', '--flat-playlist'], {}, (err, output) => {
             if (err) throw err;
-            // var info = {};
-            // info.type = "playlist";
-            //item.folderName = "playlist" + this.getDateTime();
-            //var dir = path.join(this.downloadDir,item.folderName);
-            //this.createFolder(dir);
             item.list = output;
-            this.win.webContents.send('video-list', item);
-            //this.processPlaylist(item);
-            //var  id = JSON.parse(output[info.currentLoadItem]).id;
-            // this.info.getVideoInfo(this.url.getUrlFromId(id)).then((loadedInfo)=>{
-            //     this.writeInfoToFile(output);
-            // });
-            // this.writeInfoToFile(output);
+            this.win.webContents.send('list-downloaded', item);
+            this.downloadPlaylist(item);
 
         });
     }
 
+    downloadPlaylistItem(item) {
+
+    }
+
     createFolder(dir) {
-        //var dir = path.join(this.app.getPath('videos'), "kr_youtube_downloader",name);
+        log.debug('---createFolder----');
         if (!fs.existsSync(dir)) {
             fs.mkdirSync(dir);
         }
     }
 
 
-    downloadVideo(url) {
-        log.debug('------getVideoInfo-------');
+    downloadVideo(url, item) {
+        log.debug('------downloadVideo-------');
 
         var video = youtubedl(url,
             ['--format=18'],
             { cwd: __dirname, maxBuffer: Infinity });
 
         video.on('info', (loadedInfo) => {
+            item.infoAtDownload = loadedInfo;
             let downloadPath = path.join(config.downloadDir, loadedInfo._filename);
             video.pipe(fs.createWriteStream(downloadPath));
         });
@@ -436,4 +407,5 @@ module.exports = class Downloader {
             callback(stdout, error);
         });
     }
+
 }
