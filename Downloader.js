@@ -97,7 +97,7 @@ module.exports = class Downloader {
                 this.win.webContents.send('load-complete', item);
                 //here vulnerability of asynchronous item attribute change 
                 if (item.isPlaylist) {
-                   this.loadListItem(item);
+                    this.loadListItem(item);
                 }
                 else this.processForDownload(item);
             }
@@ -177,9 +177,9 @@ module.exports = class Downloader {
     downloadPlaylist(item) {
         console.log('-----downloadPlaylist-----');
         if (this.queue.length < 6) {
-            this.win.webContents.send('downloading-playlist',item);
+            this.win.webContents.send('downloading-playlist', item);
             this.loadListItem(item);
-           // this.downloadListItem(item);
+            this.downloadListItem(item);
         }
         else {
             this.queue.push(item);
@@ -191,6 +191,7 @@ module.exports = class Downloader {
         console.log('-----loadListItem-----');
         item.loadIndex++;
         if (item.loadIndex < item.list.length) {
+            log.debug('loadIndex:' + item.loadIndex);
             let id = JSON.parse(item.list[item.loadIndex]).id;
             let url = this.url.getUrlFromId(id);
             this.loadInfo(url, item);
@@ -199,6 +200,13 @@ module.exports = class Downloader {
     }
 
     downloadListItem(item) {
+        item.downloadIndex++;
+        if (item.downloadIndex < item.list.length) {
+            log.debug('downloadIndex:' + item.downloadIndex);
+            //let id = JSON.parse(item.list[item.downloadIndex]).id;
+           // let url = this.url.getUrlFromId(id);
+            this.downloadPlaylistItem(item);
+        }
 
     }
 
@@ -269,7 +277,7 @@ module.exports = class Downloader {
 
     download_videoList(item) {
 
-        log.debug('------in fun download_videoList--------');
+        log.debug('------download_videoList--------');
         var url = item.url;
         youtubedl.exec(url, ['-j', '--flat-playlist'], {}, (err, output) => {
             if (err) throw err;
@@ -280,8 +288,46 @@ module.exports = class Downloader {
         });
     }
 
-    downloadPlaylistItem(item) {
+    async downloadPlaylistItem(item) {
 
+        log.debug('----downloadPlaylistItem------');
+        //var size = item.infoAtDownload.filesize;
+        var id = JSON.parse(item.list[item.downloadIndex]).id;
+        var url = this.url.getUrlFromId(id);
+        let video = await this.downloadVideo(url, item);
+        var size = item.infoAtDownload.filesize;
+        var pos = 0;
+        var progressInfo = {};
+        var percent = 0;
+        progressInfo.id = item.infoAtDownload.id;
+        video.on('data', function data(chunk) {
+            pos += chunk.length;
+            if (size) {
+                percent = Math.floor((pos / size) * 100);
+                log.debug('percent:' + percent + "%");
+            }
+        });
+        this.win.webContents.send('download-started', item);
+
+        var f = setInterval(() => {
+            progressInfo.percent = percent;
+            this.win.webContents.send('playlist-download-progress', progressInfo);
+        }, 1000);
+
+        video.on('end', () => {
+            log.debug('--- video.on(\'end\')---');
+            clearInterval(f);
+            var filename = item.infoAtDownload._filename;
+            var srcPath = path.join(config.downloadDir, filename);
+            var destinationPath = path.join(item.destinationDir, filename);
+            this.fileManager.move(srcPath, destinationPath, item,
+                function (message) {
+                    log.debug(message);
+                });
+            this.downloadListItem(item);
+
+        });
+    
     }
 
     createFolder(dir) {
@@ -293,19 +339,36 @@ module.exports = class Downloader {
 
 
     downloadVideo(url, item) {
-        log.debug('------downloadVideo-------');
+        // log.debug('------downloadVideo-------');
 
-        var video = youtubedl(url,
-            ['--format=18'],
-            { cwd: __dirname, maxBuffer: Infinity });
+        // var video = youtubedl(url,
+        //     ['--format=18'],
+        //     { cwd: __dirname, maxBuffer: Infinity });
 
-        video.on('info', (loadedInfo) => {
-            item.infoAtDownload = loadedInfo;
-            let downloadPath = path.join(config.downloadDir, loadedInfo._filename);
-            video.pipe(fs.createWriteStream(downloadPath));
-        });
+        // video.on('info', (loadedInfo) => {
+        //     item.infoAtDownload = loadedInfo;
+        //     let downloadPath = path.join(config.downloadDir, loadedInfo._filename);
+        //     video.pipe(fs.createWriteStream(downloadPath));
+        // });
 
-        return video;
+        // return video;
+
+
+        return new Promise((resolve, reject) => {
+
+
+            var video = youtubedl(url,
+              ['--format=18'],
+              { cwd: __dirname, maxBuffer: Infinity });
+      
+            video.on('info', (loadedInfo) => {
+                item.infoAtDownload = loadedInfo;
+                let downloadPath = path.join(config.downloadDir, loadedInfo._filename);
+                video.pipe(fs.createWriteStream(downloadPath));
+                resolve(video);
+            });
+      
+          });
 
 
     }

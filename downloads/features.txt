@@ -23,6 +23,20 @@ To Do
 13.opening media file to edit or to play
 14.
 
+
+Done
+1.Downloading multiple video at a time
+2.forbidin downloading same video.
+3.fixing buffer error
+4.download path for playliist
+5.creating destination folder if doesn't exist
+6.show video in destination on click
+
+last status:
+1.woring at Downloader.js in loadInfo function.
+
+
+
 Bugs/Errors
 1.auto update is not working well
 2.downloads same video when click download
@@ -36,13 +50,12 @@ Bugs/Errors
     at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
     //at  https://www.youtube.com/watch?v=G009oRhuDXk
 
-Done
-1.Downloading multiple video at a time
-2.forbidin downloading same video.
-3.fixing buffer error
-4.download path for playliist
-5.creating destination folder if doesn't exist
-6.show video in destination on click
+5. Error: Command failed: D:\workspace\downloader\node_modules\youtube-dl\bin\youtube-dl.exe --dump-json --format=18 http://www.youtube.com/watch?v=L58N4IHgF0o
+WARNING: Unable to extract video title
+ERROR: This video is unavailable.
 
-last status:
-1.woring at Downloader.js in loadInfo function.
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)

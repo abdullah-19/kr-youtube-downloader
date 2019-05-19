@@ -340,15 +340,15 @@ function showSingleVideoInfo(item) {
     infoDiv.getElementsByClassName('thumbnail')[0].src = item.infoAtLoad.thumbnail;
 
     var filesize = infoDiv.getElementsByClassName('filesize')[0];
-    filesize.innerHTML = "filesize:" + (info.filesize / 1024) + "MB";
+    filesize.innerHTML = "Filesize:" + (info.filesize / 1024) + "MB";
     filesize.classList.remove('d-none');
 
     var duration = infoDiv.getElementsByClassName('duration')[0];
-    duration.innerHTML = "duration:" + info._duration_hms;
+    duration.innerHTML = "Duration:" + info._duration_hms;
     duration.classList.remove('d-none');
 
     var filename = infoDiv.getElementsByClassName('filename')[0];
-    filename.innerHTML = "filename:" + info._filename;
+    filename.innerHTML = "Filename:" + info._filename;
     filename.classList.remove('d-none');
 
     infoDiv.getElementsByClassName('progress_div')[0].id = "pds_" + item.id;
@@ -391,8 +391,26 @@ ipcRenderer.on('download-progress', function (event, progressInfo) {
 
 });
 
+ipcRenderer.on('playlist-download-progress', function (event, progressInfo) {
+
+    console.log('--------ipcRenderer playlist-download-progress--------------');
+    console.log('progressInfo.id:' + progressInfo.id);
+    console.log('progressInfo.percent:' + progressInfo.percent);
+    document.getElementById('pbp_' + progressInfo.id).style.width = progressInfo.percent + "%";
+    document.getElementById('ptp_' + progressInfo.id).innerHTML = progressInfo.percent + "%";
+
+});
+
 ipcRenderer.on('download-complete', (event, item) => {
-    var iconDiv = document.getElementById('s_' + item.id);
+    console.log('----ipcRenderer download-complete---');
+    var iconDiv;
+    if (item.isPlaylist) {
+        console.log('id:'+item.infoAtDownload.id);
+        iconDiv = document.getElementById('pi_' + item.infoAtDownload.id);
+    }
+    else {
+        iconDiv = document.getElementById('s_' + item.id);
+    }
 
     var folderIcon = iconDiv.getElementsByClassName('folderIcon')[0];
     folderIcon.classList.remove('d-none');
@@ -417,7 +435,7 @@ function showPlaylistWaitingDiv(url) {
 
     var playlistItemDemo = waitingDiv.getElementsByClassName('playlistItem')[0];
     console.log('playlist item demo:');
-    playlistItemDemo.id = "piDemo_"+id;
+    playlistItemDemo.id = "piDemo_" + id;
     console.log(playlistItemDemo);
 
 }
@@ -427,38 +445,44 @@ function showPlaylistItemWaitingDiv(item) {
 
     //var playlistDiv = document.getElementById('playlist_'+item.id);
 
-    var waitingItemDiv = document.querySelector('#piDemo_'+item.id).cloneNode(true);
-    console.log('loadIndex:'+item.loadIndex);
-    let id =JSON.parse(item.list[item.loadIndex+1]).id;
-    console.log('id:'+item.id);
+    var waitingItemDiv = document.querySelector('#piDemo_' + item.id).cloneNode(true);
+    console.log('loadIndex:' + item.loadIndex);
+    let id = JSON.parse(item.list[item.loadIndex + 1]).id;
+    console.log('id:' + item.id);
     //var waitingItemDiv = playlistDiv.getElementsByClassName('playlistItem');
     waitingItemDiv.id = "pi_" + id;
     waitingItemDiv.classList.remove("d-none");
-    var sibling = document.getElementById('piDemo_'+item.id);
+    var sibling = document.getElementById('piDemo_' + item.id);
     console.log('sibling:');
     console.log(sibling);
-    sibling.parentNode.insertBefore(waitingItemDiv, sibling.nextSibling);
-    
+    //sibling.parentNode.insertBefore(waitingItemDiv, sibling.nextSibling);
+    sibling.parentNode.appendChild(waitingItemDiv);
+
     waitingItemDiv.getElementsByClassName('progress_bar')[0].id = 'pbp_' + id;
     waitingItemDiv.getElementsByClassName('progress_text')[0].id = 'ptp_' + id;
 
 }
 
 function showPlaylistItemInfo(item) {
-    
+
+    console.log('------showPlaylistItemInfo------');
+    console.log(item);
     let playlistItemDiv = document.getElementById('pi_' + item.infoAtLoad.id);
+    console.log('pi_' + item.infoAtLoad.id);
+    console.log(playlistItemDiv);
+
     playlistItemDiv.getElementsByClassName('processIcon')[0].classList.add('d-none');
-    
+
     let filesize = playlistItemDiv.getElementsByClassName('filesize')[0];
-    filesize.innerHTML = Math.floor(item.infoAtLoad.filesize/(1020*1024))+"MB";
+    filesize.innerHTML = "Filesize:"+ Math.floor(item.infoAtLoad.filesize / (1020 * 1024)) + "MB";
     filesize.classList.remove('d-none');
 
     let duration = playlistItemDiv.getElementsByClassName('duration')[0];
-    duration.innerHTML = item.infoAtLoad._duration_hms;
+    duration.innerHTML = "Duration:" + item.infoAtLoad._duration_hms;
     duration.classList.remove('d-none');
 
     let filename = playlistItemDiv.getElementsByClassName('filename')[0];
-    filename.innerHTML = item.infoAtLoad._filename;
+    filename.innerHTML = "Filename:"+ item.infoAtLoad._filename;
     filename.classList.remove('d-none');
 
     let progress_div = playlistItemDiv.getElementsByClassName('progress_div')[0];
@@ -468,9 +492,19 @@ function showPlaylistItemInfo(item) {
 
     let thumbnail = playlistItemDiv.getElementsByClassName('thumbnail')[0];
     thumbnail.src = item.infoAtLoad.thumbnail;
-    
+
     progress_div.classList.remove('d-none');
 
+    if (item.loadIndex < item.list.length - 1) {
+        showPlaylistItemWaitingDiv(item);
+    }
 
 }
 
+function showProgressOfPlaylistVideo(item) {
+    var playlist = document.getElementById('playlist_' + item.id);
+    playlist.getElementsByClassName('progress_div')[0].classList.remove('bg-danger');
+    playlist.getElementsByClassName('playlistDownloadStatus')[0].innerHTML =
+        "downloding " + (item.downloadIndex + 1) + "of " + item.list.length;
+
+}
