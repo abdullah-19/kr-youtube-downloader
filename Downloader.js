@@ -130,7 +130,7 @@ module.exports = class Downloader {
     async downloadSingleVideo(item) {
         log.debug('----downloadSingleVideo------');
         var size = item.infoAtLoad.filesize;
-        let video = this.downloadVideo(item.url, item);
+        let video = await this.downloadVideo(item.url, item);
         var pos = 0;
         var progressInfo = {};
         var percent = 0;
@@ -339,7 +339,7 @@ module.exports = class Downloader {
 
 
     downloadVideo(url, item) {
-        // log.debug('------downloadVideo-------');
+        log.debug('------downloadVideo-------');
 
         // var video = youtubedl(url,
         //     ['--format=18'],
@@ -368,6 +368,8 @@ module.exports = class Downloader {
                 resolve(video);
             });
       
+          }).catch(error =>{
+              log.debug('error:'+error.message);
           });
 
 
