@@ -8,6 +8,7 @@ const config = require('./config');
 const youtubedl = require('youtube-dl');
 const fs = require('fs');
 const path = require('path');
+
 module.exports = class Downloader {
     constructor(app, win) {
         this.app = app;
@@ -86,12 +87,14 @@ module.exports = class Downloader {
             item.infoAtLoad = loadedInfo;
 
             if (fs.existsSync(path.join(item.destinationDir, item.infoAtLoad._filename))) {
-                this.win.webContents.send('already_downloaded', item);
+                this.win.webContents.send('already-downloaded', item);
                 log.debug('already downloaded');
+                //this.win.webContents.send("already-downloaded",item);
             }
             else if (fs.existsSync(path.join(config.downloadDir, item.infoAtLoad._filename))) {
-                this.win.webContents.send('already_downloadeding', item);
+                this.win.webContents.send('already-downloadeding', item);
                 log.debug('already downloading');
+                //this.win.webContents.send("already-inProgress",item);
             }
             else {
                 this.win.webContents.send('load-complete', item);
@@ -139,7 +142,7 @@ module.exports = class Downloader {
             pos += chunk.length;
             if (size) {
                 percent = Math.floor((pos / size) * 100);
-                log.debug('percent:' + percent + "%");
+                //log.debug('percent:' + percent + "%");
             }
         });
         this.win.webContents.send('download-started', item);
@@ -304,7 +307,7 @@ module.exports = class Downloader {
             pos += chunk.length;
             if (size) {
                 percent = Math.floor((pos / size) * 100);
-                log.debug('percent:' + percent + "%");
+              //  log.debug('percent:' + percent + "%");
             }
         });
         this.win.webContents.send('download-started', item);

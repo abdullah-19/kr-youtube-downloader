@@ -1,5 +1,5 @@
 In progress
-1.gui process refactoring
+1.already downloaded/downloading messaging and restart fixing.
 
 To Do
 ......necessary.....
@@ -12,7 +12,7 @@ To Do
 2.excluding in windows defender
 3.quality,format setting before download
 4.pause,cancell,resume all video or a single video
-5.youtube mode(when compy link video download will start)
+5.youtube mode(when copy link video download will start)
 6.video info display
 7.getting to start cancelled videos
 8.video editing
@@ -31,6 +31,7 @@ Done
 4.download path for playliist
 5.creating destination folder if doesn't exist
 6.show video in destination on click
+7.gui process refactoring
 
 last status:
 1.woring at Downloader.js in loadInfo function.
@@ -41,7 +42,7 @@ Bugs/Errors
 1.auto update is not working well
 2.downloads same video when click download
 3.space problem in url
-4. Unable to download webpage: The read operation timed out (caused by timeout('The read operation timed out',))
+4.Unable to download webpage: The read operation timed out (caused by timeout('The read operation timed out',))
 
     at ChildProcess.exithandler (child_process.js:287:12)
     at emitTwo (events.js:126:13)
@@ -59,3 +60,6 @@ ERROR: This video is unavailable.
     at ChildProcess.emit (events.js:214:7)
     at maybeClose (internal/child_process.js:925:16)
     at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+//this is occure when video is private    
+6.sometimes hange and stop download and gui becomes black when downloading.
+//after sometimes it is gone and start processing.

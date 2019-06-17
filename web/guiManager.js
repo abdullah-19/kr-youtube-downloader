@@ -383,9 +383,9 @@ function showSingleVideoInfo(item) {
 
 
 ipcRenderer.on('download-progress', function (event, progressInfo) {
-    console.log('--------in ipcRenderer download-progress--------------');
-    console.log('progressInfo.id:' + progressInfo.id);
-    console.log('progressInfo.percent:' + progressInfo.percent);
+    //console.log('--------in ipcRenderer download-progress--------------');
+    //console.log('progressInfo.id:' + progressInfo.id);
+    //console.log('progressInfo.percent:' + progressInfo.percent);
     document.getElementById('pbs_' + progressInfo.id).style.width = progressInfo.percent + "%";
     document.getElementById('pts_' + progressInfo.id).innerHTML = progressInfo.percent + "%";
 
@@ -405,7 +405,7 @@ ipcRenderer.on('download-complete', (event, item) => {
     console.log('----ipcRenderer download-complete---');
     var iconDiv;
     if (item.isPlaylist) {
-        console.log('id:'+item.infoAtDownload.id);
+        console.log('id:' + item.infoAtDownload.id);
         iconDiv = document.getElementById('pi_' + item.infoAtDownload.id);
     }
     else {
@@ -474,7 +474,7 @@ function showPlaylistItemInfo(item) {
     playlistItemDiv.getElementsByClassName('processIcon')[0].classList.add('d-none');
 
     let filesize = playlistItemDiv.getElementsByClassName('filesize')[0];
-    filesize.innerHTML = "Filesize:"+ Math.floor(item.infoAtLoad.filesize / (1020 * 1024)) + "MB";
+    filesize.innerHTML = "Filesize:" + Math.floor(item.infoAtLoad.filesize / (1020 * 1024)) + "MB";
     filesize.classList.remove('d-none');
 
     let duration = playlistItemDiv.getElementsByClassName('duration')[0];
@@ -482,7 +482,7 @@ function showPlaylistItemInfo(item) {
     duration.classList.remove('d-none');
 
     let filename = playlistItemDiv.getElementsByClassName('filename')[0];
-    filename.innerHTML = "Filename:"+ item.infoAtLoad._filename;
+    filename.innerHTML = "Filename:" + item.infoAtLoad._filename;
     filename.classList.remove('d-none');
 
     let progress_div = playlistItemDiv.getElementsByClassName('progress_div')[0];
@@ -507,4 +507,63 @@ function showProgressOfPlaylistVideo(item) {
     playlist.getElementsByClassName('playlistDownloadStatus')[0].innerHTML =
         "downloding " + (item.downloadIndex + 1) + "of " + item.list.length;
 
+}
+
+ipcRenderer.on('already-downloading', (event, item) => {
+    console.log('-----ipcRenderer already-downloading--------');
+    if (item.isPlaylist) {
+        let playlistItem = document.getElementById('pi_' + item.playlistId);
+        let status = playlistItem.getElementsByClassName('ai_progress')[0];
+        let processIcon = playlistItem.getElementsByClassName('processIcon')[0];
+        processIcon.classList.add('d-none');
+        status.classList.remove('d-none');
+
+    }
+    else {
+        let playlistItem = document.getElementById('s_' + item.playlistId);
+        let status = playlistItem.getElementsByClassName('ai_progress')[0];
+        let processIcon = playlistItem.getElementsByClassName('processIcon')[0];
+        processIcon.classList.add('d-none');
+        status.classList.remove('d-none');
+    }
+});
+
+ipcRenderer.on('already-downloaded', (event, item) => {
+
+    console.log('-----ipcRenderer already-downloaded--------');
+    if (item.isPlaylist) {
+        let playlistItem = document.getElementsByClassName('');
+        let status = playlistItem.getElementsByClassName('a_done')[0];
+        let processIcon = playlistItem.getElementsByClassName('processIcon')[0];
+        processIcon.classList.add('d-none');
+        status.classList.remove('d-none');
+
+    }
+    else {
+        // let playlistItem = document.getElementsByClassName('waiting')[0];
+        // let status = playlistItem.getElementsByClassName('a_done')[0];
+        // let processIcon = playlistItem.getElementsByClassName('processIcon')[0];
+        // processIcon.classList.add('d-none');
+        // status.classList.remove('d-none');
+        showAlreadyDownloadedSingleVideoInfo(item);
+    }
+});
+
+function showAlreadyDownloadedSingleVideoInfo(item) {
+    console.log('-------showAlreadyDownloadedSingleVideoInfo-------');
+    console.log(item);
+    let singleWaitingVideo = document.getElementsByClassName('waiting')[0];
+    singleWaitingVideo.classList.remove('waiting');
+    singleWaitingVideo.classList.add('already_doneDiv');
+    singleWaitingVideo.id = 'ad_'+item.infoAtLoad.id;
+    let status = singleWaitingVideo.getElementsByClassName('aDone_status')[0];
+    let thumbnail = singleWaitingVideo.getElementsByClassName('thumbnail')[0];
+    let filename = singleWaitingVideo.getElementsByClassName('filename')[0];
+    let processIcon = singleWaitingVideo.getElementsByClassName('processIcon')[0];
+    processIcon.classList.add('d-none');
+    status.classList.remove('d-none');
+    thumbnail.src = item.infoAtLoad.thumbnail;
+    filename.innerHTML = item.infoAtLoad._filename;
+    filename.classList.remove('d-none');
+    filename.classList.add('text-center');
 }

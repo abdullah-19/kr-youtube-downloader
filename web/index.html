@@ -26,7 +26,7 @@
 
   <div id="video_div" class="container-fluid px-0 border">
 
-    <div id="accordion" class=" px-md-5 mx-md-5">
+    <div id="accordion" class="px-md-5 mx-md-5">
 
       <div id="single_videos" class="card">
         <div class="card-header text-center d-none">
@@ -35,38 +35,42 @@
         <div id="" class="collapse show" data-parent="">
           <div class="card-body">
 
-              <div id="singleWaitingDemo" class="container-fluid border border-info px-0 d-none">
+            <!-- 1.waiting state:copy the div,remove id, class 'waiting'
+              2.video loaded: 'waiting' class removed, 's_'+loadedInfo.id is added as id of the div
+              3.already downloaded:id = 'ad_'+loadedInfo.id -->
+            <div id="singleWaitingDemo" class="container-fluid border border-info px-0 d-none">
 
-                  <div class="row mx-0 border border-info" style="height:80px; ">
-                    <div class="col-2 " style="height: 100%;">
-                      <img class="thumbnail" alt="" src="" style="height:100%;width:100%;">
-                    </div>
-    
-                    <div class="col-9 " style="height:inherit;">
-                      <p style="margin: 2px;" class="filesize small d-none">100MB</p>
-                      <p style="margin: 2px; " class="duration small d-none">1h</p>
-                      <p style="margin: 2px;" class="filename small d-none">This a file name</p>
-                      <span id="" class="processIcon fa fa-spinner fa-spin"
-                        style="position: absolute;top: 30%;left: 40%; font-size:32px;color:lightcoral;"></span>
-                    </div>
-    
-                    <div class="col-1 align-self-center">
-                      <img class="downloadingIcon d-none" alt="" src="res/images/dwonload_continous.gif"
-                        style="height:40px;width:40px;">
-                      <span id="" class="folderIcon fa fa-folder-open d-none"></span>
-                    </div>
-                  </div>
-    
-    
-                  <div class="progress_div d-none row mx-0" style="height:18px;">
-                    <div class="col-md-12 p-0 border" style="height: 100%;">
-                      <div class="progress_bar bg-info text-center border border-danger"
-                        style="height:100%;width:0%;">
-                      </div>
-                      <p  class="progress_text small" style="position:absolute; top:0;left: 50%;">0%</p>
-                    </div>
-                  </div>
+              <div class="row mx-0 border border-info" style="height:80px; ">
+                <div class="col-2 " style="height: 100%;">
+                  <img class="thumbnail" alt="" src="" style="height:100%;width:100%;">
                 </div>
+
+                <div class="col-9 " style="height:inherit;">
+                  <p style="margin: 2px;" class="filesize small d-none">100MB</p>
+                  <p style="margin: 2px; " class="duration small d-none">1h</p>
+                  <p style="margin: 2px;" class="filename small d-none">This a file name</p>
+                  <span id="" class="processIcon fa fa-spinner fa-spin"
+                    style="position: absolute;top: 30%;left: 40%; font-size:32px;color:lightcoral;"></span>
+                  <p class="aDone_status d-none bg-info text-center">Already downloaded</p>
+                  <p class="aInProgress_status d-none">Alreaady in progress</p>
+                </div>
+
+                <div class="col-1 align-self-center">
+                  <img class="downloadingIcon d-none" alt="" src="res/images/dwonload_continous.gif"
+                    style="height:40px;width:40px;">
+                  <span id="" class="folderIcon fa fa-folder-open d-none"></span>
+                </div>
+              </div>
+
+
+              <div class="progress_div d-none row mx-0" style="height:18px;">
+                <div class="col-md-12 p-0 border" style="height: 100%;">
+                  <div class="progress_bar bg-info text-center border border-danger" style="height:100%;width:0%;">
+                  </div>
+                  <p class="progress_text small" style="position:absolute; top:0;left: 50%;">0%</p>
+                </div>
+              </div>
+            </div>
 
           </div>
         </div>
@@ -100,6 +104,8 @@
                   <p style="margin: 2px;" class="filename small d-none">This a file name</p>
                   <span id="" class="processIcon fa fa-spinner fa-spin"
                     style="position: absolute;top: 30%;left: 40%; font-size:32px;color:lightcoral;"></span>
+                    <p class="ai_progress d-none">Alreaady in progress</p>
+                    <p class="a_done">Alreaady downloaded</p>
                 </div>
 
                 <div class="col-1 align-self-center">
@@ -112,10 +118,9 @@
 
               <div class="progress_div d-none row mx-0" style="height:18px;">
                 <div class="col-md-12 p-0 border" style="height: 100%;">
-                  <div class="progress_bar bg-info text-center border border-danger"
-                    style="height:100%;width:0%;">
+                  <div class="progress_bar bg-info text-center border border-danger" style="height:100%;width:0%;">
                   </div>
-                  <p  class="progress_text small" style="position:absolute; top:0;left: 50%;">0%</p>
+                  <p class="progress_text small" style="position:absolute; top:0;left: 50%;">0%</p>
                 </div>
               </div>
             </div>
@@ -206,12 +211,12 @@
                     </div>
                   </div> -->
 
-    <!-- ...........................the below code are no longer used....................... -->
+  <!-- ...........................the below code are no longer used....................... -->
 
-    <!-- <div class="waiting border border-info mx-3">
+  <!-- <div class="waiting border border-info mx-3">
       <p class="text-center mb-0"><span class="fa fa-spinner fa-spin py-4" style="font-size:24px"></span></p>
     </div> -->
-    <!-- <div class="waiting">
+  <!-- <div class="waiting">
         <p class="p-1 bg-info text-center">Waiting...</p>
     </div>
 
@@ -219,7 +224,7 @@
         <p class="p-1 bg-info text-center">Waiting...</p>
     </div> -->
 
-    <!-- <div id="" class="row mx-0" style="height:80px; ">
+  <!-- <div id="" class="row mx-0" style="height:80px; ">
       <div class="col-md-2" style="height: 100%;">
         <img id="videoThumbnail" src="" style="display: none; height:100%;width:100%;">
       </div>
