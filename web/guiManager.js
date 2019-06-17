@@ -560,10 +560,16 @@ function showAlreadyDownloadedSingleVideoInfo(item) {
     let thumbnail = singleWaitingVideo.getElementsByClassName('thumbnail')[0];
     let filename = singleWaitingVideo.getElementsByClassName('filename')[0];
     let processIcon = singleWaitingVideo.getElementsByClassName('processIcon')[0];
+    let folderIcon = singleWaitingVideo.getElementsByClassName('folderIcon')[0];
     processIcon.classList.add('d-none');
     status.classList.remove('d-none');
     thumbnail.src = item.infoAtLoad.thumbnail;
     filename.innerHTML = item.infoAtLoad._filename;
     filename.classList.remove('d-none');
     filename.classList.add('text-center');
+    
+    folderIcon.onclick = function () {
+        ipcRenderer.send('open-already-downloaded-file-directory', item);
+    }
+    folderIcon.classList.remove('d-none');
 }

@@ -89,6 +89,7 @@ module.exports = class Downloader {
             if (fs.existsSync(path.join(item.destinationDir, item.infoAtLoad._filename))) {
                 this.win.webContents.send('already-downloaded', item);
                 log.debug('already downloaded');
+                log.debug('destination path:'+item.destinationDir);
                 //this.win.webContents.send("already-downloaded",item);
             }
             else if (fs.existsSync(path.join(config.downloadDir, item.infoAtLoad._filename))) {

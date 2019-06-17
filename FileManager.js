@@ -80,6 +80,14 @@ module.exports = class FileManager {
             log.debug("downloaded file path:" + destinationPath);
             shell.showItemInFolder(destinationPath);
         });
+
+        ipcMain.on('open-already-downloaded-file-directory', (event, item) =>{
+            log.debug('----ipcMain open-already-downloaded-file-directory----');
+            var destinationPath;
+            destinationPath = path.join(item.destinationDir,item.infoAtLoad._filename);
+            log.debug("downloaded file path:" + destinationPath);
+            shell.showItemInFolder(destinationPath);
+        });
     }
 
 }
