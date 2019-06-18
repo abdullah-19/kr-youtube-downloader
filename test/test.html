@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <ul>
+        <li><span class="text-task">5</span><span class="delete-task">x</span></li>
+
+    </ul>
+    
+    <script>
+        $(document).ready(function () {
+            $(document).on('click', '.delete-task', function () { // We use 'on' as the element is dynamically added
+                console.log("'Delete' button pressed");
+
+                var foo = $(this).closest('li');
+                console.log(foo);
+
+
+                $(this).closest('li').fadeOut(250, function () {
+
+                    arr.splice(foo, 1);
+
+                    $(this).remove(); // Dynamically remove the DOM element from the list
+                    localStorage.setItem('items', JSON.stringify(arr));
+
+                    console.log(arr);
+                    console.log(localStorage.getItem('items'));
+
+                });
+            });
+        });  
+    </script>
+</body>
+
+</html>

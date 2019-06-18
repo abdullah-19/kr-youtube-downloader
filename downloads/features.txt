@@ -63,3 +63,4 @@ ERROR: This video is unavailable.
 //this is occure when video is private    
 6.sometimes hange and stop download and gui becomes black when downloading.
 //after sometimes it is gone and start processing.
+7.sometimes takes to much time to start download video.

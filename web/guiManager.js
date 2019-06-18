@@ -540,11 +540,6 @@ ipcRenderer.on('already-downloaded', (event, item) => {
 
     }
     else {
-        // let playlistItem = document.getElementsByClassName('waiting')[0];
-        // let status = playlistItem.getElementsByClassName('a_done')[0];
-        // let processIcon = playlistItem.getElementsByClassName('processIcon')[0];
-        // processIcon.classList.add('d-none');
-        // status.classList.remove('d-none');
         showAlreadyDownloadedSingleVideoInfo(item);
     }
 });
@@ -573,3 +568,12 @@ function showAlreadyDownloadedSingleVideoInfo(item) {
     }
     folderIcon.classList.remove('d-none');
 }
+
+ipcRenderer.on('already-downloadeding',function(event,item){
+    if(item.isPlaylist){
+
+    }
+    else{
+        
+    }
+});

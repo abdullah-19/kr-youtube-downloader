@@ -20,9 +20,7 @@ var queue = {
 
 
 downloadBtn.addEventListener('click', function () {
-    //start_process();
-    //showWaiting();
-    //addWaitingDiv();
+
     start_process();
 
 });
@@ -30,43 +28,10 @@ downloadBtn.addEventListener('click', function () {
 function start_process() {
     console.log('--start_process----');
     var url = urlField.value;
-    //var url_status = isValidUrl(url);
-    // if (queue.toDownload.length === 0) {
-    //     queue.isDownloading = false;
-    // }
+
     if (url == "") {
         status_text.innerHTML = "Please insert url";
     }
-    // else if (url_status == 1) {
-    //     var info = {};
-    //     console.log('url status 1');
-    //     info.type = "single";
-    //     info.url = url;
-    //     queue.toLoad.push(info);
-    //     queue.toDownload.push(info);
-    //     //download_video(url);
-    //     if (queue.toLoad.length === 1) {
-    //         //queue.isDownloading = false;
-    //         loadNext();
-    //     }
-
-    // }
-    // else if (url_status === 2) {
-    //     //download_playlist(url);
-
-    //     var info = {};
-    //     info.type = "playlist";
-    //     info.folderName = "playlist:" + getDateTime();
-    //     ipcRenderer.send('start-playlist-download', url);
-    // }
-    // else {
-    //     //show_processIcon();
-    //     status_text.innerHTML = "Url is not valid";
-    //     // console.log('in start process');
-    //     // console.log("before extract:" + url);
-    //     // addVideoDiv(url);
-    //     // ipcRenderer.send('start_download', url);
-    // }
 
     if (isValidUrl(url)) {
         if (is_playlist(url)) {

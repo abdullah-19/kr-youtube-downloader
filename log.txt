@@ -74430,3 +74430,565 @@ ERROR: Unable to download webpage: The read operation timed out (caused by timeo
     at ontimeout (timers.js:475:11)
     at tryOnTimeout (timers.js:310:5)
     at Timer.listOnTimeout (timers.js:270:5)
+[2019-06-18 23:56:06.745] [debug] logging set up
+[2019-06-18 23:56:06.807] [debug] log level:debug
+[2019-06-18 23:56:06.820] [debug] size:5242880
+[2019-06-18 23:56:11.467] [debug] window created
+[2019-06-18 23:56:11.475] [debug] -------makeDestinationDir-------
+[2019-06-18 23:56:11.482] [debug] ---createFolder----
+[2019-06-18 23:56:11.493] [debug] downloader object created.
+[2019-06-18 23:56:29.732] [debug] ------startProcess-----
+[2019-06-18 23:56:29.755] [debug] ------in Item class constuctor-----
+[2019-06-18 23:56:29.766] [debug] -----getIdFromUrl----
+[2019-06-18 23:56:29.775] [debug] -----getIdFromUrl----
+[2019-06-18 23:56:29.783] [debug] ------getVideoInfo-------
+[2019-06-18 23:56:36.039] [debug] already downloaded
+[2019-06-18 23:56:36.060] [debug] destination path:C:\Users\ASUS\Videos\kr_youtube_downloader
+[2019-06-18 23:56:40.022] [debug] ----ipcMain open-already-downloaded-file-directory----
+[2019-06-18 23:56:40.043] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-06-18 23:56:40.846] [debug] ----ipcMain open-already-downloaded-file-directory----
+[2019-06-18 23:56:40.858] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-06-18 23:56:48.974] [debug] ------startProcess-----
+[2019-06-18 23:56:49.006] [debug] ------in Item class constuctor-----
+[2019-06-18 23:56:49.031] [debug] -----getIdFromUrl----
+[2019-06-18 23:56:49.045] [debug] -----getIdFromUrl----
+[2019-06-18 23:56:49.059] [debug] ------getVideoInfo-------
+[2019-06-18 23:56:54.426] [debug] ----processForDownload---
+[2019-06-18 23:56:54.464] [debug] ----downloadSingleVideo------
+[2019-06-18 23:56:54.476] [debug] ------downloadVideo-------
+[2019-06-18 23:57:00.557] [debug] --- video.on('end')---
+[2019-06-18 23:57:00.564] [debug] new path:
+[2019-06-18 23:57:00.579] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-06-18 23:57:00.588] [debug] last index:42
+[2019-06-18 23:57:00.594] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader
+[2019-06-18 23:57:00.630] [debug] null
+[2019-06-18 23:57:04.646] [debug] ----ipcMain open-file-directory----
+[2019-06-18 23:57:04.669] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-06-18 23:57:04.764] [debug] ----ipcMain open-file-directory----
+[2019-06-18 23:57:04.774] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-06-18 23:57:11.834] [debug] ----ipcMain open-file-directory----
+[2019-06-18 23:57:11.851] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-06-18 23:57:11.878] [debug] ----ipcMain open-file-directory----
+[2019-06-18 23:57:11.888] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-06-18 23:57:52.312] [debug] ------startProcess-----
+[2019-06-18 23:57:52.347] [debug] ------in Item class constuctor-----
+[2019-06-18 23:57:52.373] [debug] -----getIdFromUrl----
+[2019-06-18 23:57:52.389] [debug] -----getIdFromUrl----
+[2019-06-18 23:57:52.399] [debug] ------getVideoInfo-------
+[2019-06-18 23:57:58.713] [debug] already downloaded
+[2019-06-18 23:57:58.749] [debug] destination path:C:\Users\ASUS\Videos\kr_youtube_downloader
+[2019-06-18 23:58:02.749] [debug] ----ipcMain open-already-downloaded-file-directory----
+[2019-06-18 23:58:02.772] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\♥♥ My Second Best Fireplace Video (2 hours long)-LIJAsKCLTqc.mp4
+[2019-06-18 23:58:02.862] [debug] ----ipcMain open-already-downloaded-file-directory----
+[2019-06-18 23:58:02.869] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\♥♥ My Second Best Fireplace Video (2 hours long)-LIJAsKCLTqc.mp4
+[2019-06-18 23:58:08.374] [debug] ------startProcess-----
+[2019-06-18 23:58:08.416] [debug] ------in Item class constuctor-----
+[2019-06-18 23:58:08.455] [debug] -----getIdFromUrl----
+[2019-06-18 23:58:08.473] [debug] -----getIdFromUrl----
+[2019-06-18 23:58:08.484] [debug] ------getVideoInfo-------
+[2019-06-19 00:08:13.982] [debug] ----processForDownload---
+[2019-06-19 00:08:13.987] [debug] ----downloadSingleVideo------
+[2019-06-19 00:08:13.995] [debug] ------downloadVideo-------
+[2019-06-19 00:17:45.953] [debug] --- video.on('end')---
+[2019-06-19 00:17:45.963] [debug] new path:
+[2019-06-19 00:17:45.972] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\♥♥ My Second Best Fireplace Video (2 hours long)-LIJAsKCLTqc.mp4
+[2019-06-19 00:17:45.982] [debug] last index:42
+[2019-06-19 00:17:46.002] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader
+[2019-06-19 00:17:47.966] [debug] null
+[2019-06-19 00:42:01.256] [debug] ----ipcMain open-file-directory----
+[2019-06-19 00:42:01.280] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\♥♥ My Second Best Fireplace Video (2 hours long)-LIJAsKCLTqc.mp4
+[2019-06-19 00:42:01.536] [debug] ----ipcMain open-file-directory----
+[2019-06-19 00:42:01.545] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\♥♥ My Second Best Fireplace Video (2 hours long)-LIJAsKCLTqc.mp4
+[2019-06-19 00:46:39.448] [debug] ------startProcess-----
+[2019-06-19 00:46:39.486] [debug] ------in Item class constuctor-----
+[2019-06-19 00:46:39.513] [debug] -----getIdFromUrl----
+[2019-06-19 00:46:39.540] [debug] -----getIdFromUrl----
+[2019-06-19 00:46:39.550] [debug] ------getVideoInfo-------
+[2019-06-19 00:46:44.292] [debug] ----processForDownload---
+[2019-06-19 00:46:44.303] [debug] ----downloadSingleVideo------
+[2019-06-19 00:46:44.311] [debug] ------downloadVideo-------
+[2019-06-19 00:47:03.502] [debug] --- video.on('end')---
+[2019-06-19 00:47:03.529] [debug] new path:
+[2019-06-19 00:47:03.547] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\Angular 7 Stable Version Released Now - Introduction  -  Part 4 - Angular 7 Full Tutorial in Hindi-P7-hAe41sIA.mp4
+[2019-06-19 00:47:03.557] [debug] last index:42
+[2019-06-19 00:47:03.567] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader
+[2019-06-19 00:47:03.670] [debug] null
+[2019-06-19 01:02:58.132] [debug] ------startProcess-----
+[2019-06-19 01:02:58.176] [debug] ------in Item class constuctor-----
+[2019-06-19 01:02:58.201] [debug] -----getIdFromUrl----
+[2019-06-19 01:02:58.224] [debug] -----getIdFromUrl----
+[2019-06-19 01:02:58.237] [debug] ------getVideoInfo-------
+[2019-06-19 01:03:04.208] [debug] already downloaded
+[2019-06-19 01:03:04.237] [debug] destination path:C:\Users\ASUS\Videos\kr_youtube_downloader
+[2019-06-19 01:03:08.733] [debug] ----ipcMain open-already-downloaded-file-directory----
+[2019-06-19 01:03:08.747] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\Angular 7  - Part 2  -  Angular 7 Full Tutorial in Hindi - What new in angular get notifications-BdGaUltG_sk.mp4
+[2019-06-19 01:03:08.853] [debug] ----ipcMain open-already-downloaded-file-directory----
+[2019-06-19 01:03:08.862] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\Angular 7  - Part 2  -  Angular 7 Full Tutorial in Hindi - What new in angular get notifications-BdGaUltG_sk.mp4
+[2019-06-19 01:03:19.523] [debug] ------startProcess-----
+[2019-06-19 01:03:19.564] [debug] ------in Item class constuctor-----
+[2019-06-19 01:03:19.593] [debug] -----getIdFromUrl----
+[2019-06-19 01:03:19.607] [debug] -----getIdFromUrl----
+[2019-06-19 01:03:19.617] [debug] ------getVideoInfo-------
+[2019-06-19 01:03:36.916] [debug] ----processForDownload---
+[2019-06-19 01:03:36.926] [debug] ----downloadSingleVideo------
+[2019-06-19 01:03:36.935] [debug] ------downloadVideo-------
+[2019-06-19 01:03:46.204] [debug] --- video.on('end')---
+[2019-06-19 01:03:46.225] [debug] new path:
+[2019-06-19 01:03:46.238] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\Angular 7  - Part 2  -  Angular 7 Full Tutorial in Hindi - What new in angular get notifications-BdGaUltG_sk.mp4
+[2019-06-19 01:03:46.246] [debug] last index:42
+[2019-06-19 01:03:46.256] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader
+[2019-06-19 01:03:46.328] [debug] null
+[2019-06-19 01:05:19.588] [debug] ----ipcMain open-file-directory----
+[2019-06-19 01:05:19.594] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\Angular 7  - Part 2  -  Angular 7 Full Tutorial in Hindi - What new in angular get notifications-BdGaUltG_sk.mp4
+[2019-06-19 01:05:19.668] [debug] ----ipcMain open-file-directory----
+[2019-06-19 01:05:19.683] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\Angular 7  - Part 2  -  Angular 7 Full Tutorial in Hindi - What new in angular get notifications-BdGaUltG_sk.mp4
+[2019-06-19 01:06:07.387] [debug] ----ipcMain open-file-directory----
+[2019-06-19 01:06:07.397] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\Angular 7  - Part 2  -  Angular 7 Full Tutorial in Hindi - What new in angular get notifications-BdGaUltG_sk.mp4
+[2019-06-19 01:06:07.483] [debug] ----ipcMain open-file-directory----
+[2019-06-19 01:06:07.499] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\Angular 7  - Part 2  -  Angular 7 Full Tutorial in Hindi - What new in angular get notifications-BdGaUltG_sk.mp4
+[2019-06-19 01:06:10.633] [debug] ----ipcMain open-file-directory----
+[2019-06-19 01:06:10.652] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\♥♥ My Second Best Fireplace Video (2 hours long)-LIJAsKCLTqc.mp4
+[2019-06-19 01:06:10.681] [debug] ----ipcMain open-file-directory----
+[2019-06-19 01:06:10.689] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\♥♥ My Second Best Fireplace Video (2 hours long)-LIJAsKCLTqc.mp4
+[2019-06-19 01:08:11.452] [debug] ----ipcMain open-already-downloaded-file-directory----
+[2019-06-19 01:08:11.476] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-06-19 01:08:11.503] [debug] ----ipcMain open-already-downloaded-file-directory----
+[2019-06-19 01:08:11.517] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-06-19 01:10:09.584] [debug] ----ipcMain open-file-directory----
+[2019-06-19 01:10:09.605] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\Angular 7 Stable Version Released Now - Introduction  -  Part 4 - Angular 7 Full Tutorial in Hindi-P7-hAe41sIA.mp4
+[2019-06-19 01:10:09.631] [debug] ----ipcMain open-file-directory----
+[2019-06-19 01:10:09.642] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\Angular 7 Stable Version Released Now - Introduction  -  Part 4 - Angular 7 Full Tutorial in Hindi-P7-hAe41sIA.mp4
+[2019-06-19 01:11:52.573] [debug] ------startProcess-----
+[2019-06-19 01:11:52.607] [debug] ------in Item class constuctor-----
+[2019-06-19 01:11:52.641] [debug] -----getIdFromUrl----
+[2019-06-19 01:11:52.670] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-06-19 01:11:52.685] [debug] ---createFolder----
+[2019-06-19 01:11:52.696] [debug] ------download_videoList--------
+[2019-06-19 01:11:57.050] [debug] loadIndex:0
+[2019-06-19 01:11:57.055] [debug] -----getIdFromUrl----
+[2019-06-19 01:11:57.062] [debug] ------getVideoInfo-------
+[2019-06-19 01:11:57.075] [debug] downloadIndex:0
+[2019-06-19 01:11:57.085] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:11:57.095] [debug] ------downloadVideo-------
+[2019-06-19 01:12:01.638] [debug] loadIndex:1
+[2019-06-19 01:12:01.646] [debug] -----getIdFromUrl----
+[2019-06-19 01:12:01.652] [debug] ------getVideoInfo-------
+[2019-06-19 01:12:07.718] [debug] loadIndex:2
+[2019-06-19 01:12:07.729] [debug] -----getIdFromUrl----
+[2019-06-19 01:12:07.741] [debug] ------getVideoInfo-------
+[2019-06-19 01:12:13.622] [debug] loadIndex:3
+[2019-06-19 01:12:13.633] [debug] -----getIdFromUrl----
+[2019-06-19 01:12:13.647] [debug] ------getVideoInfo-------
+[2019-06-19 01:12:16.306] [debug] --- video.on('end')---
+[2019-06-19 01:12:16.330] [debug] new path:
+[2019-06-19 01:12:16.340] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Angular 7  - Part 1- Angular 7 Full Tutorial in Hindi- Angular Introduction , Versioning and Releases-SuZa2nv24HE.mp4
+[2019-06-19 01:12:16.349] [debug] last index:68
+[2019-06-19 01:12:16.356] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:12:16.363] [debug] downloadIndex:1
+[2019-06-19 01:12:16.368] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:12:16.375] [debug] ------downloadVideo-------
+[2019-06-19 01:12:16.591] [debug] null
+[2019-06-19 01:12:17.540] [debug] loadIndex:4
+[2019-06-19 01:12:17.549] [debug] -----getIdFromUrl----
+[2019-06-19 01:12:17.557] [debug] ------getVideoInfo-------
+[2019-06-19 01:12:22.609] [debug] loadIndex:5
+[2019-06-19 01:12:22.623] [debug] -----getIdFromUrl----
+[2019-06-19 01:12:22.634] [debug] ------getVideoInfo-------
+[2019-06-19 01:12:27.091] [debug] --- video.on('end')---
+[2019-06-19 01:12:27.107] [debug] new path:
+[2019-06-19 01:12:27.118] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Angular 7  - Part 2  -  Angular 7 Full Tutorial in Hindi - What new in angular get notifications-BdGaUltG_sk.mp4
+[2019-06-19 01:12:27.129] [debug] last index:68
+[2019-06-19 01:12:27.136] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:12:27.147] [debug] downloadIndex:2
+[2019-06-19 01:12:27.157] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:12:27.166] [debug] ------downloadVideo-------
+[2019-06-19 01:12:27.235] [debug] null
+[2019-06-19 01:12:28.678] [debug] loadIndex:6
+[2019-06-19 01:12:28.685] [debug] -----getIdFromUrl----
+[2019-06-19 01:12:28.693] [debug] ------getVideoInfo-------
+[2019-06-19 01:12:34.550] [debug] loadIndex:7
+[2019-06-19 01:12:34.560] [debug] -----getIdFromUrl----
+[2019-06-19 01:12:34.568] [debug] ------getVideoInfo-------
+[2019-06-19 01:12:36.181] [debug] --- video.on('end')---
+[2019-06-19 01:12:36.189] [debug] new path:
+[2019-06-19 01:12:36.196] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Angular 7  - Part 3   - Angular 7 Full Tutorial in Hindi - Angular 7 New Features-GYHaucEVFG4.mp4
+[2019-06-19 01:12:36.201] [debug] last index:68
+[2019-06-19 01:12:36.207] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:12:36.213] [debug] downloadIndex:3
+[2019-06-19 01:12:36.221] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:12:36.229] [debug] ------downloadVideo-------
+[2019-06-19 01:12:36.319] [debug] null
+[2019-06-19 01:12:40.562] [debug] loadIndex:8
+[2019-06-19 01:12:40.573] [debug] -----getIdFromUrl----
+[2019-06-19 01:12:40.580] [debug] ------getVideoInfo-------
+[2019-06-19 01:12:47.378] [debug] loadIndex:9
+[2019-06-19 01:12:47.410] [debug] -----getIdFromUrl----
+[2019-06-19 01:12:47.423] [debug] ------getVideoInfo-------
+[2019-06-19 01:12:48.179] [debug] --- video.on('end')---
+[2019-06-19 01:12:48.187] [debug] new path:
+[2019-06-19 01:12:48.192] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Angular 7 Stable Version Released Now - Introduction  -  Part 4 - Angular 7 Full Tutorial in Hindi-P7-hAe41sIA.mp4
+[2019-06-19 01:12:48.198] [debug] last index:68
+[2019-06-19 01:12:48.205] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:12:48.212] [debug] downloadIndex:4
+[2019-06-19 01:12:48.218] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:12:48.223] [debug] ------downloadVideo-------
+[2019-06-19 01:12:48.307] [debug] null
+[2019-06-19 01:12:52.615] [debug] loadIndex:10
+[2019-06-19 01:12:52.627] [debug] -----getIdFromUrl----
+[2019-06-19 01:12:52.635] [debug] ------getVideoInfo-------
+[2019-06-19 01:12:58.290] [debug] loadIndex:11
+[2019-06-19 01:12:58.300] [debug] -----getIdFromUrl----
+[2019-06-19 01:12:58.312] [debug] ------getVideoInfo-------
+[2019-06-19 01:13:04.023] [debug] loadIndex:12
+[2019-06-19 01:13:04.036] [debug] -----getIdFromUrl----
+[2019-06-19 01:13:04.051] [debug] ------getVideoInfo-------
+[2019-06-19 01:13:08.760] [debug] loadIndex:13
+[2019-06-19 01:13:08.769] [debug] -----getIdFromUrl----
+[2019-06-19 01:13:08.777] [debug] ------getVideoInfo-------
+[2019-06-19 01:13:09.260] [debug] --- video.on('end')---
+[2019-06-19 01:13:09.267] [debug] new path:
+[2019-06-19 01:13:09.272] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Angular 7 CLI Prompts  - Part 5 - Angular 7 Full Tutorial in Hindi _ Angular 7 New Features-Q3uLQxJ5vqE.mp4
+[2019-06-19 01:13:09.278] [debug] last index:68
+[2019-06-19 01:13:09.284] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:13:09.290] [debug] downloadIndex:5
+[2019-06-19 01:13:09.297] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:13:09.303] [debug] ------downloadVideo-------
+[2019-06-19 01:13:09.440] [debug] null
+[2019-06-19 01:13:15.396] [debug] loadIndex:14
+[2019-06-19 01:13:15.408] [debug] -----getIdFromUrl----
+[2019-06-19 01:13:15.418] [debug] ------getVideoInfo-------
+[2019-06-19 01:13:23.566] [debug] loadIndex:15
+[2019-06-19 01:13:23.575] [debug] -----getIdFromUrl----
+[2019-06-19 01:13:23.583] [debug] ------getVideoInfo-------
+[2019-06-19 01:13:29.621] [debug] loadIndex:16
+[2019-06-19 01:13:29.634] [debug] -----getIdFromUrl----
+[2019-06-19 01:13:29.644] [debug] ------getVideoInfo-------
+[2019-06-19 01:13:36.130] [debug] loadIndex:17
+[2019-06-19 01:13:36.141] [debug] -----getIdFromUrl----
+[2019-06-19 01:13:36.148] [debug] ------getVideoInfo-------
+[2019-06-19 01:13:36.993] [debug] --- video.on('end')---
+[2019-06-19 01:13:37.001] [debug] new path:
+[2019-06-19 01:13:37.008] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Drag and Drop in angular  - Part 6 - Angular 7 Full Tutorial in Hindi _ Angular 7 New Features-t_qHCNMfIpo.mp4
+[2019-06-19 01:13:37.014] [debug] last index:68
+[2019-06-19 01:13:37.020] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:13:37.026] [debug] downloadIndex:6
+[2019-06-19 01:13:37.034] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:13:37.041] [debug] ------downloadVideo-------
+[2019-06-19 01:13:37.252] [debug] null
+[2019-06-19 01:13:41.960] [debug] loadIndex:18
+[2019-06-19 01:13:41.968] [debug] -----getIdFromUrl----
+[2019-06-19 01:13:41.981] [debug] ------getVideoInfo-------
+[2019-06-19 01:13:49.735] [debug] loadIndex:19
+[2019-06-19 01:13:49.744] [debug] -----getIdFromUrl----
+[2019-06-19 01:13:49.754] [debug] ------getVideoInfo-------
+[2019-06-19 01:13:56.367] [debug] loadIndex:20
+[2019-06-19 01:13:56.377] [debug] -----getIdFromUrl----
+[2019-06-19 01:13:56.385] [debug] ------getVideoInfo-------
+[2019-06-19 01:14:01.283] [debug] --- video.on('end')---
+[2019-06-19 01:14:01.307] [debug] new path:
+[2019-06-19 01:14:01.321] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Virtual Scrolling in angular 7  - Part 7 - Angular 7 Full Tutorial in Hindi _ Angular 7 New Features-AN9WuOIctw8.mp4
+[2019-06-19 01:14:01.331] [debug] last index:68
+[2019-06-19 01:14:01.339] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:14:01.347] [debug] downloadIndex:7
+[2019-06-19 01:14:01.359] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:14:01.367] [debug] ------downloadVideo-------
+[2019-06-19 01:14:01.611] [debug] null
+[2019-06-19 01:14:02.235] [debug] loadIndex:21
+[2019-06-19 01:14:02.247] [debug] -----getIdFromUrl----
+[2019-06-19 01:14:02.256] [debug] ------getVideoInfo-------
+[2019-06-19 01:14:08.902] [debug] loadIndex:22
+[2019-06-19 01:14:08.912] [debug] -----getIdFromUrl----
+[2019-06-19 01:14:08.921] [debug] ------getVideoInfo-------
+[2019-06-19 01:14:14.248] [debug] ----ipcMain open-file-directory----
+[2019-06-19 01:14:14.255] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Virtual Scrolling in angular 7  - Part 7 - Angular 7 Full Tutorial in Hindi _ Angular 7 New Features-AN9WuOIctw8.mp4
+[2019-06-19 01:14:14.845] [debug] ----ipcMain open-file-directory----
+[2019-06-19 01:14:14.854] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Virtual Scrolling in angular 7  - Part 7 - Angular 7 Full Tutorial in Hindi _ Angular 7 New Features-AN9WuOIctw8.mp4
+[2019-06-19 01:14:17.465] [debug] loadIndex:23
+[2019-06-19 01:14:17.478] [debug] -----getIdFromUrl----
+[2019-06-19 01:14:17.488] [debug] ------getVideoInfo-------
+[2019-06-19 01:14:20.151] [debug] --- video.on('end')---
+[2019-06-19 01:14:20.164] [debug] new path:
+[2019-06-19 01:14:20.179] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Improved Accessibility of Selects  -Part 8 -Angular 7 Full Tutorial in Hindi _ Angular 7 New Features-pS1T7Q7wLeM.mp4
+[2019-06-19 01:14:20.190] [debug] last index:68
+[2019-06-19 01:14:20.200] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:14:20.213] [debug] downloadIndex:8
+[2019-06-19 01:14:20.220] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:14:20.228] [debug] ------downloadVideo-------
+[2019-06-19 01:14:20.488] [debug] null
+[2019-06-19 01:14:24.138] [debug] loadIndex:24
+[2019-06-19 01:14:24.149] [debug] -----getIdFromUrl----
+[2019-06-19 01:14:24.157] [debug] ------getVideoInfo-------
+[2019-06-19 01:14:31.216] [debug] loadIndex:25
+[2019-06-19 01:14:31.225] [debug] -----getIdFromUrl----
+[2019-06-19 01:14:31.235] [debug] ------getVideoInfo-------
+[2019-06-19 01:14:34.051] [debug] --- video.on('end')---
+[2019-06-19 01:14:34.063] [debug] new path:
+[2019-06-19 01:14:34.073] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Documentation Updates in Angular 7 -Part 9 -Angular 7 Full Tutorial in Hindi _ Angular 7 New Features-OH0KYhVChcc.mp4
+[2019-06-19 01:14:34.082] [debug] last index:68
+[2019-06-19 01:14:34.092] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:14:34.102] [debug] downloadIndex:9
+[2019-06-19 01:14:34.111] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:14:34.119] [debug] ------downloadVideo-------
+[2019-06-19 01:14:34.246] [debug] null
+[2019-06-19 01:14:37.293] [debug] loadIndex:26
+[2019-06-19 01:14:37.301] [debug] -----getIdFromUrl----
+[2019-06-19 01:14:37.309] [debug] ------getVideoInfo-------
+[2019-06-19 01:14:43.532] [debug] loadIndex:27
+[2019-06-19 01:14:43.550] [debug] -----getIdFromUrl----
+[2019-06-19 01:14:43.561] [debug] ------getVideoInfo-------
+[2019-06-19 01:14:44.841] [debug] --- video.on('end')---
+[2019-06-19 01:14:44.847] [debug] new path:
+[2019-06-19 01:14:44.852] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Application Performance in Angular 7  - Part 10 -Angular 7 Full Tutorial in Hindi-ffbeyGim0AI.mp4
+[2019-06-19 01:14:44.857] [debug] last index:68
+[2019-06-19 01:14:44.863] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:14:44.868] [debug] downloadIndex:10
+[2019-06-19 01:14:44.876] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:14:44.883] [debug] ------downloadVideo-------
+[2019-06-19 01:14:44.954] [debug] null
+[2019-06-19 01:14:49.300] [debug] loadIndex:28
+[2019-06-19 01:14:49.308] [debug] -----getIdFromUrl----
+[2019-06-19 01:14:49.319] [debug] ------getVideoInfo-------
+[2019-06-19 01:14:57.071] [debug] loadIndex:29
+[2019-06-19 01:14:57.083] [debug] -----getIdFromUrl----
+[2019-06-19 01:14:57.094] [debug] ------getVideoInfo-------
+[2019-06-19 01:15:03.161] [debug] --- video.on('end')---
+[2019-06-19 01:15:03.185] [debug] new path:
+[2019-06-19 01:15:03.213] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Partner Launches Angular 7  -  Part 11 -Angular 7 Full Tutorial in Hindi-DX9ruG4c3v0.mp4
+[2019-06-19 01:15:03.233] [debug] last index:68
+[2019-06-19 01:15:03.246] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:15:03.259] [debug] downloadIndex:11
+[2019-06-19 01:15:03.269] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:15:03.279] [debug] ------downloadVideo-------
+[2019-06-19 01:15:03.424] [debug] null
+[2019-06-19 01:15:25.469] [debug] --- video.on('end')---
+[2019-06-19 01:15:25.494] [debug] new path:
+[2019-06-19 01:15:25.525] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Angular 7 installation requirements  - Part 12 -Angular 7 Full Tutorial in Hindi-xxwx2MrgXCs.mp4
+[2019-06-19 01:15:25.557] [debug] last index:68
+[2019-06-19 01:15:25.573] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:15:25.586] [debug] downloadIndex:12
+[2019-06-19 01:15:25.599] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:15:25.610] [debug] ------downloadVideo-------
+[2019-06-19 01:15:25.795] [debug] null
+[2019-06-19 01:15:53.640] [debug] --- video.on('end')---
+[2019-06-19 01:15:53.649] [debug] new path:
+[2019-06-19 01:15:53.659] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Angular folder structure and booting process   -  Part 13 -Angular 7 Full Tutorial in Hindi-JiS6UTNucbs.mp4
+[2019-06-19 01:15:53.667] [debug] last index:68
+[2019-06-19 01:15:53.676] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:15:53.689] [debug] downloadIndex:13
+[2019-06-19 01:15:53.701] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:15:53.716] [debug] ------downloadVideo-------
+[2019-06-19 01:15:53.912] [debug] null
+[2019-06-19 01:16:11.747] [debug] --- video.on('end')---
+[2019-06-19 01:16:11.758] [debug] new path:
+[2019-06-19 01:16:11.769] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\package json and package-lock json  - Part 14 -Angular 7 Full Tutorial in Hindi-wLURqXxxYSo.mp4
+[2019-06-19 01:16:11.776] [debug] last index:68
+[2019-06-19 01:16:11.786] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:16:11.794] [debug] downloadIndex:14
+[2019-06-19 01:16:11.803] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:16:11.812] [debug] ------downloadVideo-------
+[2019-06-19 01:16:11.942] [debug] null
+[2019-06-19 01:16:33.613] [debug] --- video.on('end')---
+[2019-06-19 01:16:33.626] [debug] new path:
+[2019-06-19 01:16:33.640] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\modules in Angular 7  - Part 15 -Angular 7 Full Tutorial in Hindi-3AKwhTMB8Ho.mp4
+[2019-06-19 01:16:33.653] [debug] last index:68
+[2019-06-19 01:16:33.671] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:16:33.688] [debug] downloadIndex:15
+[2019-06-19 01:16:33.710] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:16:33.728] [debug] ------downloadVideo-------
+[2019-06-19 01:16:33.883] [debug] null
+[2019-06-19 01:16:54.039] [debug] --- video.on('end')---
+[2019-06-19 01:16:54.057] [debug] new path:
+[2019-06-19 01:16:54.065] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Decorators in Angular 7  - Part 16 -Angular 7 Full Tutorial in Hindi-o4ZJsu3VF14.mp4
+[2019-06-19 01:16:54.072] [debug] last index:68
+[2019-06-19 01:16:54.080] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:16:54.091] [debug] downloadIndex:16
+[2019-06-19 01:16:54.101] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:16:54.116] [debug] ------downloadVideo-------
+[2019-06-19 01:16:54.254] [debug] null
+[2019-06-19 01:17:12.408] [debug] --- video.on('end')---
+[2019-06-19 01:17:12.428] [debug] new path:
+[2019-06-19 01:17:12.445] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Component in Angular 7  - Part 17 -Angular 7 Full Tutorial in Hindi-85GajynO8pQ.mp4
+[2019-06-19 01:17:12.463] [debug] last index:68
+[2019-06-19 01:17:12.477] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:17:12.491] [debug] downloadIndex:17
+[2019-06-19 01:17:12.502] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:17:12.510] [debug] ------downloadVideo-------
+[2019-06-19 01:17:12.667] [debug] null
+[2019-06-19 01:17:29.317] [debug] --- video.on('end')---
+[2019-06-19 01:17:29.340] [debug] new path:
+[2019-06-19 01:17:29.351] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Directives in Angular 7  - Part 18 -Angular 7 Full Tutorial in Hindi-kfUOqksBOpU.mp4
+[2019-06-19 01:17:29.362] [debug] last index:68
+[2019-06-19 01:17:29.371] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:17:29.379] [debug] downloadIndex:18
+[2019-06-19 01:17:29.387] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:17:29.395] [debug] ------downloadVideo-------
+[2019-06-19 01:17:29.531] [debug] null
+[2019-06-19 01:17:45.851] [debug] --- video.on('end')---
+[2019-06-19 01:17:45.871] [debug] new path:
+[2019-06-19 01:17:45.891] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\ngif else then in Angular 7  - Part 19 -Angular 7 Full Tutorial in Hindi-GschhBMmk2k.mp4
+[2019-06-19 01:17:45.915] [debug] last index:68
+[2019-06-19 01:17:45.936] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:17:45.951] [debug] downloadIndex:19
+[2019-06-19 01:17:45.961] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:17:45.972] [debug] ------downloadVideo-------
+[2019-06-19 01:17:46.100] [debug] null
+[2019-06-19 01:17:59.045] [debug] --- video.on('end')---
+[2019-06-19 01:17:59.059] [debug] new path:
+[2019-06-19 01:17:59.073] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\ngSwitch in Angular 7  - Part 20 -Angular 7 Full Tutorial in Hindi-zEgIoT5X0_U.mp4
+[2019-06-19 01:17:59.114] [debug] last index:68
+[2019-06-19 01:17:59.145] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:17:59.165] [debug] downloadIndex:20
+[2019-06-19 01:17:59.176] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:17:59.185] [debug] ------downloadVideo-------
+[2019-06-19 01:17:59.294] [debug] null
+[2019-06-19 01:18:14.058] [debug] --- video.on('end')---
+[2019-06-19 01:18:14.066] [debug] new path:
+[2019-06-19 01:18:14.073] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\ngFor in Angular 7  - Part 21 -Angular 7 Full Tutorial in Hindi-eLkvowWpHdI.mp4
+[2019-06-19 01:18:14.084] [debug] last index:68
+[2019-06-19 01:18:14.093] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:18:14.104] [debug] downloadIndex:21
+[2019-06-19 01:18:14.117] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:18:14.131] [debug] ------downloadVideo-------
+[2019-06-19 01:18:14.259] [debug] null
+[2019-06-19 01:18:36.288] [debug] --- video.on('end')---
+[2019-06-19 01:18:36.299] [debug] new path:
+[2019-06-19 01:18:36.307] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\TrackBy in Angular 7  - Part 22 -Angular 7 Full Tutorial in Hindi-MW_0yVtfAWA.mp4
+[2019-06-19 01:18:36.315] [debug] last index:68
+[2019-06-19 01:18:36.322] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:18:36.331] [debug] downloadIndex:22
+[2019-06-19 01:18:36.339] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:18:36.346] [debug] ------downloadVideo-------
+[2019-06-19 01:18:36.491] [debug] null
+[2019-06-19 01:18:47.213] [debug] --- video.on('end')---
+[2019-06-19 01:18:47.241] [debug] new path:
+[2019-06-19 01:18:47.268] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Grouping with ngFor in Angular 7  - Part 23 -Angular 7 Full Tutorial in Hindi-vd2eCHsCxWw.mp4
+[2019-06-19 01:18:47.293] [debug] last index:68
+[2019-06-19 01:18:47.312] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:18:47.323] [debug] downloadIndex:23
+[2019-06-19 01:18:47.337] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:18:47.344] [debug] ------downloadVideo-------
+[2019-06-19 01:18:47.427] [debug] null
+[2019-06-19 01:19:03.079] [debug] --- video.on('end')---
+[2019-06-19 01:19:03.097] [debug] new path:
+[2019-06-19 01:19:03.123] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\ngStyle in Angular 7  - Part 24 -Angular 7 Full Tutorial in Hindi _ ngStyle in Agular-IgtHAMHbzO8.mp4
+[2019-06-19 01:19:03.149] [debug] last index:68
+[2019-06-19 01:19:03.158] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:19:03.166] [debug] downloadIndex:24
+[2019-06-19 01:19:03.178] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:19:03.185] [debug] ------downloadVideo-------
+[2019-06-19 01:19:03.320] [debug] null
+[2019-06-19 01:19:20.410] [debug] --- video.on('end')---
+[2019-06-19 01:19:20.421] [debug] new path:
+[2019-06-19 01:19:20.430] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\ngClass in Angular 7  - Part 25 -Angular 7 Full Tutorial in Hindi _ ngClass in Agular-X1VTLyLq2AM.mp4
+[2019-06-19 01:19:20.438] [debug] last index:68
+[2019-06-19 01:19:20.448] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:19:20.458] [debug] downloadIndex:25
+[2019-06-19 01:19:20.470] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:19:20.478] [debug] ------downloadVideo-------
+[2019-06-19 01:19:20.631] [debug] null
+[2019-06-19 01:19:30.975] [debug] --- video.on('end')---
+[2019-06-19 01:19:30.989] [debug] new path:
+[2019-06-19 01:19:31.006] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Data Binding in Angular 7  - Part 26  -Angular 7 Full Tutorial in Hindi _ data binding in Agular-l6l6cUxm7qE.mp4
+[2019-06-19 01:19:31.022] [debug] last index:68
+[2019-06-19 01:19:31.037] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:19:31.048] [debug] downloadIndex:26
+[2019-06-19 01:19:31.058] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:19:31.065] [debug] ------downloadVideo-------
+[2019-06-19 01:19:31.159] [debug] null
+[2019-06-19 01:19:43.135] [debug] --- video.on('end')---
+[2019-06-19 01:19:43.156] [debug] new path:
+[2019-06-19 01:19:43.179] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Interpolation in Angular 7  - Part 27 -Angular 7 Full Tutorial in Hindi _ data binding in Agular-QqhIr-9_qqE.mp4
+[2019-06-19 01:19:43.207] [debug] last index:68
+[2019-06-19 01:19:43.235] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:19:43.252] [debug] downloadIndex:27
+[2019-06-19 01:19:43.262] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:19:43.268] [debug] ------downloadVideo-------
+[2019-06-19 01:19:43.367] [debug] null
+[2019-06-19 01:19:56.097] [debug] --- video.on('end')---
+[2019-06-19 01:19:56.106] [debug] new path:
+[2019-06-19 01:19:56.114] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Property Binding in Angular 7  - Part 28 -Angular 7 Full Tutorial in Hindi _ data binding in Agular-r9bMOnMkTEM.mp4
+[2019-06-19 01:19:56.123] [debug] last index:68
+[2019-06-19 01:19:56.133] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:19:56.144] [debug] downloadIndex:28
+[2019-06-19 01:19:56.157] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:19:56.171] [debug] ------downloadVideo-------
+[2019-06-19 01:19:56.269] [debug] null
+[2019-06-19 01:20:09.250] [debug] --- video.on('end')---
+[2019-06-19 01:20:09.263] [debug] new path:
+[2019-06-19 01:20:09.277] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Attribute Binding in Angular 7  - Part 29 -Angular 7 Full Tutorial in Hindi _ data binding in Agular-lJFf_V7byI8.mp4
+[2019-06-19 01:20:09.292] [debug] last index:68
+[2019-06-19 01:20:09.313] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:20:09.335] [debug] downloadIndex:29
+[2019-06-19 01:20:09.356] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:20:09.368] [debug] ------downloadVideo-------
+[2019-06-19 01:20:09.469] [debug] null
+[2019-06-19 01:21:39.117] [debug] --- video.on('end')---
+[2019-06-19 01:21:39.132] [debug] new path:
+[2019-06-19 01:21:39.140] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Event Binding in Angular 7  - Part 30 -Angular 7 Full Tutorial in Hindi _ data binding in Agular-_z1d7FAzpg4.mp4
+[2019-06-19 01:21:39.147] [debug] last index:68
+[2019-06-19 01:21:39.153] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:21:39.160] [debug] downloadIndex:30
+[2019-06-19 01:21:39.168] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:21:39.176] [debug] ------downloadVideo-------
+[2019-06-19 01:21:39.280] [debug] null
+[2019-06-19 01:24:09.094] [debug] --- video.on('end')---
+[2019-06-19 01:24:09.102] [debug] new path:
+[2019-06-19 01:24:09.108] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19\Two-way Data Binding in Angular 7  - Part 31 -Angular 7 Full Tutorial in Hindi _ data binding-nDR0KjLT3KU.mp4
+[2019-06-19 01:24:09.115] [debug] last index:68
+[2019-06-19 01:24:09.122] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist1_11_52 2019.6.19
+[2019-06-19 01:24:09.131] [debug] downloadIndex:31
+[2019-06-19 01:24:09.138] [debug] ----downloadPlaylistItem------
+[2019-06-19 01:24:09.146] [debug] ------downloadVideo-------
+[2019-06-19 01:24:09.373] [debug] null
+[2019-06-19 01:33:51.976] [debug] logging set up
+[2019-06-19 01:33:51.990] [debug] log level:debug
+[2019-06-19 01:33:51.996] [debug] size:5242880
+[2019-06-19 01:33:52.812] [debug] window created
+[2019-06-19 01:33:52.828] [debug] -------makeDestinationDir-------
+[2019-06-19 01:33:52.836] [debug] ---createFolder----
+[2019-06-19 01:33:52.850] [debug] downloader object created.
+[2019-06-19 01:34:13.516] [debug] ------startProcess-----
+[2019-06-19 01:34:13.544] [debug] ------in Item class constuctor-----
+[2019-06-19 01:34:13.555] [debug] -----getIdFromUrl----
+[2019-06-19 01:34:13.567] [debug] -----getIdFromUrl----
+[2019-06-19 01:34:13.576] [debug] ------getVideoInfo-------
+[2019-06-19 01:34:22.051] [debug] ----processForDownload---
+[2019-06-19 01:34:22.063] [debug] ----downloadSingleVideo------
+[2019-06-19 01:34:22.074] [debug] ------downloadVideo-------
+[2019-06-19 01:34:30.034] [debug] ------startProcess-----
+[2019-06-19 01:34:30.060] [debug] ------in Item class constuctor-----
+[2019-06-19 01:34:30.086] [debug] -----getIdFromUrl----
+[2019-06-19 01:34:30.097] [debug] -----getIdFromUrl----
+[2019-06-19 01:34:30.107] [debug] ------getVideoInfo-------
+[2019-06-19 01:34:36.050] [debug] already downloading
+[2019-06-19 01:34:44.284] [debug] --- video.on('end')---
+[2019-06-19 01:34:44.315] [debug] new path:
+[2019-06-19 01:34:44.338] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\Angular 7  - Part 1- Angular 7 Full Tutorial in Hindi- Angular Introduction , Versioning and Releases-SuZa2nv24HE.mp4
+[2019-06-19 01:34:44.352] [debug] last index:42
+[2019-06-19 01:34:44.364] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader
+[2019-06-19 01:34:44.529] [debug] null
+[2019-06-19 02:49:53.779] [debug] logging set up
+[2019-06-19 02:49:53.810] [debug] log level:debug
+[2019-06-19 02:49:53.819] [debug] size:5242880
+[2019-06-19 02:49:54.605] [debug] window created
+[2019-06-19 02:49:54.616] [debug] -------makeDestinationDir-------
+[2019-06-19 02:49:54.627] [debug] ---createFolder----
+[2019-06-19 02:49:54.637] [debug] downloader object created.
+[2019-06-19 02:50:24.795] [debug] ------startProcess-----
+[2019-06-19 02:50:24.818] [debug] ------in Item class constuctor-----
+[2019-06-19 02:50:24.844] [debug] -----getIdFromUrl----
+[2019-06-19 02:50:24.877] [debug] -----getIdFromUrl----
+[2019-06-19 02:50:24.897] [debug] ------getVideoInfo-------
+[2019-06-19 02:50:31.044] [debug] ----processForDownload---
+[2019-06-19 02:50:31.059] [debug] ----downloadSingleVideo------
+[2019-06-19 02:50:31.071] [debug] ------downloadVideo-------
+[2019-06-19 02:50:35.606] [debug] --- video.on('end')---
+[2019-06-19 02:50:35.619] [debug] new path:
+[2019-06-19 02:50:35.627] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-06-19 02:50:35.632] [debug] last index:42
+[2019-06-19 02:50:35.639] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader
+[2019-06-19 02:50:35.671] [debug] null
+[2019-06-19 02:50:37.675] [debug] ----ipcMain open-file-directory----
+[2019-06-19 02:50:37.696] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-06-19 02:50:37.809] [debug] ----ipcMain open-file-directory----
+[2019-06-19 02:50:37.820] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\5 Second Countdown HD-QohH89Eu5iM.mp4
