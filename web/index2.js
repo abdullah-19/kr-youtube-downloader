@@ -38,7 +38,7 @@ function start_process() {
             showPlaylistWaitingDiv(url);
         }
         else {
-            showSingleVideoWaitingDiv();
+            showSingleVideoWaitingDiv(extractId(url));
         }
         ipcRenderer.send('start-process', url);
     }

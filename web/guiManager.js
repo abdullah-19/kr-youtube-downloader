@@ -1,19 +1,19 @@
 
-function addWaitingDiv() {
-    //var video_id = extractId(url);
-    var firstDiv = document.createElement("div");
-    firstDiv.setAttribute("class", "waiting border border-info mx-3");
-    var paragraph = document.createElement("p");
-    paragraph.setAttribute("class", "text-center mb-0");
-    var span = document.createElement("span");
-    span.setAttribute("class", "fa fa-spinner fa-spin py-4");
-    span.setAttribute("style", "font-size:24px");
-    paragraph.appendChild(span);
-    //firstDiv.setAttribute("style", "height:80px;");
-    //firstDiv.setAttribute("id", "temp");//info.id
-    firstDiv.appendChild(paragraph);
-    document.getElementById('video_div').appendChild(firstDiv);
-}
+// function addWaitingDiv() {
+//     //var video_id = extractId(url);
+//     var firstDiv = document.createElement("div");
+//     firstDiv.setAttribute("class", "waiting border border-info mx-3");
+//     var paragraph = document.createElement("p");
+//     paragraph.setAttribute("class", "text-center mb-0");
+//     var span = document.createElement("span");
+//     span.setAttribute("class", "fa fa-spinner fa-spin py-4");
+//     span.setAttribute("style", "font-size:24px");
+//     paragraph.appendChild(span);
+//     //firstDiv.setAttribute("style", "height:80px;");
+//     //firstDiv.setAttribute("id", "temp");//info.id
+//     firstDiv.appendChild(paragraph);
+//     document.getElementById('video_div').appendChild(firstDiv);
+// }
 
 function addVideoDiv(url) {
 
@@ -298,24 +298,24 @@ ipcRenderer.on('move-complete', (event, info) => {
 
 });
 
-function showWaiting() {
-    var div1 = document.createElement("div");
-    //div1.setAttribute("id", "progressDiv_" + "temp");
-    div1.setAttribute("class", "waiting");
-    var paragraph = document.createElement("p");
-    paragraph.setAttribute("class", "p-1 bg-info text-center");
-    paragraph.innerHTML = "Waiting...";
-    //div1.setAttribute("style", "height:18px; display: none;");
-    div1.appendChild(paragraph);
-    document.getElementById("video_div").appendChild(div1);
-}
+// function showWaiting() {
+//     var div1 = document.createElement("div");
+//     //div1.setAttribute("id", "progressDiv_" + "temp");
+//     div1.setAttribute("class", "waiting");
+//     var paragraph = document.createElement("p");
+//     paragraph.setAttribute("class", "p-1 bg-info text-center");
+//     paragraph.innerHTML = "Waiting...";
+//     //div1.setAttribute("style", "height:18px; display: none;");
+//     div1.appendChild(paragraph);
+//     document.getElementById("video_div").appendChild(div1);
+// }
 
-function showSingleVideoWaitingDiv() {
+function showSingleVideoWaitingDiv(id) {
     console.log('----showSingleVideoWaitingDiv-----');
     var waitingDiv = document.querySelector('#singleWaitingDemo').cloneNode(true);
     waitingDiv.id = "";
     waitingDiv.classList.remove("d-none");
-    waitingDiv.classList.add('waiting');
+    waitingDiv.classList.add('singleWaiting_'+id);
     var sibling = document.getElementById('singleWaitingDemo');
     sibling.parentNode.insertBefore(waitingDiv, sibling.nextSibling);
     //head.parentNode.insertBefore(myEle,head.nextSibling)
@@ -327,7 +327,7 @@ function showSingleVideoInfo(item) {
     var info = item.infoAtLoad;
 
     let singleVideos = document.getElementById('single_videos');
-    var infoDiv = singleVideos.getElementsByClassName('waiting')[0]
+    var infoDiv = singleVideos.getElementsByClassName('singleWaiting_'+item.id)[0]
 
     //var infoDiv = document.getElementsByClassName('singleWaiting')[0];
     if (document.getElementById('s_' + item.id)) {
@@ -335,7 +335,7 @@ function showSingleVideoInfo(item) {
         ele.parentNode.removeChild(ele);
     }
 
-    infoDiv.classList.remove('waiting');
+    infoDiv.classList.remove('singleWaiting_'+item.id);
     infoDiv.id = 's_' + item.id;
     infoDiv.getElementsByClassName('thumbnail')[0].src = item.infoAtLoad.thumbnail;
 
@@ -547,8 +547,8 @@ ipcRenderer.on('already-downloaded', (event, item) => {
 function showAlreadyDownloadedSingleVideoInfo(item) {
     console.log('-------showAlreadyDownloadedSingleVideoInfo-------');
     console.log(item);
-    let singleWaitingVideo = document.getElementsByClassName('waiting')[0];
-    singleWaitingVideo.classList.remove('waiting');
+    let singleWaitingVideo = document.getElementsByClassName('singleWaiting_'+item.id)[0];
+    singleWaitingVideo.classList.remove('singleWaiting_'+item.id);
     singleWaitingVideo.classList.add('already_doneDiv');
     singleWaitingVideo.id = 'ad_'+item.infoAtLoad.id;
     let status = singleWaitingVideo.getElementsByClassName('aDone_status')[0];

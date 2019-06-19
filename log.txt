@@ -74992,3 +74992,35 @@ ERROR: Unable to download webpage: The read operation timed out (caused by timeo
 [2019-06-19 02:50:37.696] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\5 Second Countdown HD-QohH89Eu5iM.mp4
 [2019-06-19 02:50:37.809] [debug] ----ipcMain open-file-directory----
 [2019-06-19 02:50:37.820] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-06-19 11:53:12.947] [debug] logging set up
+[2019-06-19 11:53:12.954] [debug] log level:debug
+[2019-06-19 11:53:12.960] [debug] size:5242880
+[2019-06-19 11:53:16.453] [debug] window created
+[2019-06-19 11:53:16.459] [debug] -------makeDestinationDir-------
+[2019-06-19 11:53:16.474] [debug] ---createFolder----
+[2019-06-19 11:53:16.485] [debug] downloader object created.
+[2019-06-19 11:54:08.129] [debug] ------startProcess-----
+[2019-06-19 11:54:08.140] [debug] ------in Item class constuctor-----
+[2019-06-19 11:54:08.146] [debug] -----getIdFromUrl----
+[2019-06-19 11:54:08.151] [debug] -----getIdFromUrl----
+[2019-06-19 11:54:08.156] [debug] ------getVideoInfo-------
+[2019-06-19 11:54:14.283] [debug] ----processForDownload---
+[2019-06-19 11:54:14.290] [debug] ----downloadSingleVideo------
+[2019-06-19 11:54:14.295] [debug] ------downloadVideo-------
+[2019-06-19 11:54:18.163] [debug] --- video.on('end')---
+[2019-06-19 11:54:18.171] [debug] new path:
+[2019-06-19 11:54:18.189] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-06-19 11:54:18.196] [debug] last index:42
+[2019-06-19 11:54:18.201] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader
+[2019-06-19 11:54:18.262] [debug] null
+[2019-06-19 11:54:20.920] [debug] ------startProcess-----
+[2019-06-19 11:54:20.932] [debug] ------in Item class constuctor-----
+[2019-06-19 11:54:20.941] [debug] -----getIdFromUrl----
+[2019-06-19 11:54:20.948] [debug] -----getIdFromUrl----
+[2019-06-19 11:54:20.956] [debug] ------getVideoInfo-------
+[2019-06-19 11:54:29.579] [debug] already downloaded
+[2019-06-19 11:54:29.586] [debug] destination path:C:\Users\ASUS\Videos\kr_youtube_downloader
+[2019-06-19 11:54:34.370] [debug] ----ipcMain open-already-downloaded-file-directory----
+[2019-06-19 11:54:34.381] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-06-19 11:54:34.979] [debug] ----ipcMain open-already-downloaded-file-directory----
+[2019-06-19 11:54:35.004] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\5 Second Countdown HD-QohH89Eu5iM.mp4
