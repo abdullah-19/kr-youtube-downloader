@@ -313,9 +313,9 @@ ipcRenderer.on('move-complete', (event, info) => {
 function showSingleVideoWaitingDiv(id) {
     console.log('----showSingleVideoWaitingDiv-----');
     var waitingDiv = document.querySelector('#singleWaitingDemo').cloneNode(true);
-    waitingDiv.id = "";
+    waitingDiv.id = 'singleWaiting_' + id;
     waitingDiv.classList.remove("d-none");
-    waitingDiv.classList.add('singleWaiting_'+id);
+    // waitingDiv.classList.add('singleWaiting_'+id);
     var sibling = document.getElementById('singleWaitingDemo');
     sibling.parentNode.insertBefore(waitingDiv, sibling.nextSibling);
     //head.parentNode.insertBefore(myEle,head.nextSibling)
@@ -327,15 +327,15 @@ function showSingleVideoInfo(item) {
     var info = item.infoAtLoad;
 
     let singleVideos = document.getElementById('single_videos');
-    var infoDiv = singleVideos.getElementsByClassName('singleWaiting_'+item.id)[0]
-
+    //var infoDiv = singleVideos.getElementsByClassName('singleWaiting_'+item.id)[0]
+    var infoDiv = document.getElementById('singleWaiting_' + item.id);
     //var infoDiv = document.getElementsByClassName('singleWaiting')[0];
     if (document.getElementById('s_' + item.id)) {
         let ele = document.getElementById('s_' + item.id);
         ele.parentNode.removeChild(ele);
     }
 
-    infoDiv.classList.remove('singleWaiting_'+item.id);
+    // infoDiv.classList.remove('singleWaiting_'+item.id);
     infoDiv.id = 's_' + item.id;
     infoDiv.getElementsByClassName('thumbnail')[0].src = item.infoAtLoad.thumbnail;
 
@@ -547,10 +547,16 @@ ipcRenderer.on('already-downloaded', (event, item) => {
 function showAlreadyDownloadedSingleVideoInfo(item) {
     console.log('-------showAlreadyDownloadedSingleVideoInfo-------');
     console.log(item);
-    let singleWaitingVideo = document.getElementsByClassName('singleWaiting_'+item.id)[0];
-    singleWaitingVideo.classList.remove('singleWaiting_'+item.id);
-    singleWaitingVideo.classList.add('already_doneDiv');
-    singleWaitingVideo.id = 'ad_'+item.infoAtLoad.id;
+    //let singleWaitingVideo = document.getElementsByClassName('singleWaiting_'+item.id)[0];
+    let singleWaitingVideo = document.getElementById('singleWaiting_' + item.id);
+    // singleWaitingVideo.classList.remove('singleWaiting_'+item.id);
+    if (document.getElementById('singleAlreadyDone_' + item.id)) {
+        let element = document.getElementById('singleAlreadyDone_' + item.id);
+        element.parentNode.removeChild(element);
+    }
+    //singleWaitingVideo.classList.add('singleAlreadyDone');
+    singleWaitingVideo.id = "singleAlreadyDone_" + item.id;
+   // singleWaitingVideo.id = 'ad_' + item.infoAtLoad.id;
     let status = singleWaitingVideo.getElementsByClassName('aDone_status')[0];
     let thumbnail = singleWaitingVideo.getElementsByClassName('thumbnail')[0];
     let filename = singleWaitingVideo.getElementsByClassName('filename')[0];
@@ -562,18 +568,20 @@ function showAlreadyDownloadedSingleVideoInfo(item) {
     filename.innerHTML = item.infoAtLoad._filename;
     filename.classList.remove('d-none');
     filename.classList.add('text-center');
-    
+
     folderIcon.onclick = function () {
         ipcRenderer.send('open-already-downloaded-file-directory', item);
     }
     folderIcon.classList.remove('d-none');
 }
 
-ipcRenderer.on('already-downloadeding',function(event,item){
-    if(item.isPlaylist){
+ipcRenderer.on('already-downloadeding', function (event, item) {
+    if (item.isPlaylist) {
 
     }
-    else{
-        
+    else {
+        let element = document.getElementById('singleWaiting_'+item.id);
+        element.parentNode.removeChild(element);
+        document.getElementById('s_'+item.id).scrollIntoView();
     }
 });

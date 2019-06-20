@@ -75024,3 +75024,119 @@ ERROR: Unable to download webpage: The read operation timed out (caused by timeo
 [2019-06-19 11:54:34.381] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\5 Second Countdown HD-QohH89Eu5iM.mp4
 [2019-06-19 11:54:34.979] [debug] ----ipcMain open-already-downloaded-file-directory----
 [2019-06-19 11:54:35.004] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\5 Second Countdown HD-QohH89Eu5iM.mp4
+[2019-06-20 10:50:52.499] [debug] logging set up
+[2019-06-20 10:50:52.570] [debug] log level:debug
+[2019-06-20 10:50:52.575] [debug] size:5242880
+[2019-06-20 10:50:55.401] [debug] window created
+[2019-06-20 10:50:55.408] [debug] -------makeDestinationDir-------
+[2019-06-20 10:50:55.416] [debug] ---createFolder----
+[2019-06-20 10:50:55.422] [debug] downloader object created.
+[2019-06-20 10:51:14.026] [debug] ------startProcess-----
+[2019-06-20 10:51:14.031] [debug] ------in Item class constuctor-----
+[2019-06-20 10:51:14.036] [debug] -----getIdFromUrl----
+[2019-06-20 10:51:14.042] [debug] -----getIdFromUrl----
+[2019-06-20 10:51:14.049] [debug] ------getVideoInfo-------
+[2019-06-20 10:51:17.374] [debug] ------startProcess-----
+[2019-06-20 10:51:17.391] [debug] ------in Item class constuctor-----
+[2019-06-20 10:51:17.400] [debug] -----getIdFromUrl----
+[2019-06-20 10:51:17.406] [debug] -----getIdFromUrl----
+[2019-06-20 10:51:17.413] [debug] ------getVideoInfo-------
+[2019-06-20 10:51:20.052] [debug] ----processForDownload---
+[2019-06-20 10:51:20.058] [debug] ----downloadSingleVideo------
+[2019-06-20 10:51:20.064] [debug] ------downloadVideo-------
+[2019-06-20 10:51:21.430] [debug] ----processForDownload---
+[2019-06-20 10:51:21.436] [debug] ----downloadSingleVideo------
+[2019-06-20 10:51:21.441] [debug] ------downloadVideo-------
+[2019-06-20 10:51:32.179] [error] an unhandled error caught in gloabl handler:  Error: Object has been destroyed
+    at Timeout.setInterval [as _onTimeout] (E:\workspace\downloader\Downloader.js:153:22)
+    at ontimeout (timers.js:475:11)
+    at tryOnTimeout (timers.js:310:5)
+    at Timer.listOnTimeout (timers.js:270:5)
+[2019-06-20 10:53:50.477] [debug] logging set up
+[2019-06-20 10:53:50.485] [debug] log level:debug
+[2019-06-20 10:53:50.491] [debug] size:5242880
+[2019-06-20 10:53:51.182] [debug] window created
+[2019-06-20 10:53:51.201] [debug] -------makeDestinationDir-------
+[2019-06-20 10:53:51.213] [debug] ---createFolder----
+[2019-06-20 10:53:51.225] [debug] downloader object created.
+[2019-06-20 10:54:10.754] [debug] ------startProcess-----
+[2019-06-20 10:54:10.770] [debug] ------in Item class constuctor-----
+[2019-06-20 10:54:10.778] [debug] -----getIdFromUrl----
+[2019-06-20 10:54:10.786] [debug] -----getIdFromUrl----
+[2019-06-20 10:54:10.793] [debug] ------getVideoInfo-------
+[2019-06-20 10:54:14.880] [debug] ------startProcess-----
+[2019-06-20 10:54:14.888] [debug] ------in Item class constuctor-----
+[2019-06-20 10:54:14.896] [debug] -----getIdFromUrl----
+[2019-06-20 10:54:14.905] [debug] -----getIdFromUrl----
+[2019-06-20 10:54:14.911] [debug] ------getVideoInfo-------
+[2019-06-20 10:54:16.873] [debug] ------startProcess-----
+[2019-06-20 10:54:16.879] [debug] ------in Item class constuctor-----
+[2019-06-20 10:54:16.884] [debug] -----getIdFromUrl----
+[2019-06-20 10:54:16.892] [debug] -----getIdFromUrl----
+[2019-06-20 10:54:16.899] [debug] ------getVideoInfo-------
+[2019-06-20 10:54:16.947] [debug] already downloading
+[2019-06-20 11:41:39.200] [debug] logging set up
+[2019-06-20 11:41:39.209] [debug] log level:debug
+[2019-06-20 11:41:39.217] [debug] size:5242880
+[2019-06-20 11:41:39.931] [debug] window created
+[2019-06-20 11:41:39.946] [debug] -------makeDestinationDir-------
+[2019-06-20 11:41:39.955] [debug] ---createFolder----
+[2019-06-20 11:41:39.969] [debug] downloader object created.
+[2019-06-20 11:41:56.991] [debug] ------startProcess-----
+[2019-06-20 11:41:56.997] [debug] ------in Item class constuctor-----
+[2019-06-20 11:41:57.003] [debug] -----getIdFromUrl----
+[2019-06-20 11:41:57.008] [debug] -----getIdFromUrl----
+[2019-06-20 11:41:57.015] [debug] ------getVideoInfo-------
+[2019-06-20 11:42:02.318] [debug] ----processForDownload---
+[2019-06-20 11:42:02.325] [debug] ----downloadSingleVideo------
+[2019-06-20 11:42:02.330] [debug] ------downloadVideo-------
+[2019-06-20 11:42:23.431] [debug] ------startProcess-----
+[2019-06-20 11:42:23.442] [debug] ------in Item class constuctor-----
+[2019-06-20 11:42:23.450] [debug] -----getIdFromUrl----
+[2019-06-20 11:42:23.456] [debug] -----getIdFromUrl----
+[2019-06-20 11:42:23.462] [debug] ------getVideoInfo-------
+[2019-06-20 11:42:28.707] [debug] already downloading
+[2019-06-20 11:42:46.186] [debug] --- video.on('end')---
+[2019-06-20 11:42:46.200] [debug] new path:
+[2019-06-20 11:42:46.207] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\♥♥ My Second Best Fireplace Video (2 hours long)-LIJAsKCLTqc.mp4
+[2019-06-20 11:42:46.212] [debug] last index:42
+[2019-06-20 11:42:46.218] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader
+[2019-06-20 11:42:48.599] [debug] null
+[2019-06-20 12:04:34.013] [debug] logging set up
+[2019-06-20 12:04:34.025] [debug] log level:debug
+[2019-06-20 12:04:34.031] [debug] size:5242880
+[2019-06-20 12:04:34.720] [debug] window created
+[2019-06-20 12:04:34.731] [debug] -------makeDestinationDir-------
+[2019-06-20 12:04:34.744] [debug] ---createFolder----
+[2019-06-20 12:04:34.756] [debug] downloader object created.
+[2019-06-20 12:04:53.328] [debug] ------startProcess-----
+[2019-06-20 12:04:53.333] [debug] ------in Item class constuctor-----
+[2019-06-20 12:04:53.339] [debug] -----getIdFromUrl----
+[2019-06-20 12:04:53.345] [debug] -----getIdFromUrl----
+[2019-06-20 12:04:53.351] [debug] ------getVideoInfo-------
+[2019-06-20 12:04:58.536] [debug] already downloaded
+[2019-06-20 12:04:58.552] [debug] destination path:C:\Users\ASUS\Videos\kr_youtube_downloader
+[2019-06-20 12:05:00.142] [debug] ----ipcMain open-already-downloaded-file-directory----
+[2019-06-20 12:05:00.147] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\♥♥ My Second Best Fireplace Video (2 hours long)-LIJAsKCLTqc.mp4
+[2019-06-20 12:05:00.764] [debug] ----ipcMain open-already-downloaded-file-directory----
+[2019-06-20 12:05:00.802] [debug] downloaded file path:C:\Users\ASUS\Videos\kr_youtube_downloader\♥♥ My Second Best Fireplace Video (2 hours long)-LIJAsKCLTqc.mp4
+[2019-06-20 12:05:11.392] [debug] ------startProcess-----
+[2019-06-20 12:05:11.407] [debug] ------in Item class constuctor-----
+[2019-06-20 12:05:11.418] [debug] -----getIdFromUrl----
+[2019-06-20 12:05:11.425] [debug] -----getIdFromUrl----
+[2019-06-20 12:05:11.433] [debug] ------getVideoInfo-------
+[2019-06-20 12:05:15.747] [debug] ----processForDownload---
+[2019-06-20 12:05:15.756] [debug] ----downloadSingleVideo------
+[2019-06-20 12:05:15.761] [debug] ------downloadVideo-------
+[2019-06-20 12:05:24.332] [debug] ------startProcess-----
+[2019-06-20 12:05:24.338] [debug] ------in Item class constuctor-----
+[2019-06-20 12:05:24.344] [debug] -----getIdFromUrl----
+[2019-06-20 12:05:24.351] [debug] -----getIdFromUrl----
+[2019-06-20 12:05:24.358] [debug] ------getVideoInfo-------
+[2019-06-20 12:05:29.492] [debug] already downloading
+[2019-06-20 12:06:12.967] [debug] --- video.on('end')---
+[2019-06-20 12:06:12.974] [debug] new path:
+[2019-06-20 12:06:12.979] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\♥♥ My Second Best Fireplace Video (2 hours long)-LIJAsKCLTqc.mp4
+[2019-06-20 12:06:12.984] [debug] last index:42
+[2019-06-20 12:06:12.992] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader
+[2019-06-20 12:06:14.892] [debug] null

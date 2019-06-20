@@ -33,14 +33,20 @@ function start_process() {
         status_text.innerHTML = "Please insert url";
     }
 
-    if (isValidUrl(url)) {
+    else if (isValidUrl(url)) {
         if (is_playlist(url)) {
             showPlaylistWaitingDiv(url);
+            ipcRenderer.send('start-process', url);
         }
         else {
-            showSingleVideoWaitingDiv(extractId(url));
+            let id = extractId(url);
+            if(!document.getElementById('singleWaiting_'+id)){
+                //console.log('');
+                showSingleVideoWaitingDiv(id);
+                ipcRenderer.send('start-process', url);
+            }   
         }
-        ipcRenderer.send('start-process', url);
+        
     }
 
     else {
