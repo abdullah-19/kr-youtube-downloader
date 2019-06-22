@@ -20,6 +20,7 @@ module.exports = class Downloader {
         this.fileManager = new FileManager(this.app, this.win);
         this.setIpcEvents();
         this.makeDestinationDir();
+        this.setStartSingleVideoDownloadEvent();
     }
 
     setIpcEvents() {
@@ -27,6 +28,20 @@ module.exports = class Downloader {
         this.setLoadEvent();
         // this.setStartDownloadEvent();
         this.setProcessEvent();
+        this.setNextItemLoadEvent();
+    }
+
+    setStartSingleVideoDownloadEvent(){
+        ipcMain.on('start-single-video-download',(event,item)=>{
+            console.log('---start-single-video-download---');
+            this.processForDownload(item);
+        })
+    }
+
+    setNextItemLoadEvent(){
+        ipcMain.on('load-next-playlist-item',(event,item)=>{
+            this.loadListItem(item);
+        });
     }
 
     setProcessEvent() {
@@ -83,32 +98,28 @@ module.exports = class Downloader {
     async loadInfo(url, item) {
 
         console.log('----------loadInfo-------------');
-        this.info.getVideoInfo(this.url.getIdFromUrl(url)).then((loadedInfo) => {
-            item.infoAtLoad = loadedInfo;
+        let loadedInfo = await this.info.getVideoInfo(this.url.getIdFromUrl(url));
+        item.infoAtLoad = loadedInfo;
 
-            if (fs.existsSync(path.join(item.destinationDir, item.infoAtLoad._filename))) {
-                this.win.webContents.send('already-downloaded', item);
-                log.debug('already downloaded');
-                log.debug('destination path:'+item.destinationDir);
-                //this.win.webContents.send("already-downloaded",item);
-            }
-            else if (fs.existsSync(path.join(config.downloadDir, item.infoAtLoad._filename))) {
-                this.win.webContents.send('already-downloadeding', item);
-                log.debug('already downloading');
-                //this.win.webContents.send("already-inProgress",item);
-            }
-            else {
-                this.win.webContents.send('load-complete', item);
-                //here vulnerability of asynchronous item attribute change 
-                if (item.isPlaylist) {
-                    this.loadListItem(item);
-                }
-                else this.processForDownload(item);
-            }
+        if (fs.existsSync(path.join(item.destinationDir, item.infoAtLoad._filename))) {
+            this.win.webContents.send('already-downloaded', item);
+            log.debug('already downloaded');
+            log.debug('destination path:' + item.destinationDir);
+        }
+        else if (fs.existsSync(path.join(config.downloadDir, item.infoAtLoad._filename))) {
+            this.win.webContents.send('already-downloadeding', item);
+            log.debug('already downloading');
+            //this.win.webContents.send("already-inProgress",item);
+        }
+        else {
 
-        }).catch((error) => {
-            console.log('Error from getVideoinfo with async( When promise gets rejected ): ' + error);
-        });
+            this.win.webContents.send('load-complete', item);
+            //here vulnerability of asynchronous item attribute change 
+            // if (item.isPlaylist) {
+            //     this.loadListItem(item);
+            // }
+            // else this.processForDownload(item);
+        }
 
     }
 
@@ -178,11 +189,11 @@ module.exports = class Downloader {
         });
     }
 
-    downloadPlaylist(item) {
+    async downloadPlaylist(item) {
         console.log('-----downloadPlaylist-----');
         if (this.queue.length < 6) {
             this.win.webContents.send('downloading-playlist', item);
-            this.loadListItem(item);
+            await this.loadListItem(item);
             this.downloadListItem(item);
         }
         else {
@@ -191,24 +202,24 @@ module.exports = class Downloader {
         //this.downloadListItem(item);
     }
 
-    loadListItem(item) {
+    async loadListItem(item) {
         console.log('-----loadListItem-----');
         item.loadIndex++;
         if (item.loadIndex < item.list.length) {
             log.debug('loadIndex:' + item.loadIndex);
             let id = JSON.parse(item.list[item.loadIndex]).id;
             let url = this.url.getUrlFromId(id);
-            this.loadInfo(url, item);
+            await this.loadInfo(url, item);
         }
 
     }
 
     downloadListItem(item) {
         item.downloadIndex++;
-        if (item.downloadIndex < item.list.length) {
+        if (item.downloadIndex < item.list.length && item.downloadIndex < item.loadIndex) {
             log.debug('downloadIndex:' + item.downloadIndex);
             //let id = JSON.parse(item.list[item.downloadIndex]).id;
-           // let url = this.url.getUrlFromId(id);
+            // let url = this.url.getUrlFromId(id);
             this.downloadPlaylistItem(item);
         }
 
@@ -308,7 +319,7 @@ module.exports = class Downloader {
             pos += chunk.length;
             if (size) {
                 percent = Math.floor((pos / size) * 100);
-              //  log.debug('percent:' + percent + "%");
+                //  log.debug('percent:' + percent + "%");
             }
         });
         this.win.webContents.send('download-started', item);
@@ -331,7 +342,7 @@ module.exports = class Downloader {
             this.downloadListItem(item);
 
         });
-    
+
     }
 
     createFolder(dir) {
@@ -362,19 +373,19 @@ module.exports = class Downloader {
 
 
             var video = youtubedl(url,
-              ['--format=18'],
-              { cwd: __dirname, maxBuffer: Infinity });
-      
+                ['--format=18'],
+                { cwd: __dirname, maxBuffer: Infinity });
+
             video.on('info', (loadedInfo) => {
                 item.infoAtDownload = loadedInfo;
                 let downloadPath = path.join(config.downloadDir, loadedInfo._filename);
                 video.pipe(fs.createWriteStream(downloadPath));
                 resolve(video);
             });
-      
-          }).catch(error =>{
-              log.debug('error:'+error.message);
-          });
+
+        }).catch(error => {
+            log.debug('error:' + error.message);
+        });
 
 
     }

@@ -73,16 +73,18 @@ module.exports = class Info {
   getVideoInfo(url) {
     log.debug('------getVideoInfo-------');
 
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
 
       var video = youtubedl(url,
         ['--format=18'],
         { cwd: __dirname, maxBuffer: Infinity });
 
       video.on('info', (loadedInfo) => {
-          resolve(loadedInfo);
+        resolve(loadedInfo);
       });
 
+    }).catch((error) => {
+      console.log('Error from getVideoinfo with async( When promise gets rejected ): ' + error);
     });
   }
 }

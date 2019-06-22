@@ -39,9 +39,15 @@ ipcRenderer.on('load-complete', function (event, item) {
     console.log(item.isPlaylist);
     if(item.isPlaylist){
         showPlaylistItemInfo(item);
+        ipcRenderer.send('load-next-playlist-item',item);
     }
     else{
+        if(document.getElementById('singleAlreadyDone_'+item.id)){
+            let elem =document.getElementById('singleAlreadyDone_'+item.id);
+            elem.parentNode.removeChild(elem);
+        }
         showSingleVideoInfo(item);
+        ipcRenderer.send('start-single-video-download',item);
     }
     
 });
@@ -81,17 +87,18 @@ function processNextVideo() {
 
 ipcRenderer.on('list-downloaded',function(event, item){
     console.log('---ipcRenderer list-downloaded----');
-    var playlistDiv = document.getElementById('playlist_'+item.id);
+    let playlistDiv = document.getElementById('playlist_'+item.id);
     playlistDiv.getElementsByClassName('p_title')[0].innerHTML = item.folderName;
 
 });
 
-ipcRenderer.on('downloading-playlist', function(event, item){
-
-    var playlistDiv = document.getElementById('playlist_'+item.id);
+ipcRenderer.on('downloading-playlist', (event, item)=>{
+    console.log('-------downloading-playlist---------');
+    console.log(item);
+    let playlistDiv = document.getElementById('playlist_'+item.id);
     playlistDiv.getElementsByClassName('waitngIconOfPlaylist')[0].classList.add('d-none');
     
-    var status = playlistDiv.getElementsByClassName('playlistDownloadStatus')[0];
+    let status = playlistDiv.getElementsByClassName('playlistDownloadStatus')[0];
     status.innerHTML = "starting download...";
     status.classList.remove('d-none');
     

@@ -394,8 +394,11 @@ ipcRenderer.on('download-progress', function (event, progressInfo) {
 ipcRenderer.on('playlist-download-progress', function (event, progressInfo) {
 
     console.log('--------ipcRenderer playlist-download-progress--------------');
+    console.log("progressInfo:");
+    console.log(progressInfo);
     console.log('progressInfo.id:' + progressInfo.id);
     console.log('progressInfo.percent:' + progressInfo.percent);
+
     document.getElementById('pbp_' + progressInfo.id).style.width = progressInfo.percent + "%";
     document.getElementById('ptp_' + progressInfo.id).innerHTML = progressInfo.percent + "%";
 
@@ -428,6 +431,7 @@ function showPlaylistWaitingDiv(url) {
     console.log('----showPlaylistWaitingDiv-----');
     let id = getPlaylistId(url);
     var waitingDiv = document.querySelector('#playlist_demo').cloneNode(true);
+    console.log(waitingDiv);
     waitingDiv.id = "playlist_" + id;
     waitingDiv.classList.remove("d-none");
     var sibling = document.getElementById('playlist_demo');
@@ -442,13 +446,11 @@ function showPlaylistWaitingDiv(url) {
 
 function showPlaylistItemWaitingDiv(item) {
     console.log('-----showPlaylistItemWaitingDiv------');
-
     //var playlistDiv = document.getElementById('playlist_'+item.id);
-
     var waitingItemDiv = document.querySelector('#piDemo_' + item.id).cloneNode(true);
     console.log('loadIndex:' + item.loadIndex);
     let id = JSON.parse(item.list[item.loadIndex + 1]).id;
-    console.log('id:' + item.id);
+    console.log('id:' + id);
     //var waitingItemDiv = playlistDiv.getElementsByClassName('playlistItem');
     waitingItemDiv.id = "pi_" + id;
     waitingItemDiv.classList.remove("d-none");
@@ -556,7 +558,7 @@ function showAlreadyDownloadedSingleVideoInfo(item) {
     }
     //singleWaitingVideo.classList.add('singleAlreadyDone');
     singleWaitingVideo.id = "singleAlreadyDone_" + item.id;
-   // singleWaitingVideo.id = 'ad_' + item.infoAtLoad.id;
+    // singleWaitingVideo.id = 'ad_' + item.infoAtLoad.id;
     let status = singleWaitingVideo.getElementsByClassName('aDone_status')[0];
     let thumbnail = singleWaitingVideo.getElementsByClassName('thumbnail')[0];
     let filename = singleWaitingVideo.getElementsByClassName('filename')[0];
@@ -580,8 +582,8 @@ ipcRenderer.on('already-downloadeding', function (event, item) {
 
     }
     else {
-        let element = document.getElementById('singleWaiting_'+item.id);
+        let element = document.getElementById('singleWaiting_' + item.id);
         element.parentNode.removeChild(element);
-        document.getElementById('s_'+item.id).scrollIntoView();
+        document.getElementById('s_' + item.id).scrollIntoView();
     }
 });

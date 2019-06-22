@@ -64,3 +64,8 @@ ERROR: This video is unavailable.
 6.sometimes hange and stop download and gui becomes black when downloading.
 //after sometimes it is gone and start processing.
 7.sometimes takes to much time to start download video.
+8.sometimes takes to much time for list download, loadInfo, downloadVideo. 
+    i.should give timeout for each process.
+
+9.WARNING: unable to extract channel id; please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; type  youtube-dl -U  to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.
+    i.error in load and stop loading the next item in playlist.

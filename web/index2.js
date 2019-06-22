@@ -20,7 +20,7 @@ var queue = {
 
 
 downloadBtn.addEventListener('click', function () {
-
+    
     start_process();
 
 });
@@ -35,8 +35,20 @@ function start_process() {
 
     else if (isValidUrl(url)) {
         if (is_playlist(url)) {
-            showPlaylistWaitingDiv(url);
-            ipcRenderer.send('start-process', url);
+            let id = getPlaylistId(url);
+            if(document.getElementById('playlist_'+id)){
+                let elem = document.getElementById('playlist_'+id);
+                if(!elem.classList.contains('inProgress')){
+                    elem.parentNode.removeChild(elem);
+                    showPlaylistWaitingDiv(url);    
+                    ipcRenderer.send('start-process', url);
+                }
+            }
+            else{
+                showPlaylistWaitingDiv(url);
+                ipcRenderer.send('start-process', url);
+            }
+            
         }
         else {
             let id = extractId(url);

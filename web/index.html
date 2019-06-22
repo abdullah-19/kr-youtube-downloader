@@ -75,8 +75,10 @@
           </div>
         </div>
       </div>
-
-      <div id="playlist_demo" class="card d-none">
+<!-- this will be cloned
+in all state id = 'playlist_'+id,
+removed class d-none -->
+      <div id="playlist_demo" class="card d-none inProgress">
         <div class="card-header text-center">
           <a class="p_title card-link" data-toggle="collapse" href="#collapseOne">
             Processing the playlist...
@@ -90,7 +92,9 @@
         </div>
         <div id="collapseOne" class="collapse" data-parent="#accordion">
           <div class="card-body">
-
+         <!-- in any stage:id="piDemo_" + id,
+         after cloned:i.
+          -->
             <div id="" class="playlistItem container-fluid border border-info px-0 d-none">
 
               <div class="row mx-0 border border-info" style="height:80px; ">
@@ -118,6 +122,7 @@
 
               <div class="progress_div d-none row mx-0" style="height:18px;">
                 <div class="col-md-12 p-0 border" style="height: 100%;">
+                  <!-- after load: id = 'pbp_'+id -->
                   <div class="progress_bar bg-info text-center border border-danger" style="height:100%;width:0%;">
                   </div>
                   <p class="progress_text small" style="position:absolute; top:0;left: 50%;">0%</p>
