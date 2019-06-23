@@ -449,7 +449,7 @@ function showPlaylistItemWaitingDiv(item) {
     //var playlistDiv = document.getElementById('playlist_'+item.id);
     var waitingItemDiv = document.querySelector('#piDemo_' + item.id).cloneNode(true);
     console.log('loadIndex:' + item.loadIndex);
-    let id = JSON.parse(item.list[item.loadIndex + 1]).id;
+    let id = JSON.parse(item.list[item.loadIndex]).id;
     console.log('id:' + id);
     //var waitingItemDiv = playlistDiv.getElementsByClassName('playlistItem');
     waitingItemDiv.id = "pi_" + id;
@@ -463,6 +463,32 @@ function showPlaylistItemWaitingDiv(item) {
     waitingItemDiv.getElementsByClassName('progress_bar')[0].id = 'pbp_' + id;
     waitingItemDiv.getElementsByClassName('progress_text')[0].id = 'ptp_' + id;
 
+    ipcRenderer.send('load-playlist-item', item);
+    checkForLoadComplete(item);
+
+}
+
+function checkForLoadComplete(item){
+    //item.loadIndex++;
+    console.log('---checkingForLoadComplete---');
+    let id = JSON.parse(item.list[item.loadIndex]).id;
+    let trial = 1;
+    setInterval(() => {
+        if(document.getElementById('pi_'+id).classList.contains('waiting')){
+            console.log('----trying again---');
+            trial++;
+            console.log('trial:'+trial);
+            if(trial<=2) ipcRenderer.send('load-playlist-item',item);
+        }
+    }, 20*1000);
+
+    setTimeout(() => {
+        if(document.getElementById('pi_'+id).classList.contains('waiting')){
+            let copyItem = {...item};
+            copyItem.loadIndex++;
+            ipcRenderer.send('load-playlist-item',copyItem);
+        }
+    }, 10*1000);
 }
 
 function showPlaylistItemInfo(item) {
@@ -472,7 +498,8 @@ function showPlaylistItemInfo(item) {
     let playlistItemDiv = document.getElementById('pi_' + item.infoAtLoad.id);
     console.log('pi_' + item.infoAtLoad.id);
     console.log(playlistItemDiv);
-
+    
+    playlistItemDiv.classList.remove('waiting');
     playlistItemDiv.getElementsByClassName('processIcon')[0].classList.add('d-none');
 
     let filesize = playlistItemDiv.getElementsByClassName('filesize')[0];
@@ -498,7 +525,9 @@ function showPlaylistItemInfo(item) {
     progress_div.classList.remove('d-none');
 
     if (item.loadIndex < item.list.length - 1) {
-        showPlaylistItemWaitingDiv(item);
+        item.loadIndex++;
+        let nextId = JSON.parse(item.list[item.loadIndex]).id;
+        if(!document.getElementById(nextId)) showPlaylistItemWaitingDiv(item);
     }
 
 }

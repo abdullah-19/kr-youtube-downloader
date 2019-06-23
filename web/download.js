@@ -25,7 +25,7 @@ function loadVideo(info) {
 //         var id = JSON.parse(info.list[info.currentDownloadItem]).id;
 //         url = getUrlFromId(id);
 //     }
-    
+
 // }
 
 function downloadFromQueue() {
@@ -37,19 +37,21 @@ ipcRenderer.on('load-complete', function (event, item) {
     console.log(item);
     console.log('video type:');
     console.log(item.isPlaylist);
-    if(item.isPlaylist){
-        showPlaylistItemInfo(item);
-        ipcRenderer.send('load-next-playlist-item',item);
+    if (item.isPlaylist) {
+        if(document.getElementById(getPlaylistLoadItemId(item)).classList.contains('waiting')){
+            showPlaylistItemInfo(item);
+            //ipcRenderer.send('load-next-playlist-item', item);
+        }
     }
-    else{
-        if(document.getElementById('singleAlreadyDone_'+item.id)){
-            let elem =document.getElementById('singleAlreadyDone_'+item.id);
+    else {
+        if (document.getElementById('singleAlreadyDone_' + item.id)) {
+            let elem = document.getElementById('singleAlreadyDone_' + item.id);
             elem.parentNode.removeChild(elem);
         }
         showSingleVideoInfo(item);
-        ipcRenderer.send('start-single-video-download',item);
+        ipcRenderer.send('start-single-video-download', item);
     }
-    
+
 });
 
 ipcRenderer.on('download-started', function (event, item) {
@@ -57,11 +59,11 @@ ipcRenderer.on('download-started', function (event, item) {
     console.log('item:');
     console.log(item);
 
-    if(item.isPlaylist){
+    if (item.isPlaylist) {
         showProgressOfPlaylistVideo(item);
     }
-    else{
-       document.getElementById('pds_'+item.id).classList.remove('d-none');
+    else {
+        document.getElementById('pds_' + item.id).classList.remove('d-none');
     }
 });
 
@@ -85,24 +87,42 @@ function processNextVideo() {
     if (queue.toDownload.length != 0) downloadNext();
 }
 
-ipcRenderer.on('list-downloaded',function(event, item){
+ipcRenderer.on('list-downloaded', function (event, item) {
     console.log('---ipcRenderer list-downloaded----');
-    let playlistDiv = document.getElementById('playlist_'+item.id);
+    let playlistDiv = document.getElementById('playlist_' + item.id);
     playlistDiv.getElementsByClassName('p_title')[0].innerHTML = item.folderName;
 
 });
 
-ipcRenderer.on('downloading-playlist', (event, item)=>{
+ipcRenderer.on('downloading-playlist', (event, item) => {
     console.log('-------downloading-playlist---------');
     console.log(item);
-    let playlistDiv = document.getElementById('playlist_'+item.id);
+    let playlistDiv = document.getElementById('playlist_' + item.id);
     playlistDiv.getElementsByClassName('waitngIconOfPlaylist')[0].classList.add('d-none');
-    
+
     let status = playlistDiv.getElementsByClassName('playlistDownloadStatus')[0];
     status.innerHTML = "starting download...";
     status.classList.remove('d-none');
-    
+
     playlistDiv.getElementsByClassName('collapse')[0].classList.add('show');
+    item.loadIndex++;
     showPlaylistItemWaitingDiv(item);
 
 });
+
+ipcRenderer.on('check-load-of-playlist-item', (event,item) => {
+    console.log('---check-load-of-playlist-item---');
+    let id = JSON.parse(item.list[item.downloadIndex]).id;
+    console.log(id);
+    let elem = document.getElementById('pi_' + id);
+    if (!elem.classList.contains('waiting'))
+        ipcRenderer.send('download-playlist-item', item);
+    else {
+        let f = setInterval(() => {
+            if (!elem.classList.contains('waiting')) {
+                clearInterval(f);
+                ipcRenderer.send('download-playlist-item', item);
+            }
+        }, 2000);
+    }
+})

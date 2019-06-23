@@ -30,4 +30,8 @@ module.exports = class Url {
         log.debug('playlistId:'+playlist_id);
         return playlist_id;
     }
+
+    getPlaylistLoadItemURL(item){
+        return this.getUrlFromId(JSON.parse(item.list[item.loadIndex]).id);
+    }
 }

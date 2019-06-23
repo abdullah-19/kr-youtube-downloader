@@ -48,3 +48,11 @@ function getPlaylistId(url){
     console.log('playlistId:'+playlist_id);
     return playlist_id;
 }
+
+function getPlaylistLoadItemId(item){
+    return JSON.parse(item.list[item.loadIndex]).id;
+}
+
+function getPlaylistDownloadItemId(item){
+    return JSON.parse(item.list[item.downloadIndex]).id;
+}

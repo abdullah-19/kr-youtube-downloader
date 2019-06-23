@@ -77,13 +77,14 @@ module.exports = class Info {
 
       var video = youtubedl(url,
         ['--format=18'],
-        { cwd: __dirname, maxBuffer: Infinity });
+        { cwd: __dirname, maxBuffer: Infinity,timeout:1000*15});
 
       video.on('info', (loadedInfo) => {
         resolve(loadedInfo);
       });
 
     }).catch((error) => {
+      console.log('error test:');
       console.log('Error from getVideoinfo with async( When promise gets rejected ): ' + error);
     });
   }

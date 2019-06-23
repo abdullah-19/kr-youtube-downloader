@@ -80360,3 +80360,1075 @@ ERROR: This video is unavailable.
     at ChildProcess.emit (events.js:214:7)
     at maybeClose (internal/child_process.js:925:16)
     at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-06-22 14:09:47.000] [debug] logging set up
+[2019-06-22 14:09:47.010] [debug] log level:debug
+[2019-06-22 14:09:47.016] [debug] size:5242880
+[2019-06-22 14:09:49.377] [debug] window created
+[2019-06-22 14:09:49.391] [debug] -------makeDestinationDir-------
+[2019-06-22 14:09:49.404] [debug] ---createFolder----
+[2019-06-22 14:09:49.419] [debug] downloader object created.
+[2019-06-22 14:11:02.283] [debug] logging set up
+[2019-06-22 14:11:02.291] [debug] log level:debug
+[2019-06-22 14:11:02.298] [debug] size:5242880
+[2019-06-22 14:11:02.997] [debug] window created
+[2019-06-22 14:11:03.022] [debug] -------makeDestinationDir-------
+[2019-06-22 14:11:03.038] [debug] ---createFolder----
+[2019-06-22 14:11:03.053] [debug] downloader object created.
+[2019-06-22 14:12:17.895] [debug] logging set up
+[2019-06-22 14:12:17.903] [debug] log level:debug
+[2019-06-22 14:12:17.908] [debug] size:5242880
+[2019-06-22 14:12:18.609] [debug] window created
+[2019-06-22 14:12:18.620] [debug] -------makeDestinationDir-------
+[2019-06-22 14:12:18.633] [debug] ---createFolder----
+[2019-06-22 14:12:18.645] [debug] downloader object created.
+[2019-06-22 14:16:41.527] [debug] logging set up
+[2019-06-22 14:16:41.534] [debug] log level:debug
+[2019-06-22 14:16:41.540] [debug] size:5242880
+[2019-06-22 14:16:42.393] [debug] window created
+[2019-06-22 14:16:42.403] [debug] -------makeDestinationDir-------
+[2019-06-22 14:16:42.417] [debug] ---createFolder----
+[2019-06-22 14:16:42.426] [debug] downloader object created.
+[2019-06-22 14:35:18.131] [debug] logging set up
+[2019-06-22 14:35:18.138] [debug] log level:debug
+[2019-06-22 14:35:18.144] [debug] size:5242880
+[2019-06-22 14:35:21.622] [debug] window created
+[2019-06-22 14:35:21.636] [debug] -------makeDestinationDir-------
+[2019-06-22 14:35:21.654] [debug] ---createFolder----
+[2019-06-22 14:35:21.665] [debug] downloader object created.
+[2019-06-22 14:36:59.422] [debug] logging set up
+[2019-06-22 14:36:59.430] [debug] log level:debug
+[2019-06-22 14:36:59.436] [debug] size:5242880
+[2019-06-22 14:37:00.157] [debug] window created
+[2019-06-22 14:37:00.174] [debug] -------makeDestinationDir-------
+[2019-06-22 14:37:00.183] [debug] ---createFolder----
+[2019-06-22 14:37:00.193] [debug] downloader object created.
+[2019-06-22 14:38:16.877] [debug] logging set up
+[2019-06-22 14:38:16.883] [debug] log level:debug
+[2019-06-22 14:38:16.888] [debug] size:5242880
+[2019-06-22 14:38:17.576] [debug] window created
+[2019-06-22 14:38:17.600] [debug] -------makeDestinationDir-------
+[2019-06-22 14:38:17.613] [debug] ---createFolder----
+[2019-06-22 14:38:17.629] [debug] downloader object created.
+[2019-06-22 15:22:05.872] [debug] logging set up
+[2019-06-22 15:22:05.907] [debug] log level:debug
+[2019-06-22 15:22:05.916] [debug] size:5242880
+[2019-06-22 15:22:09.464] [debug] window created
+[2019-06-22 15:22:09.486] [debug] -------makeDestinationDir-------
+[2019-06-22 15:22:09.503] [debug] ---createFolder----
+[2019-06-22 15:22:09.522] [debug] downloader object created.
+[2019-06-22 15:22:36.500] [debug] logging set up
+[2019-06-22 15:22:36.508] [debug] log level:debug
+[2019-06-22 15:22:36.514] [debug] size:5242880
+[2019-06-22 15:22:37.229] [debug] window created
+[2019-06-22 15:22:37.247] [debug] -------makeDestinationDir-------
+[2019-06-22 15:22:37.257] [debug] ---createFolder----
+[2019-06-22 15:22:37.273] [debug] downloader object created.
+[2019-06-22 18:34:19.438] [debug] logging set up
+[2019-06-22 18:34:19.445] [debug] log level:debug
+[2019-06-22 18:34:19.450] [debug] size:5242880
+[2019-06-22 18:34:20.159] [debug] window created
+[2019-06-22 18:34:20.186] [debug] -------makeDestinationDir-------
+[2019-06-22 18:34:20.194] [debug] ---createFolder----
+[2019-06-22 18:34:20.211] [debug] downloader object created.
+[2019-06-22 18:34:39.574] [debug] ------startProcess-----
+[2019-06-22 18:34:39.583] [debug] ------in Item class constuctor-----
+[2019-06-22 18:34:39.592] [debug] -----getIdFromUrl----
+[2019-06-22 18:34:39.600] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-06-22 18:34:39.609] [debug] ---createFolder----
+[2019-06-22 18:34:39.617] [debug] ------download_videoList--------
+[2019-06-22 18:34:44.482] [debug] loadIndex:0
+[2019-06-22 18:34:44.488] [debug] -----getIdFromUrl----
+[2019-06-22 18:34:44.493] [debug] ------getVideoInfo-------
+[2019-06-22 18:34:49.875] [debug] loadIndex:1
+[2019-06-22 18:34:49.883] [debug] -----getIdFromUrl----
+[2019-06-22 18:34:49.891] [debug] ------getVideoInfo-------
+[2019-06-22 18:34:49.908] [debug] ----downloadPlaylistItem------
+[2019-06-22 18:34:49.919] [debug] ------downloadVideo-------
+[2019-06-22 18:34:56.206] [debug] loadIndex:2
+[2019-06-22 18:34:56.214] [debug] -----getIdFromUrl----
+[2019-06-22 18:34:56.219] [debug] ------getVideoInfo-------
+[2019-06-22 18:35:04.258] [debug] loadIndex:3
+[2019-06-22 18:35:04.268] [debug] -----getIdFromUrl----
+[2019-06-22 18:35:04.274] [debug] ------getVideoInfo-------
+[2019-06-22 18:35:09.368] [debug] --- video.on('end')---
+[2019-06-22 18:35:09.377] [debug] new path:
+[2019-06-22 18:35:09.383] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22\Angular 7  - Part 1- Angular 7 Full Tutorial in Hindi- Angular Introduction , Versioning and Releases-SuZa2nv24HE.mp4
+[2019-06-22 18:35:09.391] [debug] last index:69
+[2019-06-22 18:35:09.398] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22
+[2019-06-22 18:35:09.460] [debug] ----downloadPlaylistItem------
+[2019-06-22 18:35:09.469] [debug] ------downloadVideo-------
+[2019-06-22 18:35:09.698] [debug] null
+[2019-06-22 18:35:09.970] [debug] loadIndex:4
+[2019-06-22 18:35:09.978] [debug] -----getIdFromUrl----
+[2019-06-22 18:35:09.984] [debug] ------getVideoInfo-------
+[2019-06-22 18:35:14.801] [debug] loadIndex:5
+[2019-06-22 18:35:14.807] [debug] -----getIdFromUrl----
+[2019-06-22 18:35:14.813] [debug] ------getVideoInfo-------
+[2019-06-22 18:35:20.381] [debug] --- video.on('end')---
+[2019-06-22 18:35:20.389] [debug] new path:
+[2019-06-22 18:35:20.394] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22\Angular 7  - Part 2  -  Angular 7 Full Tutorial in Hindi - What new in angular get notifications-BdGaUltG_sk.mp4
+[2019-06-22 18:35:20.399] [debug] last index:69
+[2019-06-22 18:35:20.406] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22
+[2019-06-22 18:35:20.443] [debug] ----downloadPlaylistItem------
+[2019-06-22 18:35:20.463] [debug] ------downloadVideo-------
+[2019-06-22 18:35:20.549] [debug] null
+[2019-06-22 18:35:20.669] [debug] loadIndex:6
+[2019-06-22 18:35:20.677] [debug] -----getIdFromUrl----
+[2019-06-22 18:35:20.683] [debug] ------getVideoInfo-------
+[2019-06-22 18:35:28.045] [debug] loadIndex:7
+[2019-06-22 18:35:28.051] [debug] -----getIdFromUrl----
+[2019-06-22 18:35:28.057] [debug] ------getVideoInfo-------
+[2019-06-22 18:35:31.152] [debug] --- video.on('end')---
+[2019-06-22 18:35:31.159] [debug] new path:
+[2019-06-22 18:35:31.167] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22\Angular 7  - Part 3   - Angular 7 Full Tutorial in Hindi - Angular 7 New Features-GYHaucEVFG4.mp4
+[2019-06-22 18:35:31.173] [debug] last index:69
+[2019-06-22 18:35:31.179] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22
+[2019-06-22 18:35:31.212] [debug] ----downloadPlaylistItem------
+[2019-06-22 18:35:31.222] [debug] ------downloadVideo-------
+[2019-06-22 18:35:31.270] [debug] null
+[2019-06-22 18:35:33.442] [debug] loadIndex:8
+[2019-06-22 18:35:33.450] [debug] -----getIdFromUrl----
+[2019-06-22 18:35:33.457] [debug] ------getVideoInfo-------
+[2019-06-22 18:35:41.291] [debug] loadIndex:9
+[2019-06-22 18:35:41.298] [debug] -----getIdFromUrl----
+[2019-06-22 18:35:41.304] [debug] ------getVideoInfo-------
+[2019-06-22 18:35:45.460] [debug] --- video.on('end')---
+[2019-06-22 18:35:45.467] [debug] new path:
+[2019-06-22 18:35:45.472] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22\Angular 7 Stable Version Released Now - Introduction  -  Part 4 - Angular 7 Full Tutorial in Hindi-P7-hAe41sIA.mp4
+[2019-06-22 18:35:45.477] [debug] last index:69
+[2019-06-22 18:35:45.492] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22
+[2019-06-22 18:35:45.512] [debug] ----downloadPlaylistItem------
+[2019-06-22 18:35:45.519] [debug] ------downloadVideo-------
+[2019-06-22 18:35:45.605] [debug] null
+[2019-06-22 18:35:47.337] [debug] loadIndex:10
+[2019-06-22 18:35:47.349] [debug] -----getIdFromUrl----
+[2019-06-22 18:35:47.356] [debug] ------getVideoInfo-------
+[2019-06-22 18:35:56.704] [debug] loadIndex:11
+[2019-06-22 18:35:56.710] [debug] -----getIdFromUrl----
+[2019-06-22 18:35:56.717] [debug] ------getVideoInfo-------
+[2019-06-22 18:36:02.518] [debug] loadIndex:12
+[2019-06-22 18:36:02.524] [debug] -----getIdFromUrl----
+[2019-06-22 18:36:02.530] [debug] ------getVideoInfo-------
+[2019-06-22 18:36:08.230] [debug] loadIndex:13
+[2019-06-22 18:36:08.239] [debug] -----getIdFromUrl----
+[2019-06-22 18:36:08.245] [debug] ------getVideoInfo-------
+[2019-06-22 18:36:11.838] [debug] --- video.on('end')---
+[2019-06-22 18:36:11.843] [debug] new path:
+[2019-06-22 18:36:11.848] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22\Angular 7 CLI Prompts  - Part 5 - Angular 7 Full Tutorial in Hindi _ Angular 7 New Features-Q3uLQxJ5vqE.mp4
+[2019-06-22 18:36:11.854] [debug] last index:69
+[2019-06-22 18:36:11.860] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22
+[2019-06-22 18:36:11.880] [debug] ----downloadPlaylistItem------
+[2019-06-22 18:36:11.888] [debug] ------downloadVideo-------
+[2019-06-22 18:36:12.040] [debug] null
+[2019-06-22 18:36:13.335] [debug] loadIndex:14
+[2019-06-22 18:36:13.350] [debug] -----getIdFromUrl----
+[2019-06-22 18:36:13.368] [debug] ------getVideoInfo-------
+[2019-06-22 18:36:19.972] [debug] loadIndex:15
+[2019-06-22 18:36:19.980] [debug] -----getIdFromUrl----
+[2019-06-22 18:36:19.989] [debug] ------getVideoInfo-------
+[2019-06-22 18:36:24.856] [debug] loadIndex:16
+[2019-06-22 18:36:24.868] [debug] -----getIdFromUrl----
+[2019-06-22 18:36:24.935] [debug] ------getVideoInfo-------
+[2019-06-22 18:36:30.480] [debug] loadIndex:17
+[2019-06-22 18:36:30.486] [debug] -----getIdFromUrl----
+[2019-06-22 18:36:30.490] [debug] ------getVideoInfo-------
+[2019-06-22 18:36:35.881] [debug] --- video.on('end')---
+[2019-06-22 18:36:35.888] [debug] new path:
+[2019-06-22 18:36:35.895] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22\Drag and Drop in angular  - Part 6 - Angular 7 Full Tutorial in Hindi _ Angular 7 New Features-t_qHCNMfIpo.mp4
+[2019-06-22 18:36:35.903] [debug] last index:69
+[2019-06-22 18:36:35.909] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22
+[2019-06-22 18:36:35.952] [debug] loadIndex:18
+[2019-06-22 18:36:35.958] [debug] -----getIdFromUrl----
+[2019-06-22 18:36:35.966] [debug] ------getVideoInfo-------
+[2019-06-22 18:36:36.040] [debug] ----downloadPlaylistItem------
+[2019-06-22 18:36:36.048] [debug] ------downloadVideo-------
+[2019-06-22 18:36:36.243] [debug] null
+[2019-06-22 18:36:43.377] [debug] loadIndex:19
+[2019-06-22 18:36:43.387] [debug] -----getIdFromUrl----
+[2019-06-22 18:36:43.391] [debug] ------getVideoInfo-------
+[2019-06-22 18:36:59.883] [debug] --- video.on('end')---
+[2019-06-22 18:36:59.890] [debug] new path:
+[2019-06-22 18:36:59.897] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22\Virtual Scrolling in angular 7  - Part 7 - Angular 7 Full Tutorial in Hindi _ Angular 7 New Features-AN9WuOIctw8.mp4
+[2019-06-22 18:36:59.904] [debug] last index:69
+[2019-06-22 18:36:59.910] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22
+[2019-06-22 18:37:00.017] [debug] ----downloadPlaylistItem------
+[2019-06-22 18:37:00.026] [debug] ------downloadVideo-------
+[2019-06-22 18:37:00.215] [debug] null
+[2019-06-22 18:37:17.077] [debug] --- video.on('end')---
+[2019-06-22 18:37:17.085] [debug] new path:
+[2019-06-22 18:37:17.093] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22\Improved Accessibility of Selects  -Part 8 -Angular 7 Full Tutorial in Hindi _ Angular 7 New Features-pS1T7Q7wLeM.mp4
+[2019-06-22 18:37:17.099] [debug] last index:69
+[2019-06-22 18:37:17.105] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22
+[2019-06-22 18:37:17.206] [debug] ----downloadPlaylistItem------
+[2019-06-22 18:37:17.218] [debug] ------downloadVideo-------
+[2019-06-22 18:37:17.301] [debug] null
+[2019-06-22 18:37:27.751] [debug] --- video.on('end')---
+[2019-06-22 18:37:27.760] [debug] new path:
+[2019-06-22 18:37:27.766] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22\Documentation Updates in Angular 7 -Part 9 -Angular 7 Full Tutorial in Hindi _ Angular 7 New Features-OH0KYhVChcc.mp4
+[2019-06-22 18:37:27.771] [debug] last index:69
+[2019-06-22 18:37:27.776] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22
+[2019-06-22 18:37:27.821] [debug] ----downloadPlaylistItem------
+[2019-06-22 18:37:27.827] [debug] ------downloadVideo-------
+[2019-06-22 18:37:27.886] [debug] null
+[2019-06-22 18:37:38.768] [debug] --- video.on('end')---
+[2019-06-22 18:37:38.774] [debug] new path:
+[2019-06-22 18:37:38.779] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22\Application Performance in Angular 7  - Part 10 -Angular 7 Full Tutorial in Hindi-ffbeyGim0AI.mp4
+[2019-06-22 18:37:38.784] [debug] last index:69
+[2019-06-22 18:37:38.790] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22
+[2019-06-22 18:37:38.846] [debug] ----downloadPlaylistItem------
+[2019-06-22 18:37:38.854] [debug] ------downloadVideo-------
+[2019-06-22 18:37:38.914] [debug] null
+[2019-06-22 18:37:58.401] [debug] --- video.on('end')---
+[2019-06-22 18:37:58.416] [debug] new path:
+[2019-06-22 18:37:58.430] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22\Partner Launches Angular 7  -  Part 11 -Angular 7 Full Tutorial in Hindi-DX9ruG4c3v0.mp4
+[2019-06-22 18:37:58.446] [debug] last index:69
+[2019-06-22 18:37:58.453] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist18_34_39 2019.6.22
+[2019-06-22 18:37:58.545] [debug] ----downloadPlaylistItem------
+[2019-06-22 18:37:58.550] [debug] ------downloadVideo-------
+[2019-06-22 18:37:58.625] [debug] null
+[2019-06-22 18:38:12.898] [debug] logging set up
+[2019-06-22 18:38:12.907] [debug] log level:debug
+[2019-06-22 18:38:12.914] [debug] size:5242880
+[2019-06-22 18:38:13.683] [debug] window created
+[2019-06-22 18:38:13.734] [error] an unhandled error caught in gloabl handler:  TypeError: log.setLoadEvent is not a function
+    at Downloader.setNextItemDownloadEvent (E:\workspace\downloader\Downloader.js:36:13)
+    at Downloader.setIpcEvents (E:\workspace\downloader\Downloader.js:32:14)
+    at new Downloader (E:\workspace\downloader\Downloader.js:21:14)
+    at MainApp.createWindow (E:\workspace\downloader\MainApp.js:77:27)
+    at App.app.on (E:\workspace\downloader\MainApp.js:54:18)
+    at emitTwo (events.js:131:20)
+    at App.emit (events.js:214:7)
+[2019-06-22 18:38:24.898] [debug] ------startProcess-----
+[2019-06-22 18:38:24.910] [debug] ------in Item class constuctor-----
+[2019-06-22 18:38:24.918] [debug] -----getIdFromUrl----
+[2019-06-22 18:38:24.924] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-06-22 18:38:24.930] [debug] ---createFolder----
+[2019-06-22 18:38:24.940] [debug] ------download_videoList--------
+[2019-06-22 18:38:29.163] [debug] loadIndex:0
+[2019-06-22 18:38:29.170] [debug] -----getIdFromUrl----
+[2019-06-22 18:38:29.175] [debug] ------getVideoInfo-------
+[2019-06-22 18:38:36.781] [debug] loadIndex:1
+[2019-06-22 18:38:36.788] [debug] -----getIdFromUrl----
+[2019-06-22 18:38:36.798] [debug] ------getVideoInfo-------
+[2019-06-22 18:38:42.023] [debug] loadIndex:2
+[2019-06-22 18:38:42.033] [debug] -----getIdFromUrl----
+[2019-06-22 18:38:42.040] [debug] ------getVideoInfo-------
+[2019-06-22 18:38:48.303] [debug] loadIndex:3
+[2019-06-22 18:38:48.311] [debug] -----getIdFromUrl----
+[2019-06-22 18:38:48.317] [debug] ------getVideoInfo-------
+[2019-06-22 18:38:52.700] [debug] loadIndex:4
+[2019-06-22 18:38:52.706] [debug] -----getIdFromUrl----
+[2019-06-22 18:38:52.712] [debug] ------getVideoInfo-------
+[2019-06-22 18:38:56.880] [debug] loadIndex:5
+[2019-06-22 18:38:56.891] [debug] -----getIdFromUrl----
+[2019-06-22 18:38:56.899] [debug] ------getVideoInfo-------
+[2019-06-22 18:39:04.687] [debug] loadIndex:6
+[2019-06-22 18:39:04.694] [debug] -----getIdFromUrl----
+[2019-06-22 18:39:04.699] [debug] ------getVideoInfo-------
+[2019-06-22 18:39:10.645] [debug] loadIndex:7
+[2019-06-22 18:39:10.653] [debug] -----getIdFromUrl----
+[2019-06-22 18:39:10.659] [debug] ------getVideoInfo-------
+[2019-06-22 18:39:18.228] [debug] loadIndex:8
+[2019-06-22 18:39:18.238] [debug] -----getIdFromUrl----
+[2019-06-22 18:39:18.245] [debug] ------getVideoInfo-------
+[2019-06-22 18:39:23.373] [debug] loadIndex:9
+[2019-06-22 18:39:23.380] [debug] -----getIdFromUrl----
+[2019-06-22 18:39:23.381] [debug] ------getVideoInfo-------
+[2019-06-22 18:39:30.885] [debug] loadIndex:10
+[2019-06-22 18:39:30.891] [debug] -----getIdFromUrl----
+[2019-06-22 18:39:30.896] [debug] ------getVideoInfo-------
+[2019-06-22 18:39:36.428] [debug] loadIndex:11
+[2019-06-22 18:39:36.433] [debug] -----getIdFromUrl----
+[2019-06-22 18:39:36.440] [debug] ------getVideoInfo-------
+[2019-06-22 18:39:41.914] [debug] already downloading
+[2019-06-22 18:41:18.617] [debug] logging set up
+[2019-06-22 18:41:18.625] [debug] log level:debug
+[2019-06-22 18:41:18.630] [debug] size:5242880
+[2019-06-22 18:41:19.344] [debug] window created
+[2019-06-22 18:41:19.365] [error] an unhandled error caught in gloabl handler:  TypeError: log.setLoadEvent is not a function
+    at Downloader.setNextItemDownloadEvent (E:\workspace\downloader\Downloader.js:36:13)
+    at Downloader.setIpcEvents (E:\workspace\downloader\Downloader.js:32:14)
+    at new Downloader (E:\workspace\downloader\Downloader.js:21:14)
+    at MainApp.createWindow (E:\workspace\downloader\MainApp.js:77:27)
+    at App.app.on (E:\workspace\downloader\MainApp.js:54:18)
+    at emitTwo (events.js:131:20)
+    at App.emit (events.js:214:7)
+[2019-06-22 18:41:24.203] [debug] ------startProcess-----
+[2019-06-22 18:41:24.210] [debug] ------in Item class constuctor-----
+[2019-06-22 18:41:24.220] [debug] -----getIdFromUrl----
+[2019-06-22 18:41:24.227] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-06-22 18:41:24.233] [debug] ---createFolder----
+[2019-06-22 18:41:24.240] [debug] ------download_videoList--------
+[2019-06-22 18:41:29.017] [debug] loadIndex:0
+[2019-06-22 18:41:29.025] [debug] -----getIdFromUrl----
+[2019-06-22 18:41:29.033] [debug] ------getVideoInfo-------
+[2019-06-22 18:41:34.055] [debug] loadIndex:1
+[2019-06-22 18:41:34.061] [debug] -----getIdFromUrl----
+[2019-06-22 18:41:34.066] [debug] ------getVideoInfo-------
+[2019-06-22 18:41:41.690] [debug] loadIndex:2
+[2019-06-22 18:41:41.704] [debug] -----getIdFromUrl----
+[2019-06-22 18:41:41.709] [debug] ------getVideoInfo-------
+[2019-06-22 18:41:47.111] [debug] loadIndex:3
+[2019-06-22 18:41:47.117] [debug] -----getIdFromUrl----
+[2019-06-22 18:41:47.123] [debug] ------getVideoInfo-------
+[2019-06-22 18:41:52.078] [debug] loadIndex:4
+[2019-06-22 18:41:52.087] [debug] -----getIdFromUrl----
+[2019-06-22 18:41:52.096] [debug] ------getVideoInfo-------
+[2019-06-22 18:41:56.398] [debug] loadIndex:5
+[2019-06-22 18:41:56.402] [debug] -----getIdFromUrl----
+[2019-06-22 18:41:56.408] [debug] ------getVideoInfo-------
+[2019-06-22 18:42:00.811] [debug] loadIndex:6
+[2019-06-22 18:42:00.817] [debug] -----getIdFromUrl----
+[2019-06-22 18:42:00.823] [debug] ------getVideoInfo-------
+[2019-06-22 18:42:07.830] [debug] loadIndex:7
+[2019-06-22 18:42:07.836] [debug] -----getIdFromUrl----
+[2019-06-22 18:42:07.845] [debug] ------getVideoInfo-------
+[2019-06-22 18:42:14.166] [debug] loadIndex:8
+[2019-06-22 18:42:14.171] [debug] -----getIdFromUrl----
+[2019-06-22 18:42:14.176] [debug] ------getVideoInfo-------
+[2019-06-22 18:42:18.546] [debug] loadIndex:9
+[2019-06-22 18:42:18.553] [debug] -----getIdFromUrl----
+[2019-06-22 18:42:18.561] [debug] ------getVideoInfo-------
+[2019-06-22 18:42:24.014] [debug] loadIndex:10
+[2019-06-22 18:42:24.020] [debug] -----getIdFromUrl----
+[2019-06-22 18:42:24.026] [debug] ------getVideoInfo-------
+[2019-06-22 18:42:30.000] [debug] loadIndex:11
+[2019-06-22 18:42:30.006] [debug] -----getIdFromUrl----
+[2019-06-22 18:42:30.011] [debug] ------getVideoInfo-------
+[2019-06-22 18:42:37.048] [debug] loadIndex:12
+[2019-06-22 18:42:37.054] [debug] -----getIdFromUrl----
+[2019-06-22 18:42:37.060] [debug] ------getVideoInfo-------
+[2019-06-22 18:42:41.383] [debug] loadIndex:13
+[2019-06-22 18:42:41.391] [debug] -----getIdFromUrl----
+[2019-06-22 18:42:41.398] [debug] ------getVideoInfo-------
+[2019-06-22 18:42:47.676] [debug] loadIndex:14
+[2019-06-22 18:42:47.685] [debug] -----getIdFromUrl----
+[2019-06-22 18:42:47.692] [debug] ------getVideoInfo-------
+[2019-06-22 18:42:52.588] [debug] loadIndex:15
+[2019-06-22 18:42:52.601] [debug] -----getIdFromUrl----
+[2019-06-22 18:42:52.608] [debug] ------getVideoInfo-------
+[2019-06-22 18:42:56.728] [debug] loadIndex:16
+[2019-06-22 18:42:56.733] [debug] -----getIdFromUrl----
+[2019-06-22 18:42:56.739] [debug] ------getVideoInfo-------
+[2019-06-22 18:43:04.253] [debug] loadIndex:17
+[2019-06-22 18:43:04.259] [debug] -----getIdFromUrl----
+[2019-06-22 18:43:04.264] [debug] ------getVideoInfo-------
+[2019-06-22 18:43:12.505] [debug] loadIndex:18
+[2019-06-22 18:43:12.513] [debug] -----getIdFromUrl----
+[2019-06-22 18:43:12.519] [debug] ------getVideoInfo-------
+[2019-06-22 18:43:17.195] [debug] loadIndex:19
+[2019-06-22 18:43:17.201] [debug] -----getIdFromUrl----
+[2019-06-22 18:43:17.206] [debug] ------getVideoInfo-------
+[2019-06-22 18:43:22.425] [debug] loadIndex:20
+[2019-06-22 18:43:22.434] [debug] -----getIdFromUrl----
+[2019-06-22 18:43:22.440] [debug] ------getVideoInfo-------
+[2019-06-22 18:43:29.888] [debug] loadIndex:21
+[2019-06-22 18:43:29.895] [debug] -----getIdFromUrl----
+[2019-06-22 18:43:29.903] [debug] ------getVideoInfo-------
+[2019-06-22 18:43:35.258] [debug] loadIndex:22
+[2019-06-22 18:43:35.264] [debug] -----getIdFromUrl----
+[2019-06-22 18:43:35.269] [debug] ------getVideoInfo-------
+[2019-06-22 18:43:42.129] [debug] loadIndex:23
+[2019-06-22 18:43:42.134] [debug] -----getIdFromUrl----
+[2019-06-22 18:43:42.141] [debug] ------getVideoInfo-------
+[2019-06-22 18:43:47.442] [debug] loadIndex:24
+[2019-06-22 18:43:47.447] [debug] -----getIdFromUrl----
+[2019-06-22 18:43:47.452] [debug] ------getVideoInfo-------
+[2019-06-22 18:43:57.134] [debug] loadIndex:25
+[2019-06-22 18:43:57.139] [debug] -----getIdFromUrl----
+[2019-06-22 18:43:57.145] [debug] ------getVideoInfo-------
+[2019-06-22 18:44:02.237] [debug] loadIndex:26
+[2019-06-22 18:44:02.243] [debug] -----getIdFromUrl----
+[2019-06-22 18:44:02.250] [debug] ------getVideoInfo-------
+[2019-06-22 18:44:07.127] [debug] loadIndex:27
+[2019-06-22 18:44:07.134] [debug] -----getIdFromUrl----
+[2019-06-22 18:44:07.140] [debug] ------getVideoInfo-------
+[2019-06-22 18:44:12.994] [debug] loadIndex:28
+[2019-06-22 18:44:12.999] [debug] -----getIdFromUrl----
+[2019-06-22 18:44:13.005] [debug] ------getVideoInfo-------
+[2019-06-22 18:44:18.272] [debug] loadIndex:29
+[2019-06-22 18:44:18.279] [debug] -----getIdFromUrl----
+[2019-06-22 18:44:18.286] [debug] ------getVideoInfo-------
+[2019-06-22 18:44:25.487] [debug] loadIndex:30
+[2019-06-22 18:44:25.493] [debug] -----getIdFromUrl----
+[2019-06-22 18:44:25.498] [debug] ------getVideoInfo-------
+[2019-06-22 18:44:30.740] [debug] loadIndex:31
+[2019-06-22 18:44:30.747] [debug] -----getIdFromUrl----
+[2019-06-22 18:44:30.753] [debug] ------getVideoInfo-------
+[2019-06-22 18:44:36.538] [debug] loadIndex:32
+[2019-06-22 18:44:36.544] [debug] -----getIdFromUrl----
+[2019-06-22 18:44:36.549] [debug] ------getVideoInfo-------
+[2019-06-22 18:44:42.240] [debug] loadIndex:33
+[2019-06-22 18:44:42.247] [debug] -----getIdFromUrl----
+[2019-06-22 18:44:42.255] [debug] ------getVideoInfo-------
+[2019-06-22 18:44:50.969] [debug] loadIndex:34
+[2019-06-22 18:44:50.974] [debug] -----getIdFromUrl----
+[2019-06-22 18:44:50.981] [debug] ------getVideoInfo-------
+[2019-06-22 18:44:55.688] [debug] loadIndex:35
+[2019-06-22 18:44:55.694] [debug] -----getIdFromUrl----
+[2019-06-22 18:44:55.702] [debug] ------getVideoInfo-------
+[2019-06-22 18:45:02.019] [debug] loadIndex:36
+[2019-06-22 18:45:02.027] [debug] -----getIdFromUrl----
+[2019-06-22 18:45:02.033] [debug] ------getVideoInfo-------
+[2019-06-22 18:45:08.093] [debug] loadIndex:37
+[2019-06-22 18:45:08.099] [debug] -----getIdFromUrl----
+[2019-06-22 18:45:08.107] [debug] ------getVideoInfo-------
+[2019-06-22 18:45:15.947] [debug] loadIndex:38
+[2019-06-22 18:45:15.954] [debug] -----getIdFromUrl----
+[2019-06-22 18:45:15.960] [debug] ------getVideoInfo-------
+[2019-06-22 18:45:21.551] [debug] loadIndex:39
+[2019-06-22 18:45:21.561] [debug] -----getIdFromUrl----
+[2019-06-22 18:45:21.568] [debug] ------getVideoInfo-------
+[2019-06-22 18:45:27.106] [debug] loadIndex:40
+[2019-06-22 18:45:27.112] [debug] -----getIdFromUrl----
+[2019-06-22 18:45:27.118] [debug] ------getVideoInfo-------
+[2019-06-22 18:45:33.632] [debug] loadIndex:41
+[2019-06-22 18:45:33.639] [debug] -----getIdFromUrl----
+[2019-06-22 18:45:33.647] [debug] ------getVideoInfo-------
+[2019-06-22 18:45:40.276] [debug] loadIndex:42
+[2019-06-22 18:45:40.284] [debug] -----getIdFromUrl----
+[2019-06-22 18:45:40.289] [debug] ------getVideoInfo-------
+[2019-06-22 18:45:47.230] [debug] loadIndex:43
+[2019-06-22 18:45:47.236] [debug] -----getIdFromUrl----
+[2019-06-22 18:45:47.242] [debug] ------getVideoInfo-------
+[2019-06-22 18:45:51.989] [debug] loadIndex:44
+[2019-06-22 18:45:51.996] [debug] -----getIdFromUrl----
+[2019-06-22 18:45:52.004] [debug] ------getVideoInfo-------
+[2019-06-22 18:45:57.317] [debug] loadIndex:45
+[2019-06-22 18:45:57.323] [debug] -----getIdFromUrl----
+[2019-06-22 18:45:57.330] [debug] ------getVideoInfo-------
+[2019-06-22 18:46:02.527] [debug] loadIndex:46
+[2019-06-22 18:46:02.532] [debug] -----getIdFromUrl----
+[2019-06-22 18:46:02.538] [debug] ------getVideoInfo-------
+[2019-06-22 18:46:13.732] [debug] loadIndex:47
+[2019-06-22 18:46:13.738] [debug] -----getIdFromUrl----
+[2019-06-22 18:46:13.744] [debug] ------getVideoInfo-------
+[2019-06-22 18:46:21.645] [debug] loadIndex:48
+[2019-06-22 18:46:21.651] [debug] -----getIdFromUrl----
+[2019-06-22 18:46:21.656] [debug] ------getVideoInfo-------
+[2019-06-22 18:56:28.944] [debug] loadIndex:49
+[2019-06-22 18:56:28.954] [debug] -----getIdFromUrl----
+[2019-06-22 18:56:28.962] [debug] ------getVideoInfo-------
+[2019-06-22 18:56:46.600] [debug] loadIndex:50
+[2019-06-22 18:56:46.607] [debug] -----getIdFromUrl----
+[2019-06-22 18:56:46.612] [debug] ------getVideoInfo-------
+[2019-06-22 18:56:52.246] [debug] loadIndex:51
+[2019-06-22 18:56:52.251] [debug] -----getIdFromUrl----
+[2019-06-22 18:56:52.257] [debug] ------getVideoInfo-------
+[2019-06-22 18:57:01.938] [debug] loadIndex:52
+[2019-06-22 18:57:01.944] [debug] -----getIdFromUrl----
+[2019-06-22 18:57:01.950] [debug] ------getVideoInfo-------
+[2019-06-22 18:57:09.751] [debug] loadIndex:53
+[2019-06-22 18:57:09.759] [debug] -----getIdFromUrl----
+[2019-06-22 18:57:09.768] [debug] ------getVideoInfo-------
+[2019-06-22 18:57:15.503] [debug] loadIndex:54
+[2019-06-22 18:57:15.509] [debug] -----getIdFromUrl----
+[2019-06-22 18:57:15.515] [debug] ------getVideoInfo-------
+[2019-06-22 18:57:21.754] [debug] loadIndex:55
+[2019-06-22 18:57:21.759] [debug] -----getIdFromUrl----
+[2019-06-22 18:57:21.764] [debug] ------getVideoInfo-------
+[2019-06-22 18:57:28.027] [debug] loadIndex:56
+[2019-06-22 18:57:28.032] [debug] -----getIdFromUrl----
+[2019-06-22 18:57:28.038] [debug] ------getVideoInfo-------
+[2019-06-22 18:57:33.232] [debug] loadIndex:57
+[2019-06-22 18:57:33.239] [debug] -----getIdFromUrl----
+[2019-06-22 18:57:33.243] [debug] ------getVideoInfo-------
+[2019-06-22 18:57:38.994] [debug] loadIndex:58
+[2019-06-22 18:57:39.001] [debug] -----getIdFromUrl----
+[2019-06-22 18:57:39.008] [debug] ------getVideoInfo-------
+[2019-06-22 18:57:43.996] [debug] loadIndex:59
+[2019-06-22 18:57:44.002] [debug] -----getIdFromUrl----
+[2019-06-22 18:57:44.008] [debug] ------getVideoInfo-------
+[2019-06-22 18:57:51.094] [debug] loadIndex:60
+[2019-06-22 18:57:51.099] [debug] -----getIdFromUrl----
+[2019-06-22 18:57:51.104] [debug] ------getVideoInfo-------
+[2019-06-22 18:57:55.830] [debug] loadIndex:61
+[2019-06-22 18:57:55.835] [debug] -----getIdFromUrl----
+[2019-06-22 18:57:55.841] [debug] ------getVideoInfo-------
+[2019-06-22 18:58:01.342] [debug] loadIndex:62
+[2019-06-22 18:58:01.354] [debug] -----getIdFromUrl----
+[2019-06-22 18:58:01.362] [debug] ------getVideoInfo-------
+[2019-06-22 18:58:07.821] [debug] loadIndex:63
+[2019-06-22 18:58:07.827] [debug] -----getIdFromUrl----
+[2019-06-22 18:58:07.832] [debug] ------getVideoInfo-------
+[2019-06-22 18:58:12.722] [debug] loadIndex:64
+[2019-06-22 18:58:12.729] [debug] -----getIdFromUrl----
+[2019-06-22 18:58:12.734] [debug] ------getVideoInfo-------
+[2019-06-22 18:58:20.177] [debug] loadIndex:65
+[2019-06-22 18:58:20.184] [debug] -----getIdFromUrl----
+[2019-06-22 18:58:20.190] [debug] ------getVideoInfo-------
+[2019-06-22 18:58:27.454] [debug] loadIndex:66
+[2019-06-22 18:58:27.459] [debug] -----getIdFromUrl----
+[2019-06-22 18:58:27.464] [debug] ------getVideoInfo-------
+[2019-06-22 18:58:32.922] [debug] loadIndex:67
+[2019-06-22 18:58:32.928] [debug] -----getIdFromUrl----
+[2019-06-22 18:58:32.934] [debug] ------getVideoInfo-------
+[2019-06-22 18:58:37.465] [debug] loadIndex:68
+[2019-06-22 18:58:37.474] [debug] -----getIdFromUrl----
+[2019-06-22 18:58:37.481] [debug] ------getVideoInfo-------
+[2019-06-22 18:58:42.256] [debug] loadIndex:69
+[2019-06-22 18:58:42.275] [debug] -----getIdFromUrl----
+[2019-06-22 18:58:42.285] [debug] ------getVideoInfo-------
+[2019-06-22 18:58:50.179] [debug] loadIndex:70
+[2019-06-22 18:58:50.187] [debug] -----getIdFromUrl----
+[2019-06-22 18:58:50.196] [debug] ------getVideoInfo-------
+[2019-06-22 18:58:57.234] [debug] loadIndex:71
+[2019-06-22 18:58:57.239] [debug] -----getIdFromUrl----
+[2019-06-22 18:58:57.244] [debug] ------getVideoInfo-------
+[2019-06-22 18:59:01.972] [debug] loadIndex:72
+[2019-06-22 18:59:01.978] [debug] -----getIdFromUrl----
+[2019-06-22 18:59:01.984] [debug] ------getVideoInfo-------
+[2019-06-22 18:59:07.369] [debug] loadIndex:73
+[2019-06-22 18:59:07.375] [debug] -----getIdFromUrl----
+[2019-06-22 18:59:07.381] [debug] ------getVideoInfo-------
+[2019-06-22 18:59:17.481] [debug] loadIndex:74
+[2019-06-22 18:59:17.486] [debug] -----getIdFromUrl----
+[2019-06-22 18:59:17.491] [debug] ------getVideoInfo-------
+[2019-06-22 18:59:22.571] [debug] loadIndex:75
+[2019-06-22 18:59:22.578] [debug] -----getIdFromUrl----
+[2019-06-22 18:59:22.583] [debug] ------getVideoInfo-------
+[2019-06-22 18:59:27.617] [debug] loadIndex:76
+[2019-06-22 18:59:27.622] [debug] -----getIdFromUrl----
+[2019-06-22 18:59:27.633] [debug] ------getVideoInfo-------
+[2019-06-22 18:59:35.022] [debug] loadIndex:77
+[2019-06-22 18:59:35.028] [debug] -----getIdFromUrl----
+[2019-06-22 18:59:35.033] [debug] ------getVideoInfo-------
+[2019-06-22 18:59:42.463] [debug] loadIndex:78
+[2019-06-22 18:59:42.468] [debug] -----getIdFromUrl----
+[2019-06-22 18:59:42.473] [debug] ------getVideoInfo-------
+[2019-06-22 18:59:48.409] [debug] loadIndex:79
+[2019-06-22 18:59:48.417] [debug] -----getIdFromUrl----
+[2019-06-22 18:59:48.422] [debug] ------getVideoInfo-------
+[2019-06-22 18:59:54.704] [debug] loadIndex:80
+[2019-06-22 18:59:54.709] [debug] -----getIdFromUrl----
+[2019-06-22 18:59:54.714] [debug] ------getVideoInfo-------
+[2019-06-22 19:00:00.434] [debug] loadIndex:81
+[2019-06-22 19:00:00.440] [debug] -----getIdFromUrl----
+[2019-06-22 19:00:00.445] [debug] ------getVideoInfo-------
+[2019-06-22 19:01:22.978] [debug] logging set up
+[2019-06-22 19:01:22.987] [debug] log level:debug
+[2019-06-22 19:01:22.992] [debug] size:5242880
+[2019-06-22 19:01:23.709] [debug] window created
+[2019-06-22 19:01:23.729] [error] an unhandled error caught in gloabl handler:  TypeError: log.setLoadEvent is not a function
+    at Downloader.setNextItemDownloadEvent (E:\workspace\downloader\Downloader.js:36:13)
+    at Downloader.setIpcEvents (E:\workspace\downloader\Downloader.js:32:14)
+    at new Downloader (E:\workspace\downloader\Downloader.js:21:14)
+    at MainApp.createWindow (E:\workspace\downloader\MainApp.js:77:27)
+    at App.app.on (E:\workspace\downloader\MainApp.js:54:18)
+    at emitTwo (events.js:131:20)
+    at App.emit (events.js:214:7)
+[2019-06-22 19:01:33.407] [debug] ------startProcess-----
+[2019-06-22 19:01:33.422] [debug] ------in Item class constuctor-----
+[2019-06-22 19:01:33.429] [debug] -----getIdFromUrl----
+[2019-06-22 19:01:33.436] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-06-22 19:01:33.441] [debug] ---createFolder----
+[2019-06-22 19:01:33.447] [debug] ------download_videoList--------
+[2019-06-22 19:01:38.637] [debug] loadIndex:0
+[2019-06-22 19:01:38.642] [debug] -----getIdFromUrl----
+[2019-06-22 19:01:38.648] [debug] ------getVideoInfo-------
+[2019-06-22 19:01:45.679] [debug] loadIndex:1
+[2019-06-22 19:01:45.686] [debug] -----getIdFromUrl----
+[2019-06-22 19:01:45.691] [debug] ------getVideoInfo-------
+[2019-06-22 19:01:50.998] [debug] loadIndex:2
+[2019-06-22 19:01:51.008] [debug] -----getIdFromUrl----
+[2019-06-22 19:01:51.015] [debug] ------getVideoInfo-------
+[2019-06-22 19:01:55.713] [debug] loadIndex:3
+[2019-06-22 19:01:55.721] [debug] -----getIdFromUrl----
+[2019-06-22 19:01:55.727] [debug] ------getVideoInfo-------
+[2019-06-22 19:02:00.195] [debug] loadIndex:4
+[2019-06-22 19:02:00.201] [debug] -----getIdFromUrl----
+[2019-06-22 19:02:00.208] [debug] ------getVideoInfo-------
+[2019-06-22 19:02:04.845] [debug] loadIndex:5
+[2019-06-22 19:02:04.854] [debug] -----getIdFromUrl----
+[2019-06-22 19:02:04.863] [debug] ------getVideoInfo-------
+[2019-06-22 19:02:10.935] [debug] loadIndex:6
+[2019-06-22 19:02:10.941] [debug] -----getIdFromUrl----
+[2019-06-22 19:02:10.946] [debug] ------getVideoInfo-------
+[2019-06-22 19:02:16.257] [debug] loadIndex:7
+[2019-06-22 19:02:16.265] [debug] -----getIdFromUrl----
+[2019-06-22 19:02:16.270] [debug] ------getVideoInfo-------
+[2019-06-22 19:02:20.958] [debug] loadIndex:8
+[2019-06-22 19:02:20.966] [debug] -----getIdFromUrl----
+[2019-06-22 19:02:20.972] [debug] ------getVideoInfo-------
+[2019-06-22 19:02:26.163] [debug] loadIndex:9
+[2019-06-22 19:02:26.174] [debug] -----getIdFromUrl----
+[2019-06-22 19:02:26.182] [debug] ------getVideoInfo-------
+[2019-06-22 19:02:31.142] [debug] loadIndex:10
+[2019-06-22 19:02:31.147] [debug] -----getIdFromUrl----
+[2019-06-22 19:02:31.154] [debug] ------getVideoInfo-------
+[2019-06-22 21:45:15.846] [debug] logging set up
+[2019-06-22 21:45:15.916] [debug] log level:debug
+[2019-06-22 21:45:15.934] [debug] size:5242880
+[2019-06-22 21:45:19.810] [debug] window created
+[2019-06-22 21:45:19.827] [error] an unhandled error caught in gloabl handler:  TypeError: log.setLoadEvent is not a function
+    at Downloader.setNextItemDownloadEvent (E:\workspace\downloader\Downloader.js:36:13)
+    at Downloader.setIpcEvents (E:\workspace\downloader\Downloader.js:32:14)
+    at new Downloader (E:\workspace\downloader\Downloader.js:21:14)
+    at MainApp.createWindow (E:\workspace\downloader\MainApp.js:77:27)
+    at App.app.on (E:\workspace\downloader\MainApp.js:54:18)
+    at emitTwo (events.js:131:20)
+    at App.emit (events.js:214:7)
+[2019-06-22 21:46:10.066] [debug] logging set up
+[2019-06-22 21:46:10.075] [debug] log level:debug
+[2019-06-22 21:46:10.082] [debug] size:5242880
+[2019-06-22 21:46:10.763] [debug] window created
+[2019-06-22 21:46:10.785] [debug] ---setNextItemDownloadEvent-----
+[2019-06-22 21:46:10.800] [debug] -------makeDestinationDir-------
+[2019-06-22 21:46:10.809] [debug] ---createFolder----
+[2019-06-22 21:46:10.819] [debug] downloader object created.
+[2019-06-22 21:46:24.761] [debug] ------startProcess-----
+[2019-06-22 21:46:24.785] [debug] ------in Item class constuctor-----
+[2019-06-22 21:46:24.813] [debug] -----getIdFromUrl----
+[2019-06-22 21:46:24.857] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-06-22 21:46:24.878] [debug] ---createFolder----
+[2019-06-22 21:46:24.890] [debug] ------download_videoList--------
+[2019-06-22 21:46:30.429] [debug] loadIndex:0
+[2019-06-22 21:46:30.439] [debug] -----getIdFromUrl----
+[2019-06-22 21:46:30.447] [debug] ------getVideoInfo-------
+[2019-06-22 21:46:36.868] [debug] loadIndex:1
+[2019-06-22 21:46:36.875] [debug] -----getIdFromUrl----
+[2019-06-22 21:46:36.885] [debug] ------getVideoInfo-------
+[2019-06-22 21:46:36.903] [debug] ---in ipcRenderer download-playlist-item----
+[2019-06-22 21:46:36.912] [debug] ----downloadPlaylistItem------
+[2019-06-22 21:46:36.924] [debug] ------downloadVideo-------
+[2019-06-22 21:46:43.493] [debug] loadIndex:2
+[2019-06-22 21:46:43.499] [debug] -----getIdFromUrl----
+[2019-06-22 21:46:43.507] [debug] ------getVideoInfo-------
+[2019-06-22 21:46:50.452] [debug] loadIndex:3
+[2019-06-22 21:46:50.475] [debug] -----getIdFromUrl----
+[2019-06-22 21:46:50.484] [debug] ------getVideoInfo-------
+[2019-06-22 21:46:57.143] [debug] loadIndex:4
+[2019-06-22 21:46:57.160] [debug] -----getIdFromUrl----
+[2019-06-22 21:46:57.173] [debug] ------getVideoInfo-------
+[2019-06-22 21:46:59.593] [debug] --- video.on('end')---
+[2019-06-22 21:46:59.600] [debug] new path:
+[2019-06-22 21:46:59.607] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist21_46_24 2019.6.22\Angular 7  - Part 1- Angular 7 Full Tutorial in Hindi- Angular Introduction , Versioning and Releases-SuZa2nv24HE.mp4
+[2019-06-22 21:46:59.614] [debug] last index:69
+[2019-06-22 21:46:59.619] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist21_46_24 2019.6.22
+[2019-06-22 21:46:59.656] [debug] ---in ipcRenderer download-playlist-item----
+[2019-06-22 21:46:59.666] [debug] ----downloadPlaylistItem------
+[2019-06-22 21:46:59.672] [debug] ------downloadVideo-------
+[2019-06-22 21:46:59.883] [debug] null
+[2019-06-22 21:47:02.177] [debug] loadIndex:5
+[2019-06-22 21:47:02.191] [debug] -----getIdFromUrl----
+[2019-06-22 21:47:02.201] [debug] ------getVideoInfo-------
+[2019-06-22 21:47:07.892] [debug] loadIndex:6
+[2019-06-22 21:47:07.899] [debug] -----getIdFromUrl----
+[2019-06-22 21:47:07.906] [debug] ------getVideoInfo-------
+[2019-06-22 21:47:09.127] [debug] --- video.on('end')---
+[2019-06-22 21:47:09.134] [debug] new path:
+[2019-06-22 21:47:09.139] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist21_46_24 2019.6.22\Angular 7  - Part 2  -  Angular 7 Full Tutorial in Hindi - What new in angular get notifications-BdGaUltG_sk.mp4
+[2019-06-22 21:47:09.145] [debug] last index:69
+[2019-06-22 21:47:09.153] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist21_46_24 2019.6.22
+[2019-06-22 21:47:09.210] [debug] ---in ipcRenderer download-playlist-item----
+[2019-06-22 21:47:09.218] [debug] ----downloadPlaylistItem------
+[2019-06-22 21:47:09.223] [debug] ------downloadVideo-------
+[2019-06-22 21:47:09.262] [debug] null
+[2019-06-22 21:47:14.585] [debug] loadIndex:7
+[2019-06-22 21:47:14.591] [debug] -----getIdFromUrl----
+[2019-06-22 21:47:14.597] [debug] ------getVideoInfo-------
+[2019-06-22 21:47:25.293] [debug] --- video.on('end')---
+[2019-06-22 21:47:25.322] [debug] new path:
+[2019-06-22 21:47:25.347] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist21_46_24 2019.6.22\Angular 7  - Part 3   - Angular 7 Full Tutorial in Hindi - Angular 7 New Features-GYHaucEVFG4.mp4
+[2019-06-22 21:47:25.364] [debug] last index:69
+[2019-06-22 21:47:25.378] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist21_46_24 2019.6.22
+[2019-06-22 21:47:25.434] [debug] ---in ipcRenderer download-playlist-item----
+[2019-06-22 21:47:25.441] [debug] ----downloadPlaylistItem------
+[2019-06-22 21:47:25.446] [debug] ------downloadVideo-------
+[2019-06-22 21:47:25.478] [debug] null
+[2019-06-22 21:47:39.094] [debug] --- video.on('end')---
+[2019-06-22 21:47:39.123] [debug] new path:
+[2019-06-22 21:47:39.135] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist21_46_24 2019.6.22\Angular 7 Stable Version Released Now - Introduction  -  Part 4 - Angular 7 Full Tutorial in Hindi-P7-hAe41sIA.mp4
+[2019-06-22 21:47:39.145] [debug] last index:69
+[2019-06-22 21:47:39.153] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist21_46_24 2019.6.22
+[2019-06-22 21:47:39.178] [debug] ---in ipcRenderer download-playlist-item----
+[2019-06-22 21:47:39.186] [debug] ----downloadPlaylistItem------
+[2019-06-22 21:47:39.192] [debug] ------downloadVideo-------
+[2019-06-22 21:47:39.351] [debug] null
+[2019-06-22 21:48:08.386] [debug] --- video.on('end')---
+[2019-06-22 21:48:08.399] [debug] new path:
+[2019-06-22 21:48:08.414] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist21_46_24 2019.6.22\Angular 7 CLI Prompts  - Part 5 - Angular 7 Full Tutorial in Hindi _ Angular 7 New Features-Q3uLQxJ5vqE.mp4
+[2019-06-22 21:48:08.433] [debug] last index:69
+[2019-06-22 21:48:08.450] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist21_46_24 2019.6.22
+[2019-06-22 21:48:08.541] [debug] ---in ipcRenderer download-playlist-item----
+[2019-06-22 21:48:08.546] [debug] ----downloadPlaylistItem------
+[2019-06-22 21:48:08.552] [debug] ------downloadVideo-------
+[2019-06-22 21:48:08.660] [debug] null
+[2019-06-22 21:48:40.897] [debug] --- video.on('end')---
+[2019-06-22 21:48:40.919] [debug] new path:
+[2019-06-22 21:48:40.939] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist21_46_24 2019.6.22\Drag and Drop in angular  - Part 6 - Angular 7 Full Tutorial in Hindi _ Angular 7 New Features-t_qHCNMfIpo.mp4
+[2019-06-22 21:48:40.964] [debug] last index:69
+[2019-06-22 21:48:40.986] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist21_46_24 2019.6.22
+[2019-06-22 21:48:41.159] [debug] ---in ipcRenderer download-playlist-item----
+[2019-06-22 21:48:41.164] [debug] ----downloadPlaylistItem------
+[2019-06-22 21:48:41.171] [debug] ------downloadVideo-------
+[2019-06-22 21:48:41.320] [debug] null
+[2019-06-22 21:49:04.440] [debug] --- video.on('end')---
+[2019-06-22 21:49:04.450] [debug] new path:
+[2019-06-22 21:49:04.462] [debug] C:\Users\ASUS\Videos\kr_youtube_downloader\playlist21_46_24 2019.6.22\Virtual Scrolling in angular 7  - Part 7 - Angular 7 Full Tutorial in Hindi _ Angular 7 New Features-AN9WuOIctw8.mp4
+[2019-06-22 21:49:04.474] [debug] last index:69
+[2019-06-22 21:49:04.486] [debug] new path:C:\Users\ASUS\Videos\kr_youtube_downloader\playlist21_46_24 2019.6.22
+[2019-06-22 21:49:04.708] [debug] null
+[2019-06-22 21:57:18.847] [error] an unhandled error caught in gloabl handler:  Error: Command failed: E:\workspace\downloader\node_modules\youtube-dl\bin\youtube-dl.exe --dump-json --format=18 pS1T7Q7wLeM
+ERROR: Unable to download webpage: The read operation timed out (caused by timeout('The read operation timed out',))
+
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-06-22 22:29:03.634] [debug] logging set up
+[2019-06-22 22:29:03.642] [debug] log level:debug
+[2019-06-22 22:29:03.649] [debug] size:5242880
+[2019-06-22 22:29:04.391] [debug] window created
+[2019-06-22 22:29:04.409] [debug] ---setNextItemDownloadEvent-----
+[2019-06-22 22:29:04.423] [debug] -------makeDestinationDir-------
+[2019-06-22 22:29:04.434] [debug] ---createFolder----
+[2019-06-22 22:29:04.448] [debug] downloader object created.
+[2019-06-22 22:29:24.336] [debug] ------startProcess-----
+[2019-06-22 22:29:24.366] [debug] ------in Item class constuctor-----
+[2019-06-22 22:29:24.398] [debug] -----getIdFromUrl----
+[2019-06-22 22:29:24.432] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-06-22 22:29:24.443] [debug] ---createFolder----
+[2019-06-22 22:29:24.452] [debug] ------download_videoList--------
+[2019-06-22 22:29:29.690] [debug] loadIndex:0
+[2019-06-22 22:29:29.699] [debug] -----getIdFromUrl----
+[2019-06-22 22:29:29.705] [debug] ------getVideoInfo-------
+[2019-06-22 22:29:31.831] [error] an unhandled error caught in gloabl handler:  Error: Command failed: E:\workspace\downloader\node_modules\youtube-dl\bin\youtube-dl.exe --dump-json --format=18 SuZa2nv24HE
+
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-06-22 22:31:27.824] [debug] logging set up
+[2019-06-22 22:31:27.830] [debug] log level:debug
+[2019-06-22 22:31:27.836] [debug] size:5242880
+[2019-06-22 22:31:28.583] [debug] window created
+[2019-06-22 22:31:28.598] [debug] ---setNextItemDownloadEvent-----
+[2019-06-22 22:31:28.614] [debug] -------makeDestinationDir-------
+[2019-06-22 22:31:28.627] [debug] ---createFolder----
+[2019-06-22 22:31:28.635] [debug] downloader object created.
+[2019-06-22 22:31:32.478] [debug] ------startProcess-----
+[2019-06-22 22:31:32.503] [debug] ------in Item class constuctor-----
+[2019-06-22 22:31:32.519] [debug] -----getIdFromUrl----
+[2019-06-22 22:31:32.528] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-06-22 22:31:32.535] [debug] ---createFolder----
+[2019-06-22 22:31:32.545] [debug] ------download_videoList--------
+[2019-06-22 22:31:36.827] [debug] loadIndex:0
+[2019-06-22 22:31:36.835] [debug] -----getIdFromUrl----
+[2019-06-22 22:31:36.843] [debug] ------getVideoInfo-------
+[2019-06-22 22:31:38.876] [error] an unhandled error caught in gloabl handler:  Error: Command failed: E:\workspace\downloader\node_modules\youtube-dl\bin\youtube-dl.exe --dump-json --format=18 SuZa2nv24HE
+
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-06-22 22:45:08.113] [debug] logging set up
+[2019-06-22 22:45:08.124] [debug] log level:debug
+[2019-06-22 22:45:08.129] [debug] size:5242880
+[2019-06-22 22:45:09.099] [debug] window created
+[2019-06-22 22:45:09.106] [debug] ---setNextItemDownloadEvent-----
+[2019-06-22 22:45:09.113] [debug] -------makeDestinationDir-------
+[2019-06-22 22:45:09.121] [debug] ---createFolder----
+[2019-06-22 22:45:09.136] [debug] downloader object created.
+[2019-06-22 22:45:18.874] [debug] ------startProcess-----
+[2019-06-22 22:45:18.908] [debug] ------in Item class constuctor-----
+[2019-06-22 22:45:18.943] [debug] -----getIdFromUrl----
+[2019-06-22 22:45:18.981] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-06-22 22:45:19.003] [debug] ---createFolder----
+[2019-06-22 22:45:19.016] [debug] ------download_videoList--------
+[2019-06-22 22:46:14.372] [debug] logging set up
+[2019-06-22 22:46:14.379] [debug] log level:debug
+[2019-06-22 22:46:14.385] [debug] size:5242880
+[2019-06-22 22:46:15.078] [debug] window created
+[2019-06-22 22:46:15.095] [debug] ---setNextItemDownloadEvent-----
+[2019-06-22 22:46:15.108] [debug] -------makeDestinationDir-------
+[2019-06-22 22:46:15.116] [debug] ---createFolder----
+[2019-06-22 22:46:15.127] [debug] downloader object created.
+[2019-06-22 22:46:29.413] [debug] ------startProcess-----
+[2019-06-22 22:46:29.445] [debug] ------in Item class constuctor-----
+[2019-06-22 22:46:29.482] [debug] -----getIdFromUrl----
+[2019-06-22 22:46:29.520] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-06-22 22:46:29.534] [debug] ---createFolder----
+[2019-06-22 22:46:29.545] [debug] ------download_videoList--------
+[2019-06-22 22:46:34.788] [debug] loadIndex:0
+[2019-06-22 22:46:34.797] [debug] -----getIdFromUrl----
+[2019-06-22 22:46:34.807] [debug] ------getVideoInfo-------
+[2019-06-22 22:46:36.842] [error] an unhandled error caught in gloabl handler:  Error: Command failed: E:\workspace\downloader\node_modules\youtube-dl\bin\youtube-dl.exe --dump-json --format=18 SuZa2nv24HE
+
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-06-22 22:52:43.971] [debug] logging set up
+[2019-06-22 22:52:43.979] [debug] log level:debug
+[2019-06-22 22:52:43.987] [debug] size:5242880
+[2019-06-22 22:52:44.678] [debug] window created
+[2019-06-22 22:52:44.693] [debug] ---setNextItemDownloadEvent-----
+[2019-06-22 22:52:44.709] [debug] -------makeDestinationDir-------
+[2019-06-22 22:52:44.718] [debug] ---createFolder----
+[2019-06-22 22:52:44.727] [debug] downloader object created.
+[2019-06-22 22:53:05.701] [debug] ------startProcess-----
+[2019-06-22 22:53:05.727] [debug] ------in Item class constuctor-----
+[2019-06-22 22:53:05.754] [debug] -----getIdFromUrl----
+[2019-06-22 22:53:05.787] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-06-22 22:53:05.806] [debug] ---createFolder----
+[2019-06-22 22:53:05.823] [debug] ------download_videoList--------
+[2019-06-22 22:53:14.078] [debug] loadIndex:0
+[2019-06-22 22:53:14.085] [debug] -----getIdFromUrl----
+[2019-06-22 22:53:14.093] [debug] ------getVideoInfo-------
+[2019-06-22 22:53:16.124] [error] an unhandled error caught in gloabl handler:  Error: Command failed: E:\workspace\downloader\node_modules\youtube-dl\bin\youtube-dl.exe --dump-json --format=18 SuZa2nv24HE
+
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-06-23 00:44:21.702] [debug] logging set up
+[2019-06-23 00:44:21.712] [debug] log level:debug
+[2019-06-23 00:44:21.720] [debug] size:5242880
+[2019-06-23 00:44:22.405] [debug] window created
+[2019-06-23 00:44:22.426] [debug] ---setNextItemDownloadEvent-----
+[2019-06-23 00:44:22.443] [debug] -------makeDestinationDir-------
+[2019-06-23 00:44:22.455] [debug] ---createFolder----
+[2019-06-23 00:44:22.465] [debug] downloader object created.
+[2019-06-23 00:44:58.481] [debug] ------startProcess-----
+[2019-06-23 00:44:58.517] [debug] ------in Item class constuctor-----
+[2019-06-23 00:44:58.554] [debug] -----getIdFromUrl----
+[2019-06-23 00:44:58.571] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-06-23 00:44:58.584] [debug] ---createFolder----
+[2019-06-23 00:44:58.595] [debug] ------download_videoList--------
+[2019-06-23 00:45:03.301] [debug] loadIndex:0
+[2019-06-23 00:45:03.309] [debug] -----getIdFromUrl----
+[2019-06-23 00:45:03.317] [debug] ------getVideoInfo-------
+[2019-06-23 00:45:05.350] [error] an unhandled error caught in gloabl handler:  Error: Command failed: E:\workspace\downloader\node_modules\youtube-dl\bin\youtube-dl.exe --dump-json --format=18 SuZa2nv24HE
+
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-06-23 16:55:35.794] [debug] logging set up
+[2019-06-23 16:55:35.850] [debug] log level:debug
+[2019-06-23 16:55:35.856] [debug] size:5242880
+[2019-06-23 16:55:38.149] [debug] window created
+[2019-06-23 16:55:38.159] [debug] ---setNextItemDownloadEvent-----
+[2019-06-23 16:55:38.169] [debug] -------makeDestinationDir-------
+[2019-06-23 16:55:38.179] [debug] ---createFolder----
+[2019-06-23 16:55:38.195] [debug] downloader object created.
+[2019-06-23 16:56:01.284] [debug] ------startProcess-----
+[2019-06-23 16:56:01.298] [debug] ------in Item class constuctor-----
+[2019-06-23 16:56:01.325] [debug] -----getIdFromUrl----
+[2019-06-23 16:56:01.353] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-06-23 16:56:01.365] [debug] ---createFolder----
+[2019-06-23 16:56:01.372] [debug] ------download_videoList--------
+[2019-06-23 16:56:05.727] [debug] loadIndex:0
+[2019-06-23 16:56:05.734] [debug] -----getIdFromUrl----
+[2019-06-23 16:56:05.740] [debug] ------getVideoInfo-------
+[2019-06-23 16:56:07.772] [error] an unhandled error caught in gloabl handler:  Error: Command failed: E:\workspace\downloader\node_modules\youtube-dl\bin\youtube-dl.exe --dump-json --format=18 SuZa2nv24HE
+
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-06-24 00:16:51.419] [debug] logging set up
+[2019-06-24 00:16:51.473] [debug] log level:debug
+[2019-06-24 00:16:51.484] [debug] size:5242880
+[2019-06-24 00:16:55.118] [debug] window created
+[2019-06-24 00:16:55.130] [debug] ---setNextItemDownloadEvent-----
+[2019-06-24 00:16:55.142] [debug] --setTryAgainPlaylistItemEvent---
+[2019-06-24 00:16:55.155] [debug] -------makeDestinationDir-------
+[2019-06-24 00:16:55.169] [debug] ---createFolder----
+[2019-06-24 00:16:55.186] [debug] downloader object created.
+[2019-06-24 00:17:15.046] [debug] ------startProcess-----
+[2019-06-24 00:17:15.068] [debug] ------in Item class constuctor-----
+[2019-06-24 00:17:15.088] [debug] -----getIdFromUrl----
+[2019-06-24 00:17:15.097] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-06-24 00:17:15.109] [debug] ---createFolder----
+[2019-06-24 00:17:15.120] [debug] ------download_videoList--------
+[2019-06-24 00:17:20.061] [debug] loadIndex:0
+[2019-06-24 00:17:20.071] [debug] -----getIdFromUrl----
+[2019-06-24 00:17:20.082] [debug] ------getVideoInfo-------
+[2019-06-24 00:17:22.117] [error] an unhandled error caught in gloabl handler:  Error: Command failed: E:\workspace\downloader\node_modules\youtube-dl\bin\youtube-dl.exe --dump-json --format=18 SuZa2nv24HE
+
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-06-24 02:20:05.969] [debug] logging set up
+[2019-06-24 02:20:05.978] [debug] log level:debug
+[2019-06-24 02:20:05.985] [debug] size:5242880
+[2019-06-24 02:20:06.690] [debug] window created
+[2019-06-24 02:20:06.701] [debug] ---setNextItemDownloadEvent-----
+[2019-06-24 02:20:06.718] [debug] --setTryAgainPlaylistItemEvent---
+[2019-06-24 02:20:06.732] [debug] -------makeDestinationDir-------
+[2019-06-24 02:20:06.747] [debug] ---createFolder----
+[2019-06-24 02:20:06.758] [debug] downloader object created.
+[2019-06-24 02:20:34.103] [debug] ------startProcess-----
+[2019-06-24 02:20:34.128] [debug] ------in Item class constuctor-----
+[2019-06-24 02:20:34.165] [debug] -----getIdFromUrl----
+[2019-06-24 02:20:34.184] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-06-24 02:20:34.194] [debug] ---createFolder----
+[2019-06-24 02:20:34.204] [debug] ------download_videoList--------
+[2019-06-24 02:20:38.563] [debug] loadIndex:0
+[2019-06-24 02:20:38.595] [debug] -----getIdFromUrl----
+[2019-06-24 02:20:38.601] [debug] ------getVideoInfo-------
+[2019-06-24 02:28:36.366] [debug] logging set up
+[2019-06-24 02:28:36.374] [debug] log level:debug
+[2019-06-24 02:28:36.381] [debug] size:5242880
+[2019-06-24 02:28:37.089] [debug] window created
+[2019-06-24 02:28:37.105] [debug] ---setNextItemDownloadEvent-----
+[2019-06-24 02:28:37.117] [debug] --setTryAgainPlaylistItemEvent---
+[2019-06-24 02:28:37.126] [debug] -------makeDestinationDir-------
+[2019-06-24 02:28:37.136] [debug] ---createFolder----
+[2019-06-24 02:28:37.144] [debug] downloader object created.
+[2019-06-24 02:28:50.229] [debug] ------startProcess-----
+[2019-06-24 02:28:50.254] [debug] ------in Item class constuctor-----
+[2019-06-24 02:28:50.287] [debug] -----getIdFromUrl----
+[2019-06-24 02:28:50.322] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-06-24 02:28:50.334] [debug] ---createFolder----
+[2019-06-24 02:28:50.343] [debug] ------download_videoList--------
+[2019-06-24 02:30:29.925] [debug] logging set up
+[2019-06-24 02:30:29.933] [debug] log level:debug
+[2019-06-24 02:30:29.939] [debug] size:5242880
+[2019-06-24 02:30:30.680] [debug] window created
+[2019-06-24 02:30:30.696] [debug] ---setNextItemDownloadEvent-----
+[2019-06-24 02:30:30.710] [debug] --setTryAgainPlaylistItemEvent---
+[2019-06-24 02:30:30.726] [debug] -------makeDestinationDir-------
+[2019-06-24 02:30:30.740] [debug] ---createFolder----
+[2019-06-24 02:30:30.746] [debug] downloader object created.
+[2019-06-24 02:30:42.862] [debug] ------startProcess-----
+[2019-06-24 02:30:42.886] [debug] ------in Item class constuctor-----
+[2019-06-24 02:30:42.918] [debug] -----getIdFromUrl----
+[2019-06-24 02:30:42.956] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-06-24 02:30:42.977] [debug] ---createFolder----
+[2019-06-24 02:30:42.994] [debug] ------download_videoList--------
+[2019-06-24 02:30:47.622] [debug] -----getIdFromUrl----
+[2019-06-24 02:30:47.628] [debug] ------getVideoInfo-------
+[2019-06-24 02:30:50.359] [error] an unhandled error caught in gloabl handler:  Error: Command failed: E:\workspace\downloader\node_modules\youtube-dl\bin\youtube-dl.exe --dump-json --format=18 [object Object]
+ERROR: '[object Object]' is not a valid URL. Set --default-search "ytsearch" (or run  youtube-dl "ytsearch:[object Object]" ) to search YouTube
+
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-06-24 02:30:57.626] [debug] -----getIdFromUrl----
+[2019-06-24 02:30:57.650] [debug] ------getVideoInfo-------
+[2019-06-24 02:31:00.492] [error] an unhandled error caught in gloabl handler:  Error: Command failed: E:\workspace\downloader\node_modules\youtube-dl\bin\youtube-dl.exe --dump-json --format=18 [object Object]
+ERROR: '[object Object]' is not a valid URL. Set --default-search "ytsearch" (or run  youtube-dl "ytsearch:[object Object]" ) to search YouTube
+
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-06-24 02:31:07.629] [debug] -----getIdFromUrl----
+[2019-06-24 02:31:07.657] [debug] ------getVideoInfo-------
+[2019-06-24 02:31:10.418] [error] an unhandled error caught in gloabl handler:  Error: Command failed: E:\workspace\downloader\node_modules\youtube-dl\bin\youtube-dl.exe --dump-json --format=18 [object Object]
+ERROR: '[object Object]' is not a valid URL. Set --default-search "ytsearch" (or run  youtube-dl "ytsearch:[object Object]" ) to search YouTube
+
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-06-24 02:35:09.207] [debug] logging set up
+[2019-06-24 02:35:09.215] [debug] log level:debug
+[2019-06-24 02:35:09.224] [debug] size:5242880
+[2019-06-24 02:35:09.922] [debug] window created
+[2019-06-24 02:35:09.936] [debug] ---setNextItemDownloadEvent-----
+[2019-06-24 02:35:09.956] [error] an unhandled error caught in gloabl handler:  TypeError: this.setTryAgainPlaylistItemEvent is not a function
+    at Downloader.setIpcEvents (E:\workspace\downloader\Downloader.js:33:14)
+    at new Downloader (E:\workspace\downloader\Downloader.js:21:14)
+    at MainApp.createWindow (E:\workspace\downloader\MainApp.js:77:27)
+    at App.app.on (E:\workspace\downloader\MainApp.js:54:18)
+    at emitTwo (events.js:131:20)
+    at App.emit (events.js:214:7)
+[2019-06-24 02:35:31.376] [debug] ------startProcess-----
+[2019-06-24 02:35:31.406] [debug] ------in Item class constuctor-----
+[2019-06-24 02:35:31.441] [debug] -----getIdFromUrl----
+[2019-06-24 02:35:31.457] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-06-24 02:35:31.468] [debug] ---createFolder----
+[2019-06-24 02:35:31.481] [debug] ------download_videoList--------
+[2019-06-24 02:35:36.421] [debug] -----getIdFromUrl----
+[2019-06-24 02:35:36.428] [debug] ------getVideoInfo-------
+[2019-06-24 02:35:39.169] [error] an unhandled error caught in gloabl handler:  Error: Command failed: E:\workspace\downloader\node_modules\youtube-dl\bin\youtube-dl.exe --dump-json --format=18 [object Object]
+ERROR: '[object Object]' is not a valid URL. Set --default-search "ytsearch" (or run  youtube-dl "ytsearch:[object Object]" ) to search YouTube
+
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-06-24 02:35:46.427] [debug] -----getIdFromUrl----
+[2019-06-24 02:35:46.454] [debug] ------getVideoInfo-------
+[2019-06-24 02:35:49.393] [error] an unhandled error caught in gloabl handler:  Error: Command failed: E:\workspace\downloader\node_modules\youtube-dl\bin\youtube-dl.exe --dump-json --format=18 [object Object]
+ERROR: '[object Object]' is not a valid URL. Set --default-search "ytsearch" (or run  youtube-dl "ytsearch:[object Object]" ) to search YouTube
+
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-06-24 02:35:57.129] [debug] -----getIdFromUrl----
+[2019-06-24 02:35:57.150] [debug] ------getVideoInfo-------
+[2019-06-24 02:36:01.435] [error] an unhandled error caught in gloabl handler:  Error: Command failed: E:\workspace\downloader\node_modules\youtube-dl\bin\youtube-dl.exe --dump-json --format=18 [object Object]
+ERROR: '[object Object]' is not a valid URL. Set --default-search "ytsearch" (or run  youtube-dl "ytsearch:[object Object]" ) to search YouTube
+
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-06-24 02:38:11.964] [debug] logging set up
+[2019-06-24 02:38:11.973] [debug] log level:debug
+[2019-06-24 02:38:11.978] [debug] size:5242880
+[2019-06-24 02:38:12.670] [debug] window created
+[2019-06-24 02:38:12.683] [debug] ---setNextItemDownloadEvent-----
+[2019-06-24 02:38:12.704] [error] an unhandled error caught in gloabl handler:  TypeError: this.setTryAgainPlaylistItemEvent is not a function
+    at Downloader.setIpcEvents (E:\workspace\downloader\Downloader.js:33:14)
+    at new Downloader (E:\workspace\downloader\Downloader.js:21:14)
+    at MainApp.createWindow (E:\workspace\downloader\MainApp.js:77:27)
+    at App.app.on (E:\workspace\downloader\MainApp.js:54:18)
+    at emitTwo (events.js:131:20)
+    at App.emit (events.js:214:7)
+[2019-06-24 02:38:51.360] [debug] logging set up
+[2019-06-24 02:38:51.368] [debug] log level:debug
+[2019-06-24 02:38:51.375] [debug] size:5242880
+[2019-06-24 02:38:52.080] [debug] window created
+[2019-06-24 02:38:52.099] [debug] ---setNextItemDownloadEvent-----
+[2019-06-24 02:38:52.112] [debug] -------makeDestinationDir-------
+[2019-06-24 02:38:52.119] [debug] ---createFolder----
+[2019-06-24 02:38:52.129] [debug] downloader object created.
+[2019-06-24 02:39:05.246] [debug] ------startProcess-----
+[2019-06-24 02:39:05.265] [debug] ------in Item class constuctor-----
+[2019-06-24 02:39:05.277] [debug] -----getIdFromUrl----
+[2019-06-24 02:39:05.284] [debug] playlistId:PL_qizAfcpJ-MfBGyKVSt4a2kj_hJQ4yUT
+[2019-06-24 02:39:05.295] [debug] ---createFolder----
+[2019-06-24 02:39:05.304] [debug] ------download_videoList--------
+[2019-06-24 02:39:09.836] [debug] -----getIdFromUrl----
+[2019-06-24 02:39:09.845] [debug] ------getVideoInfo-------
+[2019-06-24 02:39:12.614] [error] an unhandled error caught in gloabl handler:  Error: Command failed: E:\workspace\downloader\node_modules\youtube-dl\bin\youtube-dl.exe --dump-json --format=18 [object Object]
+ERROR: '[object Object]' is not a valid URL. Set --default-search "ytsearch" (or run  youtube-dl "ytsearch:[object Object]" ) to search YouTube
+
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+[2019-06-24 02:39:20.123] [debug] -----getIdFromUrl----
+[2019-06-24 02:39:20.155] [debug] ------getVideoInfo-------
+[2019-06-24 02:39:24.091] [error] an unhandled error caught in gloabl handler:  Error: Command failed: E:\workspace\downloader\node_modules\youtube-dl\bin\youtube-dl.exe --dump-json --format=18 [object Object]
+ERROR: '[object Object]' is not a valid URL. Set --default-search "ytsearch" (or run  youtube-dl "ytsearch:[object Object]" ) to search YouTube
+
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
