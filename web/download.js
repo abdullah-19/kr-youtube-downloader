@@ -38,7 +38,13 @@ ipcRenderer.on('load-complete', function (event, item) {
     console.log('video type:');
     console.log(item.isPlaylist);
     if (item.isPlaylist) {
-        if(document.getElementById(getPlaylistLoadItemId(item)).classList.contains('waiting')){
+        console.log('getPlaylistLoadItemId(item)');
+        console.log(getPlaylistLoadItemId(item));
+        console.log('item.loadIndex:');
+        console.log(item.loadIndex);
+        console.log('playlist load item id:');
+        console.log(getPlaylistLoadItemId(item));
+        if(document.getElementById("pi_"+getPlaylistLoadItemId(item)).classList.contains('waiting')){
             showPlaylistItemInfo(item);
             //ipcRenderer.send('load-next-playlist-item', item);
         }
@@ -110,19 +116,43 @@ ipcRenderer.on('downloading-playlist', (event, item) => {
 
 });
 
-ipcRenderer.on('check-load-of-playlist-item', (event,item) => {
+ipcRenderer.on('check-load-of-playlist-item', function (event,item){
+
     console.log('---check-load-of-playlist-item---');
-    let id = JSON.parse(item.list[item.downloadIndex]).id;
-    console.log(id);
-    let elem = document.getElementById('pi_' + id);
-    if (!elem.classList.contains('waiting'))
+    (function me(){
+        console.log('--item.downloadIndex:');
+        console.log(item.downloadIndex);
+        let id = JSON.parse(item.list[item.downloadIndex]).id;
+        console.log(id);
+        let elem = document.getElementById('pi_' + id);
+        if(!elem){
+            console.log('playlist waiting div not created, download index:'+item.downloadIndex);
+            setTimeout(me, 1000);
+            return;
+        }
+        if (elem.classList.contains('waiting')){
+            console.log('playlist item in waiting, download index:'+item.downloadIndex);
+            setTimeout(me, 1000);
+            return;
+        }
+        console.log('playlist item info exist');
         ipcRenderer.send('download-playlist-item', item);
-    else {
-        let f = setInterval(() => {
-            if (!elem.classList.contains('waiting')) {
-                clearInterval(f);
-                ipcRenderer.send('download-playlist-item', item);
-            }
-        }, 2000);
-    }
+    
+    })();
+    
+    
+    // if (!elem.classList.contains('waiting')){
+    //     console.log('not contain waiting');
+    //     ipcRenderer.send('download-playlist-item', item);
+    // }
+    // else {
+    //     console.log('---contain waiting----');
+    //     let f = setInterval(() => {
+    //         if (!elem.classList.contains('waiting')) {
+    //             console.log('---in interval---')
+    //             clearInterval(f);
+    //             ipcRenderer.send('download-playlist-item', item);
+    //         }
+    //     }, 2000);
+    // }
 })

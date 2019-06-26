@@ -51,7 +51,7 @@ module.exports = class Downloader {
     setNextItemDownloadEvent(){
         log.debug('---setNextItemDownloadEvent-----');
         ipcMain.on('download-playlist-item',(event,item)=>{
-            log.debug('---in ipcRenderer download-playlist-item----');
+            log.debug('---in ipcMain download-playlist-item----');
             this.downloadPlaylistItem(item);
         });
     }
@@ -66,7 +66,7 @@ module.exports = class Downloader {
     setNextItemLoadEvent() {
         ipcMain.on('load-playlist-item', (event, item) => {
             //this.loadListItem(item);
-            let url = this.url.getUrlFromId(JSON.parse(item.list[item.loadIndex]));
+            let url = this.url.getUrlFromId(JSON.parse(item.list[item.loadIndex]).id);
             this.loadInfo(url,item);
         });
     }

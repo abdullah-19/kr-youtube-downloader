@@ -527,14 +527,14 @@ function showPlaylistItemInfo(item) {
     if (item.loadIndex < item.list.length - 1) {
         item.loadIndex++;
         let nextId = JSON.parse(item.list[item.loadIndex]).id;
-        if(!document.getElementById(nextId)) showPlaylistItemWaitingDiv(item);
+        if(!document.getElementById('pi_'+nextId)) showPlaylistItemWaitingDiv(item);
     }
 
 }
 
 function showProgressOfPlaylistVideo(item) {
     var playlist = document.getElementById('playlist_' + item.id);
-    playlist.getElementsByClassName('progress_div')[0].classList.remove('bg-danger');
+    // playlist.getElementsByClassName('progress_div')[0].classList.remove('bg-danger');
     playlist.getElementsByClassName('playlistDownloadStatus')[0].innerHTML =
         "downloding " + (item.downloadIndex + 1) + "of " + item.list.length;
 
