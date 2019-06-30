@@ -1,5 +1,5 @@
 In progress
-1.already downloaded/downloading messaging and restart fixing.
+1. downloading path fixing
 
 To Do
 ......necessary.....
@@ -32,6 +32,7 @@ Done
 5.creating destination folder if doesn't exist
 6.show video in destination on click
 7.gui process refactoring
+8.already downloaded/downloading messaging and restart fixing.
 
 last status:
 1.woring at Downloader.js in loadInfo function.

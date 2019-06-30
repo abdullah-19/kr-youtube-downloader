@@ -415,6 +415,8 @@ ipcRenderer.on('download-complete', (event, item) => {
         iconDiv = document.getElementById('s_' + item.id);
     }
 
+    iconDiv.classList.remove('downloading');
+    iconDiv.classList.add('done');
     var folderIcon = iconDiv.getElementsByClassName('folderIcon')[0];
     folderIcon.classList.remove('d-none');
 
@@ -468,27 +470,44 @@ function showPlaylistItemWaitingDiv(item) {
 
 }
 
-function checkForLoadComplete(item){
+function checkForLoadComplete(item) {
     //item.loadIndex++;
     console.log('---checkingForLoadComplete---');
     let id = JSON.parse(item.list[item.loadIndex]).id;
     let trial = 1;
-    setInterval(() => {
-        if(document.getElementById('pi_'+id).classList.contains('waiting')){
-            console.log('----trying again---');
+    let elem = document.getElementById('pi_' + id);
+    let f = setInterval(() => {
+        if (elem.classList.contains('waiting')) {
+            console.log('trying again to load');
+            console.log('id:'+id);
             trial++;
-            console.log('trial:'+trial);
-            if(trial<=2) ipcRenderer.send('load-playlist-item',item);
+            console.log('trial:' + trial);
+            if (trial <= 3) {
+                ipcRenderer.send('load-playlist-item', item);
+            }
+            else{
+                //elem.classList.add('cancelled');
+                //elem.classList.remove('waiting');
+                elem.classList.add('skipped');
+                elem.classList.remove('waiting');
+                console.log('max trial exeeded, cant load the video info');
+                clearInterval(f);
+            }
         }
-    }, 20*1000);
+        else clearInterval(f);
+    }, 20 * 1000);
 
     setTimeout(() => {
-        if(document.getElementById('pi_'+id).classList.contains('waiting')){
-            let copyItem = {...item};
-            copyItem.loadIndex++;
-            ipcRenderer.send('load-playlist-item',copyItem);
+        if (elem.classList.contains('waiting')) {
+            
+            if(item.loadIndex+1<item.list.length){
+                console.log('going forward for delay');
+                let copyItem = { ...item };
+                copyItem.loadIndex++;
+                showPlaylistItemWaitingDiv(copyItem);
+            }
         }
-    }, 10*1000);
+    }, 15 * 1000);
 }
 
 function showPlaylistItemInfo(item) {
@@ -498,8 +517,9 @@ function showPlaylistItemInfo(item) {
     let playlistItemDiv = document.getElementById('pi_' + item.infoAtLoad.id);
     console.log('pi_' + item.infoAtLoad.id);
     console.log(playlistItemDiv);
-    
+
     playlistItemDiv.classList.remove('waiting');
+    playlistItemDiv.classList.add('pending');
     playlistItemDiv.getElementsByClassName('processIcon')[0].classList.add('d-none');
 
     let filesize = playlistItemDiv.getElementsByClassName('filesize')[0];
@@ -527,13 +547,17 @@ function showPlaylistItemInfo(item) {
     if (item.loadIndex < item.list.length - 1) {
         item.loadIndex++;
         let nextId = JSON.parse(item.list[item.loadIndex]).id;
-        if(!document.getElementById('pi_'+nextId)) showPlaylistItemWaitingDiv(item);
+        if (!document.getElementById('pi_' + nextId)) showPlaylistItemWaitingDiv(item);
     }
 
 }
 
 function showProgressOfPlaylistVideo(item) {
     var playlist = document.getElementById('playlist_' + item.id);
+    let itemId = JSON.parse(item.list[item.downloadIndex]).id;
+    let elem = document.getElementById('pi_'+itemId);
+    elem.classList.remove('starting');
+    elem.classList.add('downloading');
     // playlist.getElementsByClassName('progress_div')[0].classList.remove('bg-danger');
     playlist.getElementsByClassName('playlistDownloadStatus')[0].innerHTML =
         "downloding " + (item.downloadIndex + 1) + "of " + item.list.length;

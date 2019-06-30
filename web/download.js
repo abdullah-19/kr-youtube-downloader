@@ -12,22 +12,6 @@ function loadVideo(info) {
 }
 
 
-// function download_video(info) {
-//     console.log('----------in fun download_video----------');
-//     console.log('downloading video');
-//     var url;
-//     //var info = queue.toDownload[0];
-//     console.log('info');
-//     console.log(info);
-//     ipcRenderer.send('start_download', info);
-//     if (info.type === "single") url = info.url;
-//     else if (info.type === "playlist") {
-//         var id = JSON.parse(info.list[info.currentDownloadItem]).id;
-//         url = getUrlFromId(id);
-//     }
-
-// }
-
 function downloadFromQueue() {
     download_video(queue.toDownload.shift());
 }
@@ -44,9 +28,13 @@ ipcRenderer.on('load-complete', function (event, item) {
         console.log(item.loadIndex);
         console.log('playlist load item id:');
         console.log(getPlaylistLoadItemId(item));
-        if(document.getElementById("pi_"+getPlaylistLoadItemId(item)).classList.contains('waiting')){
+        let elem = document.getElementById("pi_" + getPlaylistLoadItemId(item));
+        if (!elem) {
+            console.log('element not created');
+            return;
+        }
+        if (elem.classList.contains('waiting')) {
             showPlaylistItemInfo(item);
-            //ipcRenderer.send('load-next-playlist-item', item);
         }
     }
     else {
@@ -116,43 +104,95 @@ ipcRenderer.on('downloading-playlist', (event, item) => {
 
 });
 
-ipcRenderer.on('check-load-of-playlist-item', function (event,item){
+ipcRenderer.on('check-load-of-playlist-item', function (event, item) {
+    console.log('-----check-load-of-playlist-item-----');
+    checkLoadOfPlaylistItem(item);
+})
 
-    console.log('---check-load-of-playlist-item---');
-    (function me(){
-        console.log('--item.downloadIndex:');
-        console.log(item.downloadIndex);
+function checkLoadOfPlaylistItem(item) {
+    let waitingTime = 0;
+    (function me() {
+        waitingTime++;
+
         let id = JSON.parse(item.list[item.downloadIndex]).id;
         console.log(id);
         let elem = document.getElementById('pi_' + id);
-        if(!elem){
-            console.log('playlist waiting div not created, download index:'+item.downloadIndex);
+
+        console.log('item.downloadIndex:');
+        console.log(item.downloadIndex);
+
+        if (elem.classList.contains('done')) {
+
+            console.log('already has been downloaded');
+            return;
+        }
+
+        if (elem.classList.contains('skipped')) {
+            item.downloadIndex++;
+            waitingTime = 0;
+            me();
+            return;
+        }
+
+        if (waitingTime > 20) {
+            console.log('waiting time for load exeeded, so skipping');
+            item.downloadIndex++;
+            waitingTime = 0;
+            me();
+            return;
+        }
+
+        if (!elem) {
+            console.log('playlist waiting div not created, download index:' + item.downloadIndex);
             setTimeout(me, 1000);
             return;
         }
-        if (elem.classList.contains('waiting')){
-            console.log('playlist item in waiting, download index:'+item.downloadIndex);
+        if (!elem.classList.contains('pending')) {
+            console.log('playlist item not in pending, download index:' + item.downloadIndex);
             setTimeout(me, 1000);
             return;
         }
         console.log('playlist item info exist');
+        elem.classList.remove('pending');
+        elem.classList.add('starting');
         ipcRenderer.send('download-playlist-item', item);
-    
+        checkForDownloadStart(item);
+
     })();
-    
-    
-    // if (!elem.classList.contains('waiting')){
-    //     console.log('not contain waiting');
-    //     ipcRenderer.send('download-playlist-item', item);
-    // }
-    // else {
-    //     console.log('---contain waiting----');
-    //     let f = setInterval(() => {
-    //         if (!elem.classList.contains('waiting')) {
-    //             console.log('---in interval---')
-    //             clearInterval(f);
-    //             ipcRenderer.send('download-playlist-item', item);
-    //         }
-    //     }, 2000);
-    // }
-})
+}
+
+function checkForDownloadStart(item) {
+    console.log('---checkForDonloadStart---');
+    let id = JSON.parse(item.list[item.downloadIndex]).id;
+    console.log('download id:' + id);
+    let elem = document.getElementById('pi_' + id);
+    let trial = 0;
+    let f = setInterval(() => {
+        if (elem.classList.contains('starting')) {
+            console.log('trying again to download');
+            trial++;
+            if (trial > 2) {
+                console.log('max trail exeeded to download');
+                clearInterval(f);
+                return;
+            }
+            ipcRenderer.send('download-playlist-item', item);
+            // checkForDownloadStart(item);
+            return;
+        }
+        else clearInterval(f);
+    }, 25 * 1000);
+
+    setTimeout(() => {
+        if (elem.classList.contains('starting')) {
+            console.log('forwarding to next download');
+            if(item.downloadIndex+1 < item.list.length){
+                let copyItem = { ...item };
+                copyItem.downloadIndex++;
+                checkLoadOfPlaylistItem(copyItem);
+            }
+            //ipcRenderer.send('download-playlist-item', copyItem);
+        }
+    }, 15 * 1000);
+
+}

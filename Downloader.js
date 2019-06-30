@@ -19,8 +19,17 @@ module.exports = class Downloader {
         this.info = new Info(this.app, this.win);
         this.fileManager = new FileManager(this.app, this.win);
         this.setIpcEvents();
-        this.makeDestinationDir();
+        //this.makeDestinationDir();
+        this.makeDirectories();
         this.setStartSingleVideoDownloadEvent();
+    }
+
+    makeDirectories(){
+        log.debug('---makeDirectories---');
+        log.debug('creating destinationDir');
+        this.createFolder(config.destinationDir);
+        log.debug('creating downloadDir');
+        this.createFolder(config.downloadDir);
     }
 
     setIpcEvents() {
@@ -98,11 +107,6 @@ module.exports = class Downloader {
 
     }
 
-    makeDestinationDir() {
-        log.debug('-------makeDestinationDir-------');
-        var destination = path.join(this.app.getPath('videos'), "kr_youtube_downloader");
-        this.createFolder(destination);
-    }
     setLoadEvent() {
         ipcMain.on('start-load', (event, info) => {
             var url;
@@ -254,11 +258,6 @@ module.exports = class Downloader {
         item.downloadIndex++;
         if (item.downloadIndex < item.list.length) {
             this.win.webContents.send('check-load-of-playlist-item',item);
-            // if (item.downloadIndex < item.loadIndex) {
-            //     log.debug('downloadIndex:' + item.downloadIndex);
-                
-            //     this.downloadPlaylistItem(item);
-            // }
 
         }
 
@@ -275,59 +274,6 @@ module.exports = class Downloader {
             console.log("JSON file has been saved.");
         });
     }
-
-    // loadUsingYDL(item) {
-    //     log.debug('in fun loadUsingYDL');
-    //     var filename;
-    //     var downloadPath;
-
-    //     var options = ['--format=18', '--skip-download'];
-    //     youtubedl.getInfo(item.url, options, (err, loadedInfo) => {
-    //         if (err) throw err;
-    //         item.infoAtLoad = loadedInfo;
-    //         if (fs.existsSync(path.join(config.destinationDir, item.infoAtLoad._filename))) {
-    //             this.win.webContents.send('already_downloaded', item);
-    //         }
-    //         else if (fs.existsSync(path.join(this.app.getAppPath(), "downloads", item.infoAtLoad._filename))) {
-    //             this.win.webContents.send('already_downloadeding', item);
-    //         }
-    //         else {
-    //             log.debug('thumbnail url:' + item.infoAtLoad.thumbnails[0].url);
-    //             filename = item.infoAtLoad._filename;
-    //             downloadPath = path.join(this.app.getAppPath(), "downloads", filename);
-    //             item.infoAtLoad.appPath = this.app.getAppPath();
-    //             item.infoAtLoad.downloadFilePath = downloadPath;
-    //             this.win.webContents.send('load-complete', item);
-    //         }
-
-    //     });
-    // }
-
-
-    // setPlaylistDownloadEvent() {
-    //     log.debug('-------------in fun setPlaylistDownloadEvent-----------------');
-    //     ipcMain.on('start-playlist-download', (event, url) => {
-    //         log.debug('----------in ipcMain start_playlist_download---------------');
-    //         this.download_videoList(url);
-    //     })
-    // }
-
-    // download_videoList(url) {
-    //     log.debug('-------------in fun download_videoList-----------------');
-    //     youtubedl.exec(url, ['-j', '--flat-playlist'], {}, (err, output) => {
-    //         if (err) throw err;
-    //         var info = {};
-    //         info.type = "playlist";
-    //         info.folderName = "playlist" + this.getDateTime();
-    //         var dir = path.join(this.app.getPath('videos'), "kr_youtube_downloader",info.folderName);
-    //         this.createFolder(dir);
-    //         info.list = output;
-    //         info.currentDownloadItem = 0;
-    //         info.currentLoadItem = 0;
-    //         this.win.webContents.send('video-list', info);
-    //     });
-    // }
-
 
     download_videoList(item) {
 
@@ -394,12 +340,12 @@ module.exports = class Downloader {
 
     downloadVideo(url, item) {
         log.debug('------downloadVideo-------');
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
 
 
             var video = youtubedl(url,
                 ['--format=18'],
-                { cwd: __dirname, maxBuffer: Infinity });
+                { cwd: __dirname, maxBuffer: Infinity, timeout:1000*15 });
 
             video.on('info', (loadedInfo) => {
                 item.infoAtDownload = loadedInfo;
@@ -412,31 +358,6 @@ module.exports = class Downloader {
             log.debug('error in downloadVideo:' + error.message);
         });
 
-
-    }
-
-
-    downloadUsingYDL(item) {
-        var filename;
-        var downloadPath;
-        log.debug('------------in fun downloadUsingYDL-------------');
-
-        var video = youtubedl(info.url,
-            ['--format=18'],
-            { cwd: __dirname, maxBuffer: Infinity });
-
-        video.on('info', (loadedInfo) => {
-            info.loadedInfo = loadedInfo;
-            log.debug('thumbnail url:' + loadedInfo.thumbnails[0].url);
-            filename = loadedInfo._filename;
-            downloadPath = path.join(this.app.getAppPath(), "downloads", filename);
-            video.pipe(fs.createWriteStream(downloadPath));
-            loadedInfo.appPath = this.app.getAppPath();
-            loadedInfo.downloadFilePath = downloadPath;
-            this.win.webContents.send('download-started', info);
-
-        });
-
     }
 
     getDateTime() {
@@ -444,73 +365,6 @@ module.exports = class Downloader {
         var time = date.getHours() + "_" + date.getMinutes() + "_" + date.getSeconds();
         var str_date = date.getFullYear() + '.' + (date.getMonth() + 1) + '.' + date.getDate();
         return time + " " + str_date;
-    }
-
-    download_thumbnail(event, url) {
-        var command = preperCommandForThumbnail(url);
-        execute(command, (output, error) => {
-            if (error != null) {
-                console.log('thumbnail eror');
-                event.sender.send('download_error');
-            }
-
-            else {
-                console.log('thumbnail download success');
-                console.log(output);
-                var thumbnail_destination = output.split("Writing thumbnail to")[1].split("\n")[0];
-                var thumbailDestinationWithoutExtension = thumbnail_destination.substr(0, thumbnail_destination.lastIndexOf('.'));
-                var thumbnailName = thumbailDestinationWithoutExtension.substr(thumbailDestinationWithoutExtension.lastIndexOf
-                    (path.sep) + 1, thumbailDestinationWithoutExtension.length - 1);
-
-                console.log('thumbnail destination:' + thumbnail_destination);
-                console.log('thumbnail name:' + thumbnailName);
-                event.sender.send('downloaded-thumbnail', thumbnailName);
-            }
-
-        });
-    }
-
-    preperCommand(url) {
-        var plugin_path = path.join("\"" + __dirname + "\"", "downloads", "youtube-dl");
-        var command;
-
-        console.log("download_path:" + download_path);
-
-        if (url.indexOf("playlist?list=") != -1) {
-            command = plugin_path + " -i -f mp4 --yes-playlist -o " + download_path + " " + url;
-            return command;
-        }
-        else {
-            console.log("splitted Link:" + url.split("&")[0]);
-            command = plugin_path + " -o " + download_path + " " + url.split("&")[0];
-            console.log("command:" + command);
-            return command;
-        }
-    }
-
-    preperCommandForThumbnail(url) {
-        var plugin_path = path.join("\"" + __dirname + "\"", "downloads", "youtube-dl");
-        var thumbnail_path = path.join("\"" + __dirname + "\"", "downloads", "thumbnail", "%(title)s");
-        var command;
-
-        //console.log("download_path:" + download_path);
-
-        if (url.indexOf("playlist?list=") != -1) {
-            command = plugin_path + " -i -f mp4 --yes-playlist -o " + download_path + " " + url;
-            return command;
-        }
-        else {
-            console.log("splitted Link:" + url.split("&")[0]);
-            command = plugin_path + " --skip-download --write-thumbnail" + " -o " + thumbnail_path + " " + url.split("&")[0];
-            console.log("thumbnail command:" + command);
-            return command;
-        }
-    }
-
-    execute(command, callback) {
-        exec(command, (error, stdout, stderr) => {
-            callback(stdout, error);
-        });
     }
 
 }

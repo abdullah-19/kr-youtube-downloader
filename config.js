@@ -2,11 +2,10 @@ const {app} = require('electron');
 const path = require('path');
 const loggerPath = __dirname;
 //const downloadPath = path.join(app.getAppPath(), "downloads");
-const downloadDir = path.join(app.getAppPath(), "downloads");
+//const downloadDir = path.join(app.getAppPath(), "downloads");
 //const destinationPath = path.join(app.getPath('videos'),"kr_youtube_downloader");
 const destinationDir = path.join(app.getPath('videos'),"kr_youtube_downloader");
-
-
+const downloadDir = path.join(destinationDir, ".metadata");
 
 var config = {
   "logger": {
