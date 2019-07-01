@@ -33,22 +33,10 @@ module.exports = class Downloader {
     }
 
     setIpcEvents() {
-        //this.setPlaylistDownloadEvent();
-        this.setLoadEvent();
-        // this.setStartDownloadEvent();
         this.setProcessEvent();
         this.setNextItemLoadEvent();
         this.setNextItemDownloadEvent();
     }
-
-
-    // setTryAgainPlaylistItemEvent(){
-    //     log.debug('--setTryAgainPlaylistItemEvent---');
-    //     ipcMain.on('retry-load-playlist-item',(event,item)=>{
-    //         log.debug('in ipcMain try-again-load-playlist-item');
-    //         this.loadInfo(item);
-    //     })
-    // }
 
     startLoadPlaylistItem(){
         log.debug('---startLoadPlaylistItem---');
@@ -107,24 +95,18 @@ module.exports = class Downloader {
 
     }
 
-    setLoadEvent() {
-        ipcMain.on('start-load', (event, info) => {
-            var url;
-            log.debug('------in ipcMain start-load-------');
-            if (info.type === "playlist") {
-                var id = JSON.parse(info.list[info.currentLoadItem]).id;
-                url = this.url.getUrlFromId(id);
-                info.url = url;
-            }
+    // setLoadEvent() {
+    //     ipcMain.on('start-load', (event, info) => {
+    //         var url;
+    //         log.debug('------in ipcMain start-load-------');
+    //         if (info.type === "playlist") {
+    //             var id = JSON.parse(info.list[info.currentLoadItem]).id;
+    //             url = this.url.getUrlFromId(id);
+    //             info.url = url;
+    //         }
 
-            // else if (info.type === "single") {
-            //     url = info.url;
-            // }
-            // this.loadUsingYDL(info);
-            // this.loadInfo(info);
-
-        });
-    }
+    //     });
+    // }
 
     async loadInfo(url, item) {
         
@@ -161,15 +143,15 @@ module.exports = class Downloader {
 
     }
 
-    loadNextPlaylistItem(item) {
-        item.loadIndex++;
-        if (item.loadIndex >= item.list.length) {
-            let id = JSON.parse(item.list[item.loadIndex]).id;
-            let url = this.url.getUrlFromId(id);
-            this.loadInfo(url, item);
-        }
+    // loadNextPlaylistItem(item) {
+    //     item.loadIndex++;
+    //     if (item.loadIndex >= item.list.length) {
+    //         let id = JSON.parse(item.list[item.loadIndex]).id;
+    //         let url = this.url.getUrlFromId(id);
+    //         this.loadInfo(url, item);
+    //     }
 
-    }
+    // }
 
     processForDownload(item) {
         log.debug('----processForDownload---');
@@ -212,18 +194,6 @@ module.exports = class Downloader {
                 function (message) {
                     log.debug(message);
                 });
-
-            //this.win.webContents.send('download-complete', item);
-
-
-            // var f2 = setInterval(() => {
-            //     if (percent == 100) {
-            //         clearInterval(f);
-            //         clearInterval(f2);
-
-            //     }
-            // }, 1000);
-
         });
     }
 

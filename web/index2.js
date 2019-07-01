@@ -67,10 +67,3 @@ function start_process() {
 
     console.log("Url:" + url);
 }
-
-function getDateTime() {
-    var date = new Date();
-    var time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-    var current_date = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-    return time + " " + current_date;
-}

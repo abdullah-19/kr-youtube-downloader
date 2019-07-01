@@ -60,18 +60,6 @@ module.exports = class FileManager {
         this.onShowDownloads();
     }
 
-    // onDownloadComplete() {
-    //     ipcMain.on('download-complete', (event, info) => {
-    //         var movePath;
-    //         if(info.type === "playlist") movePath = path.join(this.app.getPath('videos'), "kr_youtube_downloader",info.folderName, info.loadedInfo
-    //         ._filename);
-    //         else movePath = path.join(this.app.getPath('videos'), "kr_youtube_downloader", info.loadedInfo._filename);
-    //         this.move(info.loadedInfo.downloadFilePath, movePath, info, (err) => {
-    //             console.log(err);
-    //         });
-    //     });
-    // }
-
     onShowDownloads() {
         ipcMain.on('open-file-directory', (event, item) =>{
             log.debug('----ipcMain open-file-directory----');

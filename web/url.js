@@ -9,17 +9,6 @@ function extractId(url) {
     return video_id;
 }
 
-
-// function isValidUrl(url) {
-//     var p = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
-//     if (url.match(p) != null) {
-//         //return url.match(p)[1];
-//         return 1;
-//     }
-//     else if (is_playlist(url)) return 2;
-//     return -1;
-// }
-
 function isValidUrl(url) {
     var p = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
     if (url.match(p) != null) {

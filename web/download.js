@@ -1,17 +1,4 @@
 
-function loadVideo(info) {
-    console.log('--------- in fun loadVideo----------');
-    var url;
-    ipcRenderer.send('start-load', info);
-    if (info.type === "single") url = info.url;
-    else if (info.type === "playlist") {
-        var id = JSON.parse(info.list[info.currentLoadItem]).id;
-        url = getUrlFromId(id);
-    }
-    addVideoDiv(url);
-}
-
-
 function downloadFromQueue() {
     download_video(queue.toDownload.shift());
 }
@@ -60,26 +47,6 @@ ipcRenderer.on('download-started', function (event, item) {
         document.getElementById('pds_' + item.id).classList.remove('d-none');
     }
 });
-
-
-function loadNext() {
-    var info = queue.toLoad[0];
-    loadVideo(info);
-}
-
-
-function processNextVideo() {
-    var info = queue.toDownload[0];
-    if (info.type === "single") queue.toDownload.shift();
-    else if (info.type === "playlist") {
-        if (info.currentDownloadItem >= info.list.length) {
-            queue.toDownload.shift();
-            if (queue.toDownload.length === 0) queue.isDownloading = false;
-        }
-        else queue.toDownload[0].currentDownloadItem++;
-    }
-    if (queue.toDownload.length != 0) downloadNext();
-}
 
 ipcRenderer.on('list-downloaded', function (event, item) {
     console.log('---ipcRenderer list-downloaded----');
@@ -186,7 +153,7 @@ function checkForDownloadStart(item) {
     setTimeout(() => {
         if (elem.classList.contains('starting')) {
             console.log('forwarding to next download');
-            if(item.downloadIndex+1 < item.list.length){
+            if (item.downloadIndex + 1 < item.list.length) {
                 let copyItem = { ...item };
                 copyItem.downloadIndex++;
                 checkLoadOfPlaylistItem(copyItem);
