@@ -1,7 +1,7 @@
 
-function downloadFromQueue() {
-    download_video(queue.toDownload.shift());
-}
+// function downloadFromQueue() {
+//     download_video(queue.toDownload.shift());
+// }
 
 ipcRenderer.on('load-complete', function (event, item) {
     console.log('--------in ipcRenderer load-complete--------------');

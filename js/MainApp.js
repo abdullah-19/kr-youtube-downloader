@@ -63,7 +63,6 @@ module.exports = class MainApp {
     createWindow() {
         this.win = new BrowserWindow({ width: 800, height: 600 });
 
-
         this.win.loadURL(url.format({
             pathname: config.htmlPath,
             protocol: 'file:',

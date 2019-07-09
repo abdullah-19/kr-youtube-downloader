@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 class UrlManager {
     isValidUrl(url) {
         let pattern = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
@@ -15,6 +14,7 @@ class UrlManager {
             return true;
         return false;
     }
+    printSomething() {
+        console.log('something printed');
+    }
 }
-exports.UrlManager = UrlManager;
-//# sourceMappingURL=UrlManager.js.map

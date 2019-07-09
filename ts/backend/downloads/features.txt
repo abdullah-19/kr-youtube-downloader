@@ -1,0 +1,73 @@
+In progress
+1. converting to typescript
+
+To Do
+......necessary.....
+1.partial playlist download.
+2.download resume single/playliist
+
+.....not necessary......
+
+1.video info code refactoring
+2.excluding in windows defender
+3.quality,format setting before download
+4.pause,cancell,resume all video or a single video
+5.youtube mode(when copy link video download will start)
+6.video info display
+7.getting to start cancelled videos
+8.video editing
+9.getting downloaded part of video as file.
+10.downloading video thumbnail only
+11.getting video info without downloading
+12.showing downloading speed and waiting time when downloading for each and for all video
+13.opening media file to edit or to play
+14.
+
+
+Done
+1.Downloading multiple video at a time
+2.forbidin downloading same video.
+3.fixing buffer error
+4.download path for playliist
+5.creating destination folder if doesn't exist
+6.show video in destination on click
+7.gui process refactoring
+8.already downloaded/downloading messaging and restart fixing.
+9.downloading path fixing
+
+last status:
+1.woring at Downloader.js in loadInfo function.
+
+
+
+Bugs/Errors
+1.auto update is not working well
+2.downloads same video when click download
+3.space problem in url
+4.Unable to download webpage: The read operation timed out (caused by timeout('The read operation timed out',))
+
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+    //at  https://www.youtube.com/watch?v=G009oRhuDXk
+
+5. Error: Command failed: D:\workspace\downloader\node_modules\youtube-dl\bin\youtube-dl.exe --dump-json --format=18 http://www.youtube.com/watch?v=L58N4IHgF0o
+WARNING: Unable to extract video title
+ERROR: This video is unavailable.
+
+    at ChildProcess.exithandler (child_process.js:287:12)
+    at emitTwo (events.js:126:13)
+    at ChildProcess.emit (events.js:214:7)
+    at maybeClose (internal/child_process.js:925:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+//this is occure when video is private    
+6.sometimes hange and stop download and gui becomes black when downloading.
+//after sometimes it is gone and start processing.
+7.sometimes takes to much time to start download video.
+8.sometimes takes to much time for list download, loadInfo, downloadVideo. 
+    i.should give timeout for each process.
+
+9.WARNING: unable to extract channel id; please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; type  youtube-dl -U  to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.
+    i.error in load and stop loading the next item in playlist.
