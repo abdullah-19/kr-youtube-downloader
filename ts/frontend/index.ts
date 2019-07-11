@@ -1,4 +1,6 @@
 import { ipcRenderer } from "electron";
+import { GuiManager } from "./GuiManager";
+import { UrlManager } from "./UrlManager";
 
 class Main {
     private readonly downloadBtn: HTMLElement = document.getElementById('downloadBtn');
@@ -7,6 +9,7 @@ class Main {
         <HTMLInputElement>document.getElementById('urlField');
 
     private readonly status_text:HTMLElement = document.getElementById('error_text');
+    
     private readonly urlManager:UrlManager = new UrlManager();
 
     constructor() {
@@ -20,6 +23,7 @@ class Main {
     }
 
     private start_process(): void {
+        let guiManager = new GuiManager();
         console.log('--start_process----');
         let url: string = this.urlField.value;
 
@@ -34,12 +38,12 @@ class Main {
                     let elem:HTMLElement = <HTMLElement>document.getElementById('playlist_' + id);
                     if (!elem.classList.contains('inProgress')) {
                         elem.parentNode.removeChild(elem);
-                        showPlaylistWaitingDiv(url);
+                        guiManager.showPlaylistWaitingDiv(url);
                         ipcRenderer.send('start-process', url);
                     }
                 }
                 else {
-                    showPlaylistWaitingDiv(url);
+                    guiManager.showPlaylistWaitingDiv(url);
                     ipcRenderer.send('start-process', url);
                 }
 
@@ -48,7 +52,7 @@ class Main {
                 //let id = extractId(url);
                 let id = this.urlManager.getIdFromUrl(url);
                 if (!document.getElementById('singleWaiting_' + id)) {
-                    showSingleVideoWaitingDiv(id);
+                    guiManager.showSingleVideoWaitingDiv(id);
                     ipcRenderer.send('start-process', url);
                 }
             }
@@ -63,3 +67,5 @@ class Main {
     }
 
 }
+
+new Main();

@@ -1,5 +1,5 @@
 
-class Item {
+export class Item {
     public url: string = "";
     public id: string = "";
     public isPlaylist: boolean = false;
@@ -15,7 +15,7 @@ class Item {
     public listSize: number = -1;
 }
 
-interface VideoInfo {
+export interface VideoInfo {
     _filename: string;
     filesize: number;
     thumbnail: string;

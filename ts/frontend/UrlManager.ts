@@ -1,5 +1,6 @@
-class UrlManager {
+import { Item } from "./Item";
 
+export class UrlManager {
     public isValidUrl(url: string): boolean {
         let pattern: RegExp = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
         if (url.match(pattern)) return true;
@@ -30,5 +31,13 @@ class UrlManager {
             video_id = video_id.substring(0, ampersandPosition);
         }
         return video_id;
+    }
+
+    public getPlaylistLoadItemId(item:Item):string{
+        return JSON.parse(item.list[item.loadIndex]).id;
+    }
+    
+    public getPlaylistDownloadItemId(item:Item):string{
+        return JSON.parse(item.list[item.downloadIndex]).id;
     }
 }
