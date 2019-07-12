@@ -74,3 +74,5 @@ ERROR: This video is unavailable.
 
 ///////////////////////////when converting to typescript///////////////////
 1.already-downloadeding ipc call
+2.in Logger.ts at last line
+3.in config.ts at last line
