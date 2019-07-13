@@ -17,9 +17,11 @@ export class InfoManager {
 
             var video = youtubedl(url,
                 ['--format=18'],
-                { cwd: __dirname, maxBuffer: Infinity, timeout: 1000 * 25 });
+                <any>{ cwd: __dirname, maxBuffer: Infinity, timeout: 25000 });
 
             video.on('info', (loadedInfo: VideoInfo) => {
+                console.log('info resolved');
+                console.log(loadedInfo);
                 resolve(loadedInfo);
             });
 

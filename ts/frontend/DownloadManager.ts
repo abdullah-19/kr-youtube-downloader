@@ -20,6 +20,7 @@ export class DownloadManager {
     }
 
     private setLoadCompleteEvent(): void {
+        console.log('----setLoadCompleteEvent----');
         ipcRenderer.on('load-complete', (event: any, item: Item) => {
             console.log('--------in ipcRenderer load-complete--------------');
             console.log(item);

@@ -6,7 +6,7 @@ class Configuration {
     private loggerPath = __dirname + '/../../';
     private readonly destinationDir = path.join(app.getPath('videos'), "kr_youtube_downloader");
     private readonly downloadDir = path.join(this.destinationDir, ".metadata");
-    private readonly htmlPath = path.resolve(__dirname, "..", "ts/frontend/index.html");
+    private readonly htmlPath = path.resolve(__dirname, "..", "frontend/index.html");
 
     public configure(){
         let config = {

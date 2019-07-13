@@ -12,7 +12,7 @@
     // "declarationMap": true,                /* Generates a sourcemap for each corresponding '.d.ts' file. */
     "sourceMap": true, /* Generates corresponding '.map' file. */
     // "outFile": "./",                       /* Concatenate and emit output to single file. */
-    "outDir": "./dist", /* Redirect output structure to the directory. */
+    "outDir": "./dist/backend", /* Redirect output structure to the directory. */
     "rootDir": ".", /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
     // "composite": true,                     /* Enable project compilation */
     // "tsBuildInfoFile": "./",               /* Specify file to store incremental compilation information */
@@ -40,7 +40,6 @@
     "baseUrl": "../", /* Base directory to resolve non-absolute module names. */
     "paths": {
       "*": [
-        "backend/node_modules/electron/node_modules/@types/node/*",
         "backend/node_modules/electron/*"
       ]
     }, /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */

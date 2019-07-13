@@ -17,6 +17,7 @@ class Main {
     }
 
     private init(): void {
+        console.log('initialised');
         this.downloadBtn.addEventListener('click', () => {
             this.start_process();
         });

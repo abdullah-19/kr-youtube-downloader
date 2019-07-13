@@ -1,14 +1,16 @@
-import {app, BrowserWindow} from "electron";
+import { app, BrowserWindow } from "electron";
 import config from "./config";
 import { AutoUpdater } from "./AutoUpdater";
 import url = require("url");
 import log from "./Logger";
+import { DownloadManager } from "./DownloadManager";
+import { FileManager } from "./FileManager";
 
-export class MainApp{
-    private win:BrowserWindow;
-    private downloader:DownloadManager;
-    private fileManager:FileManager;
-    constructor(){
+export class MainApp {
+    private win: BrowserWindow;
+    private downloader: DownloadManager;
+    private fileManager: FileManager;
+    constructor() {
         this.onReady();
         this.setAppEvents();
     }
@@ -50,7 +52,7 @@ export class MainApp{
     }
 
     createWindow() {
-        this.win = new BrowserWindow({ width: 800, height: 600 });
+        this.win = new BrowserWindow({ width: 800, height: 600, webPreferences: { nodeIntegration: true } });
 
         this.win.loadURL(url.format({
             pathname: config.htmlPath,
@@ -62,8 +64,8 @@ export class MainApp{
             this.win = null
         });
         log.debug('window created');
-        this.downloader = new DownloadManager(app, this.win);
-        this.fileManager = new FileManager(app, this.win);
+        this.downloader = new DownloadManager(this.win);
+        this.fileManager = new FileManager(this.win);
         log.debug('downloader object created.')
     }
 }

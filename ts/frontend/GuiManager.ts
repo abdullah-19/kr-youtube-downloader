@@ -1,13 +1,21 @@
 import { ipcRenderer } from "electron";
 import { Event } from "electron";
 import { Item } from "./Item";
-import {VideoInfo} from "./Item";
+import { VideoInfo } from "./Item";
 import { UrlManager } from "./UrlManager";
 
 export class GuiManager {
     private readonly status_text: HTMLElement = document.getElementById('error_text');
     constructor() {
         this.setIpcEvents();
+        this.setEventListeners();
+    }
+
+    private setEventListeners() {
+        document.getElementById("urlField").oninput = (e) => {
+            this.clear_status();
+        };
+
     }
 
     private setIpcEvents(): void {
@@ -156,7 +164,7 @@ export class GuiManager {
 
     public showSingleVideoInfo(item: Item) {
         console.log('----showSingleVideoInfo----');
-        
+
         var info: VideoInfo = item.infoAtLoad;
 
         var infoDiv: HTMLElement = document.getElementById('singleWaiting_' + item.id);

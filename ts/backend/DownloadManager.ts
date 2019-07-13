@@ -18,6 +18,7 @@ export class DownloadManager {
     private fileManager: FileManager;
 
     constructor(win: BrowserWindow) {
+        this.win = win;
         this.infoManager = new InfoManager(this.win);
         this.fileManager = new FileManager(this.win);
         this.setIpcEvents();
@@ -143,7 +144,7 @@ export class DownloadManager {
     async downloadSingleVideo(item: Item) {
         log.debug('----downloadSingleVideo------');
         var size = item.infoAtLoad.filesize;
-        let video = await this.downloadVideo(item.url, item);
+        let video =<youtubedl.Youtubedl> await this.downloadVideo(item.url, item);
         var pos = 0;
         var progressInfo: progressInfo;
         var percent = 0;
@@ -242,7 +243,7 @@ export class DownloadManager {
         //var size = item.infoAtDownload.filesize;
         var id = JSON.parse(item.list[item.downloadIndex]).id;
         var url = this.url.getUrlFromId(id);
-        let video = await this.downloadVideo(url, item);
+        let video = <youtubedl.Youtubedl> await this.downloadVideo(url, item);
         var size = item.infoAtDownload.filesize;
         var pos = 0;
         var progressInfo:progressInfo;
@@ -292,10 +293,10 @@ export class DownloadManager {
 
             var video = youtubedl(url,
                 ['--format=18'],
-                { cwd: __dirname, maxBuffer: Infinity, timeout:1000*15 });
+                { cwd: __dirname, maxBuffer: "Infinity", timeout:"15000" });
 
-            video.on('info', (loadedInfo:VideoInfo) => {
-                item.infoAtDownload = loadedInfo;
+            video.on('info', (loadedInfo) => {
+                item.infoAtDownload = <VideoInfo>loadedInfo;
                 let downloadPath = path.join(config.downloadDir, loadedInfo._filename);
                 video.pipe(fs.createWriteStream(downloadPath));
                 resolve(video);
