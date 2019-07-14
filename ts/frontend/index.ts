@@ -1,6 +1,7 @@
 import { ipcRenderer } from "electron";
 import { GuiManager } from "./GuiManager";
 import { UrlManager } from "./UrlManager";
+import { DownloadManager } from "./DownloadManager";
 
 class Main {
     private readonly downloadBtn: HTMLElement = document.getElementById('downloadBtn');
@@ -12,6 +13,8 @@ class Main {
     
     private readonly urlManager:UrlManager = new UrlManager();
 
+    private readonly downloadManager:DownloadManager = new DownloadManager();
+
     constructor() {
         this.init();
     }
@@ -21,9 +24,11 @@ class Main {
         this.downloadBtn.addEventListener('click', () => {
             this.start_process();
         });
+
     }
 
     private start_process(): void {
+        console.log('--starting process--');
         let guiManager = new GuiManager();
         console.log('--start_process----');
         let url: string = this.urlField.value;

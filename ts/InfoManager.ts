@@ -19,10 +19,10 @@ export class InfoManager {
                 ['--format=18'],
                 <any>{ cwd: __dirname, maxBuffer: Infinity, timeout: 25000 });
 
-            video.on('info', (loadedInfo: VideoInfo) => {
+            video.on('info', (loadedInfo: any) => {
                 console.log('info resolved');
                 console.log(loadedInfo);
-                resolve(loadedInfo);
+                resolve(<VideoInfo>loadedInfo);
             });
 
         }).catch((error) => {

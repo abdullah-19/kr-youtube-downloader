@@ -9,6 +9,11 @@ import { UrlManager } from "./UrlManager";
 import { InfoManager } from "./InfoManager";
 import { FileManager } from "./FileManager";
 
+interface progressInfo {
+    id: string;
+    percent: number;
+}
+
 export class DownloadManager {
     private win: BrowserWindow;
     private numberOfItemInProgress: number = 0;
@@ -146,7 +151,7 @@ export class DownloadManager {
         var size = item.infoAtLoad.filesize;
         let video =<youtubedl.Youtubedl> await this.downloadVideo(item.url, item);
         var pos = 0;
-        var progressInfo: progressInfo;
+        var progressInfo: progressInfo = {id:item.id,percent:0};
         var percent = 0;
         progressInfo.id = item.id;
         video.on('data', function data(chunk: any) {
@@ -293,9 +298,9 @@ export class DownloadManager {
 
             var video = youtubedl(url,
                 ['--format=18'],
-                { cwd: __dirname, maxBuffer: "Infinity", timeout:"15000" });
+                <any>{ cwd: __dirname, maxBuffer: Infinity, timeout:15000 });
 
-            video.on('info', (loadedInfo) => {
+            video.on('info', (loadedInfo:any) => {
                 item.infoAtDownload = <VideoInfo>loadedInfo;
                 let downloadPath = path.join(config.downloadDir, loadedInfo._filename);
                 video.pipe(fs.createWriteStream(downloadPath));
@@ -316,7 +321,3 @@ export class DownloadManager {
     }
 }
 
-interface progressInfo {
-    id: string;
-    percent: number;
-}

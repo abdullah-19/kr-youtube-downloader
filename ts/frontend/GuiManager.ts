@@ -7,6 +7,7 @@ import { UrlManager } from "./UrlManager";
 export class GuiManager {
     private readonly status_text: HTMLElement = document.getElementById('error_text');
     constructor() {
+        console.log('in guimanager constuctor');
         this.setIpcEvents();
         this.setEventListeners();
     }
