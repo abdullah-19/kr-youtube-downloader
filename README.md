@@ -35,6 +35,7 @@ kr-youtube-downloader doesn't require any 3rd party dependencies to install.
  - click [here](https://github.com/TulshiDas39/kr-youtube-downloader/releases/download/v1.1.1/kr-youtube-downloader.Setup.1.1.0.exe) to download the installer.
  - run the installer and complete the steps
  - to get the best speed exclude the installation folder in windows defender.
+ - get step by step video guid [here](https://www.youtube.com/watch?v=ZRD9thyD48A)
 
 ### Development
 
