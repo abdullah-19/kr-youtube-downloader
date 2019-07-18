@@ -19,7 +19,7 @@ The features are tested on windows 10 pc. So, if you feel problem on yours pc pl
 ### Tech
 
 kr-youtube-downloader uses the following technology:
-* [Electron](https://electronjs.org/) - The major tech.
+* [Electron](https://electronjs.org/) - As a Framework.
 * [TypeScript](https://www.typescriptlang.org/index.html) - As a programming language
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - initial realeses used javaScript only in commonjs plateform!
 
