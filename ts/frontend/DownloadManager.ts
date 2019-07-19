@@ -16,12 +16,14 @@ export class DownloadManager {
         this.setDownloadStartedEvent();
         this.setListDownloadedEvent();
         this.setDownloadingPlaylistEvent();
+        this.setCheckingLoadOfPlaylistItem();
 
     }
 
     private setLoadCompleteEvent(): void {
         console.log('----setLoadCompleteEvent----');
         ipcRenderer.on('load-complete', (event: any, item: Item) => {
+            debugger;
             console.log('--------in ipcRenderer load-complete--------------');
             console.log(item);
             console.log('video type:');

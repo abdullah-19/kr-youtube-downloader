@@ -31,7 +31,7 @@ export class DownloadManager {
         this.setStartSingleVideoDownloadEvent();
     }
 
-    makeDirectories() {
+    private makeDirectories(): void {
         log.debug('---makeDirectories---');
         log.debug('creating destinationDir');
         this.createFolder(config.destinationDir);
@@ -77,6 +77,7 @@ export class DownloadManager {
 
     setProcessEvent() {
         ipcMain.on('start-process', (event: any, url: string) => {
+           
             this.startProcess(url);
         });
     }
@@ -106,7 +107,7 @@ export class DownloadManager {
 
         console.log('----------loadInfo-------------');
         console.log(url);
-        let loadedInfo:VideoInfo;
+        let loadedInfo: VideoInfo;
         try {
             loadedInfo = <VideoInfo>await this.infoManager.getVideoInfo(this.url.getIdFromUrl(url));
         } catch (err) {
@@ -149,9 +150,9 @@ export class DownloadManager {
     async downloadSingleVideo(item: Item) {
         log.debug('----downloadSingleVideo------');
         var size = item.infoAtLoad.filesize;
-        let video =<youtubedl.Youtubedl> await this.downloadVideo(item.url, item);
+        let video = <youtubedl.Youtubedl>await this.downloadVideo(item.url, item);
         var pos = 0;
-        var progressInfo: progressInfo = {id:item.id,percent:0};
+        var progressInfo: progressInfo = { id: item.id, percent: 0 };
         var percent = 0;
         progressInfo.id = item.id;
         video.on('data', function data(chunk: any) {
@@ -175,13 +176,13 @@ export class DownloadManager {
             var srcPath = path.join(config.downloadDir, filename);
             var destinationPath = path.join(item.destinationDir, filename);
             this.fileManager.move(srcPath, destinationPath, item,
-                function (message:any) {
+                function (message: any) {
                     log.debug(message);
                 });
         });
     }
 
-   private async downloadPlaylist(item: Item) {
+    private async downloadPlaylist(item: Item) {
         console.log('-----downloadPlaylist-----');
         if (this.queue.length < 6) {
             this.win.webContents.send('downloading-playlist', item);
@@ -194,7 +195,7 @@ export class DownloadManager {
         //this.downloadListItem(item);
     }
 
-   private async loadListItem(item: Item) {
+    private async loadListItem(item: Item) {
         console.log('-----loadListItem-----');
         item.loadIndex++;
         if (item.loadIndex < item.list.length) {
@@ -207,7 +208,7 @@ export class DownloadManager {
 
     }
 
-   private downloadListItem(item: Item) {
+    private downloadListItem(item: Item) {
         console.log('----downloadListItem-----');
         item.downloadIndex++;
         if (item.downloadIndex < item.list.length) {
@@ -217,7 +218,7 @@ export class DownloadManager {
 
     }
 
-   private writeInfoToFile(loadedInfo: any) {
+    private writeInfoToFile(loadedInfo: any) {
         var jsonContent = JSON.stringify(loadedInfo);
         fs.writeFile("output.json", jsonContent, 'utf8', function (err) {
             if (err) {
@@ -242,19 +243,19 @@ export class DownloadManager {
         });
     }
 
-    private async downloadPlaylistItem(item:Item) {
+    private async downloadPlaylistItem(item: Item) {
 
         log.debug('----downloadPlaylistItem------');
         //var size = item.infoAtDownload.filesize;
         var id = JSON.parse(item.list[item.downloadIndex]).id;
         var url = this.url.getUrlFromId(id);
-        let video = <youtubedl.Youtubedl> await this.downloadVideo(url, item);
+        let video = <youtubedl.Youtubedl>await this.downloadVideo(url, item);
         var size = item.infoAtDownload.filesize;
         var pos = 0;
-        var progressInfo:progressInfo;
         var percent = 0;
+        var progressInfo: progressInfo = {id:item.infoAtDownload.id, percent:percent};
         progressInfo.id = item.infoAtDownload.id;
-        video.on('data', function data(chunk:any) {
+        video.on('data', function data(chunk: any) {
             pos += chunk.length;
             if (size) {
                 percent = Math.floor((pos / size) * 100);
@@ -275,7 +276,7 @@ export class DownloadManager {
             var srcPath = path.join(config.downloadDir, filename);
             var destinationPath = path.join(item.destinationDir, filename);
             this.fileManager.move(srcPath, destinationPath, item,
-                function (message:any) {
+                function (message: any) {
                     log.debug(message);
                 });
             this.downloadListItem(item);
@@ -284,23 +285,23 @@ export class DownloadManager {
 
     }
 
-    createFolder(dir:string) {
+    createFolder(dir: string) {
         log.debug('---createFolder----');
         if (!fs.existsSync(dir)) {
             fs.mkdirSync(dir);
         }
     }
 
-   private downloadVideo(url:string, item:Item) {
+    private downloadVideo(url: string, item: Item) {
         log.debug('------downloadVideo-------');
         return new Promise((resolve) => {
 
 
             var video = youtubedl(url,
                 ['--format=18'],
-                <any>{ cwd: __dirname, maxBuffer: Infinity, timeout:15000 });
+                <any>{ cwd: __dirname, maxBuffer: Infinity, timeout: 15000 });
 
-            video.on('info', (loadedInfo:any) => {
+            video.on('info', (loadedInfo: any) => {
                 item.infoAtDownload = <VideoInfo>loadedInfo;
                 let downloadPath = path.join(config.downloadDir, loadedInfo._filename);
                 video.pipe(fs.createWriteStream(downloadPath));
@@ -313,7 +314,7 @@ export class DownloadManager {
 
     }
 
-    private getDateTime():string {
+    private getDateTime(): string {
         var date = new Date();
         var time = date.getHours() + "_" + date.getMinutes() + "_" + date.getSeconds();
         var str_date = date.getFullYear() + '.' + (date.getMonth() + 1) + '.' + date.getDate();

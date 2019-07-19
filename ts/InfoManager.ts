@@ -20,8 +20,8 @@ export class InfoManager {
                 <any>{ cwd: __dirname, maxBuffer: Infinity, timeout: 25000 });
 
             video.on('info', (loadedInfo: any) => {
-                console.log('info resolved');
-                console.log(loadedInfo);
+                // console.log('info resolved');
+                // console.log(loadedInfo);
                 resolve(<VideoInfo>loadedInfo);
             });
 

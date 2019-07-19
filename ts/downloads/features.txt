@@ -1,5 +1,5 @@
 In progress
-1. converting to typescript
+1. already downloaded/downloading error fixing
 
 To Do
 ......necessary.....
