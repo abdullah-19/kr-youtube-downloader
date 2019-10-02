@@ -1,10 +1,11 @@
 In progress
-1. already downloaded/downloading error fixing
+1. removing iifi usage in checkLoadOfPlaylistItem() of DownloadManagerr.ts in fronted
 
 To Do
 ......necessary.....
 1.partial playlist download.
 2.download resume single/playliist
+3.already downloaded/downloading error fixing
 
 .....not necessary......
 

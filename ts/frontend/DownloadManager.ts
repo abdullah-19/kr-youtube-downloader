@@ -156,6 +156,7 @@ export class DownloadManager {
             classT.checkForDownloadStart(item);
 
         })(this);
+        
     }
 
     private checkForDownloadStart(item:Item):void {
